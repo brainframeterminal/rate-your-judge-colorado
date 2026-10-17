@@ -90,10 +90,12 @@ function stepRole() {
     h('div', { class: 'home-btns' }, h('button', { class: 'btn ghost', style: 'margin-top:12px', onclick: stepMap }, t('home.map')),
     h('button', { class: 'btn ghost', style: 'margin-top:10px', onclick: openAppellate }, t('home.appellate')))),
     latest,
+    asks,
     apHome,
     featuredH, featured,
   ], 0, stepRole);
   latestRail();
+  asksRail();
   appealsRail();
   api('/api/featured').then(list => (featuredH.hidden = !list.length, list)).then(list => featured.replaceChildren(...list.map(p => h('button', { class: 'choice', onclick: () => { S.sent = null; stepResult(p.id); } },
     avatar(p.name), h('span', {}, dName(p.name), h('small', {}, `${titleOf(p.type)} · ${p.court}`), h('small', {}, `${sumLine(p.summary)} · ${t('home.demo')}`)), h('span', { class: 'go' }, '›'))))).catch(() => {});
@@ -135,6 +137,26 @@ async function openAppellate() {   // home → the justices and appeals judges, 
 // home: real judges with the most Court of Appeals decisions — a swipeable rail on phones, a grid on wider screens.
 // A count, never a rate (busy dockets get more appeals); each card opens the profile with the full list.
 const apHome = h('section', { class: 'aphome', hidden: true, 'aria-labelledby': 'aph' });
+const asks = h('section', { class: 'asks', hidden: true, 'aria-labelledby': 'askh' });   // "What people ask": opted-in, moderator-published suggestions with 👍/👎
+function asksRail() {
+  api('/api/asks').then(list => {
+    asks.hidden = !list.length; if (!list.length) return;
+    const card = x => h('div', { class: 'ask card' }, x.reviewed ? null : h('span', { class: 'pill warn ask-pill' }, t('asks.new')),
+      x.ease != null ? h('p', { class: 'ask-ease' }, h('span', {}, t('asks.ease')), dots(x.ease)) : null,                     // how easy the site was for them
+      x.parts ? (p => p.length ? h('p', { class: 'ask-parts' }, h('b', {}, t('asks.parts') + ' '), p.join(', ')) : h('p', { class: 'ask-parts' }, t('asks.none')))(x.parts.split(/,\s*(?=[A-ZÁÉÍÓÚÑ])/).filter(s => !/^(Nothing, it was clear|Nada, estuvo claro)/i.test(s))) : null,   // "nothing was hard" said plainly
+      x.questions ? h('p', {}, h('b', {}, t('asks.q') + ' '), x.questions) : null, x.text ? h('p', {}, x.text) : null,
+      h('div', { class: 'ask-foot' }, h('small', { class: 'muted' }, ago(x.at)),
+        x.canReact ? h('div', { class: 'vote react' }, h('button', { 'aria-pressed': x.myVote === 1, 'aria-label': t('cm.like.a', { n: x.up }), onclick: () => askVote(x.id, 1) }, `👍 ${x.up}`), h('button', { 'aria-pressed': x.myVote === -1, 'aria-label': t('cm.dislike.a', { n: x.down }), onclick: () => askVote(x.id, -1) }, `👎 ${x.down}`))
+        : h('div', { class: 'vote react mine' }, h('button', { disabled: true, title: t('asks.own') }, `👍 ${x.up}`), h('button', { disabled: true, title: t('asks.own') }, `👎 ${x.down}`))));
+    // same shape as the appeals rail: swipe sideways on a phone, a grid on a computer, room under the subtitle
+    const rail = h('div', { class: 'aprail asks-rail', role: 'list' }, list.map(x => h('div', { role: 'listitem' }, card(x))));
+    const step = d => rail.scrollBy({ left: d * (rail.firstChild ? rail.firstChild.getBoundingClientRect().width + 12 : 280), behavior: 'smooth' });
+    asks.replaceChildren(h('div', { class: 'aphead' }, h('h2', { id: 'askh' }, t('home.asks')),
+        list.length > 1 ? h('span', { class: 'aparrows' }, h('button', { type: 'button', 'aria-label': t('home.ap.prev'), onclick: () => step(-1) }, '‹'), h('button', { type: 'button', 'aria-label': t('home.ap.next'), onclick: () => step(1) }, '›')) : null),
+      h('p', { class: 'apsub' }, t('home.asks.sub')), rail);
+  }).catch(() => {});
+}
+async function askVote(id, v) { try { await api('/api/asks/vote', { id, vote: v }); asksRail(); } catch (e) { toast(e.message); } }
 let apData = null;
 async function appealsRail() {
   try { apData = apData || await api('/api/appeals/top'); } catch { return; }
@@ -528,6 +550,7 @@ async function stepResult(id) {
     c.hasText ? h('p', {}, c.text || (c.pendingText ? c.pendingText : t('cm.hidden'))) : null,
     c.canVote ? h('div', { class: 'vote' }, h('button', { onclick: () => vote(c.id, 1, d.id) }, t('cm.up', { n: c.up })), h('button', { onclick: () => vote(c.id, -1, d.id) }, t('cm.down', { n: c.down })))
       : c.canReact ? h('div', { class: 'vote react' }, h('button', { 'aria-pressed': c.myVote === 1, 'aria-label': t('cm.like.a', { n: c.up }), onclick: () => vote(c.id, 1, d.id) }, `👍 ${c.up}`), h('button', { 'aria-pressed': c.myVote === -1, 'aria-label': t('cm.dislike.a', { n: c.down }), onclick: () => vote(c.id, -1, d.id) }, `👎 ${c.down}`))
+      : c.mine && c.text ? h('div', { class: 'vote react mine' }, h('button', { disabled: true, title: t('cm.own') }, `👍 ${c.up}`), h('button', { disabled: true, title: t('cm.own') }, `👎 ${c.down}`), h('small', { class: 'muted' }, t('cm.own')))   // your own comment: you see the thumbs and the counts, but cannot press them
       : c.hasText && (c.up || c.down) ? h('p', { class: 'muted react-n' }, `👍 ${c.up} · 👎 ${c.down}`) : null,
     c.text && !c.mine ? reportMenu(c, d.id) : null));
   const sent = S.sent;

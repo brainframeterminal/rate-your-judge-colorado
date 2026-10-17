@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Print a flyer — Rate Your Judge Colorado</title>
+<meta name="description" content="A printable flyer and postcards for Rate Your Judge Colorado, with a QR code to the site. English and Spanish.">
+<link rel="icon" href="icons/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="stylesheet" href="flyer.css">
+<script type="module" src="flyer.js"></script>
+</head>
+<body>
+<header class="bar" aria-label="Print options">
+  <a class="home" href="/"><img src="img/logo-128.webp" alt="" width="32" height="32"> <span data-t="back">Back to the site</span></a>
+  <div class="opts">
+    <div class="seg" role="group" aria-label="Language"><button type="button" data-lang="en">English</button><button type="button" data-lang="es">Español</button></div>
+    <div class="seg" role="group" aria-label="Format"><button type="button" data-fmt="flyer" data-t="flyer">Flyer</button><button type="button" data-fmt="cards" data-t="cards">4 postcards</button></div>
+    <button type="button" class="print" data-t="print">Print</button>
+    <a class="pdf" data-t="pdf" href="print/rate-your-judge-flyer-en.pdf">Download PDF</a>
+  </div>
+  <p class="hint" data-t="hint">US Letter. Print at 100% (“actual size”). Postcards: cut along the dashed lines.</p>
+</header>
+<section id="about" class="about" aria-labelledby="abouth"></section>
+<main id="sheet" class="sheet" aria-live="polite"></main>
+</body>
+</html>

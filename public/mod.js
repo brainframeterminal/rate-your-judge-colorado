@@ -85,8 +85,12 @@ async function jn() {
     app.append(h('div', { class: 'card' }, h('h3', {}, `Want to help (${d.length})`), d.map(r => h('div', { class: 'modrow' }, h('span', { class: 'muted' }, `${ago(r.created_at)} · ${r.interests || '—'} · ${r.lang}`), h('p', {}, (r.contact ? r.contact + ' — ' : '') + (r.message || ''))))));
   } catch {}
 }
+async function fbDecide(id, pub) { try { await api('/api/mod/feedback-decide', { id, pub }); app.querySelectorAll('.card').forEach(c => { if (/Pilot feedback/.test(c.textContent)) c.remove(); }); fb(); } catch (e) { const m = h('p', { class: 'err', role: 'alert' }, e.message); app.prepend(m); setTimeout(() => m.remove(), 6000); } }   // "What people ask"
 async function fb() {
   try { const d = await api('/api/mod/feedback'); if (!d.rows.length) return;
-    app.append(h('div', { class: 'card' }, h('h3', {}, `Pilot feedback (${d.avg.n}) · ease ${d.avg.a ? d.avg.a.toFixed(1) : '–'}/5`), d.rows.map(r => h('div', { class: 'modrow' }, h('span', { class: 'muted' }, `${ago(r.created_at)} · ${r.page} · ${r.lang}${r.ease ? ' · ease ' + r.ease : ''}`), r.parts ? h('p', {}, 'Confusing: ' + r.parts) : null, r.questions ? h('p', {}, 'Questions: ' + r.questions) : null, r.text ? h('p', {}, r.text) : null)))); } catch {}
+    app.append(h('div', { class: 'card' }, h('h3', {}, `Pilot feedback (${d.avg.n}) · ease ${d.avg.a ? d.avg.a.toFixed(1) : '–'}/5`), d.rows.map(r => h('div', { class: 'modrow' }, h('span', { class: 'muted' }, `${ago(r.created_at)} · ${r.page} · ${r.lang}${r.ease ? ' · ease ' + r.ease : ''}`), r.parts ? h('p', {}, 'Confusing: ' + r.parts) : null, r.questions ? h('p', {}, 'Questions: ' + r.questions) : null, r.text ? h('p', {}, r.text) : null,
+      h('div', { class: 'modbtns' }, h('span', { class: 'muted' }, r.pub === 'published' ? `Public · reviewed (${r.pub_by})` : r.pub === 'hidden' ? `Removed (${r.pub_by})` : r.pub === 'held' ? 'Held by the screen: possible private name or threat' : 'Public · not reviewed yet'),
+        r.pub !== 'published' ? h('button', { class: 'btn ghost', onclick: () => fbDecide(r.id, 'published') }, 'Mark reviewed / publish') : null,
+        r.pub !== 'hidden' ? h('button', { class: 'btn ghost', onclick: () => fbDecide(r.id, 'hidden') }, 'Remove') : null))))); } catch {}
 }
 draw();

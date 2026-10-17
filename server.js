@@ -83,6 +83,10 @@ CREATE INDEX IF NOT EXISTS idx_rev_dev ON reviews (device);
 `);
 
 try { await db.exec("ALTER TABLE officials ADD COLUMN scope TEXT NOT NULL DEFAULT 'court'"); } catch {}
+// "What people ask". pub: '' = shown, not reviewed yet ·
+// 'published' = a moderator read it · 'held' = the screen found a possible private name/threat, hidden until a moderator decides · 'hidden' = removed
+for (const col of ["share INTEGER NOT NULL DEFAULT 0", "pub TEXT NOT NULL DEFAULT ''", "pub_by TEXT NOT NULL DEFAULT ''", `pub_at ${BI}`]) { try { await db.exec(`ALTER TABLE feedback ADD COLUMN ${col}`); } catch {} }
+await db.exec(`CREATE TABLE IF NOT EXISTS feedback_votes (feedback_id ${BI} NOT NULL, device TEXT NOT NULL, vote INTEGER NOT NULL, created_at ${BI} NOT NULL, PRIMARY KEY (feedback_id, device))`);
 for (const col of ["source TEXT NOT NULL DEFAULT ''", "checked TEXT NOT NULL DEFAULT ''", "title TEXT NOT NULL DEFAULT ''"]) { try { await db.exec(`ALTER TABLE officials ADD COLUMN ${col}`); } catch {} }   // where a real name came from, and when it was checked (tools/roster-import.mjs)   // 'district' = listed at every courthouse of the judicial district (elected DA, district-wide judges)
 // ---- demo roster: INVENTED names for prototype testing (SEED_DEMO=0 in production) --------------------
 const FIRST = ['Marcus','Elena','Thomas','Priya','Daniel','Grace','Victor','Naomi','Samuel','Lucia','Henry','Aisha','Peter','Carmen','Walter','Julia','Omar','Rebecca','Isaac','Teresa'];
@@ -545,12 +549,37 @@ async function api(req, res, url, isMod) {
     if (validDevice(device) && rateLimited('fbd:' + device, 6, HOUR)) return json(res, 429, { error: 'slow down' });
     if ((await db.prepare('SELECT COUNT(*) n FROM feedback').get()).n >= 5000) return json(res, 503, { error: 'busy' });
     const text = clean(b.text).slice(0, 600), questions = clean(b.questions).slice(0, 600);
+    let held = false;                                                             // feedback is public, so it gets the comment screen (short is fine here)
+    for (const x of [text, questions].filter(Boolean)) { const sc = screen(x); if (sc.verdict === 'block' && sc.reason !== 'short') return json(res, 400, { error: SCREEN_MESSAGES[sc.reason] || SCREEN_MESSAGES.language, screen: sc.reason }); if (sc.verdict === 'hold') held = true; }
     const parts = (Array.isArray(b.parts) ? b.parts : []).map(x => clean(x).slice(0, 40)).slice(0, 8).join(', ');
     const ease = int15(b.ease);
     if (!text && !questions && !parts && ease === null) return json(res, 400, { error: 'empty' });
-    await db.prepare('INSERT INTO feedback (created_at, page, lang, ease, parts, questions, text, device) VALUES (?,?,?,?,?,?,?,?)')
-      .run(hourFloor(Date.now()), clean(b.page).slice(0, 40), b.lang === 'es' ? 'es' : 'en', ease, parts, questions, text, validDevice(device) ? device : '');
+    await db.prepare('INSERT INTO feedback (created_at, page, lang, ease, parts, questions, text, device, pub) VALUES (?,?,?,?,?,?,?,?,?)')
+      .run(hourFloor(Date.now()), clean(b.page).slice(0, 40), b.lang === 'es' ? 'es' : 'en', ease, parts, questions, text, validDevice(device) ? device : '', held ? 'held' : '');
     notify(`[Feedback] ease ${ease ?? '-'} · ${clean(b.page).slice(0, 30) || 'page'} · ${b.lang === 'es' ? 'ES' : 'EN'}`, [`Ease: ${ease ?? '-'}/5`, `Page: ${clean(b.page).slice(0, 40)}`, `Language: ${b.lang === 'es' ? 'ES' : 'EN'}`, `Confusing: ${parts || '-'}`, `Question wording: ${questions || '-'}`, `Comment: ${text || '-'}`]); return json(res, 200, { ok: true });
+  }
+
+  if (req.method === 'GET' && url.pathname === '/api/asks') {                      // "What people ask": everything people sent (minus held/removed), newest first, with reader 👍/👎
+    const me = validDevice(deviceOf(req)) ? deviceOf(req) : '';
+    const rows = await db.prepare(`SELECT f.id, f.created_at, f.lang, f.ease, f.parts, f.questions, f.text, f.device, f.pub,
+        (SELECT COUNT(*) FROM feedback_votes v WHERE v.feedback_id = f.id AND v.vote = 1) up, (SELECT COUNT(*) FROM feedback_votes v WHERE v.feedback_id = f.id AND v.vote = -1) down,
+        (SELECT vote FROM feedback_votes v WHERE v.feedback_id = f.id AND v.device = ?) myvote
+      FROM feedback f WHERE f.pub IN ('', 'published') AND (COALESCE(f.text, '') != '' OR COALESCE(f.questions, '') != '' OR f.ease IS NOT NULL OR COALESCE(f.parts, '') != '') ORDER BY f.created_at DESC, f.id DESC LIMIT 10`).all(me || '-');
+    return json(res, 200, rows.map(r => ({ id: Number(r.id), at: Number(r.created_at), lang: r.lang, ease: r.ease == null ? null : Number(r.ease), parts: r.parts || '', questions: r.questions || '', text: r.text || '', reviewed: r.pub === 'published', up: Number(r.up), down: Number(r.down),
+      myVote: r.myvote == null ? 0 : Number(r.myvote), mine: !!me && r.device === me, canReact: !!me && r.device !== me })));
+  }
+  if (req.method === 'POST' && url.pathname === '/api/asks/vote') {                 // one 👍 or 👎 per phone per suggestion; the same thumb again takes it back; never your own
+    if (rateLimited('askv:' + net, 200, HOUR)) return json(res, 429, { error: 'slow down' });
+    const b = await readBody(req); const device = deviceOf(req, b), vote = b.vote === 1 ? 1 : b.vote === -1 ? -1 : 0;
+    if (!validDevice(device)) return badDevice(res);
+    if (!vote) return json(res, 400, { error: 'bad request' });
+    const f = await db.prepare("SELECT id, device FROM feedback WHERE id = ? AND pub IN ('', 'published')").get(idOf(b.id));
+    if (!f) return json(res, 404, { error: 'not found' });
+    if (f.device && f.device === device) return json(res, 403, { error: 'You cannot vote on your own suggestion.' });
+    const had = await db.prepare('SELECT vote FROM feedback_votes WHERE feedback_id = ? AND device = ?').get(f.id, device);
+    if (had && Number(had.vote) === vote) await db.prepare('DELETE FROM feedback_votes WHERE feedback_id = ? AND device = ?').run(f.id, device);
+    else await db.prepare('INSERT INTO feedback_votes (feedback_id, device, vote, created_at) VALUES (?,?,?,?) ON CONFLICT (feedback_id, device) DO UPDATE SET vote = excluded.vote, created_at = excluded.created_at').run(f.id, device, vote, hourFloor(Date.now()));
+    return json(res, 200, { ok: true });
   }
 
   if (req.method === 'POST' && url.pathname === '/api/join') {                     // "I want to help": volunteers, coders, testers, promoters
@@ -643,7 +672,14 @@ async function api(req, res, url, isMod) {
       return json(res, 200, { ok: true });
     }
     if (req.method === 'GET' && url.pathname === '/api/mod/join') return json(res, 200, await db.prepare('SELECT created_at, interests, contact, message, lang FROM join_requests ORDER BY created_at DESC LIMIT 200').all());
-    if (req.method === 'GET' && url.pathname === '/api/mod/feedback') return json(res, 200, { rows: await db.prepare('SELECT created_at, page, lang, ease, parts, questions, text FROM feedback ORDER BY created_at DESC LIMIT 100').all(), avg: await db.prepare('SELECT AVG(ease) a, COUNT(*) n FROM feedback').get() });
+    if (req.method === 'POST' && url.pathname === '/api/mod/feedback-decide') {      // mark a suggestion reviewed, or remove it from the home page
+      const b = await readBody(req); const pub = b.pub === 'published' ? 'published' : b.pub === 'hidden' ? 'hidden' : '';
+      const f = await db.prepare('SELECT id FROM feedback WHERE id = ?').get(idOf(b.id));
+      if (!f || !pub) return json(res, 400, { error: 'bad request' });
+      await db.prepare('UPDATE feedback SET pub = ?, pub_by = ?, pub_at = ? WHERE id = ?').run(pub, mod, Date.now(), f.id);
+      return json(res, 200, { ok: true });
+    }
+    if (req.method === 'GET' && url.pathname === '/api/mod/feedback') return json(res, 200, { rows: await db.prepare('SELECT id, created_at, page, lang, ease, parts, questions, text, share, pub, pub_by FROM feedback ORDER BY created_at DESC LIMIT 100').all(), avg: await db.prepare('SELECT AVG(ease) a, COUNT(*) n FROM feedback').get() });
     if (req.method === 'GET' && url.pathname === '/api/mod/pending')
       return json(res, 200, await Promise.all((await db.prepare("SELECT id, official_id, role, comment, present, status, created_at, (SELECT COUNT(*) FROM reports x WHERE x.review_id = r.id) reports, (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = 1) up, (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = -1) down FROM reviews r WHERE status IN ('held','flagged','pending') AND comment IS NOT NULL AND comment != '' ORDER BY CASE status WHEN 'held' THEN 0 WHEN 'flagged' THEN 1 ELSE 2 END, created_at").all())
         .map(async r => ({ ...r, official: await officialLabel(r.official_id) }))));
@@ -705,7 +741,7 @@ const SEC = {
   'x-content-type-options': 'nosniff', 'referrer-policy': 'no-referrer', 'cross-origin-opener-policy': 'same-origin', 'x-frame-options': 'DENY',
   'permissions-policy': 'geolocation=(self), microphone=(self), camera=()',
 };
-const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8' };
+const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json', '.png': 'image/png', '.pdf': 'application/pdf', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.webmanifest': 'application/manifest+json', '.woff2': 'font/woff2', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8' };
 const PUBLIC_DIR = path.join(ROOT, 'public') + path.sep;
 const MOD_ONLY = new Set(['/mod.html', '/mod.js']);                                  // never served on the public listener
 

@@ -1,0 +1,89 @@
+/* Printable flyer + 4-up postcards. Sizes are in inches so the printout matches the screen; colours print as designed. */
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin.woff2) format("woff2")}
+@font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/pjs-latin.woff2) format("woff2")}
+:root{--navy:#081a52;--indigo:#3b3fb0;--plum:#a63a6c;--gold:#ffcb05;--ink:#0d1330;--muted:#4a5175;--paper:#fff;
+  --dawn:linear-gradient(158deg,#081a52 0%,#1d2a78 38%,#3b3fb0 66%,#7c3f8f 86%,#a63a6c 100%)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#e6e8f3;color:var(--ink);font:16px/1.45 "Inter",system-ui,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+/* screen toolbar */
+.bar{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;padding:12px 20px;background:var(--navy);color:#fff}
+.bar .home{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;text-decoration:none;min-height:44px}
+.opts{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.seg{display:flex;gap:4px;padding:3px;border-radius:99px;background:rgba(255,255,255,.14)}
+.seg button{min-height:40px;padding:0 14px;border:0;border-radius:99px;background:transparent;color:#fff;font:600 14px/1 "Inter",sans-serif;cursor:pointer}
+.seg button[aria-pressed=true]{background:#fff;color:var(--navy)}
+.print,.pdf{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:0;border-radius:99px;font:700 15px/1 "Plus Jakarta Sans",sans-serif;cursor:pointer;text-decoration:none}
+.print{background:var(--gold);color:var(--navy)}
+.pdf{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+.bar :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hint{flex-basis:100%;margin:0;font-size:13px;color:#c9cdeb}
+.sheet{display:flex;justify-content:center;padding:28px 12px 60px}
+.page{width:8.5in;height:11in;background:var(--paper);box-shadow:0 18px 50px rgba(8,26,82,.25);overflow:hidden}
+@media screen and (max-width:900px){.page{zoom:.8}}
+@media screen and (max-width:700px){.page{zoom:.56}}
+@media screen and (max-width:480px){.page{zoom:.43}.bar{padding:10px 14px}}
+
+/* what the flyer is for (screen only) */
+.about{max-width:760px;margin:22px auto 0;padding:22px 24px;border-radius:18px;background:#fff;box-shadow:0 8px 28px rgba(8,26,82,.12)}
+.about h1{margin:0 0 8px;font:800 24px/1.2 "Plus Jakarta Sans",sans-serif;color:var(--navy)}
+.about p{margin:0 0 10px;font-size:16px;line-height:1.5}
+.about ul{margin:0 0 10px;padding-left:20px}.about li{margin:0 0 6px;font-size:15.5px;line-height:1.45}
+.about .join a{color:var(--indigo);font-weight:700}
+@media screen and (max-width:480px){.about{margin:14px 12px 0;padding:18px}}
+
+/* shared pieces */
+.brand{display:flex;align-items:center;gap:.18in}
+.brand .name{display:flex;flex-direction:column;line-height:1}
+.brand b{font:800 30pt/1 "Plus Jakarta Sans",sans-serif;letter-spacing:-.02em}
+.brand span{margin-top:.06in;font:800 13pt/1 "Plus Jakarta Sans",sans-serif;letter-spacing:.32em;color:var(--gold)}
+.qr{margin:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.qr .code{position:relative;background:#fff;border:.07in solid var(--gold);border-radius:.22in;padding:.16in}
+.qr .qrimg{display:block}
+.qr .qrlogo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff;border-radius:22%;padding:4%}
+.qr figcaption{display:flex;flex-direction:column;align-items:center;margin-top:.12in}
+.qr figcaption b{font:800 18pt/1.1 "Plus Jakarta Sans",sans-serif;color:var(--navy)}
+.qr .url{font:700 12.5pt/1.3 "Inter",sans-serif;color:var(--indigo)}
+
+/* flyer: US Letter, 0.4 in safe margin for home printers */
+.flyer{display:grid;grid-template-rows:auto 1fr auto;gap:.32in;padding:.4in}
+.flyer .band{position:relative;border-radius:.32in;padding:.5in .55in .55in;background:var(--dawn);color:#fff;overflow:hidden}
+.flyer .band::after{content:"";position:absolute;right:-.9in;top:-1.1in;width:3.6in;height:3.6in;border-radius:50%;background:radial-gradient(circle,rgba(255,203,5,.55) 0%,rgba(255,138,61,.25) 45%,rgba(255,138,61,0) 70%)}
+.flyer .band>*{position:relative;z-index:1}
+.flyer .logo{width:1.15in;height:1.15in}
+.flyer h1{margin:.42in 0 .1in;max-width:6.4in;font:800 40pt/1.02 "Plus Jakarta Sans",sans-serif;letter-spacing:-.03em}
+.flyer .sub{margin:0;font:600 19pt/1.25 "Inter",sans-serif;color:#eef0ff}
+.chips{display:flex;flex-wrap:wrap;gap:.1in;margin:.3in 0 0;padding:0;list-style:none}
+.chips li{padding:.06in .16in;border-radius:99px;background:rgba(255,255,255,.16);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4);font:700 11.5pt/1.2 "Inter",sans-serif}
+.chips li:nth-child(-n+2){background:var(--gold);color:var(--navy);box-shadow:none;font-weight:800}   /* judges AND prosecutors: what the site rates comes first */
+.flyer .body{display:grid;grid-template-columns:1fr 3.45in;gap:.42in;align-items:center;padding:0 .15in}
+.steps h2{margin:0 0 .16in;font:800 20pt/1 "Plus Jakarta Sans",sans-serif;color:var(--navy)}
+.steps ol{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps ol li{counter-increment:s;position:relative;min-height:.5in;padding:.04in 0 .16in .64in;font:500 14pt/1.35 "Inter",sans-serif}
+.steps ol li::before{content:counter(s);position:absolute;left:0;top:0;width:.44in;height:.44in;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font:800 16pt/1 "Plus Jakarta Sans",sans-serif}
+.seen{margin:.06in 0 .18in;font:700 13pt/1.35 "Inter",sans-serif;color:var(--navy)}
+.why{margin:0;padding:.08in 0 .08in .18in;border-left:.06in solid var(--gold);font:500 11.5pt/1.45 "Inter",sans-serif;color:var(--muted)}
+.flyer .qr .qrimg{width:2.95in;height:2.95in}
+.flyer .qr .qrlogo{width:.7in;height:.7in}
+.flyer .foot{text-align:center;font:500 9.5pt/1.4 "Inter",sans-serif;color:var(--muted)}
+
+/* 4 postcards on one Letter sheet: 4.25 × 5.5 in each, cut on the dashed lines */
+.cards{display:grid;grid-template-columns:repeat(2,4.25in);grid-template-rows:repeat(2,5.5in)}
+.card{display:flex;flex-direction:column;gap:.12in;padding:.3in .32in .36in;border:0 dashed #aab0d0}
+.card:nth-child(1){border-width:0 1px 1px 0}.card:nth-child(2){border-width:0 0 1px 0}.card:nth-child(3){border-width:0 1px 0 0}
+.card .band{border-radius:.18in;padding:.18in .2in .2in;background:var(--dawn);color:#fff}
+.card .brand{gap:.09in}.card .logo{width:.5in;height:.5in}
+.card .brand b{font-size:14pt}.card .brand span{font-size:7pt;margin-top:.03in}
+.card h1{margin:.13in 0 .04in;font:800 15.5pt/1.06 "Plus Jakarta Sans",sans-serif;letter-spacing:-.02em}
+.card .sub{margin:0;font:600 9.5pt/1.3 "Inter",sans-serif;color:#eef0ff}
+.card .qr .code{border-width:.045in;border-radius:.14in;padding:.08in}
+.card .qr .qrimg{width:1.6in;height:1.6in}
+.card .qr .qrlogo{width:.42in;height:.42in}
+.card .qr figcaption{margin-top:.06in}.card .qr figcaption b{font-size:11pt}.card .qr .url{font-size:8.5pt}
+.mini{margin:0;padding-left:.2in;font:500 8.3pt/1.35 "Inter",sans-serif;color:var(--ink)}
+.mini li{margin:0 0 .02in}
+.card .foot{margin:auto 0 0;text-align:center;font:500 6.3pt/1.3 "Inter",sans-serif;color:var(--muted)}
+
+@page{size:letter;margin:0}
+@media print{body{background:#fff}.bar,.about{display:none}.sheet{padding:0;display:block}.page{zoom:1!important;box-shadow:none;break-after:page}}

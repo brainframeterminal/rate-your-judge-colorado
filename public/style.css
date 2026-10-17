@@ -444,3 +444,19 @@ h1[tabindex="-1"]:focus{outline:none}            /* the heading is focused for s
 .vote.react button{min-width:72px;justify-content:center}
 .vote.react button[aria-pressed=true]{background:var(--blue,#12358f);color:#fff}
 .react-n{margin:4px 0 0;font-size:14px}
+.vote.react.mine button{opacity:.55;cursor:default}.vote.react.mine small{align-self:center;font-size:13px}
+
+/* "What people ask" (2026-10-16) */
+.asks[hidden]{display:none!important}
+.asks-rail{align-items:stretch}
+.ask.card{position:relative;margin:0;width:100%;padding:16px 18px;color:var(--ink,#1b1d2a);display:flex;flex-direction:column}   /* relative: the screen-reader "5/5" text is absolutely placed; without a box around it, it escaped the rail and widened the phone page */
+.ask .ask-foot{margin-top:auto}
+.ask p{margin:0 0 8px;font-size:15px;line-height:1.45}
+.ask-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ask-foot .vote{margin-top:0}
+.fbshare{margin:14px 0 0;font-size:14px;line-height:1.45;color:var(--muted)}
+.ask-pill{display:inline-block;align-self:flex-start;margin-bottom:8px}
+@media (min-width:1024px){.asks-rail{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.ask-ease{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 10px;border-radius:10px;background:#f2f4fb;font-size:14px;font-weight:600}
+.ask-ease .sc b{color:#f5a623;letter-spacing:1px}.ask-ease .sc i{color:#d5d9ea;font-style:normal}
+.ask-parts{font-size:14px;color:var(--muted)}

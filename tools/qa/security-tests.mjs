@@ -86,6 +86,21 @@ r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.14'), 'x-
 r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.15'), 'x-device': dev[3] }, body: { review: rid, vote: 1 } }); { const c = await upOf(dev[3]); ok('the same thumb again takes the reaction back', r.status === 200 && c.up === before && c.myVote === 0); }
 r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.16'), 'x-device': dev[3] }, body: { review: rid, vote: -1 } }); { const c = await upOf(dev[3]); ok('a reader can 👎, and it never hides the comment', r.status === 200 && c.myVote === -1 && c.status === 'published' && !!c.text); }
 r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.17'), 'x-device': dev[0] }, body: { review: rid, vote: 1 } }); ok('nobody can react to their own comment', r.status === 403);
+// "What people ask": everything sent through the feedback form is public at once (open platform), screened like comments;
+// a held text stays out until a moderator decides; a moderator can remove; 👍/👎 like comments
+const fbBody = txt => ({ ease: 4, questions: '', text: txt, page: '/', lang: 'en' });
+await req(P, 'POST', '/api/feedback', { headers: { ...J, ...xff('3.3.4.1'), 'x-device': dev[0] }, body: fbBody('Please show how long rulings take.') });
+r = await req(P, 'GET', '/api/asks'); { const a0 = r.json.find(x => x.text === 'Please show how long rulings take.'); ok('a suggestion is public at once, marked not reviewed', !!a0 && a0.reviewed === false && !('device' in a0)); }
+await req(P, 'POST', '/api/feedback', { headers: { ...J, ...xff('3.3.4.2'), 'x-device': dev[1] }, body: fbBody('My son Michael Johnson was treated badly by the clerk.') });
+r = await req(P, 'GET', '/api/asks'); ok('a text with a possible private name is held back', !r.json.some(x => /Michael Johnson/.test(x.text)));
+r = await req(P, 'POST', '/api/feedback', { headers: { ...J, ...xff('3.3.4.6'), 'x-device': dev[3] }, body: fbBody('Call me at 303-555-0199 about this site') }); ok('contact details in feedback are refused like in comments', r.status === 400);
+const fbl = (await req(M, 'GET', '/api/mod/feedback', { headers: { ...globalThis.MH2 } })).json.rows;
+const shared = fbl.find(x => x.text === 'Please show how long rulings take.');
+r = await req(P, 'POST', '/api/asks/vote', { headers: { ...J, ...xff('3.3.4.3'), 'x-device': dev[2] }, body: { id: shared.id, vote: 1 } }); { const a1 = (await req(P, 'GET', '/api/asks', { headers: { 'x-device': dev[2] } })).json.find(x => x.id === shared.id); ok('a reader can 👍 a suggestion', r.status === 200 && a1.up === 1 && a1.myVote === 1); }
+r = await req(P, 'POST', '/api/asks/vote', { headers: { ...J, ...xff('3.3.4.4'), 'x-device': dev[2] }, body: { id: shared.id, vote: 1 } }); { const a1 = (await req(P, 'GET', '/api/asks', { headers: { 'x-device': dev[2] } })).json.find(x => x.id === shared.id); ok('the same thumb again takes the vote back', a1.up === 0 && a1.myVote === 0); }
+r = await req(P, 'POST', '/api/asks/vote', { headers: { ...J, ...xff('3.3.4.5'), 'x-device': dev[0] }, body: { id: shared.id, vote: 1 } }); ok('nobody can vote on their own suggestion', r.status === 403);
+await req(M, 'POST', '/api/mod/feedback-decide', { headers: { ...J, ...globalThis.MH2 }, body: { id: shared.id, pub: 'hidden' } });
+r = await req(P, 'GET', '/api/asks'); ok('a moderator can remove a suggestion', !r.json.some(x => x.id === shared.id));
 // 7) repeat rating, small-group privacy
 r = await rate(dev[0], 40); ok('same device cannot rate the same official again within 30 days', r.status === 409);
 const courtsList = (await req(P, 'GET', '/api/courts')).json; const empty = (await req(P, 'GET', '/api/officials?court=' + courtsList[4].id)).json[0];

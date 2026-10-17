@@ -429,7 +429,7 @@ const PAGES = {
         'The time of your rating, rounded to the hour.',
         'A random token for your phone that our server signs. It is not tied to your name. After 30 days we cut the link between the token and your ratings.',
         'If you use “Get involved”: the interests, message and contact you type. We delete these after 6 months.',
-        'If you use the feedback form: your answers, with no name.']],
+        'If you use the feedback form: your answers, with no name. What you write in it is shown publicly on the home page, without your name; a moderator can remove it.']],
       ['h2', 'What we never keep'],
       ['ul', [
         'Your name, email or phone number (unless you type them in “Get involved”).',
@@ -453,7 +453,7 @@ const PAGES = {
         'La hora de tu calificación, redondeada a la hora.',
         'Un código aleatorio de tu teléfono que firma nuestro servidor. No está ligado a tu nombre. A los 30 días cortamos el enlace entre el código y tus calificaciones.',
         'Si usas «Participa»: los intereses, el mensaje y el contacto que escribas. Los borramos a los 6 meses.',
-        'Si usas el formulario de opinión: tus respuestas, sin nombre.']],
+        'Si usas el formulario de opinión: tus respuestas, sin nombre. Lo que escribas se muestra públicamente en la página principal, sin tu nombre; una persona moderadora puede retirarlo.']],
       ['h2', 'Qué nunca guardamos'],
       ['ul', [
         'Tu nombre, correo o teléfono (salvo que los escribas en «Participa»).',

@@ -35,6 +35,7 @@ function drawSheet() {
       h('div', { class: 'q' }, t('fb.where')), h('div', { class: 'chips' }, PARTS.map(k => h('button', { type: 'button', class: 'chipbtn', 'aria-pressed': state.parts.has(k), onclick: e => { state.parts.has(k) ? state.parts.delete(k) : state.parts.add(k); e.currentTarget.setAttribute('aria-pressed', String(state.parts.has(k))); } }, t('fb.p.' + k)))),
       h('label', { class: 'q', for: 'fbq' }, t('fb.q')), h('textarea', { id: 'fbq', placeholder: t('fb.q.ph'), maxlength: 600, oninput: e => { state.q = e.target.value; } }, state.q),
       h('label', { class: 'q', for: 'fbt' }, t('fb.t')), h('textarea', { id: 'fbt', placeholder: t('fb.t.ph'), maxlength: 600, oninput: e => { state.t = e.target.value; } }, state.t),
+      h('p', { class: 'fbshare' }, t('fb.public')),   // "What people ask": what people write here is public, so the form says so
       err, h('div', { style: 'margin-top:12px' }, send))));
 }
 let release = null;
