@@ -15,6 +15,8 @@ The people listed are real Colorado officials taken from official court and dist
 - [Why this site exists](https://rateyourjudgecolorado.com/about.html): Why this site exists: how few people take part in official judge evaluations in Colorado, and how an independent, open public project can help residents be heard.
 - [How it works](https://rateyourjudgecolorado.com/how.html): How rating a Colorado judge or prosecutor works: roles, the courthouse check, the five questions, comments reviewed by a human moderator, and every situation explained.
 - [Our method](https://rateyourjudgecolorado.com/method.html): The research behind the questions: procedural-justice studies, court-user surveys and the standards used to evaluate judges and prosecutors, with sources.
+- [Appeals record](https://rateyourjudgecolorado.com/appeals.html): Colorado Court of Appeals decisions on trial judges’ rulings since June 2023, statewide and by type of case: how many were appealed, how many were changed, published and unpublished opinions, and how to read the numbers.
+- [Same law, different judge?](https://rateyourjudgecolorado.com/fairness.html): Same law, different judge? What published research found about how much the judge you draw matters. Studies on asylum, sentencing and appeals with each one’s own limits, and what this site can and cannot show.
 - [Security and trust](https://rateyourjudgecolorado.com/security.html): Security and privacy: what we store, what we never store, how we resist fake ratings, and what can still go wrong. Stated honestly.
 
 ## Participate

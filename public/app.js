@@ -1,7 +1,7 @@
 import './scene.js';
 import { modalOpen } from './modal.js';
 import { captchaHeader, prefetchCaptcha } from './captcha.js';
-import { t, plural, srv, ordinal, onLang, LANG } from './i18n.js';
+import { t, plural, srv, ordinal, onLang, LANG, apType } from './i18n.js';
 import { getDevice, currentDevice, resetDevice } from './device.js';
 import { ago } from './common.js';
 import { loaderScene } from './loader.js';
@@ -451,12 +451,26 @@ function stepRate() {
   check();
 }
 
+// "changed on appeal" = reversed, partly affirmed, vacated or sent back; "affirmed and remanded with directions" stays affirmed (mirrors server.js)
+const CHANGED_ON_APPEAL = new Set(['reversed', 'affirmed_in_part', 'vacated', 'remanded']);
+const changedOnAppeal = x => CHANGED_ON_APPEAL.has(x.outcome);
+const pubOf = note => /Unpublished opinion\./.test(note || '') ? 'unpublished' : /Published opinion\./.test(note || '') ? 'published' : '';   // the announcement's own words, kept in note
+const AP_GROUP = { 'Domestic relations appeal': 'family', 'Criminal appeal': 'criminal', 'Civil appeal': 'civil' };   // the filter chips; everything else (dependency and neglect, mental health, probate…) is "Other"
+const apGroup = name => AP_GROUP[name] || 'other';
 function appealsBlock(d) {   // public appellate record of a trial judge: listed with citations, no percentage (no public caseload to divide by)
   const a = d.appeals; if (!a || !a.items || !a.items.length) return [];
   const order = ['affirmed', 'affirmed_in_part', 'reversed', 'vacated', 'disapproved', 'remanded', 'dismissed'].filter(k => a.counts[k]);
+  const types = new Map(), pub = { published: 0, unpublished: 0 };   // counts only: appealed and changed per type of case, published and unpublished
+  for (const x of a.items) { const y = types.get(x.case_name) || types.set(x.case_name, { n: 0, changed: 0 }).get(x.case_name); y.n++; if (changedOnAppeal(x)) y.changed++; const p = pubOf(x.note); if (p) pub[p]++; }
+  const what = k => { const id = `apw-${k}-${d.id}`, p = h('p', { class: 'muted apwhat', id, hidden: true }, t(k === 'published' ? 'pub.what' : 'unpub.what'));   // one plain-language explanation behind a toggle
+    return h('div', { class: 'apline' }, h('span', {}, `${t('ap.' + k)}: `, h('b', {}, String(pub[k]))),
+      h('button', { type: 'button', class: 'linkbtn apinfo', 'aria-expanded': 'false', 'aria-controls': id, onclick: e => { p.hidden = !p.hidden; e.currentTarget.setAttribute('aria-expanded', String(!p.hidden)); } }, t('ap.what')), p); };
   return [h('h3', {}, t('ap.h')), h('p', { class: 'muted' }, t('ap.note')),
     h('div', { class: 'roles' }, order.map(k => h('div', {}, h('b', {}, String(a.counts[k])), h('span', {}, t('ap.' + k))))),
-    appealsList(a.items)];
+    h('h4', {}, t('ap.bytype')),
+    h('ul', { class: 'aptypes' }, [...types].sort((p, q) => q[1].n - p[1].n || p[0].localeCompare(q[0])).map(([name, y]) => h('li', {}, h('b', {}, apType(name)), `: ${t(y.n === 1 ? 'ap.appealed.one' : 'ap.appealed.other', { n: y.n })} · ${t(y.changed === 1 ? 'ap.changed.one' : 'ap.changed.other', { n: y.changed })}`))),
+    h('h4', {}, t('ap.pubh')), what('published'), what('unpublished'),
+    appealsList(a.items, true)];
 }
 function opinionsBlock(a) {
   const order = ['affirmed', 'affirmed_in_part', 'reversed', 'vacated', 'disapproved', 'remanded', 'dismissed'].filter(k => a.counts[k]);
@@ -465,15 +479,28 @@ function opinionsBlock(a) {
       ...order.map(k => h('div', {}, h('b', {}, String(a.counts[k])), h('span', {}, t('ap.' + k))))),
     appealsList(a.items)];
 }
-function appealsList(items) {   // newest 10, the rest behind one tap (a busy judge has 50+)
+function appealsList(items, filters) {   // newest 10, the rest behind one tap (a busy judge has 50+); on a trial judge's profile, chips narrow the WHOLE list first
   const SHOW = 10, ul = h('ul', { class: 'appeals' });
   const li = x => { const k = t('ak.' + x.case_name);
     return h('li', {}, h('span', { class: 'pill' + (x.outcome === 'affirmed' ? ' ok' : x.outcome === 'dismissed' ? '' : ' warn') }, t('ap.' + x.outcome)), ' ',   // dismissed: the ruling stands, not a loss
       h('a', { href: x.url, target: '_blank', rel: 'noopener' }, k.startsWith('ak.') ? x.case_name : k), h('small', {}, `${x.citation} · ${x.decided} · ${x.court === 'csc' ? t('ap.csc') : t('ap.coa')}`, x.copy ? [' · ', h('a', { href: x.copy, target: '_blank', rel: 'noopener' }, t('ap.copy'))] : null), x.note ? h('p', {}, x.note) : null); };
-  ul.replaceChildren(...items.slice(0, SHOW).map(li));
-  if (items.length <= SHOW) return ul;
-  const more = h('button', { class: 'btn ghost', style: 'margin-top:8px', onclick: () => { ul.replaceChildren(...items.map(li)); more.remove(); } }, t('ap.more', { n: items.length }));
-  return h('div', {}, ul, more);
+  let group = 'all', changedOnly = false, shown = items;
+  const more = h('button', { class: 'btn ghost', style: 'margin-top:8px', hidden: true, onclick: () => { ul.replaceChildren(...shown.map(li)); more.hidden = true; } });
+  const none = h('p', { class: 'muted', hidden: true }, t('af.none'));
+  const draw = () => {
+    shown = items.filter(x => (group === 'all' || apGroup(x.case_name) === group) && (!changedOnly || changedOnAppeal(x)));
+    ul.replaceChildren(...shown.slice(0, SHOW).map(li));
+    more.textContent = t('ap.more', { n: shown.length }); more.hidden = shown.length <= SHOW; none.hidden = shown.length > 0;
+  };
+  let chips = null;
+  if (filters) {   // a type chip appears only for types this judge has; one type alone needs no chips. "Changed only" combines with the type
+    const groups = ['family', 'criminal', 'civil', 'other'].filter(g => items.some(x => apGroup(x.case_name) === g)), all = groups.length > 1 ? ['all', ...groups] : [];
+    const gb = all.map(g => h('button', { type: 'button', class: 'chipbtn', 'aria-pressed': g === group, onclick: () => { group = g; gb.forEach((b, i) => b.setAttribute('aria-pressed', String(all[i] === g))); draw(); } }, t('af.' + g)));
+    const cb = h('button', { type: 'button', class: 'chipbtn', 'aria-pressed': false, onclick: e => { changedOnly = !changedOnly; e.currentTarget.setAttribute('aria-pressed', String(changedOnly)); draw(); } }, t('af.changed'));
+    chips = h('div', { class: 'chips apchips', role: 'group', 'aria-label': t('af.aria') }, ...gb, cb);
+  }
+  draw();
+  return h('div', {}, chips, ul, none, more);
 }
 function subroleBlock(o) {
   if (S.role !== 'party') return [null, null];
@@ -546,7 +573,8 @@ async function stepResult(id) {
   const unit = !hasBio ? '' : d.type === 'judge' ? pf.room : t('pu.' + pf.unitIdx);
   const bio = !hasBio ? '' : d.type === 'judge' ? t('bio.judge', { y: pf.since, f: t('bio.f.' + pf.focus) }) : t('bio.prosecutor', { y: pf.since, u: unit.toLowerCase() });
   const bars = h('div', {}, ...METRIC_IDS.map(k => h('div', { class: 'bar' }, h('div', { class: 'l' }, h('span', {}, t(`b.${d.type}.${k}`)), h('span', {}, avg(a[k]))), h('div', { class: 't' }, h('i', { 'data-w': (a[k] || 0) * 20 })))));
-  const roles = h('div', { class: 'roles' }, ['party', 'observer', 'juror', 'attorney'].map(r => h('div', {}, h('b', {}, d.stats[r] && !d.stats[r].hidden ? avg(d.stats[r].overall) : '–'), h('span', {}, `${t('rl.' + r)}${d.stats[r] && !d.stats[r].hidden ? ' · ' + d.stats[r].n : ''}`))));
+  const roles = h('div', { class: 'roles' }, ['party', 'observer', 'juror', 'attorney'].map(r => { const s = d.stats[r];   // a group under MIN_N shows its count, never its average
+    return h('div', {}, h('b', {}, s && !s.hidden ? avg(s.overall) : '–'), h('span', {}, `${t('rl.' + r)}${s && !s.hidden ? ' · ' + s.n : s && s.n ? ' · ' + t('res.sofar', { n: s.n }) : ''}`)); }));
   const SUBS = ['defendant', 'plaintiff', 'victim', 'witness', 'family', 'other'].filter(k => d.stats.sub && d.stats.sub[k] && d.stats.sub[k].n);
   const subs = SUBS.length ? [h('h3', { style: 'margin-top:14px' }, t('res.bysub')), h('div', { class: 'roles' }, SUBS.map(k => { const s = d.stats.sub[k]; return h('div', {}, h('b', {}, s.hidden ? '–' : avg(s.overall)), h('span', {}, `${t('sl.' + k)} · ${s.n}`)); }))] : [];
   const cm = d.comments.map(c => h('div', { class: 'cmt' },
@@ -568,7 +596,7 @@ async function stepResult(id) {
       h('div', { class: 'muted' }, d.title ? t('jt.' + d.title) : `${titleOf(d.type)} · ${d.court.name}`), hasBio ? h('div', { class: 'muted' }, `${t('unit.' + d.type)}: ${unit} · ${t('since', { y: pf.since })}`) : null,
       hasBio ? h('p', { style: 'margin:6px 0 0' }, bio) : null, d.demo ? h('span', { class: 'pill warn' }, t('res.demo')) : null),
       h('button', { class: 'btn', style: 'margin-top:12px', onclick: () => { S.after = { court: d.court, official: { id: d.id, name: d.name, type: d.type } }; stepRole(); } }, t('res.rate', { name: dName(d.name) }))),
-    a.hidden ? h('div', { class: 'card' }, h('h3', {}, plural(a.n)), h('p', {}, t('res.few', { n: a.n, min: d.stats.min })), h('button', { class: 'btn ghost', style: 'margin-top:8px;background:#eef0ff;color:#12358f', onclick: () => shareProfile(d) }, t('res.share')))
+    a.hidden ? h('div', { class: 'card' }, h('h3', {}, plural(a.n)), h('p', {}, a.n ? `${t(a.n === 1 ? 'res.fewline.one' : 'res.fewline.other', { n: a.n })} ${t('res.few.min', { min: d.stats.min })}` : t('res.few', { n: a.n, min: d.stats.min })), h('button', { class: 'btn ghost', style: 'margin-top:8px;background:#eef0ff;color:#12358f', onclick: () => shareProfile(d) }, t('res.share')))   // a neutral count, never a hidden average
     : h('div', { class: 'card' }, h('div', { class: 'muted' }, plural(a.n)), a.n ? h('div', { class: 'muted' }, t('res.verified', { v: a.verified || 0, n: a.n })) : null,
       h('div', { class: 'ring', style: `--p:${(a.overall || 0) * 20}` }, h('div', {}, h('div', {}, h('b', {}, avg(a.overall)), h('br'), h('span', {}, t('res.of5'))))),
       bars, h('h3', { style: 'margin-top:14px' }, t('res.by')), roles, ...subs, outcomeStat(d), extrasCard(d), h('h3', { style: 'margin-top:14px' }, t('res.trend')), sparkline(d.trend), h('button', { class: 'btn ghost', style: 'margin-top:12px;background:#eef0ff;color:#12358f', onclick: () => shareProfile(d) }, t('res.share'))),

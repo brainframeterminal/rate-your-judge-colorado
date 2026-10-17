@@ -12,13 +12,14 @@ Outcome from the announcement's own disposition line:
 """
 import json, re, sys, unicodedata
 
-def norm(s): return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
+def norm(s):   # apostrophes go entirely: the sheets write O’Shea (U+2019, dropped by the ASCII fold) and the roster O'Shea —
+    return re.sub(r"['`]", "", unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower())   # 55 decisions lost until 2026-10-17
 def toks(name):
-    n = re.sub(r"^(judge|district attorney)\s+", "", norm(name).strip())
+    n = re.sub(r"^(chief justice|justice|judge|district attorney)\s+", "", norm(name).strip())
     n = re.sub(r"\(.*?\)", " ", n); n = re.sub(r"\b(jr|sr|ii|iii|iv)\b\.?", " ", n)
     return [t for t in re.split(r"[\s.,]+", n) if t]
 def parts(name):
-    n = re.sub(r"^(judge|district attorney)\s+", "", norm(name).strip())
+    n = re.sub(r"^(chief justice|justice|judge|district attorney)\s+", "", norm(name).strip())
     n = re.sub(r"\(.*?\)", " ", n); n = re.sub(r"\b(jr|sr|ii|iii|iv)\b\.?", " ", n)
     toks = [t for t in re.split(r"[\s.,]+", n) if t]
     return (toks[0] if toks else "", toks[-1] if toks else "")
@@ -106,6 +107,7 @@ def matcher(officials):
             def same(o):
                 rt = toks(o["name"])[:-1]
                 return (len(rt[0]) > 1 and rt[0] in et) or (len(et[0]) > 1 and et[0] in rt) or \
+                       (min(len(rt[0]), len(et[0])) >= 3 and (et[0].startswith(rt[0]) or rt[0].startswith(et[0]))) or \
                        (len(rt) > 1 and len(rt[0]) > 2 and rt[0][:3] == et[0][:3] and [t[0] for t in rt[1:]] == [t[0] for t in et[1:]])
             cands = [o for (ff, o) in by_last.get((dist, l), []) if et and same(o)]
         if not cands:     # judge moved courts or sat by assignment (Douglas County left the 18th for the 23rd in 2025): accept only a FULL

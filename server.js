@@ -240,6 +240,31 @@ async function aggregate(officialId) {
 }
 let topAppeals = null;   // /api/appeals/top cache (10 min; the record changes weekly)
 const APPEAL_OUTCOMES = ['affirmed', 'affirmed_in_part', 'reversed', 'vacated', 'disapproved', 'remanded', 'dismissed'];   // disapproved: a prosecution appeal (§16-12-102) — the ruling was wrong, the verdict stands
+// "changed on appeal": reversed, partly affirmed, vacated or sent back. "Affirmed and remanded with directions" stays AFFIRMED — the
+// ruling stands; counting those 195 as changed inflated family cases from 30 % to 45 % (10-17). public/app.js mirrors both helpers.
+const CHANGED_ON_APPEAL = new Set(['reversed', 'affirmed_in_part', 'vacated', 'remanded']);
+const changedOnAppeal = a => CHANGED_ON_APPEAL.has(a.outcome);
+const pubOf = note => /Unpublished opinion\./.test(note || '') ? 'unpublished' : /Published opinion\./.test(note || '') ? 'published' : '';   // the announcement's own words (tools/appeals/match.py writes them into note)
+let apSummary = null;   // /api/appeals/summary cache (10 min, like the home rail)
+async function appealsSummary() {   // statewide counts by type of case: appealed decisions and how many were changed — shares are of APPEALED decisions, never of a caseload
+  if (apSummary && Date.now() - apSummary.at < 10 * 60 * 1000) return apSummary.body;
+  const rows = (await db.prepare('SELECT a.case_name, a.outcome, a.note, a.decided, a.official_id FROM appeals a JOIN officials o ON o.id = a.official_id WHERE o.demo = 0').all()).filter(a => APPEAL_OUTCOMES.includes(a.outcome));
+  const blank = () => ({ n: 0, changed: 0 }), add = (x, a) => { x.n++; if (changedOnAppeal(a)) x.changed++; };
+  const all = blank(), types = new Map(), pub = { published: blank(), unpublished: blank() }, outcomes = {}, judges = new Set();
+  for (const a of rows) { add(all, a); add(types.get(a.case_name) || types.set(a.case_name, blank()).get(a.case_name), a); const p = pubOf(a.note); if (p) add(pub[p], a); outcomes[a.outcome] = (outcomes[a.outcome] || 0) + 1; judges.add(a.official_id); }
+  const days = rows.map(a => a.decided).sort();
+  apSummary = { at: Date.now(), body: { decisions: all.n, changed: all.changed, judges: judges.size, since: days[0] || '', until: days[days.length - 1] || '', outcomes,
+    types: [...types].map(([type, x]) => ({ type, ...x })).sort((a, b) => b.n - a.n || a.type.localeCompare(b.type)), published: pub.published, unpublished: pub.unpublished } };
+  return apSummary.body;
+}
+const AP_TYPE = { 'Domestic relations appeal': 'Family (domestic relations)', 'Appeal': 'Type not stated' }, typeLabel = s => AP_TYPE[s] || s.replace(/ appeal$/, '');
+function appealsTable(s) {   // the crawler copy of /appeals.html (EN); public/pages.js draws the same table in both languages
+  const pct = (m, n) => n ? `${Math.round(m / n * 100)}%` : '–';
+  const row = (label, x, cls) => `<tr${cls ? ` class="${cls}"` : ''}><th scope="row">${escH(label)}</th><td>${x.n}</td><td>${x.changed}</td><td>${pct(x.changed, x.n)}</td></tr>`;
+  return `<table class="apsum"><caption>Colorado Court of Appeals decisions on trial judges’ rulings, announced ${s.since} to ${s.until}: ${s.decisions} decisions on ${s.judges} judges. “Share” is changed ÷ appealed decisions of that row, not a share of all the cases those judges decided.</caption>`
+    + `<thead><tr><th scope="col">Type of case</th><th scope="col">Appealed decisions</th><th scope="col">Changed on appeal</th><th scope="col">Share of appealed</th></tr></thead><tbody>`
+    + s.types.map(x => row(typeLabel(x.type), x)).join('') + row('All types', { n: s.decisions, changed: s.changed }, 'total') + row('Published opinions', s.published, 'pub') + row('Unpublished opinions', s.unpublished, 'pub') + '</tbody></table>';
+}
 // ---- our own copies of the court documents we link to
 // built by tools/archive/build.py, uploaded by tools/archive/sync.sh; outside the app tree so a deploy never touches it
 const ARCHIVE = (process.env.JUDEX_ARCHIVE || path.join(ROOT, 'data', 'archive')) + path.sep;
@@ -520,6 +545,7 @@ async function api(req, res, url, isMod) {
     }
     return json(res, 200, topAppeals.body);
   }
+  if (req.method === 'GET' && url.pathname === '/api/appeals/summary') return json(res, 200, await appealsSummary());   // /appeals.html: statewide, by type of case (read-only, 10 min cache)
   if (req.method === 'GET' && url.pathname === '/api/latest') {                  // home "Latest ratings": every new rating on a real person, with that person's own answers; a comment's TEXT only once a moderator approved it (the official's AVERAGE still waits for MIN_N)
     const me = validDevice(deviceOf(req)) ? deviceOf(req) : '';
     const rows = await db.prepare(`SELECT r.id, r.official_id, r.role, r.subrole, r.comment, r.status, r.device, r.created_at, r.overall, r.q1, r.q2, r.q3, r.q4, r.q5, o.name, o.type, o.court_id,
@@ -874,7 +900,7 @@ function makeHandler(isMod) {
           const isoDay = ms => new Date(Number(ms)).toLocaleDateString('en-CA', { timeZone: 'America/Denver' }), longDay = ms => new Date(Number(ms)).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver' });
           const counts = (x, M) => Object.keys(M).filter(k => x.counts[k]).map(k => `${x.counts[k]} ${M[k]}`).join(', ');
           const scores = a && !a.hidden ? `<h2>Scores</h2><ul><li>Overall: ${a.overall.toFixed(1)} out of 5</li>${METRICS.map((m, i) => a[m] ? `<li>${QL[i]}: ${a[m].toFixed(1)} out of 5</li>` : '').join('')}</ul>`
-            : a && a.n ? `<p>Scores appear once there are ${MIN_N} ratings.</p>` : '';
+            : a && a.n ? `<p>${a.n} ${a.n === 1 ? 'rating' : 'ratings'} so far — too few to compare yet. Scores appear once there are ${MIN_N}.</p>` : '';   // a neutral count, never a hidden average
           // comment TEXT only once a moderator has read it; an unreviewed comment is shown to people with a "Not reviewed yet" mark, never quoted to search engines
           const list = cms.length ? `<h2>Every rating</h2><ul class="ssr-ratings">${cms.map(c => { const txt = c.status === 'published' && c.text ? c.text : '';
             return `<li><p><b>${esc(WHO[c.subrole] || WHO[c.role] || 'Rating')}</b> · <time datetime="${isoDay(c.at)}">${longDay(c.at)}</time>${c.overall != null ? ` · overall ${c.overall} out of 5` : ''}${txt ? ' · reviewed by a moderator' : ''}</p>${txt ? `<blockquote>${esc(txt)}</blockquote>` : ''}</li>`; }).join('')}</ul>` : '';
@@ -891,6 +917,11 @@ function makeHandler(isMod) {
             .replace(/(<main id="app"[^>]*><!--ssr-->)[\s\S]*?(<\/main>)/, (m0, a1, a3) => `${a1}<div class="card doc"><nav aria-label="Breadcrumb"><a href="/judges">Judges and prosecutors</a> › <a href="/judges/${court.id}">${esc(court.name)}</a></nav><h1>${esc(o.name)}</h1><p>${esc(job)} · ${esc(place)}${o.title ? '' : ', Colorado'} · ${esc(court.address)}</p><p>${esc(desc)}</p>${scores}${list}${apLine}${opLine}<p><a href="/p/${o.id}">Rate ${esc(o.name)}</a> · <a href="/how.html">How it works</a> · <a href="/method.html">Our method</a></p></div>${a3}`);
         }
         res.writeHead(o ? 200 : 404, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(html);
+      }
+      if (url.pathname === '/appeals.html') {                                 // the statewide table is drawn live into the pre-rendered copy (build-seo.mjs), so a crawler reads this week's numbers
+        const table = appealsTable(await appealsSummary());
+        res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' });
+        return res.end(fs.readFileSync(path.join(ROOT, 'public', 'appeals.html'), 'utf8').replace(/<table class="apsum">[\s\S]*?<\/table>/, () => table));
       }
       if (url.pathname === '/sitemap.xml') {                                  // static pages (build-seo.mjs) + every real official's profile
         const base = fs.readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8');

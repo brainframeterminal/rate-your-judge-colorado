@@ -252,6 +252,51 @@ We do not name the people in the case, only the type of case.
 We show the list, not a reversal rate: there is no public count of every case a judge decides, and some kinds of cases are appealed far more often than others.
 A denied petition, including a denied C.A.R. 21 petition, is not an endorsement of the lower court’s ruling. We list decisions only, and never count a denial in a judge’s favor.
 Updated every week. If you see a mistake, tell us on the Corrections page.
+How to read an appeal
+
+Each entry on a judge’s profile carries one of these outcomes, in the Court of Appeals’ own words.
+
+Affirmed
+
+The Court of Appeals agreed with the trial judge’s ruling. It stands.
+
+Partly affirmed
+
+Part of the ruling stands; another part was reversed, vacated or sent back.
+
+Reversed
+
+The Court of Appeals found the ruling wrong on the point appealed and overturned it.
+
+Vacated
+
+The ruling was set aside, often so the trial court can decide again.
+
+Sent back (remanded)
+
+The case returns to the trial court for more steps: a new hearing, new findings, or a corrected calculation. Usually paired with a reversal or a vacated ruling.
+
+Dismissed
+
+The appeal ended without a decision on the merits, for example filed late or withdrawn. The ruling stands.
+
+Ruling disapproved
+
+Ruling disapproved: the prosecution appealed a trial judge’s ruling on a question of law, and the Court of Appeals agreed with the prosecution. The decision states the law for future cases; it does not always change the outcome of this case, because a defendant cannot be tried twice for the same offense.
+
+Published opinions
+
+Published: the Court of Appeals chose this opinion for official publication because it creates or changes a rule of law, applies a rule to new facts, settles a conflict between decisions, or involves an issue of continuing public interest. Every trial judge in Colorado must follow it as precedent (Colorado Appellate Rule 35(e)).
+
+Unpublished opinions
+
+Unpublished: the opinion decides this one case, usually by applying law that is already settled, and is not precedent. It carries the note “Not published pursuant to C.A.R. 35(e).” When an unpublished opinion changes a ruling, the court is usually applying law that already existed.
+
+What none of these mean: a finding of misconduct. Judges with busier dockets see more appeals; only appealed rulings are counted; reversals can follow a change in the law.
+
+The statewide Appeals record, by type of case
+Same law, different judge? What research says
+
 Judicial discipline in Colorado, statewide
 
 The Colorado Commission on Judicial Discipline reviews complaints about judges (it calls them Requests for Evaluation). Its annual reports give statewide numbers only, never per judge, so these figures say nothing about any single judge on this site.
@@ -286,6 +331,114 @@ Checking that people understand each question the same way and that the answers 
 Review by independent judicial-performance researchers, survey methodologists and practicing Colorado attorneys.
 Review of the Spanish by native speakers.
 Publishing every change to a question and the reason.
+
+---
+
+# Appeals record — Rate Your Judge Colorado
+URL: https://rateyourjudgecolorado.com/appeals.html
+
+Appeals record
+
+What the Colorado Court of Appeals did with trial judges’ rulings, statewide and by type of case. These are counts of appealed decisions. They are never a share of all the cases a judge decided, because no public count of those exists.
+
+Statewide, by type of case
+Colorado Court of Appeals decisions on trial judges’ rulings, announced to : 0 decisions on 0 judges. “Share” is changed ÷ appealed decisions of that row, not a share of all the cases those judges decided.
+Type of case	Appealed decisions	Changed on appeal	Share of appealed
+All types	0	0	–
+Published opinions	0	0	–
+Unpublished opinions	0	0	–
+
+Publication status can change: an opinion first issued as unpublished is sometimes later designated for publication.
+
+How to read this table
+Only rulings that someone appealed appear here. Most rulings are never appealed, and there is no public count of every case a judge decided, so none of these numbers is a rate for a judge’s work as a whole.
+“Changed on appeal” counts decisions that were reversed, partly affirmed, vacated or sent back (remanded). A ruling “affirmed and remanded with directions” counts as affirmed: the ruling stands and the trial court is told to take a further step. “Share of appealed” divides that count by the appealed decisions in the same row, and by nothing else.
+A judge with a busy docket has more appeals, and more changed decisions, than a judge with a small one. Some types of cases are appealed far more often than others.
+A remand can be narrow: for example a new calculation or one more finding, with the rest of the ruling intact.
+A change in the law between the ruling and the appeal can cause a reversal that no judge could have avoided.
+None of this is a finding of misconduct. Reviewing and correcting rulings is the normal work of an appeals court.
+Where the numbers come from
+The Court of Appeals’ own weekly announcements of its decisions, from June 2023, matched to the trial judge named in each one. How the matching works, and what each outcome and each published or unpublished opinion means, is on the Our method page.
+Every judge’s own list, with a link to each decision, is on that judge’s profile. Updated every week.
+How each number is calculated. Appealed decisions: every decision in those announcements on a ruling by a trial judge on this site, counted once. Changed on appeal: the decisions announced as reversed, partly affirmed, vacated or sent back. Share: changed ÷ appealed, rounded to a whole percent. Published or unpublished: as printed in the announcement.
+Colorado Court of Appeals, weekly case announcements (the source of every appeal listed here)
+The open-source code that matches and counts them (GitHub)
+
+How to read an appeal: every outcome explained
+Same law, different judge? What research says about the judge you draw
+Judges and prosecutors by courthouse
+Report a mistake
+
+---
+
+# Same law, different judge? — Rate Your Judge Colorado
+URL: https://rateyourjudgecolorado.com/fairness.html
+
+Same law, different judge?
+
+The same law should produce the same result whatever courtroom you are assigned to. Research in several court systems has found that the judge you draw can matter a lot. Here is what careful studies found, with their own limits, and what this site can and cannot show.
+
+What the research found
+
+Each card gives one finding with its number, where and when it was measured, and the study’s own main caveat. The link opens the study.
+
+Asylum: 5% before one judge, 88% before another
+
+Colombian applicants in the Miami immigration court had a 5% chance of prevailing before one judge and an 88% chance before another judge in the same building. The study covered US asylum decisions by 225 immigration judges over four and a half years.
+
+Caveat: grant rates are not adjusted for the merits of each case, and the links to judges’ backgrounds are correlations, not causes.
+
+Ramji-Nogales, Schoenholtz & Schrag, Refugee Roulette: Disparities in Asylum Adjudication, 60 Stanford Law Review 295 (2007–2008)
+
+Federal sentences: a gap of about 17%, narrowed to about 11% by sentencing rules
+
+For comparable caseloads, the expected difference between two typical federal judges’ average sentence lengths was about 17 percent (4.9 months) in 1986–87, before the Sentencing Guidelines, and about 11 percent (3.9 months) in 1988–93, after them.
+
+Caveat: the authors did not measure parole before the Guidelines, or other sources of disparity such as prosecutors’ decisions.
+
+Anderson, Kling & Stith, Measuring Interjudge Sentencing Disparity: Before and After the Federal Sentencing Guidelines, 42 Journal of Law and Economics 271 (1999)
+
+Federal sentences: the spread between judges in the same city grew from 18.2 to 27.6 points
+
+Averaged over 30 cities, the spread between the highest and lowest judge, measured as percentage points of distance from the guideline minimum, rose from 18.2 to 23.7 to 27.6 across three periods between fiscal years 2005 and 2017.
+
+Caveat: the comparison relies on cases being assigned at random within a city; the trend slowed after 2011 and a few cities saw decreases.
+
+U.S. Sentencing Commission, Intra-City Differences in Federal Sentencing Practices (January 2019)
+
+Federal sentences: differences between judges “doubled” after the Guidelines became advisory
+
+With data on almost 400,000 federal defendants linked to their sentencing judges, differences between judges doubled after the Booker decision made the Guidelines advisory.
+
+Caveat: the author finds that prosecutors’ charging choices, which vary with the judge, are likely a prominent source of the disparity, so judges are not its only source.
+
+Crystal S. Yang, Have Interjudge Sentencing Disparities Increased in an Advisory Guidelines Regime? Evidence from Booker, 89 New York University Law Review, no. 4 (2014)
+
+Appeals: whether a ruling is reversed depends partly on which appeals panel is drawn
+
+In Norway’s courts, where cases are assigned at random at both stages, randomly assigned appeal panels differ in how often they reverse, and trial judges who are reversed shift their later decisions in the reversal’s direction.
+
+Caveat: a Norwegian study, read from its abstract; it is not a test of reversal as a measure of a judge’s quality. It is the important limit on reading any reversal record, including the one on this site.
+
+Bhuller & Sigstad, Feedback and Learning: The Causal Effects of Reversals on Judicial Decision-Making, 92 Review of Economic Studies 2359 (2025)
+
+What this means for Colorado, and what this site shows
+Ratings from people who were in the courtroom: parties, jurors, observers and attorneys, shown separately, about conduct people can see.
+For each trial judge, the Court of Appeals’ decisions on their rulings since June 2023, each linked to the court’s own announcement, and a statewide Appeals record page by type of case.
+Colorado context: in a 2008 survey of Colorado judges by IAALS, 64% of appellate judges and 53% of trial judges called the small number of survey respondents a “major problem” of the state’s own judicial performance evaluation program. That is a survey of judges’ opinions from 2008, not a measure of differences between judges.
+IAALS, The Bench Speaks on Judicial Performance Evaluation: A Survey of Colorado Judges (January 2008)
+What this site cannot show
+A judge’s whole caseload. Only appealed rulings appear in an appeals record, and there is no public count of every case a judge decided, so we show counts, never a rate.
+Whether a reversal says more about the ruling or about the panel: reversal outcomes depend partly on which appeals panel is drawn (the last study above).
+Whether one judge is “better” than another. No page here says that, and the research above does not support reading any single record that way.
+Gaps we did not fill
+We found no rigorous published study of how much family-court judges differ from one another. Studies of child-welfare decisions exist, but they measure caseworkers, not judges.
+We found no peer-reviewed study that validates a reversal rate as a measure of a trial judge’s quality. Until one exists, an appeals record is a public record to read, not a score.
+Several widely cited bail and sentencing figures exist only in working-paper versions. We left them out rather than print a number the published article may have changed.
+
+Appeals record, statewide
+How to read an appeal
+Judges and prosecutors by courthouse
 
 ---
 

@@ -1,9 +1,12 @@
 import { $, h } from './common.js';
-import { LANG, onLang } from './i18n.js';
+import { LANG, onLang, t, apType } from './i18n.js';
 import { captchaHeader, prefetchCaptcha } from './captcha.js';
-// Long-form pages (About, How it works, Our method, Security). Content is data: [kind, ...args] blocks, EN + ES.
-// Kinds: h2 · p · ul · rows (stacked "title / text" pairs, phone-friendly instead of tables) · src (source links) · note
+// Long-form pages (About, How it works, Our method, Security, Appeals record, Same law different judge). Content is data: [kind, ...args] blocks, EN + ES.
+// Kinds: h2 · p · ul · rows (stacked "title / text" pairs, phone-friendly instead of tables; a cell may be { t: 'i18n key' } to reuse a string from i18n.js)
+//        · cards (a study each: finding, setting, caveat, [citation, url]) · links (links inside the site) · apsum (the statewide appeals table) · src (source links) · note
 const SRC = {
+  coa: ['Colorado Court of Appeals, weekly case announcements (the source of every appeal listed here)', 'https://www.coloradojudicial.gov/court-appeals/court-appeals-case-announcements'],
+  code: ['The open-source code that matches and counts them (GitHub)', 'https://github.com/brainframeterminal/rate-your-judge-colorado'],
   voter: ['State of Colorado, 2024 voter survey report (OJPE)', 'https://judicialperformance.colorado.gov/sites/judicialperformance/files/documents/CO%20Judicial%20Voter%20Survey%20%282024%20Election%29%20Report%20FINAL%201%208%202025.pdf'],
   kuhn: ['A 2024 district judge retention report (OJPE) — Table 1 and “Response Rates”', 'https://judicialperformance.colorado.gov/sites/judicialperformance/files/documents/23%20-%2038083%20-%20Judge%20W.%20Eric%20Kuhn_0.pdf'],
   elliff: ['A 2017 interim report for one judge (OJPE) — Table 4 “Response Rates”', 'https://judicialperformance.colorado.gov/sites/judicialperformance/files/documents/16844%20-%20Judge%20J.%20Eric%20Elliff.pdf'],
@@ -17,6 +20,7 @@ const SRC = {
   stanford: ['Stanford Law School, “Rate My District Attorney” (2018)', 'https://law.stanford.edu/wp-content/uploads/2018/01/Rate_My_District_Attorney__January_2018.pdf'],
   ppi: ['Prosecutorial Performance Indicators project', 'https://www.apainc.org/prosecutorial-performance-indicators/'],
   aba: ['ABA Criminal Justice Standards for the Prosecution Function', 'https://www.americanbar.org/groups/criminal_justice/resources/standards/prosecution-function/'],
+  iaals08: ['IAALS, The Bench Speaks on Judicial Performance Evaluation: A Survey of Colorado Judges (January 2008)', 'https://iaals.du.edu/publications/bench-speaks-judicial-performance-evaluation'],
 };
 const S = k => SRC[k];
 
@@ -234,6 +238,20 @@ const PAGES = {
       ['p', 'Also: Lind, Tyler and Huo (1997) and Tyler and Huo, “Trust in the Law”, on how people judge courts by fair treatment more than by outcome.'],
       ['h2', 'The appeals record on judge profiles'],
       ['ul', ['Source: the Colorado Court of Appeals’ own weekly announcements of its decisions, from June 2023. Each entry opens the announcement it came from, on the right page.', 'We keep our own copy of every announcement we link to. Next to each entry, “our saved copy” opens it, so it can still be checked if the court’s file is moved or removed. The official link always comes first.', 'A decision is listed under a judge only when the announcement names that judge as the trial judge and the name matches exactly one judge on our list in that court district (or the same full name, once in the whole state, for judges who changed courts). Magistrates are not included.', 'The outcome uses the court’s own wording. “Partly affirmed” means part of the ruling was reversed or vacated and the rest stands. When the court only declined to hear part of an appeal, that is not counted against the judge.', 'We do not name the people in the case, only the type of case.', 'We show the list, not a reversal rate: there is no public count of every case a judge decides, and some kinds of cases are appealed far more often than others.', 'A denied petition, including a denied C.A.R. 21 petition, is not an endorsement of the lower court’s ruling. We list decisions only, and never count a denial in a judge’s favor.', 'Updated every week. If you see a mistake, tell us on the Corrections page.']],
+      ['h2', 'How to read an appeal'],
+      ['p', 'Each entry on a judge’s profile carries one of these outcomes, in the Court of Appeals’ own words.'],
+      ['rows', [
+        ['Affirmed', 'The Court of Appeals agreed with the trial judge’s ruling. It stands.'],
+        ['Partly affirmed', 'Part of the ruling stands; another part was reversed, vacated or sent back.'],
+        ['Reversed', 'The Court of Appeals found the ruling wrong on the point appealed and overturned it.'],
+        ['Vacated', 'The ruling was set aside, often so the trial court can decide again.'],
+        ['Sent back (remanded)', 'The case returns to the trial court for more steps: a new hearing, new findings, or a corrected calculation. Usually paired with a reversal or a vacated ruling.'],
+        ['Dismissed', 'The appeal ended without a decision on the merits, for example filed late or withdrawn. The ruling stands.'],
+        [{ t: 'ap.disapproved' }, { t: 'disapproved.what' }],
+        [{ t: 'ap.published' }, { t: 'pub.what' }],
+        [{ t: 'ap.unpublished' }, { t: 'unpub.what' }]]],
+      ['note', 'What none of these mean: a finding of misconduct. Judges with busier dockets see more appeals; only appealed rulings are counted; reversals can follow a change in the law.'],
+      ['links', [['The statewide Appeals record, by type of case', 'appeals.html'], ['Same law, different judge? What research says', 'fairness.html']]],
       ['h2', 'Judicial discipline in Colorado, statewide'],
       ['p', 'The Colorado Commission on Judicial Discipline reviews complaints about judges (it calls them Requests for Evaluation). Its annual reports give statewide numbers only, never per judge, so these figures say nothing about any single judge on this site.'],
       ['ul', ['2024: 368 requests received. 318 were dismissed at the first review. The Commission considered 65 matters and dismissed 29 of them. 3 formal proceedings, each ending in public censure. 12 private disciplinary actions, all for missed financial-disclosure filings. 2 diversion plans and 1 temporary suspension.', '2023: 344 requests received. 251 were dismissed at the first review.', 'Most complaints never become public. Since Amendment H (2024), a case becomes public when the Commission starts formal proceedings; informal proceedings, where most complaints end, stay confidential (Colorado Constitution, art. VI, § 23(3)(g)).']],
@@ -279,6 +297,20 @@ const PAGES = {
       ['p', 'Además: Lind, Tyler y Huo (1997) y Tyler y Huo, “Trust in the Law”, sobre cómo la gente juzga a los tribunales más por el trato justo que por el resultado.'],
       ['h2', 'El historial de apelaciones en los perfiles de jueces'],
       ['ul', ['Fuente: los anuncios semanales de decisiones del propio Tribunal de Apelaciones de Colorado, desde junio de 2023. Cada entrada abre el anuncio del que proviene, en la página correcta.', 'Guardamos nuestra propia copia de cada anuncio que enlazamos. Junto a cada entrada, «nuestra copia guardada» lo abre, para que se pueda comprobar aunque el tribunal mueva o retire su archivo. El enlace oficial siempre va primero.', 'Una decisión aparece bajo un juez solo cuando el anuncio lo nombra como juez de primera instancia y el nombre coincide con exactamente un juez de nuestra lista en ese distrito judicial (o con el mismo nombre completo, una sola vez en todo el estado, para jueces que cambiaron de tribunal). No se incluyen magistrados.', 'El resultado usa las palabras del propio tribunal. “Confirmado en parte” significa que una parte del fallo se revocó o anuló y el resto se mantiene. Cuando el tribunal solo se negó a revisar una parte de la apelación, eso no cuenta en contra del juez.', 'No nombramos a las personas del caso, solo el tipo de caso.', 'Mostramos la lista, no un porcentaje de revocaciones: no existe un recuento público de todos los casos que decide un juez, y algunos tipos de casos se apelan mucho más que otros.', 'Una petición denegada, incluida una petición C.A.R. 21 denegada, no es un respaldo al fallo del tribunal inferior. Solo listamos decisiones y nunca contamos una denegación a favor de un juez.', 'Se actualiza cada semana. Si ves un error, dínoslo en la página de Correcciones.']],
+      ['h2', 'Cómo leer una apelación'],
+      ['p', 'Cada entrada en el perfil de un juez lleva uno de estos resultados, con las palabras del propio Tribunal de Apelaciones.'],
+      ['rows', [
+        ['Confirmado', 'El Tribunal de Apelaciones estuvo de acuerdo con el fallo del juez de primera instancia. El fallo se mantiene.'],
+        ['Confirmado en parte', 'Una parte del fallo se mantiene; otra parte fue revocada, anulada o devuelta.'],
+        ['Revocado', 'El Tribunal de Apelaciones consideró que el fallo estaba equivocado en el punto apelado y lo dejó sin efecto.'],
+        ['Anulado', 'El fallo quedó sin efecto, a menudo para que el tribunal de primera instancia decida de nuevo.'],
+        ['Devuelto (remanded)', 'El caso vuelve al tribunal de primera instancia para más pasos: una nueva audiencia, nuevas conclusiones o un cálculo corregido. Suele ir junto con una revocación o una anulación.'],
+        ['Apelación desestimada', 'La apelación terminó sin una decisión de fondo, por ejemplo porque se presentó tarde o se retiró. El fallo se mantiene.'],
+        [{ t: 'ap.disapproved' }, { t: 'disapproved.what' }],
+        [{ t: 'ap.published' }, { t: 'pub.what' }],
+        [{ t: 'ap.unpublished' }, { t: 'unpub.what' }]]],
+      ['note', 'Lo que ninguno de estos resultados significa: una conclusión de mala conducta. Los jueces con más casos tienen más apelaciones; solo se cuentan los fallos apelados; una revocación puede deberse a un cambio en la ley.'],
+      ['links', [['El historial de apelaciones de todo el estado, por tipo de caso', 'appeals.html'], ['¿Misma ley, distinto juez? Lo que dice la investigación', 'fairness.html']]],
       ['h2', 'Disciplina judicial en Colorado, en todo el estado'],
       ['p', 'La Comisión de Disciplina Judicial de Colorado revisa las quejas sobre jueces (las llama Solicitudes de Evaluación). Sus informes anuales dan solo cifras de todo el estado, nunca por juez, así que no dicen nada sobre ningún juez concreto de este sitio.'],
       ['ul', ['2024: 368 solicitudes recibidas. 318 se desestimaron en la primera revisión. La Comisión estudió 65 asuntos y desestimó 29. 3 procedimientos formales, cada uno terminado en censura pública. 12 medidas disciplinarias privadas, todas por no presentar declaraciones financieras. 2 planes de desvío y 1 suspensión temporal.', '2023: 344 solicitudes recibidas. 251 se desestimaron en la primera revisión.', 'La mayoría de las quejas nunca se hacen públicas. Desde la Enmienda H (2024), un caso se hace público cuando la Comisión inicia un procedimiento formal; los procedimientos informales, donde termina la mayoría de las quejas, siguen siendo confidenciales (Constitución de Colorado, art. VI, § 23(3)(g)).']],
@@ -300,6 +332,106 @@ const PAGES = {
     ] },
   },
 
+  appeals: {   // /appeals.html: the statewide table (apsum) and how to read it. Counts of APPEALED decisions only: there is no public count of every case a judge decided
+    en: { h1: ['Appeals ', 'record'], lead: 'What the Colorado Court of Appeals did with trial judges’ rulings, statewide and by type of case. These are counts of appealed decisions. They are never a share of all the cases a judge decided, because no public count of those exists.', blocks: [
+      ['h2', 'Statewide, by type of case'],
+      ['apsum', { type: 'Type of case', n: 'Appealed decisions', changed: 'Changed on appeal', share: 'Share of appealed', total: 'All types', pub: 'Published opinions', unpub: 'Unpublished opinions',
+        caption: 'Colorado Court of Appeals decisions on trial judges’ rulings, announced {since} to {until}: {n} decisions on {j} judges. “Share” is changed ÷ appealed decisions of that row, not a share of all the cases those judges decided.', err: 'The numbers could not be loaded. Try again in a minute.' }],
+      ['p', 'Publication status can change: an opinion first issued as unpublished is sometimes later designated for publication.'],
+      ['h2', 'How to read this table'],
+      ['ul', [
+        'Only rulings that someone appealed appear here. Most rulings are never appealed, and there is no public count of every case a judge decided, so none of these numbers is a rate for a judge’s work as a whole.',
+        '“Changed on appeal” counts decisions that were reversed, partly affirmed, vacated or sent back (remanded). A ruling “affirmed and remanded with directions” counts as affirmed: the ruling stands and the trial court is told to take a further step. “Share of appealed” divides that count by the appealed decisions in the same row, and by nothing else.',
+        'A judge with a busy docket has more appeals, and more changed decisions, than a judge with a small one. Some types of cases are appealed far more often than others.',
+        'A remand can be narrow: for example a new calculation or one more finding, with the rest of the ruling intact.',
+        'A change in the law between the ruling and the appeal can cause a reversal that no judge could have avoided.',
+        'None of this is a finding of misconduct. Reviewing and correcting rulings is the normal work of an appeals court.']],
+      ['h2', 'Where the numbers come from'],
+      ['ul', [
+        'The Court of Appeals’ own weekly announcements of its decisions, from June 2023, matched to the trial judge named in each one. How the matching works, and what each outcome and each published or unpublished opinion means, is on the Our method page.',
+        'Every judge’s own list, with a link to each decision, is on that judge’s profile. Updated every week.',
+        'How each number is calculated. Appealed decisions: every decision in those announcements on a ruling by a trial judge on this site, counted once. Changed on appeal: the decisions announced as reversed, partly affirmed, vacated or sent back. Share: changed ÷ appealed, rounded to a whole percent. Published or unpublished: as printed in the announcement.']],
+      ['src', ['coa', 'code']],
+      ['links', [['How to read an appeal: every outcome explained', 'method.html'], ['Same law, different judge? What research says about the judge you draw', 'fairness.html'], ['Judges and prosecutors by courthouse', 'judges'], ['Report a mistake', 'corrections.html']]],
+    ] },
+    es: { h1: ['Historial de ', 'apelaciones'], lead: 'Qué hizo el Tribunal de Apelaciones de Colorado con los fallos de los jueces de primera instancia, en todo el estado y por tipo de caso. Son recuentos de decisiones apeladas. Nunca son una proporción de todos los casos que decidió un juez, porque no existe un recuento público de esos casos.', blocks: [
+      ['h2', 'En todo el estado, por tipo de caso'],
+      ['apsum', { type: 'Tipo de caso', n: 'Decisiones apeladas', changed: 'Modificadas en apelación', share: 'Proporción de las apeladas', total: 'Todos los tipos', pub: 'Opiniones publicadas', unpub: 'Opiniones no publicadas',
+        caption: 'Decisiones del Tribunal de Apelaciones de Colorado sobre fallos de jueces de primera instancia, anunciadas del {since} al {until}: {n} decisiones sobre {j} jueces. La «proporción» es modificadas ÷ decisiones apeladas de esa fila, no una proporción de todos los casos que decidieron esos jueces.', err: 'No se pudieron cargar las cifras. Inténtalo de nuevo en un minuto.' }],
+      ['p', 'El estado de publicación puede cambiar: una opinión emitida primero como no publicada a veces se designa después para su publicación.'],
+      ['h2', 'Cómo leer esta tabla'],
+      ['ul', [
+        'Aquí aparecen solo los fallos que alguien apeló. La mayoría de los fallos nunca se apelan, y no existe un recuento público de todos los casos que decidió un juez, así que ninguna de estas cifras es una tasa del trabajo de un juez en su conjunto.',
+        '«Modificadas en apelación» cuenta las decisiones revocadas, confirmadas en parte, anuladas o devueltas (remanded). Un fallo «confirmado y devuelto con instrucciones» cuenta como confirmado: el fallo se mantiene y el tribunal de primera instancia debe dar un paso más. La «proporción de las apeladas» divide ese recuento por las decisiones apeladas de la misma fila, y por nada más.',
+        'Un juez con muchos casos tiene más apelaciones, y más decisiones modificadas, que un juez con pocos. Algunos tipos de casos se apelan mucho más que otros.',
+        'Una devolución puede ser limitada: por ejemplo, un nuevo cálculo o una conclusión más, con el resto del fallo intacto.',
+        'Un cambio en la ley entre el fallo y la apelación puede causar una revocación que ningún juez habría podido evitar.',
+        'Nada de esto es una conclusión de mala conducta. Revisar y corregir fallos es el trabajo normal de un tribunal de apelaciones.']],
+      ['h2', 'De dónde salen las cifras'],
+      ['ul', [
+        'Los anuncios semanales de decisiones del propio Tribunal de Apelaciones, desde junio de 2023, vinculados al juez de primera instancia que nombra cada uno. Cómo se hace esa vinculación, y qué significa cada resultado y cada opinión publicada o no publicada, está en la página Nuestro método.',
+        'La lista propia de cada juez, con un enlace a cada decisión, está en su perfil. Se actualiza cada semana.',
+        'Cómo se calcula cada cifra. Decisiones apeladas: cada decisión de esos anuncios sobre un fallo de un juez de primera instancia de este sitio, contada una vez. Modificadas en apelación: las decisiones anunciadas como revocadas, confirmadas en parte, anuladas o devueltas. Proporción: modificadas ÷ apeladas, redondeada a un porcentaje entero. Publicada o no publicada: tal como figura en el anuncio.']],
+      ['src', ['coa', 'code']],
+      ['links', [['Cómo leer una apelación: cada resultado explicado', 'method.html'], ['¿Misma ley, distinto juez? Lo que dice la investigación sobre el juez que te toca', 'fairness.html'], ['Jueces y fiscales por tribunal', 'judges'], ['Reportar un error', 'corrections.html']]],
+    ] },
+  },
+  fairness: {   // /fairness.html: what published research found about the judge you draw. Facts and numbers only from the verified brief (2026-10-17); no judge named, no score
+    en: { h1: ['Same law, ', 'different judge?'], lead: 'The same law should produce the same result whatever courtroom you are assigned to. Research in several court systems has found that the judge you draw can matter a lot. Here is what careful studies found, with their own limits, and what this site can and cannot show.', blocks: [
+      ['h2', 'What the research found'],
+      ['p', 'Each card gives one finding with its number, where and when it was measured, and the study’s own main caveat. The link opens the study.'],
+      ['cards', [
+        ['Asylum: 5% before one judge, 88% before another', 'Colombian applicants in the Miami immigration court had a 5% chance of prevailing before one judge and an 88% chance before another judge in the same building. The study covered US asylum decisions by 225 immigration judges over four and a half years.', 'Caveat: grant rates are not adjusted for the merits of each case, and the links to judges’ backgrounds are correlations, not causes.', ['Ramji-Nogales, Schoenholtz & Schrag, Refugee Roulette: Disparities in Asylum Adjudication, 60 Stanford Law Review 295 (2007–2008)', 'https://www.stanfordlawreview.org/print/article/feature-refugee-roulette-disparities-in-asylum-adjudication/']],
+        ['Federal sentences: a gap of about 17%, narrowed to about 11% by sentencing rules', 'For comparable caseloads, the expected difference between two typical federal judges’ average sentence lengths was about 17 percent (4.9 months) in 1986–87, before the Sentencing Guidelines, and about 11 percent (3.9 months) in 1988–93, after them.', 'Caveat: the authors did not measure parole before the Guidelines, or other sources of disparity such as prosecutors’ decisions.', ['Anderson, Kling & Stith, Measuring Interjudge Sentencing Disparity: Before and After the Federal Sentencing Guidelines, 42 Journal of Law and Economics 271 (1999)', 'https://doi.org/10.1086/467426']],
+        ['Federal sentences: the spread between judges in the same city grew from 18.2 to 27.6 points', 'Averaged over 30 cities, the spread between the highest and lowest judge, measured as percentage points of distance from the guideline minimum, rose from 18.2 to 23.7 to 27.6 across three periods between fiscal years 2005 and 2017.', 'Caveat: the comparison relies on cases being assigned at random within a city; the trend slowed after 2011 and a few cities saw decreases.', ['U.S. Sentencing Commission, Intra-City Differences in Federal Sentencing Practices (January 2019)', 'https://www.ussc.gov/research/research-reports/intra-city-differences-federal-sentencing-practices']],
+        ['Federal sentences: differences between judges “doubled” after the Guidelines became advisory', 'With data on almost 400,000 federal defendants linked to their sentencing judges, differences between judges doubled after the Booker decision made the Guidelines advisory.', 'Caveat: the author finds that prosecutors’ charging choices, which vary with the judge, are likely a prominent source of the disparity, so judges are not its only source.', ['Crystal S. Yang, Have Interjudge Sentencing Disparities Increased in an Advisory Guidelines Regime? Evidence from Booker, 89 New York University Law Review, no. 4 (2014)', 'https://nyulawreview.org/issues/volume-89-number-4/have-interjudge-sentencing-disparities-increased-in-an-advisory-guidelines-regime-evidence-from-booker/']],
+        ['Appeals: whether a ruling is reversed depends partly on which appeals panel is drawn', 'In Norway’s courts, where cases are assigned at random at both stages, randomly assigned appeal panels differ in how often they reverse, and trial judges who are reversed shift their later decisions in the reversal’s direction.', 'Caveat: a Norwegian study, read from its abstract; it is not a test of reversal as a measure of a judge’s quality. It is the important limit on reading any reversal record, including the one on this site.', ['Bhuller & Sigstad, Feedback and Learning: The Causal Effects of Reversals on Judicial Decision-Making, 92 Review of Economic Studies 2359 (2025)', 'https://doi.org/10.1093/restud/rdae073']]]],
+      ['h2', 'What this means for Colorado, and what this site shows'],
+      ['ul', [
+        'Ratings from people who were in the courtroom: parties, jurors, observers and attorneys, shown separately, about conduct people can see.',
+        'For each trial judge, the Court of Appeals’ decisions on their rulings since June 2023, each linked to the court’s own announcement, and a statewide Appeals record page by type of case.',
+        'Colorado context: in a 2008 survey of Colorado judges by IAALS, 64% of appellate judges and 53% of trial judges called the small number of survey respondents a “major problem” of the state’s own judicial performance evaluation program. That is a survey of judges’ opinions from 2008, not a measure of differences between judges.']],
+      ['src', ['iaals08']],
+      ['h2', 'What this site cannot show'],
+      ['ul', [
+        'A judge’s whole caseload. Only appealed rulings appear in an appeals record, and there is no public count of every case a judge decided, so we show counts, never a rate.',
+        'Whether a reversal says more about the ruling or about the panel: reversal outcomes depend partly on which appeals panel is drawn (the last study above).',
+        'Whether one judge is “better” than another. No page here says that, and the research above does not support reading any single record that way.']],
+      ['h2', 'Gaps we did not fill'],
+      ['ul', [
+        'We found no rigorous published study of how much family-court judges differ from one another. Studies of child-welfare decisions exist, but they measure caseworkers, not judges.',
+        'We found no peer-reviewed study that validates a reversal rate as a measure of a trial judge’s quality. Until one exists, an appeals record is a public record to read, not a score.',
+        'Several widely cited bail and sentencing figures exist only in working-paper versions. We left them out rather than print a number the published article may have changed.']],
+      ['links', [['Appeals record, statewide', 'appeals.html'], ['How to read an appeal', 'method.html'], ['Judges and prosecutors by courthouse', 'judges']]],
+    ] },
+    es: { h1: ['¿Misma ley, ', 'distinto juez?'], lead: 'La misma ley debería dar el mismo resultado sin importar la sala que te toque. Investigaciones en varios sistemas judiciales han encontrado que el juez que te asignan puede importar mucho. Esto es lo que encontraron estudios cuidadosos, con sus propios límites, y lo que este sitio puede y no puede mostrar.', blocks: [
+      ['h2', 'Qué encontró la investigación'],
+      ['p', 'Cada tarjeta da un hallazgo con su cifra, dónde y cuándo se midió, y la principal advertencia del propio estudio. El enlace abre el estudio.'],
+      ['cards', [
+        ['Asilo: 5% ante un juez, 88% ante otro', 'Los solicitantes colombianos en el tribunal de inmigración de Miami tenían un 5% de probabilidad de ganar ante un juez y un 88% ante otro juez del mismo edificio. El estudio abarcó decisiones de asilo en EE. UU. de 225 jueces de inmigración durante cuatro años y medio.', 'Advertencia: las tasas de concesión no están ajustadas por el fondo de cada caso, y la relación con el historial de los jueces es una correlación, no una causa.', ['Ramji-Nogales, Schoenholtz & Schrag, Refugee Roulette: Disparities in Asylum Adjudication, 60 Stanford Law Review 295 (2007–2008)', 'https://www.stanfordlawreview.org/print/article/feature-refugee-roulette-disparities-in-asylum-adjudication/']],
+        ['Sentencias federales: una brecha de cerca del 17%, reducida a cerca del 11% por las reglas de sentencia', 'Para cargas de casos comparables, la diferencia esperada entre dos jueces federales típicos en la duración media de sus sentencias era de cerca del 17 por ciento (4.9 meses) en 1986–87, antes de las Directrices de Sentencia, y de cerca del 11 por ciento (3.9 meses) en 1988–93, después de ellas.', 'Advertencia: los autores no midieron la libertad condicional anterior a las Directrices ni otras fuentes de disparidad, como las decisiones de la fiscalía.', ['Anderson, Kling & Stith, Measuring Interjudge Sentencing Disparity: Before and After the Federal Sentencing Guidelines, 42 Journal of Law and Economics 271 (1999)', 'https://doi.org/10.1086/467426']],
+        ['Sentencias federales: la distancia entre jueces de la misma ciudad creció de 18.2 a 27.6 puntos', 'En promedio en 30 ciudades, la distancia entre el juez más alto y el más bajo, medida en puntos porcentuales respecto al mínimo de las directrices, subió de 18.2 a 23.7 y a 27.6 en tres periodos entre los años fiscales 2005 y 2017.', 'Advertencia: la comparación depende de que los casos se asignen al azar dentro de cada ciudad; la tendencia se frenó después de 2011 y en algunas ciudades bajó.', ['U.S. Sentencing Commission, Intra-City Differences in Federal Sentencing Practices (enero de 2019)', 'https://www.ussc.gov/research/research-reports/intra-city-differences-federal-sentencing-practices']],
+        ['Sentencias federales: las diferencias entre jueces «se duplicaron» cuando las Directrices pasaron a ser orientativas', 'Con datos de casi 400,000 acusados federales vinculados a sus jueces de sentencia, las diferencias entre jueces se duplicaron después de que la decisión Booker convirtiera las Directrices en orientativas.', 'Advertencia: la autora encuentra que las decisiones de acusación de la fiscalía, que varían según el juez, son probablemente una fuente destacada de la disparidad, así que los jueces no son su única fuente.', ['Crystal S. Yang, Have Interjudge Sentencing Disparities Increased in an Advisory Guidelines Regime? Evidence from Booker, 89 New York University Law Review, núm. 4 (2014)', 'https://nyulawreview.org/issues/volume-89-number-4/have-interjudge-sentencing-disparities-increased-in-an-advisory-guidelines-regime-evidence-from-booker/']],
+        ['Apelaciones: que un fallo se revoque depende en parte de qué panel de apelación toque', 'En los tribunales de Noruega, donde los casos se asignan al azar en ambas etapas, los paneles de apelación asignados al azar difieren en cuánto revocan, y los jueces de primera instancia que reciben una revocación mueven sus decisiones posteriores en la dirección de esa revocación.', 'Advertencia: es un estudio noruego, leído a partir de su resumen; no es una prueba de la revocación como medida de la calidad de un juez. Es el límite importante para leer cualquier historial de revocaciones, incluido el de este sitio.', ['Bhuller & Sigstad, Feedback and Learning: The Causal Effects of Reversals on Judicial Decision-Making, 92 Review of Economic Studies 2359 (2025)', 'https://doi.org/10.1093/restud/rdae073']]]],
+      ['h2', 'Qué significa esto para Colorado, y qué muestra este sitio'],
+      ['ul', [
+        'Calificaciones de personas que estuvieron en la sala: partes, jurados, observadores y abogados, mostradas por separado, sobre conducta que la gente puede ver.',
+        'Para cada juez de primera instancia, las decisiones del Tribunal de Apelaciones sobre sus fallos desde junio de 2023, cada una con enlace al anuncio del propio tribunal, y una página del historial de apelaciones de todo el estado por tipo de caso.',
+        'Contexto de Colorado: en una encuesta de 2008 a jueces de Colorado hecha por IAALS, el 64% de los jueces de apelación y el 53% de los jueces de primera instancia calificaron el bajo número de personas que responden las encuestas como un «problema grave» del programa estatal de evaluación del desempeño judicial. Es una encuesta de opiniones de jueces de 2008, no una medida de diferencias entre jueces.']],
+      ['src', ['iaals08']],
+      ['h2', 'Lo que este sitio no puede mostrar'],
+      ['ul', [
+        'Toda la carga de casos de un juez. En un historial de apelaciones aparecen solo los fallos apelados, y no existe un recuento público de todos los casos que decidió un juez, así que mostramos recuentos, nunca una tasa.',
+        'Si una revocación dice más sobre el fallo o sobre el panel: el resultado de una apelación depende en parte de qué panel de apelación toque (el último estudio de arriba).',
+        'Si un juez es «mejor» que otro. Ninguna página de este sitio dice eso, y la investigación de arriba no respalda leer así ningún historial por sí solo.']],
+      ['h2', 'Vacíos que no llenamos'],
+      ['ul', [
+        'No encontramos ningún estudio riguroso publicado sobre cuánto difieren entre sí los jueces de familia. Existen estudios sobre decisiones de protección de menores, pero miden a los trabajadores sociales, no a los jueces.',
+        'No encontramos ningún estudio revisado por pares que valide la tasa de revocaciones como medida de la calidad de un juez de primera instancia. Mientras no exista, un historial de apelaciones es un registro público para leer, no una nota.',
+        'Varias cifras muy citadas sobre fianzas y sentencias existen solo en versiones de documentos de trabajo. Las dejamos fuera en lugar de imprimir un número que el artículo publicado pudo haber cambiado.']],
+      ['links', [['Historial de apelaciones de todo el estado', 'appeals.html'], ['Cómo leer una apelación', 'method.html'], ['Jueces y fiscales por tribunal', 'judges']]],
+    ] },
+  },
   security: {
     en: { h1: ['Security and ', 'trust'], lead: 'A public rating site is only worth something if people can trust the numbers. Here is how we protect against bots and fake ratings, what we store, what we never store, and what is still a risk.', blocks: [
       ['h2', 'Protections that work today'],
@@ -572,6 +704,18 @@ function videoFig(id, title, poster, note) {
     h('figcaption', {}, note, ' ', h('a', { href: 'https://www.youtube.com/watch?v=' + id, target: '_blank', rel: 'noopener noreferrer' }, es ? 'Ver en YouTube' : 'Watch on YouTube')));
   return fig;
 }
+const str = x => (x && typeof x === 'object' && x.t ? t(x.t) : x);   // a block cell may point at an i18n.js string, so one explanation is written once
+function apsumTable(L) {   // statewide appeals by type of case from /api/appeals/summary; server.js draws the same table into the crawler copy of the page
+  const tb = h('table', { class: 'apsum' }), cap = h('caption', {}, '…'); tb.append(cap);
+  const pct = (m, n) => (n ? `${Math.round(m / n * 100)}%` : '–');
+  const row = (label, x, cls) => h('tr', { class: cls }, h('th', { scope: 'row' }, label), h('td', {}, String(x.n)), h('td', {}, String(x.changed)), h('td', {}, pct(x.changed, x.n)));
+  fetch('/api/appeals/summary').then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status)))).then(s => {
+    cap.textContent = L.caption.replace('{since}', s.since).replace('{until}', s.until).replace('{n}', s.decisions).replace('{j}', s.judges);
+    tb.append(h('thead', {}, h('tr', {}, ['type', 'n', 'changed', 'share'].map(c => h('th', { scope: 'col' }, L[c])))),
+      h('tbody', {}, s.types.map(x => row(apType(x.type), x)), row(L.total, { n: s.decisions, changed: s.changed }, 'total'), row(L.pub, s.published, 'pub'), row(L.unpub, s.unpublished, 'pub')));
+  }).catch(() => { cap.textContent = L.err; });
+  return tb;
+}
 const page = document.body.dataset.page, app = $('#app');
 function draw() {
   const P = (PAGES[page] || {})[LANG] || PAGES[page].en;
@@ -585,7 +729,10 @@ function draw() {
     if (k === 'p') cur.append(h('p', {}, a[0]));
     else if (k === 'note') cur.append(h('p', { class: 'doc-note' }, a[0]));
     else if (k === 'ul') cur.append(h('ul', {}, a[0].map(x => h('li', {}, x))));
-    else if (k === 'rows') cur.append(h('div', { class: 'docrows' }, a[0].map(([t, d]) => h('div', { class: 'docrow' }, h('b', {}, t), h('p', {}, d)))));
+    else if (k === 'rows') cur.append(h('div', { class: 'docrows' }, a[0].map(([ti, de]) => h('div', { class: 'docrow' }, h('b', {}, str(ti)), h('p', {}, str(de))))));
+    else if (k === 'cards') cur.append(h('div', { class: 'docrows' }, a[0].map(([ti, de, cav, [ct, href]]) => h('div', { class: 'docrow' }, h('b', {}, ti), h('p', {}, de), h('p', { class: 'cav' }, cav), h('p', { class: 'cite' }, h('a', { href, target: '_blank', rel: 'noopener noreferrer', lang: 'en' }, ct))))));
+    else if (k === 'links') cur.append(h('p', { class: 'doclinks' }, a[0].map(([text, href]) => h('a', { href }, text))));
+    else if (k === 'apsum') cur.append(apsumTable(a[0]));
     else if (k === 'callout') cur.append(h('div', { class: 'callout' }, h('p', { class: 'callout-h' }, a[0]), h('ul', {}, a[1].map(x => h('li', {}, x)))));
     else if (k === 'fig') cur.append(h('figure', { class: 'docfig' }, h('a', { href: a[3], target: '_blank', rel: 'noopener noreferrer' }, h('img', { src: a[0], alt: a[1], width: (a[4] || [1100, 584])[0], height: (a[4] || [1100, 584])[1], loading: 'lazy', decoding: 'async' })), h('figcaption', {}, a[2], a[5] ? [' ', h('a', { href: a[5], target: '_blank', rel: 'noopener' }, a[6] || '(saved copy)')] : null)));
     else if (k === 'video') cur.append(videoFig(...a));

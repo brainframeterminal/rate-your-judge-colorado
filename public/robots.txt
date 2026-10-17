@@ -8,6 +8,7 @@ Allow: /api/courts
 Allow: /api/districts
 Allow: /api/featured
 Allow: /api/appeals/top
+Allow: /api/appeals/summary
 Allow: /api/log
 Disallow: /api/
 

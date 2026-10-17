@@ -473,3 +473,14 @@ h1[tabindex="-1"]:focus{outline:none}            /* the heading is focused for s
 .doc .dirlist a{font-weight:650;color:var(--navy);text-decoration:none;min-height:24px}.doc .dirlist a:hover{text-decoration:underline}
 .doc .dirlist .muted{font-size:14px}
 @media (min-width:1000px){.doc ul.dirlist{columns:2;column-gap:32px}.doc .dirlist li{break-inside:avoid}}   /* alphabetical down the first column, then the second */
+/* appeals: per-type counts, published/unpublished toggles and filter chips on a profile; the statewide table on /appeals.html; study cards on /fairness.html */
+.card h4{margin:14px 0 4px;font-size:15px;color:var(--navy);font-family:var(--display)}
+.aptypes{list-style:none;margin:2px 0 0;padding:0}.aptypes li{padding:7px 0;border-top:1px solid #e3e6f5;font-size:15px;line-height:1.4;overflow-wrap:anywhere}.aptypes li:first-child{border-top:0}
+.apline{display:flex;flex-wrap:wrap;align-items:center;gap:0 14px;font-size:15px}.apline b{font-size:17px;color:var(--navy);font-family:var(--display)}.apline .linkbtn{font-size:14px;min-height:40px;padding:6px 0}.apwhat{flex-basis:100%;margin:0 0 8px;line-height:1.45}
+.apchips{margin:14px 0 2px}
+table.apsum{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}.apsum caption{caption-side:top;text-align:left;font-size:14px;line-height:1.45;color:var(--muted);padding:0 0 10px}
+.apsum th,.apsum td{padding:9px 6px;border-top:1px solid #e6e8f7;text-align:right;vertical-align:top;font-family:var(--body);font-weight:500}.apsum th[scope=row]{text-align:left;font-weight:600}
+.apsum thead th{border-top:0;font-size:13px;line-height:1.3;color:var(--muted);font-weight:600}.apsum tr.total th,.apsum tr.total td{font-weight:800;border-top:2px solid #c9cde6}.apsum tr.pub th{font-weight:500;color:#2b3258}
+.docrow .cav{color:#5a628a;font-size:14px}.docrow .cite{font-size:14px}.docrow .cite a{display:inline-block;padding:6px 0;color:#12358f;font-weight:600;text-decoration:underline;overflow-wrap:anywhere}
+.doclinks{display:flex;flex-wrap:wrap;gap:0 18px;margin:8px 0 0}.doclinks a{display:inline-flex;align-items:center;min-height:44px;color:#12358f;font-weight:600;text-decoration:underline;overflow-wrap:anywhere}
+@media (max-width:480px){.apsum{font-size:14px}.apsum th,.apsum td{padding:8px 4px}.apsum thead th{font-size:12px}}   /* phones: the type column keeps whole words, the number columns give way */
