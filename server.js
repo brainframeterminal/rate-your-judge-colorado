@@ -424,13 +424,28 @@ async function directoryIndex() {
     return `<div class="card doc"><h2>${k === '0' ? 'Statewide appellate courts' : `${ordEn(Number(k))} Judicial District`}</h2>${k === '0' ? '' : `<p class="muted">${escH(counties)}</p>`}<ul class="dirlist">${list.map(c => `<li><a href="/judges/${c.id}">${escH(c.name)}</a> <span class="muted">${count(c)}</span></li>`).join('')}</ul></div>`; }).join('');
   const title = 'Colorado judges and prosecutors by courthouse — Rate Your Judge Colorado';
   const desc = `Every judge and prosecutor on Rate Your Judge Colorado, by courthouse and judicial district: ${rows.length} real Colorado officials. Open a name to read their ratings, or rate them anonymously in 30 seconds.`;
-  return dirShell({ title, desc, canon: `${SITE}/judges`, h1: 'Colorado judges and prosecutors <em>by courthouse</em>', lead: escH(`All ${rows.length} judges and prosecutors on this site, from official court and district attorney lists. Pick a courthouse to see who works there and how people rated them.`), body,
+  return dirShell({ title, desc, canon: `${SITE}/judges`, h1: 'Colorado judges and prosecutors <em>by courthouse</em>', lead: escH(`All ${rows.length} judges and prosecutors on this site, from official court and district attorney lists. Pick a courthouse to see who works there and how people rated them.`), body: `<div class="card doc"><p><a href="/prosecutors">District attorneys by judicial district</a> · <a href="/">Rate someone</a></p></div>` + body,
     ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/judges`, description: desc, isPartOf: { '@type': 'WebSite', '@id': SITE + '/#site', name: 'Rate Your Judge Colorado', url: SITE + '/' } }, crumbsLd([['Rate Your Judge Colorado', SITE + '/'], ['Judges and prosecutors', `${SITE}/judges`]])] } });
+}
+async function directoryProsecutors() {   // /prosecutors: the 23 district attorneys' offices, each with the deputies named on official pages
+  const rows = (await directoryRows()).filter(r => r.type === 'prosecutor'), byD = new Map();
+  for (const r of rows) { if (!byD.has(r.district)) byD.set(r.district, []); byD.get(r.district).push(r); }
+  const counties = d => [...new Set(courts.filter(c => c.district === d).map(c => c.county))].join(', ');
+  const keys = [...byD.keys()].sort((a, b) => Number(a) - Number(b));
+  const das = rows.filter(r => /^District Attorney/.test(r.name)), deps = rows.length - das.length;
+  const body = keys.map(k => { const l = byD.get(k), da = l.filter(r => /^District Attorney/.test(r.name)), dep = l.filter(r => !/^District Attorney/.test(r.name));
+    return `<div class="card doc" id="d-${k}"><h2>${ordEn(Number(k))} Judicial District</h2><p class="muted">${escH(counties(k))}</p><ul class="dirlist">${[...da, ...dep].map(r => `<li><a href="/p/${r.id}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul>${dep.length ? '' : '<p class="muted">We have not added this office’s deputy district attorneys yet.</p>'}</div>`; }).join('');
+  const title = 'Colorado district attorneys by judicial district: ratings and reviews — Rate Your Judge Colorado';
+  const desc = `All ${das.length} elected district attorneys in Colorado and ${deps} deputy district attorneys named on official pages, by judicial district. Read how people rated them, or rate one anonymously in 30 seconds.`;
+  return dirShell({ title, desc, canon: `${SITE}/prosecutors`, h1: 'Colorado district attorneys <em>by judicial district</em>', lead: escH(`Every elected district attorney in Colorado (${das.length}) and the ${deps} deputies named on their offices’ official pages. Open a name to see how people rated them.`),
+    body: `<div class="card doc"><p><a href="/">Rate a prosecutor</a> · <a href="/judges">Judges and prosecutors by courthouse</a></p></div>` + body,
+    ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/prosecutors`, description: desc, mainEntity: { '@type': 'ItemList', numberOfItems: das.length, itemListElement: das.sort((a, b) => Number(a.district) - Number(b.district)).map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/p/${r.id}`, name: r.name })) } },
+      crumbsLd([['Rate Your Judge Colorado', SITE + '/'], ['District attorneys', `${SITE}/prosecutors`]])] } });
 }
 async function directoryCourt(c) {
   const rows = await directoryRows(), groups = courtPeople(c, rows).filter(([, l]) => l.length);
   const body = `<div class="card doc"><p>${escH(c.address)}</p>${c.houses ? `<p class="muted">${escH(c.houses.join(' · '))}</p>` : ''}<p><a href="/">Rate someone at this courthouse</a> · <a href="/judges">All courthouses</a></p></div>` +
-    groups.map(([h, l]) => `<div class="card doc"><h2>${escH(h)}</h2><ul class="dirlist">${l.map(r => `<li><a href="/p/${r.id}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul></div>`).join('');
+    groups.map(([h, l]) => `<div class="card doc"><h2>${escH(h)}</h2>${h === 'Prosecutors' ? `<p class="muted"><a href="/prosecutors#d-${c.district}">All district attorneys by judicial district</a></p>` : ''}<ul class="dirlist">${l.map(r => `<li><a href="/p/${r.id}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul></div>`).join('');
   const all = groups.flatMap(([, l]) => l), title = `${c.name} judges and prosecutors: ratings and reviews — Rate Your Judge Colorado`;
   const desc = c.kind === 'appellate' ? `The justices of the Colorado Supreme Court and the judges of the Colorado Court of Appeals: ratings and reviews from people who saw them at work.` : `${all.length} judges and prosecutors who work at ${c.name}, ${c.district ? `${ordEn(Number(c.district))} Judicial District, ` : ''}Colorado. Read how people rated them, or rate one anonymously in 30 seconds.`;
   return dirShell({ title, desc, canon: `${SITE}/judges/${c.id}`, h1: `${escH(c.name)} <em>judges and prosecutors</em>`, lead: escH(c.kind === 'appellate' ? 'Colorado Supreme Court and Court of Appeals, 2 E. 14th Ave., Denver.' : `Everyone on this site who works at ${c.name}, ${ordEn(Number(c.district))} Judicial District.`), body,
@@ -827,6 +842,9 @@ function makeHandler(isMod) {
         res.writeHead(200, { 'content-type': 'application/pdf', 'cache-control': 'public, max-age=31536000, immutable', 'x-robots-tag': 'noindex' });
         return fs.createReadStream(file).pipe(res);
       }
+      if (url.pathname === '/prosecutors') {
+        res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(await directoryProsecutors());
+      }
       if (url.pathname === '/judges' || url.pathname === '/judges/' || (pm = url.pathname.match(/^\/judges\/([a-z0-9-]+)$/))) {   // the crawlable directory
         if (url.pathname === '/judges/') { res.writeHead(301, { location: '/judges' }); return res.end(); }
         const c = pm && pm[1] ? courtById.get(pm[1]) : null;
@@ -877,7 +895,7 @@ function makeHandler(isMod) {
       if (url.pathname === '/sitemap.xml') {                                  // static pages (build-seo.mjs) + every real official's profile
         const base = fs.readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8');
         const rows = await db.prepare("SELECT o.id, o.checked, MAX(r.created_at) last FROM officials o LEFT JOIN reviews r ON r.official_id = o.id WHERE o.demo = 0 GROUP BY o.id, o.checked ORDER BY o.id").all();
-        const dir = [`  <url><loc>${SITE}/judges</loc></url>`, ...courts.map(c => `  <url><loc>${SITE}/judges/${c.id}</loc></url>`)].join('\n') + '\n';   // the directory: lastmod left out, it changes with every rating
+        const dir = [`  <url><loc>${SITE}/judges</loc></url>`, `  <url><loc>${SITE}/prosecutors</loc></url>`, ...courts.map(c => `  <url><loc>${SITE}/judges/${c.id}</loc></url>`)].join('\n') + '\n';   // the directory: lastmod left out, it changes with every rating
         const urls = dir + rows.map(r => `  <url><loc>https://rateyourjudgecolorado.com/p/${r.id}</loc><lastmod>${r.last ? new Date(Number(r.last)).toISOString().slice(0, 10) : (r.checked || '2026-10-15')}</lastmod></url>`).join('\n');
         res.writeHead(200, { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(base.replace('</urlset>', () => urls + '\n</urlset>'));
       }
