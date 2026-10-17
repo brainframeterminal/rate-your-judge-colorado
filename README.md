@@ -158,6 +158,42 @@ procedure; it is not a finding of misconduct, and some kinds of cases are appeal
 
 ---
 
+## Not a survey: a system that keeps learning
+
+The state's evaluation is a questionnaire sent out once every few years. This project is built the other way round:
+
+- **It updates itself.** Ratings arrive every day. The appeals record refreshes every week from the Court of Appeals'
+  new announcements. Rosters are re-checked against the courts' own lists. Nothing waits for the next election cycle.
+- **It combines different kinds of evidence.** What people in the courtroom saw (the ratings) sits next to what a
+  higher court did with a judge's rulings (the appeals record). Neither is mixed into the other: each is shown as
+  itself, with its source, so a reader can weigh them.
+- **Every step is open.** The math is plain, the code is here, and every moderator decision is on a public log.
+  An ordinary person can see not only the result but how the result was made.
+
+## Open questions: help us get this right
+
+These are the parts we have not solved yet. If you work with data, statistics, courts or law, we would like your help.
+Open an issue, or a pull request with the case you are making.
+
+1. **How should the appeals record count?** A higher court's decisions on a judge's rulings are a real signal of how
+   the work is done, but a raw count can mislead: busy courts produce more appeals, some kinds of cases are appealed and
+   reversed far more than others, and there is no public count of every case a judge hears. What fair, explainable way
+   is there to put that signal in context without inventing a rate?
+2. **Which other public signals belong here?** For example: Supreme Court original proceedings on a trial judge's
+   rulings, published opinions from before June 2023, recusals, case timeliness reports. What is reliable, public and
+   fair to show next to a name?
+3. **Trends over time.** How should the site show that a judge's ratings or appeals record is improving or getting
+   worse, without over-reading a handful of data points?
+4. **Fairness checks.** How do we detect, in the open, an organized campaign for or against one official, and what
+   should the site do when it sees one?
+5. **Wording.** Are the five questions for judges and for prosecutors the ones a layperson can actually answer from
+   what they saw? The research so far is in [`docs/questions.md`](docs/questions.md).
+
+We especially welcome **technologists** who can find signals in public court data, and **lawyers and judges** who can
+tell us where a number would be unfair. Everything that is accepted becomes code here, where anyone can check it.
+
+---
+
 ## Privacy and security
 
 - **Nothing from other companies loads.** No ads, no analytics, no outside fonts or scripts; everything is served by
