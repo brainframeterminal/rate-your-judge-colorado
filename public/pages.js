@@ -595,4 +595,4 @@ function draw() {
   const nav = toc.length > 2 ? h('nav', { class: 'doc-toc', 'aria-label': LANG === 'es' ? 'En esta página' : 'On this page' }, h('p', {}, LANG === 'es' ? 'En esta página' : 'On this page'), h('ul', {}, toc)) : null;
   app.replaceChildren(...kids, h('div', { class: 'doc-grid' + (nav ? '' : ' notoc') }, nav, h('div', { class: 'doc-body' }, cards)));
 }
-draw(); onLang(draw);
+if (PAGES[page]) { draw(); onLang(draw); }   // a page without an entry here (the /judges directory) is rendered by the server and stays as sent

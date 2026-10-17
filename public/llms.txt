@@ -6,7 +6,8 @@ The people listed are real Colorado officials taken from official court and dist
 
 ## Profiles
 - Every official has a public profile at https://rateyourjudgecolorado.com/p/<number> with their court, every rating, the moderator-reviewed comments, scores once there are 5 ratings, and for trial judges the Colorado Court of Appeals decisions on their rulings since June 2023 (public record, each linked to the opinion).
-- The full list of profiles is in the sitemap: https://rateyourjudgecolorado.com/sitemap.xml
+- [All judges and prosecutors by courthouse](https://rateyourjudgecolorado.com/judges): one page per courthouse, each linking to every profile.
+- The full list of profiles is also in the sitemap: https://rateyourjudgecolorado.com/sitemap.xml
 - Every moderator decision is logged in public: https://rateyourjudgecolorado.com/log.html
 
 ## Read first

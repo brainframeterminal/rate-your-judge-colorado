@@ -466,3 +466,10 @@ h1[tabindex="-1"]:focus{outline:none}            /* the heading is focused for s
 .lt-card>.choice.lt{flex:1;margin:0;background:transparent;box-shadow:none}
 .lt-react{margin:-6px 0 0;padding:0 16px 14px 70px}
 @media (max-width:360px){.lt-react{padding-left:16px}}
+/* /judges directory (server-rendered): one row per courthouse or person, name left, count/score right */
+.doc ul.dirlist{list-style:none;margin:6px 0 0;padding:0}
+.doc .dirlist li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 14px;margin:0;padding:10px 0;border-bottom:1px solid #e6e8f3}
+.doc .dirlist li:last-child{border-bottom:0}
+.doc .dirlist a{font-weight:650;color:var(--navy);text-decoration:none;min-height:24px}.doc .dirlist a:hover{text-decoration:underline}
+.doc .dirlist .muted{font-size:14px}
+@media (min-width:1000px){.doc ul.dirlist{columns:2;column-gap:32px}.doc .dirlist li{break-inside:avoid}}   /* alphabetical down the first column, then the second */

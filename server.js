@@ -387,6 +387,56 @@ const officialRow = async id => await db.prepare('SELECT id, court_id, type, nam
 const ordEn = n => { const x = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (x[(v - 20) % 10] || x[v] || x[0]); };
 const placeOf = o => { const c = courtById.get(o.court_id); return o.title ? o.title.replace(/^[^,]*,\s*/, '') : o.scope === 'district' ? `${ordEn(Number(c.district))} Judicial District` : c.name; };   // a district-wide official's court_id is just one county of the district
 const profileTitle = o => `${o.name}, ${placeOf(o)}: ratings and reviews — Rate Your Judge Colorado`;   // public/app.js sets the same title
+// ---- crawlable directory: /judges (every courthouse, by judicial district) and /judges/<court id> (everyone who works there) ----
+// Plain HTML links to every profile, so a search engine reaches each judge from a page, not only from the sitemap.
+const SITE = 'https://rateyourjudgecolorado.com';
+const escH = x => String(x).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const surname = n => { const w = n.replace(/^(Judge|Justice|Chief Justice|Deputy DA|District Attorney)\s+/, '').replace(/\(.*?\)/g, '').trim().split(/\s+/).filter(x => !/^(Jr\.?|Sr\.?|II|III|IV)$/.test(x)); return (w.pop() || '') + ' ' + w.join(' '); };
+async function directoryRows() {
+  const rows = await db.prepare('SELECT o.id, o.name, o.type, o.court_id, o.scope, o.title, COUNT(r.id) AS n, AVG(r.overall) AS av, MAX(r.created_at) AS last FROM officials o LEFT JOIN reviews r ON r.official_id = o.id WHERE o.demo = 0 GROUP BY o.id, o.name, o.type, o.court_id, o.scope, o.title').all();
+  return rows.map(r => ({ ...r, id: Number(r.id), n: Number(r.n), av: r.av == null ? null : Number(r.av), last: r.last ? Number(r.last) : 0, district: courtById.get(r.court_id)?.district }))
+    .sort((a, b) => surname(a.name).localeCompare(surname(b.name)));
+}
+function courtPeople(c, rows) {   // the same people the rating tool lists for this courthouse
+  if (c.kind === 'appellate') { const at = rows.filter(r => r.court_id === c.id); return [['Colorado Supreme Court', at.filter(r => /Supreme Court/.test(r.title || ''))], ['Colorado Court of Appeals', at.filter(r => /Court of Appeals/.test(r.title || ''))]]; }
+  const here = r => r.court_id === c.id && r.scope !== 'district', wide = r => r.scope === 'district' && r.district === c.district;
+  const da = rows.filter(r => r.type === 'prosecutor' && wide(r)).sort((a, b) => /^District Attorney/.test(b.name) - /^District Attorney/.test(a.name));
+  return [['Judges at this courthouse', rows.filter(r => r.type === 'judge' && here(r))], [`Judges serving the whole ${ordEn(Number(c.district))} Judicial District`, rows.filter(r => r.type === 'judge' && wide(r))],
+    ['Prosecutors', [...da, ...rows.filter(r => r.type === 'prosecutor' && here(r))]]];
+}
+const scoreLine = r => r.n >= MIN_N ? `★ ${r.av.toFixed(1)} from ${r.n} ratings` : r.n ? `${r.n} ${r.n === 1 ? 'rating' : 'ratings'} so far` : 'not rated yet';
+function dirShell({ title, desc, canon, ld, h1, lead, body }) {
+  const head = `<!--seo-->\n<meta name="description" content="${escH(desc)}">\n<link rel="canonical" href="${canon}">\n<meta property="og:site_name" content="Rate Your Judge Colorado"><meta property="og:type" content="website"><meta property="og:title" content="${escH(title)}"><meta property="og:description" content="${escH(desc)}"><meta property="og:url" content="${canon}"><meta property="og:image" content="${SITE}/img/og-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${SITE}/img/og-card.jpg">\n<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>\n<!--/seo-->`;
+  return fs.readFileSync(path.join(ROOT, 'public', 'about.html'), 'utf8')
+    .replace('<head>', () => '<head><base href="/">')                                   // these pages live one folder down; the template's links are relative
+    .replace(/<title>[\s\S]*?<\/title>/, () => `<title>${escH(title)}</title>`).replace(/<!--seo-->[\s\S]*?<!--\/seo-->/, () => head)
+    .replace('data-page="about"', 'data-page="dir"')                                   // pages.js leaves a server-rendered page as it is
+    .replace(/(<main id="app"[^>]*>)[\s\S]*?(<\/main>)/, (m, a, b) => `${a}<h1>${h1}</h1><p class="lead">${lead}</p><div class="doc-grid notoc"><div class="doc-body">${body}</div></div>${b}`);
+}
+const crumbsLd = items => ({ '@type': 'BreadcrumbList', itemListElement: items.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })) });
+async function directoryIndex() {
+  const rows = await directoryRows(), byD = new Map();
+  for (const c of courts) { const k = c.kind === 'appellate' ? '0' : c.district; if (!byD.has(k)) byD.set(k, []); byD.get(k).push(c); }
+  const keys = [...byD.keys()].sort((a, b) => Number(a) - Number(b));
+  const count = c => { const g = courtPeople(c, rows); const j = g.filter(([h]) => !/^Prosecutors/.test(h)).reduce((n, [, l]) => n + l.length, 0), p = g.filter(([h]) => /^Prosecutors/.test(h)).reduce((n, [, l]) => n + l.length, 0);
+    return [j && `${j} ${j === 1 ? 'judge' : c.kind === 'appellate' ? 'justices and judges' : 'judges'}`, p && `${p} ${p === 1 ? 'prosecutor' : 'prosecutors'}`].filter(Boolean).join(' · '); };
+  const body = keys.map(k => { const list = byD.get(k).sort((a, b) => a.name.localeCompare(b.name)), counties = [...new Set(list.map(c => c.county))].join(', ');
+    return `<div class="card doc"><h2>${k === '0' ? 'Statewide appellate courts' : `${ordEn(Number(k))} Judicial District`}</h2>${k === '0' ? '' : `<p class="muted">${escH(counties)}</p>`}<ul class="dirlist">${list.map(c => `<li><a href="/judges/${c.id}">${escH(c.name)}</a> <span class="muted">${count(c)}</span></li>`).join('')}</ul></div>`; }).join('');
+  const title = 'Colorado judges and prosecutors by courthouse — Rate Your Judge Colorado';
+  const desc = `Every judge and prosecutor on Rate Your Judge Colorado, by courthouse and judicial district: ${rows.length} real Colorado officials. Open a name to read their ratings, or rate them anonymously in 30 seconds.`;
+  return dirShell({ title, desc, canon: `${SITE}/judges`, h1: 'Colorado judges and prosecutors <em>by courthouse</em>', lead: escH(`All ${rows.length} judges and prosecutors on this site, from official court and district attorney lists. Pick a courthouse to see who works there and how people rated them.`), body,
+    ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/judges`, description: desc, isPartOf: { '@type': 'WebSite', '@id': SITE + '/#site', name: 'Rate Your Judge Colorado', url: SITE + '/' } }, crumbsLd([['Rate Your Judge Colorado', SITE + '/'], ['Judges and prosecutors', `${SITE}/judges`]])] } });
+}
+async function directoryCourt(c) {
+  const rows = await directoryRows(), groups = courtPeople(c, rows).filter(([, l]) => l.length);
+  const body = `<div class="card doc"><p>${escH(c.address)}</p>${c.houses ? `<p class="muted">${escH(c.houses.join(' · '))}</p>` : ''}<p><a href="/">Rate someone at this courthouse</a> · <a href="/judges">All courthouses</a></p></div>` +
+    groups.map(([h, l]) => `<div class="card doc"><h2>${escH(h)}</h2><ul class="dirlist">${l.map(r => `<li><a href="/p/${r.id}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul></div>`).join('');
+  const all = groups.flatMap(([, l]) => l), title = `${c.name} judges and prosecutors: ratings and reviews — Rate Your Judge Colorado`;
+  const desc = c.kind === 'appellate' ? `The justices of the Colorado Supreme Court and the judges of the Colorado Court of Appeals: ratings and reviews from people who saw them at work.` : `${all.length} judges and prosecutors who work at ${c.name}, ${c.district ? `${ordEn(Number(c.district))} Judicial District, ` : ''}Colorado. Read how people rated them, or rate one anonymously in 30 seconds.`;
+  return dirShell({ title, desc, canon: `${SITE}/judges/${c.id}`, h1: `${escH(c.name)} <em>judges and prosecutors</em>`, lead: escH(c.kind === 'appellate' ? 'Colorado Supreme Court and Court of Appeals, 2 E. 14th Ave., Denver.' : `Everyone on this site who works at ${c.name}, ${ordEn(Number(c.district))} Judicial District.`), body,
+    ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/judges/${c.id}`, description: desc, mainEntity: { '@type': 'ItemList', numberOfItems: all.length, itemListElement: all.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/p/${r.id}`, name: r.name })) } },
+      crumbsLd([['Rate Your Judge Colorado', SITE + '/'], ['Judges and prosecutors', `${SITE}/judges`], [c.name, `${SITE}/judges/${c.id}`]])] } });
+}
 
 // ---- routes ------------------------------------------------------------------------------------
 async function api(req, res, url, isMod) {
@@ -777,6 +827,13 @@ function makeHandler(isMod) {
         res.writeHead(200, { 'content-type': 'application/pdf', 'cache-control': 'public, max-age=31536000, immutable', 'x-robots-tag': 'noindex' });
         return fs.createReadStream(file).pipe(res);
       }
+      if (url.pathname === '/judges' || url.pathname === '/judges/' || (pm = url.pathname.match(/^\/judges\/([a-z0-9-]+)$/))) {   // the crawlable directory
+        if (url.pathname === '/judges/') { res.writeHead(301, { location: '/judges' }); return res.end(); }
+        const c = pm && pm[1] ? courtById.get(pm[1]) : null;
+        if (pm && pm[1] && !c) { res.writeHead(404, { 'content-type': 'text/plain; charset=utf-8' }); return res.end('Not found'); }
+        const html = c ? await directoryCourt(c) : await directoryIndex();
+        res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(html);
+      }
       if ((pm = url.pathname.match(/^\/p\/(\d+)$/))) {                    // shareable profile link with a link preview
         const o = await officialRow(idOf(pm[1]));
         let html = fs.readFileSync(path.join(ROOT, 'public', 'index.html'), 'utf8').replace(/<!--seo-->[\s\S]*?<!--\/seo-->\n?/, '');
@@ -808,18 +865,20 @@ function makeHandler(isMod) {
           const last = cms.length ? Math.max(...cms.map(c => c.at)) : 0;
           const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: url1, name: title, description: desc, ...(last ? { dateModified: new Date(last).toISOString() } : {}),
             isPartOf: { '@type': 'WebSite', name: 'Rate Your Judge Colorado', url: 'https://rateyourjudgecolorado.com/' },
+            breadcrumb: crumbsLd([['Rate Your Judge Colorado', SITE + '/'], ['Judges and prosecutors', `${SITE}/judges`], [court.name, `${SITE}/judges/${court.id}`], [o.name, url1]]),
             mainEntity: { '@type': 'Person', name: bareName, jobTitle: job,
               worksFor: { '@type': 'GovernmentOrganization', name: o.title ? o.title.replace(/^[^,]*,\s*/, '') : o.type === 'judge' ? (o.scope === 'district' ? `Colorado ${place}` : court.name + ' courts') : `District Attorney, ${ordEn(Number(court.district))} Judicial District of Colorado`, address: court.address } } }).replace(/</g, '\\u003c');
           html = html.replace(/<link rel="canonical"[^>]*>/, () => `<link rel="canonical" href="${url1}">`)
             .replace('</head>', () => `<script type="application/ld+json">${ld}</script>\n</head>`)
-            .replace(/(<main id="app"[^>]*><!--ssr-->)[\s\S]*?(<\/main>)/, (m0, a1, a3) => `${a1}<div class="card doc"><h1>${esc(o.name)}</h1><p>${esc(job)} · ${esc(place)}${o.title ? '' : ', Colorado'} · ${esc(court.address)}</p><p>${esc(desc)}</p>${scores}${list}${apLine}${opLine}<p><a href="/p/${o.id}">Rate ${esc(o.name)}</a> · <a href="/how.html">How it works</a> · <a href="/method.html">Our method</a></p></div>${a3}`);
+            .replace(/(<main id="app"[^>]*><!--ssr-->)[\s\S]*?(<\/main>)/, (m0, a1, a3) => `${a1}<div class="card doc"><nav aria-label="Breadcrumb"><a href="/judges">Judges and prosecutors</a> › <a href="/judges/${court.id}">${esc(court.name)}</a></nav><h1>${esc(o.name)}</h1><p>${esc(job)} · ${esc(place)}${o.title ? '' : ', Colorado'} · ${esc(court.address)}</p><p>${esc(desc)}</p>${scores}${list}${apLine}${opLine}<p><a href="/p/${o.id}">Rate ${esc(o.name)}</a> · <a href="/how.html">How it works</a> · <a href="/method.html">Our method</a></p></div>${a3}`);
         }
         res.writeHead(o ? 200 : 404, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(html);
       }
       if (url.pathname === '/sitemap.xml') {                                  // static pages (build-seo.mjs) + every real official's profile
         const base = fs.readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8');
         const rows = await db.prepare("SELECT o.id, o.checked, MAX(r.created_at) last FROM officials o LEFT JOIN reviews r ON r.official_id = o.id WHERE o.demo = 0 GROUP BY o.id, o.checked ORDER BY o.id").all();
-        const urls = rows.map(r => `  <url><loc>https://rateyourjudgecolorado.com/p/${r.id}</loc><lastmod>${r.last ? new Date(Number(r.last)).toISOString().slice(0, 10) : (r.checked || '2026-10-15')}</lastmod></url>`).join('\n');
+        const dir = [`  <url><loc>${SITE}/judges</loc></url>`, ...courts.map(c => `  <url><loc>${SITE}/judges/${c.id}</loc></url>`)].join('\n') + '\n';   // the directory: lastmod left out, it changes with every rating
+        const urls = dir + rows.map(r => `  <url><loc>https://rateyourjudgecolorado.com/p/${r.id}</loc><lastmod>${r.last ? new Date(Number(r.last)).toISOString().slice(0, 10) : (r.checked || '2026-10-15')}</lastmod></url>`).join('\n');
         res.writeHead(200, { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(base.replace('</urlset>', () => urls + '\n</urlset>'));
       }
       let p = path.normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, '');
