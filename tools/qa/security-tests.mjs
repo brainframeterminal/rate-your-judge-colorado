@@ -79,7 +79,13 @@ r = await req(P, 'GET', '/api/officials/40'); { const c = r.json.comments.find(x
 const dec = await req(M, 'POST', '/api/mod/decide', { headers: { ...J, ...globalThis.MH2 }, body: { review: rid, status: 'published', note: 'ok' } }); ok('moderator can republish', dec.status === 200);
 await req(P, 'POST', '/api/report', { headers: { ...J, ...xff('3.3.3.12'), 'x-device': dev[1] }, body: { review: rid, reason: 'again' } }); await req(P, 'POST', '/api/report', { headers: { ...J, ...xff('3.3.3.13'), 'x-device': dev[2] }, body: { review: rid, reason: 'again' } });
 r = await req(P, 'GET', '/api/officials/40'); ok('new reports cannot undo a moderator\'s approval', !!((r.json.comments.find(c => c.id === rid) || {}).text));
-r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.14'), 'x-device': dev[3] }, body: { review: rid, vote: 1 } }); ok('votes on non-pending comments refused', r.status === 403 || r.status === 409);
+// 👍/👎 reactions on a public comment: anyone with a phone token, one each, the same thumb again takes it back, never your own, never changes the status
+const upOf = async who => { const x = await req(P, 'GET', '/api/officials/40', { headers: { 'x-device': who } }); return x.json.comments.find(c => c.id === rid) || {}; };
+const before = (await upOf(dev[3])).up;
+r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.14'), 'x-device': dev[3] }, body: { review: rid, vote: 1 } }); { const c = await upOf(dev[3]); ok('a reader can 👍 a published comment', r.status === 200 && c.up === before + 1 && c.myVote === 1 && c.status === 'published'); }
+r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.15'), 'x-device': dev[3] }, body: { review: rid, vote: 1 } }); { const c = await upOf(dev[3]); ok('the same thumb again takes the reaction back', r.status === 200 && c.up === before && c.myVote === 0); }
+r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.16'), 'x-device': dev[3] }, body: { review: rid, vote: -1 } }); { const c = await upOf(dev[3]); ok('a reader can 👎, and it never hides the comment', r.status === 200 && c.myVote === -1 && c.status === 'published' && !!c.text); }
+r = await req(P, 'POST', '/api/vote', { headers: { ...J, ...xff('3.3.3.17'), 'x-device': dev[0] }, body: { review: rid, vote: 1 } }); ok('nobody can react to their own comment', r.status === 403);
 // 7) repeat rating, small-group privacy
 r = await rate(dev[0], 40); ok('same device cannot rate the same official again within 30 days', r.status === 409);
 const courtsList = (await req(P, 'GET', '/api/courts')).json; const empty = (await req(P, 'GET', '/api/officials?court=' + courtsList[4].id)).json[0];
@@ -96,7 +102,7 @@ r = await req(P, 'GET', '/%2e%2e/public-old/x'); ok('prefix escape refused', r.s
 const bs = async ip => (await req(8762, 'POST', '/api/session', { headers: { ...J, ...xff(ip) }, body: {} })).json.device;
 const MODEMOD = 8763;
 const modAdd = await req(MODEMOD, 'GET', '/api/officials?court=adams-adams-county'); ok('production-style instance (no demo) starts with an empty roster', Array.isArray(modAdd.json) && modAdd.json.length === 0);
-r = await req(8762, 'POST', '/api/vote', { headers: { ...J, ...xff('4.4.4.4'), 'x-device': await bs('4.4.4.4') }, body: { review: 1, vote: 1 } }); ok('peer confirmation is OFF in moderator mode', r.status === 403);
+r = await req(8762, 'POST', '/api/vote', { headers: { ...J, ...xff('4.4.4.4'), 'x-device': await bs('4.4.4.4') }, body: { review: 1, vote: 1 } }); ok('a vote can never publish in moderator mode', r.status === 404 || r.status === 409 || r.status === 403);
 // 10) headers
 r = await req(P, 'GET', '/'); ok('security headers present', !!r.headers['content-security-policy'] && r.headers['x-content-type-options'] === 'nosniff' && r.headers['referrer-policy'] === 'no-referrer');
 // 11) proof-of-work captcha: required, single-use, unforgeable

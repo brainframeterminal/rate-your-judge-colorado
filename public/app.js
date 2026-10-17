@@ -526,7 +526,9 @@ async function stepResult(id) {
       c.hasText ? [' ', h('span', { class: 'pill' + (c.status === 'published' ? ' ok' : ' warn') }, c.status === 'published' ? t('cm.confirmed') : c.status === 'held' ? t('cm.held') : t('cm.waiting'))] : null),
     answersTable({ type: d.type, overall: c.overall, q: c.q }),
     c.hasText ? h('p', {}, c.text || (c.pendingText ? c.pendingText : t('cm.hidden'))) : null,
-    c.canVote ? h('div', { class: 'vote' }, h('button', { onclick: () => vote(c.id, 1, d.id) }, t('cm.up', { n: c.up })), h('button', { onclick: () => vote(c.id, -1, d.id) }, t('cm.down', { n: c.down }))) : null,
+    c.canVote ? h('div', { class: 'vote' }, h('button', { onclick: () => vote(c.id, 1, d.id) }, t('cm.up', { n: c.up })), h('button', { onclick: () => vote(c.id, -1, d.id) }, t('cm.down', { n: c.down })))
+      : c.canReact ? h('div', { class: 'vote react' }, h('button', { 'aria-pressed': c.myVote === 1, 'aria-label': t('cm.like.a', { n: c.up }), onclick: () => vote(c.id, 1, d.id) }, `👍 ${c.up}`), h('button', { 'aria-pressed': c.myVote === -1, 'aria-label': t('cm.dislike.a', { n: c.down }), onclick: () => vote(c.id, -1, d.id) }, `👎 ${c.down}`))
+      : c.hasText && (c.up || c.down) ? h('p', { class: 'muted react-n' }, `👍 ${c.up} · 👎 ${c.down}`) : null,
     c.text && !c.mine ? reportMenu(c, d.id) : null));
   const sent = S.sent;
   show([

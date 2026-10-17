@@ -439,3 +439,8 @@ h1[tabindex="-1"]:focus{outline:none}            /* the heading is focused for s
 @media (min-width:1024px) and (prefers-reduced-motion:reduce){
   .lt-marquee{overflow-x:auto;-webkit-mask:none;mask:none}.lt-track{animation:none}.lt-track>[aria-hidden=true]{display:none}
 }
+
+/* 👍/👎 under a public comment (2026-10-16): the reader's own choice is filled in */
+.vote.react button{min-width:72px;justify-content:center}
+.vote.react button[aria-pressed=true]{background:var(--blue,#12358f);color:#fff}
+.react-n{margin:4px 0 0;font-size:14px}

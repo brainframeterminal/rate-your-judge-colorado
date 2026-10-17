@@ -279,15 +279,18 @@ async function publicComments(officialId, device) {
   // every rating, newest first, each with who left it and that person's own answers; a comment's TEXT keeps its own rules
   return (await db.prepare(`SELECT id, role, subrole, overall, q1, q2, q3, q4, q5, comment, created_at, status, device,
       (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = 1) AS up,
-      (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = -1) AS down
-    FROM reviews r WHERE official_id = ? ORDER BY created_at DESC, id DESC LIMIT 50`).all(officialId))
+      (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = -1) AS down,
+      (SELECT vote FROM votes v WHERE v.review_id = r.id AND v.device = ?) AS myvote
+    FROM reviews r WHERE official_id = ? ORDER BY created_at DESC, id DESC LIMIT 50`).all(me || '-', officialId))
     .map(r => (r.comment && (r.status === 'held' || r.status === 'rejected' || r.status === 'flagged') && !(me && r.device === me) ? { ...r, comment: null } : r))   // held/rejected text: only its author sees it
     .map(r => ({ id: Number(r.id), role: r.role, subrole: r.subrole || '', overall: r.overall == null ? null : Number(r.overall), q: [r.q1, r.q2, r.q3, r.q4, r.q5].map(v => v == null ? null : Number(v)),
       hasText: !!(r.comment && r.comment.trim()), status: r.status, up: r.up, down: r.down, at: Number(r.created_at),
       text: r.status === 'published' || (r.status === 'pending' && PUBLISH_MODE === 'visible') || (me && r.device === me) ? r.comment : null,
       pendingText: r.status === 'pending' && eligible && r.device !== me ? r.comment : null,       // 'mod' mode: nobody but the author sees unreviewed text
       mine: !!me && r.device === me,
-      canVote: r.status === 'pending' && eligible && r.device !== me }));
+      canVote: r.status === 'pending' && eligible && r.device !== me,
+      myVote: r.myvote == null ? 0 : Number(r.myvote),
+      canReact: !!me && r.device !== me && !!(r.comment && r.comment.trim()) && (r.status === 'published' || (r.status === 'pending' && PUBLISH_MODE === 'visible')) }));
 }
 async function refreshStatus(reviewId) {
   if (PUBLISH_MODE !== 'peer') return;                                              // in 'mod' mode only a human can publish
@@ -498,7 +501,9 @@ async function api(req, res, url, isMod) {
   }
 
   if (req.method === 'POST' && url.pathname === '/api/vote') {
-    if (PUBLISH_MODE !== 'peer') return json(res, 403, { error: 'Confirmations are off: moderators review every comment.' });
+    // 👍/👎 on a comment. In 'peer' mode a vote on a PENDING comment is
+    // still a publishing confirmation with its old rules; everywhere else it is a reader reaction: one per phone per comment,
+    // pressing the same thumb again takes it back, and it never changes whether a comment is shown.
     if (rateLimited('vote:' + net, 200, HOUR)) return json(res, 429, { error: 'slow down' });
     const b = await readBody(req);
     const device = deviceOf(req, b), vote = b.vote === 1 ? 1 : b.vote === -1 ? -1 : 0;
@@ -506,11 +511,14 @@ async function api(req, res, url, isMod) {
     if (!vote) return json(res, 400, { error: 'bad request' });
     const r = await db.prepare('SELECT id, device, status, comment FROM reviews WHERE id = ?').get(idOf(b.review));
     if (!r) return json(res, 404, { error: 'not found' });
-    if (r.status !== 'pending' || !r.comment) return json(res, 409, { error: 'This comment is not waiting for confirmation.' });
-    if (r.device === device) return json(res, 403, { error: 'You cannot confirm your own review.' });
-    if (!await eligibleVoter(device)) return json(res, 403, { error: 'Rate someone first, then you can confirm other reviews.' });
-    await db.prepare('INSERT INTO votes (review_id, device, vote, created_at) VALUES (?,?,?,?) ON CONFLICT (review_id, device) DO UPDATE SET vote = excluded.vote, created_at = excluded.created_at').run(r.id, device, vote, hourFloor(Date.now()));
-    await refreshStatus(r.id);
+    const confirming = PUBLISH_MODE === 'peer' && r.status === 'pending';
+    if (!r.comment || !(confirming || r.status === 'published' || (r.status === 'pending' && PUBLISH_MODE === 'visible'))) return json(res, 409, { error: 'This comment is not public.' });
+    if (r.device === device) return json(res, 403, { error: 'You cannot react to your own comment.' });
+    if (confirming && !await eligibleVoter(device)) return json(res, 403, { error: 'Rate someone first, then you can confirm other reviews.' });
+    const had = await db.prepare('SELECT vote FROM votes WHERE review_id = ? AND device = ?').get(r.id, device);
+    if (had && Number(had.vote) === vote && !confirming) await db.prepare('DELETE FROM votes WHERE review_id = ? AND device = ?').run(r.id, device);   // same thumb again = take it back
+    else await db.prepare('INSERT INTO votes (review_id, device, vote, created_at) VALUES (?,?,?,?) ON CONFLICT (review_id, device) DO UPDATE SET vote = excluded.vote, created_at = excluded.created_at').run(r.id, device, vote, hourFloor(Date.now()));
+    if (confirming) await refreshStatus(r.id);
     return json(res, 200, { ok: true });
   }
 

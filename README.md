@@ -53,6 +53,18 @@ so anyone can check the math.
 
 *Screenshots use the built-in demo data: fictional people, fictional ratings.*
 
+### A profile, up close
+
+Everything a reader needs on one page: the overall score and how many ratings it rests on, how many were made near
+the courthouse, each question's average, the split by who was rating, how people who won and people who lost each
+scored the judge, the trend over the last weeks, and every single rating with that person's own answers and a 👍/👎
+for readers.
+
+<table><tr>
+<td width="34%"><img src="docs/img/phone-profile.jpg" alt="A demo judge's profile on a phone: score ring 4.2 out of 5 from 24 ratings, bars for each question, scores by who was rating, won/lost comparison, an eight-week trend line, and the list of every rating"></td>
+<td><img src="docs/img/desktop-profile-full.jpg" alt="The same demo profile on a desktop: the score card on the left, every rating with its own answers on the right"></td>
+</tr></table>
+
 ---
 
 ## How it works
