@@ -1,6 +1,14 @@
 # Rate Your Judge Colorado — everyone is welcome to read the public pages, including AI assistants and search engines.
 User-agent: *
 Allow: /
+Allow: /api/officials
+Allow: /api/latest
+Allow: /api/asks
+Allow: /api/courts
+Allow: /api/districts
+Allow: /api/featured
+Allow: /api/appeals/top
+Allow: /api/log
 Disallow: /api/
 
 Sitemap: https://rateyourjudgecolorado.com/sitemap.xml

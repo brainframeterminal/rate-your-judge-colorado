@@ -18,6 +18,12 @@ const THREAT = ['kill', 'shoot', 'murder', 'bomb', 'hurt him', 'hurt her', 'find
   'matar', 'te voy a', 'muerte a'];
 const CRIME = ['corrupt', 'bribe', 'bribed', 'took money', 'paid off', 'crook', 'fraud', 'racist', 'cocaine', 'drunk', 'on drugs',   // not 'criminal'/'illegal': 'my criminal case', 'an illegal search' are ordinary court talk
   'corrupto', 'soborno', 'sobornado', 'fraude', 'racista', 'borracho', 'drogado'];
+// accusations of child or sexual abuse against someone: held for a moderator, since a private person can be recognisable
+// from details without a name. The bare word 'abuse' stays allowed: victims use it in ordinary comments, and 'abuse of discretion' is court talk.
+const ABUSE = ['molest', 'rape$', 'raped', 'rapist', 'raping', 'pedophil', 'paedophil', 'child abuse', 'sexual abuse', 'sexually abus', 'sexual assault', 'sexually assault',
+  'abuse her', 'abuse him', 'abuse them', 'abuse their', 'abuse the child', 'abuse the kid', 'abuses her', 'abuses him', 'abused her', 'abused him', 'abused them',
+  'abusing her', 'abusing him', 'abusing them', 'abusing the', 'abusive to', 'beat her', 'beats her', 'beat him', 'beats him', 'beating her', 'beating him', 'beat the child', 'beat the kid', 'groped', 'grooming',
+  'abusa de', 'abusan de', 'abuso de', 'abuso sexual', 'abuso infantil', 'abusando de', 'violador', 'violada', 'agresion sexual', 'maltrata a', 'maltratan a', 'maltrato infantil', 'golpea a', 'golpean a', 'pedofil'];
 
 const RX = {
   email: /[\w.+-]+@[\w-]+\.[\w.-]+|\b(at|arroba)\s+\w+\s+(dot|punto)\s+(com|net|org|edu|gov|us)\b/i,   // also "jane dot doe at gmail dot com"
@@ -47,7 +53,7 @@ export function screen(text, officialName = '') {
   const p = hasStem(t, PROFANE) || hasStem(tj, PROFANE); if (p) return { verdict: 'block', reason: 'language' };
   for (const k of ['email', 'phone', 'link', 'caseNo', 'address']) if (RX[k].test(s)) return { verdict: 'block', reason: k === 'link' ? 'link' : 'contact' };
   if (hasStem(t, THREAT)) return { verdict: 'hold', reason: 'threat' };
-  if (hasStem(t, CRIME)) return { verdict: 'hold', reason: 'accusation' };
+  if (hasStem(t, CRIME) || hasStem(t, ABUSE)) return { verdict: 'hold', reason: 'accusation' };
   const letters = s.replace(/[^A-Za-z]/g, ''); if (letters.length > 20 && letters.replace(/[^A-Z]/g, '').length / letters.length > 0.6) return { verdict: 'hold', reason: 'shouting' };
   // possible private names: a capitalised word that is not a known non-name and not part of the official's own name,
   // next to another capitalised word or after a naming phrase ("my son", "named", "Mr."...)

@@ -1,0 +1,716 @@
+{
+ "as_of": "2026-10-16",
+ "note": "Deputy district attorneys from official sources only, each checked against the Colorado attorney registration on 2026-10-16. Districts not listed here publish no attorney names.",
+ "deputy_prosecutors": [
+  {
+   "name": "Holly Spease",
+   "title": "Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/driver-sentenced-to-prison-in-fatal-wheat-ridge-crash/",
+   "source_date": "2026-03-02 (post metadata); also named in releases dated 2026-06-19 and 2026-08-11",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=57886",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Ali Brady",
+   "title": "Chief Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/jian-chen-sentenced-to-maximum-12-years-in-prison-for-vehicular-homicide/",
+   "source_date": "2026-04-06 (post metadata); also named in release dated 2026-08-11",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=45048",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Kelsey Einhorn",
+   "title": "Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/former-high-school-campus-security-supervisor-sentenced/",
+   "source_date": "2026-03-10 (post metadata); also 2026-03-17",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=60060",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Jacob Mathews",
+   "title": "Senior Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/man-sentenced-to-14-years-in-fatal-dui-crash-that-killed-one-and-injured-two-others/",
+   "source_date": "2026-04-27 (post metadata)",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=48718",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Corey Fluke",
+   "title": "Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/tyler-young-sentenced-in-i-70-police-pursuit-and-officer-involved-shooting-in-evergreen/",
+   "source_date": "2026-04-27 (post metadata)",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=56349",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Conrad Glover",
+   "title": "Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/woman-sentenced-to-six-years-in-fatal-highway-93-crash/",
+   "source_date": "2026-06-18 (post metadata)",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=54198",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Ben Hepler",
+   "title": "Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/man-sentenced-to-30-years-to-life-for-sexual-assault-and-robbery-at-westminster-business/",
+   "source_date": "2026-06-26 (post metadata)",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=57825",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Chris Johnson",
+   "title": "Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/former-councilman-brent-metz-sentenced/",
+   "source_date": "2026-07-08 (post metadata)",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=52465",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Darren Kafka",
+   "title": "Chief Deputy District Attorney",
+   "district": "1",
+   "county": null,
+   "source_url": "https://firstda.co/news-update/former-cbi-lab-analyst-missy-woods-sentenced-to-ten-years-in-prison/",
+   "source_date": "2026-09-08 (post metadata)",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=43588",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Brent Nelson",
+   "title": "Assistant District Attorney",
+   "district": "4",
+   "county": null,
+   "source_url": "https://www.da4colorado.gov/executive-staff",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=49211",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Rachael Powell",
+   "title": "Chief Deputy District Attorney",
+   "district": "4",
+   "county": null,
+   "source_url": "https://www.da4colorado.gov/executive-staff",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=45378",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Tony Gioia",
+   "title": "Chief Deputy District Attorney",
+   "district": "4",
+   "county": null,
+   "source_url": "https://www.da4colorado.gov/executive-staff",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=41651",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Stephanie Redfield",
+   "title": "Chief Deputy District Attorney",
+   "district": "4",
+   "county": null,
+   "source_url": "https://www.da4colorado.gov/executive-staff",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=47424",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Jeff Harwood",
+   "title": "Chief Deputy District Attorney",
+   "district": "4",
+   "county": null,
+   "source_url": "https://www.da4colorado.gov/executive-staff",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=34020",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Ken Kupfner",
+   "title": "Assistant DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=29924",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Spencer Lipscombe",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=59617",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Jessica Mason",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=59632",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Caitlin Parets",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=60492",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Kelsey Waldorf",
+   "title": "Chief Trial Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=51214",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Aleigha Alexander",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=62875",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Haley Dancer",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=62234",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Molly McCuthen",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=62402",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Christian Gardner-Wood",
+   "title": "Chief Trial Deputy DA / Director of Community Protection, Diversion and Restorative Justice, IT, & Legislative Affairs",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=38889",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Alison Brand",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=54815",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Alex Clark",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=59112",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Ryan Day",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=42764",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Myra Gottl",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=44925",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Sierra Grob",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=60527",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Shannon Hautzinger",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=56330",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Nevene Hullender",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=38977",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Fred Johnson",
+   "title": "Chief Trial Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=42479",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Erica Jones",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=52546",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Ann Joyce",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=22142",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "McKenna Mayfield",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=54091",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Jenny McClintock",
+   "title": "Deputy DA \u2013 ITC/Revo",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=36771",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Kokomo Metzger",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=53951",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Katie Richardson",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=59765",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Brandon Rosenbach",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=58062",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Carlos Rueda",
+   "title": "Chief Trial Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=42590",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Brad Sherman",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=57257",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Katie Taylor",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=51987",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Kealoha (Malie) Minton",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=59404",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Emily Norwood",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=60498",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Catrina Weigel",
+   "title": "Chief Trial Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=33153",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Alex Zowin",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=50943",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Anne Mayer",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=46196",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Genevieve Craggs",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=57699",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Trish Mittelstadt",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=57897",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Taylor Suta",
+   "title": "Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=53742",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Adrian Van Nice",
+   "title": "Chief Trial Deputy DA",
+   "district": "20",
+   "county": "Boulder",
+   "source_url": "https://bouldercounty.gov/district-attorney/district-attorney-staff-list/",
+   "source_date": "staff list page has no printed date (page metadata datePublished 2025-03-07); fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=33239",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Jeremy Savage",
+   "title": "Assistant District Attorney",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=35975",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Melinda Shishim",
+   "title": "Chief Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=46279",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Michael Fisher",
+   "title": "Chief Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=39418",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Tearsa Olson",
+   "title": "Chief Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=52724",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "W. Mike Perry",
+   "title": "Chief Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=51952",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Hunter Sullivan",
+   "title": "District Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=57822",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Heidi Bauer",
+   "title": "Sr. Trial Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=20367",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Abbie Krane",
+   "title": "District Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=60087",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Joshua Dougherty",
+   "title": "Sr. Trial Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=42060",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Victoria Fazzino",
+   "title": "District Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=58973",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Rob Zentner",
+   "title": "Sr. Trial Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=31900",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Natalie Fortner",
+   "title": "District Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=59650",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Juliann Lawrence",
+   "title": "Sr. Trial Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=55452",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Christian Stone",
+   "title": "District Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=60468",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Sheila Adamson",
+   "title": "District Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=45277",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Ethan Rokke",
+   "title": "County Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=61197",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Steven Crague",
+   "title": "County Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=45484",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Griffin Williams",
+   "title": "County Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=61924",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "JC McCall",
+   "title": "County Court Deputy D.A.",
+   "district": "21",
+   "county": "Mesa",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney/about-us/attorney-emails",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information?Regnum=59901",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Steve Potts",
+   "title": "Chief Deputy District Attorney",
+   "district": "5",
+   "county": null,
+   "source_url": "https://clearcreekcounty.us/Directory.aspx?did=18",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information/?regnum=50479",
+   "checked": "2026-10-16"
+  },
+  {
+   "name": "Rebecca Wiard",
+   "title": "Assistant District Attorney",
+   "district": "13",
+   "county": null,
+   "source_url": "https://13thda.com/about",
+   "source_date": "page undated; fetched 2026-10-16",
+   "registration": "https://www.coloradolegalregulation.com/attorney-search/attorney-information/?regnum=40687",
+   "checked": "2026-10-16"
+  }
+ ]
+}

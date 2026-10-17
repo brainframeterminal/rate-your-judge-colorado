@@ -377,7 +377,7 @@ const PAGES = {
     ] },
   },
   terms: {
-    en: { h1: ['Terms of ', 'use'], lead: 'The simple rules for using this site. DRAFT for legal review. This text is not final and has not been approved by a lawyer.', blocks: [
+    en: { h1: ['Terms of ', 'use'], lead: 'The simple rules for using this site. Rate Your Judge Colorado belongs to the Colorado community: its code is open source and public, anyone can check or reuse it, and the community helps moderate it. Last updated: October 16, 2026.', blocks: [
       ['h2', 'What this site is'],
       ['p', 'Rate Your Judge Colorado is an independent public project. It lets people share their own experience of a judge or prosecutor in a Colorado courtroom. It is not part of the State of Colorado, its courts or any commission, and it gives no legal advice.'],
       ['h2', 'What you agree to when you rate'],
@@ -390,15 +390,29 @@ const PAGES = {
         'You are responsible for what you write. Your comment is your own statement, not a statement by this project.']],
       ['h2', 'What we do with comments'],
       ['ul', [
-        'Comments appear right away, marked “Not reviewed yet”, and are then approved or removed by a moderator. Moderators may refuse, shorten or remove a comment.',
+        'Moderation is technology-assisted review (TAR): every comment first passes an automated screen that refuses insults, contact details, links and case numbers, and holds back possible private names, threats and accusations of crimes. The screen is rules only, runs on our own server, and its code is public.',
+        'Then people review it. A rotating group of volunteers from the community reviews the site and flags problems, and a moderator approves or removes each comment. Every decision is logged in public with the moderator’s display name and the reason.',
+        'Comments appear right away, marked “Not reviewed yet”, until a moderator decides. Moderators may refuse, shorten or remove a comment.',
         'Scores and comments are opinions of the people who wrote them, not statements by this project.',
         'We may remove anything that breaks these rules, and may block abuse of the site.']],
+      ['h2', 'The law this site rests on'],
+      ['p', 'Talking about how public officials do their jobs is protected speech. These are the main rules we rely on. They are listed so anyone can check them; they are not legal advice.'],
+      ['ul', [
+        'The First Amendment to the U.S. Constitution, and Article II, Section 10 of the Colorado Constitution: “every person shall be free to speak, write or publish whatever he will on any subject, being responsible for all abuse of that liberty.”',
+        'New York Times Co. v. Sullivan, 376 U.S. 254 (1964): a public official who sues over criticism of official conduct must prove “actual malice”, meaning the statement was false and was made knowing it was false or with reckless disregard of whether it was.',
+        'Diversified Management, Inc. v. Denver Post, Inc., 653 P.2d 1103 (Colo. 1982): Colorado applies the same actual-malice standard to statements on matters of public concern.',
+        'Milkovich v. Lorain Journal Co., 497 U.S. 1 (1990), and Keohane v. Stewart, 882 P.2d 1293 (Colo. 1994): an opinion is protected unless it implies a provably false statement of fact. Ratings and comments here are opinions about what people saw in a courtroom.',
+        '47 U.S.C. § 230(c): a website is not treated as the publisher or speaker of what its users write, and may moderate in good faith without becoming liable for it. See also Zeran v. America Online, Inc., 129 F.3d 327 (4th Cir. 1997).',
+        'C.R.S. § 13-20-1101, Colorado’s anti-SLAPP law (2019): a lawsuit over speech on a public issue is dismissed early unless the person suing shows a reasonable likelihood of winning, and a defendant who wins that motion can generally recover attorney fees.']],
+      ['p', 'These protections have limits. They do not cover threats, harassment, or false statements of fact made knowingly or recklessly, and each author answers for their own words. What we publish ourselves (the scores we calculate, the appeals record, the text of these pages) is our responsibility; that is why every number links to its source and we correct errors quickly (see Corrections and removal).'],
+      ['h2', 'Governing law and legal requests'],
+      ['p', 'These terms are governed by the laws of the State of Colorado and of the United States. We keep as little as we can: no names, and no IP addresses in our database. We respond to legal demands for information only when they are valid court orders, and then only with what we actually keep.'],
       ['h2', 'Limits'],
       ['p', 'The site is a pilot and is provided as it is, without promises that it is always available or that every score is accurate. The people listed are real public officials; ratings and comments are the opinions of the people who wrote them. During the pilot we collect feedback to improve the service. Do not use it to decide a legal matter.'],
       ['h2', 'Questions and corrections'],
       ['p', 'If something about you or a ruling is wrong, see Corrections and removal. Contact: hello@rateyourjudgecolorado.com.'],
     ] },
-    es: { h1: ['Términos de ', 'uso'], lead: 'Las reglas sencillas para usar este sitio. BORRADOR para revisión legal. Este texto no es definitivo ni ha sido aprobado por un abogado.', blocks: [
+    es: { h1: ['Términos de ', 'uso'], lead: 'Las reglas sencillas para usar este sitio. Rate Your Judge Colorado pertenece a la comunidad de Colorado: su código es abierto y público, cualquiera puede revisarlo o reutilizarlo, y la comunidad ayuda a moderarlo. Última actualización: 16 de octubre de 2026.', blocks: [
       ['h2', 'Qué es este sitio'],
       ['p', 'Rate Your Judge Colorado es un proyecto público e independiente. Permite compartir tu propia experiencia con un juez o fiscal en un tribunal de Colorado. No es parte del Estado de Colorado, de sus tribunales ni de ninguna comisión, y no da asesoría legal.'],
       ['h2', 'Qué aceptas al calificar'],
@@ -411,9 +425,23 @@ const PAGES = {
         'Eres responsable de lo que escribes. Tu comentario es tu propia declaración, no una declaración de este proyecto.']],
       ['h2', 'Qué hacemos con los comentarios'],
       ['ul', [
-        'Los comentarios aparecen enseguida, marcados “Aún sin revisar”, y después una persona moderadora los aprueba o los quita. Los moderadores pueden rechazar, acortar o quitar un comentario.',
+        'La moderación es una revisión asistida por tecnología (TAR, por sus siglas en inglés): cada comentario pasa primero por un filtro automático que rechaza insultos, datos de contacto, enlaces y números de caso, y retiene posibles nombres de particulares, amenazas y acusaciones de delitos. El filtro son solo reglas, funciona en nuestro propio servidor y su código es público.',
+        'Después lo revisan personas. Un grupo rotativo de voluntarios de la comunidad revisa el sitio y señala problemas, y una persona moderadora aprueba o quita cada comentario. Cada decisión queda registrada en público con el nombre visible de quien modera y el motivo.',
+        'Los comentarios aparecen enseguida, marcados “Aún sin revisar”, hasta que alguien de moderación decide. Los moderadores pueden rechazar, acortar o quitar un comentario.',
         'Las notas y los comentarios son opiniones de quienes los escribieron, no declaraciones de este proyecto.',
         'Podemos quitar lo que incumpla estas reglas y bloquear el abuso del sitio.']],
+      ['h2', 'La ley en que se apoya este sitio'],
+      ['p', 'Hablar de cómo los funcionarios públicos hacen su trabajo es expresión protegida. Estas son las reglas principales en las que nos apoyamos. Las citamos para que cualquiera pueda comprobarlas; no son asesoría legal.'],
+      ['ul', [
+        'La Primera Enmienda de la Constitución de EE. UU. y el Artículo II, Sección 10 de la Constitución de Colorado: toda persona es libre de hablar, escribir o publicar lo que quiera sobre cualquier tema, respondiendo por el abuso de esa libertad.',
+        'New York Times Co. v. Sullivan, 376 U.S. 254 (1964): un funcionario público que demanda por críticas a su conducta oficial debe probar “actual malice”, es decir, que la afirmación era falsa y se hizo sabiendo que lo era o con desprecio temerario por si lo era.',
+        'Diversified Management, Inc. v. Denver Post, Inc., 653 P.2d 1103 (Colo. 1982): Colorado aplica el mismo estándar a las afirmaciones sobre asuntos de interés público.',
+        'Milkovich v. Lorain Journal Co., 497 U.S. 1 (1990), y Keohane v. Stewart, 882 P.2d 1293 (Colo. 1994): una opinión está protegida salvo que implique una afirmación de hecho que se pueda probar falsa. Las calificaciones y comentarios de este sitio son opiniones sobre lo que la gente vio en una sala.',
+        '47 U.S.C. § 230(c): un sitio web no se trata como editor ni autor de lo que escriben sus usuarios, y puede moderar de buena fe sin volverse responsable por ello. Véase también Zeran v. America Online, Inc., 129 F.3d 327 (4th Cir. 1997).',
+        'C.R.S. § 13-20-1101, la ley anti-SLAPP de Colorado (2019): una demanda por expresiones sobre un asunto público se desestima al inicio salvo que quien demanda muestre una probabilidad razonable de ganar, y el demandado que gana esa moción en general recupera los honorarios de abogado.']],
+      ['p', 'Estas protecciones tienen límites. No cubren amenazas, acoso ni afirmaciones de hecho falsas hechas a sabiendas o con desprecio temerario, y cada autor responde por sus propias palabras. Lo que publicamos nosotros (las puntuaciones que calculamos, el historial de apelaciones, el texto de estas páginas) es nuestra responsabilidad; por eso cada número enlaza a su fuente y corregimos los errores rápido (ver Correcciones y retiro).'],
+      ['h2', 'Ley aplicable y solicitudes legales'],
+      ['p', 'Estos términos se rigen por las leyes del Estado de Colorado y de Estados Unidos. Guardamos lo menos posible: ni nombres ni direcciones IP en nuestra base de datos. Solo respondemos a pedidos legales de información cuando son órdenes judiciales válidas, y solo con lo que realmente guardamos.'],
       ['h2', 'Límites'],
       ['p', 'El sitio es un piloto y se ofrece tal cual, sin promesas de que siempre esté disponible ni de que cada nota sea exacta. Las personas que aparecen son funcionarios públicos reales; las calificaciones y comentarios son opiniones de quienes los escribieron. Durante el piloto recopilamos opiniones para mejorar el servicio. No lo uses para decidir un asunto legal.'],
       ['h2', 'Preguntas y correcciones'],
@@ -421,7 +449,7 @@ const PAGES = {
     ] },
   },
   privacy: {
-    en: { h1: ['Privacy ', 'policy'], lead: 'What we keep, why, and for how long. DRAFT for legal review. This text is not final and has not been approved by a lawyer.', blocks: [
+    en: { h1: ['Privacy ', 'policy'], lead: 'What we keep, why, and for how long. Last updated: October 16, 2026.', blocks: [
       ['h2', 'What we keep'],
       ['ul', [
         'Your ratings, optional comment, role, and optional outcome (won, lost, mixed, watching).',
@@ -445,7 +473,7 @@ const PAGES = {
       ['h2', 'Children'],
       ['p', 'This site is for people 18 or older.'],
     ] },
-    es: { h1: ['Política de ', 'privacidad'], lead: 'Qué guardamos, por qué y por cuánto tiempo. BORRADOR para revisión legal. Este texto no es definitivo ni ha sido aprobado por un abogado.', blocks: [
+    es: { h1: ['Política de ', 'privacidad'], lead: 'Qué guardamos, por qué y por cuánto tiempo. Última actualización: 16 de octubre de 2026.', blocks: [
       ['h2', 'Qué guardamos'],
       ['ul', [
         'Tus calificaciones, comentario opcional, tu papel y el resultado opcional (gané, perdí, mixto, solo observé).',
@@ -471,7 +499,7 @@ const PAGES = {
     ] },
   },
   corrections: {
-    en: { h1: ['Corrections and ', 'removal'], lead: 'If something here is wrong or unfair, tell us. DRAFT for legal review. This text is not final and has not been approved by a lawyer.', blocks: [
+    en: { h1: ['Corrections and ', 'removal'], lead: 'If something here is wrong or unfair, tell us. Last updated: October 16, 2026.', blocks: [
       ['h2', 'Who can ask'],
       ['p', 'Any judge, prosecutor or other person named on the site, or anyone who wrote a comment, can ask for a correction, a reply or a removal.'],
       ['h2', 'How it works'],
@@ -484,7 +512,7 @@ const PAGES = {
       ['p', 'We cannot remove honest opinions about public behavior in court just because they are unflattering. Scores are never changed by hand.'],
       ['p', 'Contact: corrections@rateyourjudgecolorado.com.'],
     ] },
-    es: { h1: ['Correcciones y ', 'retiro'], lead: 'Si algo aquí es incorrecto o injusto, avísanos. BORRADOR para revisión legal. Este texto no es definitivo ni ha sido aprobado por un abogado.', blocks: [
+    es: { h1: ['Correcciones y ', 'retiro'], lead: 'Si algo aquí es incorrecto o injusto, avísanos. Última actualización: 16 de octubre de 2026.', blocks: [
       ['h2', 'Quién puede pedirlo'],
       ['p', 'Cualquier juez, fiscal u otra persona mencionada en el sitio, o quien escribió un comentario, puede pedir una corrección, una réplica o un retiro.'],
       ['h2', 'Cómo funciona'],

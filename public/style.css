@@ -336,7 +336,7 @@ h1[tabindex="-1"]:focus{outline:none}            /* the heading is focused for s
   .home-btns .btn{margin-top:14px!important;flex:1}
   .latest{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:34px}
   .latest>h2,.latest>.lt-sub{grid-column:1/-1;margin-bottom:0}
-  .latest .choice.lt{margin:0;height:100%}
+  .latest .lt-card{margin:0;height:100%}
   .aprail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;overflow:visible;margin:0;padding:14px 0 6px}
   .aprail>div{max-width:none}
   .aparrows{display:none!important}
@@ -432,7 +432,7 @@ h1[tabindex="-1"]:focus{outline:none}            /* the heading is focused for s
 @media (min-width:1024px){
   .lt-marquee{grid-column:1/-1;overflow:hidden;padding:4px 0 8px;-webkit-mask:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
   .lt-track{display:flex;gap:16px;width:max-content;animation:lt-scroll var(--lt-dur,60s) linear infinite}
-  .lt-track .choice.lt{flex:none;width:360px;margin:0;height:auto}
+  .lt-track .lt-card{flex:none;width:360px;margin:0;height:auto}
   .lt-marquee:hover .lt-track,.lt-marquee:focus-within .lt-track{animation-play-state:paused}
 }
 @keyframes lt-scroll{to{transform:translateX(calc(-50% - 8px))}}
@@ -460,3 +460,9 @@ h1[tabindex="-1"]:focus{outline:none}            /* the heading is focused for s
 .ask-ease{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 10px;border-radius:10px;background:#f2f4fb;font-size:14px;font-weight:600}
 .ask-ease .sc b{color:#f5a623;letter-spacing:1px}.ask-ease .sc i{color:#d5d9ea;font-style:normal}
 .ask-parts{font-size:14px;color:var(--muted)}
+
+/* Latest ratings: the card is the wrapper, so the 👍/👎 row can sit under the profile button (2026-10-16) */
+.lt-card{position:relative;display:flex;flex-direction:column;margin:10px 0;border-radius:var(--radius);background:rgba(255,255,255,.96);box-shadow:0 8px 24px rgba(5,10,50,.3)}
+.lt-card>.choice.lt{flex:1;margin:0;background:transparent;box-shadow:none}
+.lt-react{margin:-6px 0 0;padding:0 16px 14px 70px}
+@media (max-width:360px){.lt-react{padding-left:16px}}

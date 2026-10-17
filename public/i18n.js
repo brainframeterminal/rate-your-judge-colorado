@@ -37,7 +37,7 @@ const D = {
     'oc.stat': 'Even among people who said they lost: {avg} out of 5 ({n} ratings)', 'oc.stat.won': 'People who said they won: {avg} out of 5 ({n} ratings)',
     'home.h1a': 'You just left a Colorado courtroom. ', 'home.h1b': 'Tell us what happened.',
     'home.lead': '30 seconds. No account. Anonymous. Everyone sees the result right away.',
-    'home.who': 'First: who are you in this?', 'home.lookup': 'Look someone up', 'home.latest': 'Latest ratings', 'home.latest.sub': 'What people wrote, newest first. Each one is the author’s personal opinion, shown after a moderator approves it; we do not verify the facts.', 'lt.defendant': 'Defendant', 'lt.plaintiff': 'Plaintiff', 'lt.victim': 'Victim', 'lt.witness': 'Witness', 'lt.family': 'Family member', 'lt.other': 'In the case', 'lt.na': 'did not see', 'home.search': 'Judge or prosecutor name', 'home.search.aria': 'Search by name',
+    'home.who': 'First: who are you in this?', 'home.lookup': 'Look someone up', 'home.latest': 'Latest ratings', 'home.latest.sub': 'Every new rating, newest first, with that person’s own answers. Each is the author’s personal opinion; a written comment shows here once a moderator approves it. We do not verify the facts.', 'lt.defendant': 'Defendant', 'lt.plaintiff': 'Plaintiff', 'lt.victim': 'Victim', 'lt.witness': 'Witness', 'lt.family': 'Family member', 'lt.other': 'In the case', 'lt.na': 'did not see', 'home.search': 'Judge or prosecutor name', 'home.search.aria': 'Search by name',
     'home.none': 'No one by that name — try the courthouse instead.', 'home.map': '🗺️ Explore Colorado by district', 'home.ap.sub': 'Most Court of Appeals decisions on their rulings since June 2023. More appeals usually means a busier docket, not worse rulings.', 'home.ap.total': '{n} decisions on {j} judges, from the court’s own weekly announcements. Tap a judge for the full list.', 'home.ap.prev': 'Previous judges', 'home.ap.next': 'More judges', 'home.ap.n': '{n} appeals decided', 'home.ap.aff': '{n} affirmed', 'home.ap.part': '{n} partly', 'home.ap.rev': '{n} reversed', 'home.profile': 'See how a profile looks', 'home.demo': 'demo',
     'map.h1a': 'Colorado, ', 'map.h1b': 'district by district', 'map.lead': 'Each tint is one judicial district. Once a district has ratings, it turns from red (lower) to green (higher).', 'map.tints': 'No ratings yet: each tint is one district',
     'map.lower': 'Lower', 'map.higher': 'Higher', 'map.tap': 'Tap a district to see its courthouses.', 'map.district': '{n}{o} Judicial District',
@@ -87,7 +87,7 @@ const D = {
     'log.nodec': 'No decisions yet.', 'log.votes': 'How people voted on comments', 'log.public': 'Public', 'log.waiting': 'Waiting', 'log.review': 'Under review', 'log.nocm': 'No comments yet.',
     'ago.m': '{n} min ago', 'ago.h': '{n} h ago', 'ago.d': '{n} d ago',
     'role.short.party': 'In the case', 'role.short.observer': 'Watching', 'role.short.juror': 'Juror', 'role.short.attorney': 'Attorney / staff',
-    'page.title': 'Rate Your Judge Colorado — rate who you just stood in front of',
+    'page.title': 'Rate Your Judge Colorado — rate Colorado judges and prosecutors',
   },
   es: {
     'splash.tip': 'Califica a un juez o fiscal de Colorado en 30 segundos. Anónimo. Todos ven el resultado.',
@@ -132,7 +132,7 @@ const D = {
     'oc.stat': 'Incluso entre quienes dijeron que perdieron: {avg} de 5 ({n} calificaciones)', 'oc.stat.won': 'Quienes dijeron que ganaron: {avg} de 5 ({n} calificaciones)',
     'home.h1a': 'Acabas de salir de una sala de Colorado. ', 'home.h1b': 'Cuéntanos qué pasó.',
     'home.lead': '30 segundos. Sin cuenta. Anónimo. Todos ven el resultado al instante.',
-    'home.who': 'Primero: ¿quién eres en este caso?', 'home.lookup': 'Buscar a alguien', 'home.latest': 'Calificaciones recientes', 'home.latest.sub': 'Lo que escribió la gente, lo más reciente primero. Cada comentario es la opinión personal de quien lo escribió y aparece después de que un moderador lo aprueba; no verificamos los hechos.', 'lt.defendant': 'Acusado o demandado', 'lt.plaintiff': 'Demandante', 'lt.victim': 'Víctima', 'lt.witness': 'Testigo', 'lt.family': 'Familiar', 'lt.other': 'En el caso', 'lt.na': 'no lo vio', 'home.search': 'Nombre de juez o fiscal', 'home.search.aria': 'Buscar por nombre',
+    'home.who': 'Primero: ¿quién eres en este caso?', 'home.lookup': 'Buscar a alguien', 'home.latest': 'Calificaciones recientes', 'home.latest.sub': 'Cada calificación nueva, la más reciente primero, con las respuestas de esa persona. Cada una es la opinión personal de quien la dio; un comentario escrito aparece aquí cuando un moderador lo aprueba. No verificamos los hechos.', 'lt.defendant': 'Acusado o demandado', 'lt.plaintiff': 'Demandante', 'lt.victim': 'Víctima', 'lt.witness': 'Testigo', 'lt.family': 'Familiar', 'lt.other': 'En el caso', 'lt.na': 'no lo vio', 'home.search': 'Nombre de juez o fiscal', 'home.search.aria': 'Buscar por nombre',
     'home.none': 'No hay nadie con ese nombre. Prueba buscando por tribunal.', 'home.map': '🗺️ Explora Colorado por distrito', 'home.ap.sub': 'Más decisiones del Tribunal de Apelaciones sobre sus fallos desde junio de 2023. Más apelaciones suele significar más casos, no peores fallos.', 'home.ap.total': '{n} decisiones sobre {j} jueces, de los anuncios semanales del propio tribunal. Toca un juez para ver la lista completa.', 'home.ap.prev': 'Jueces anteriores', 'home.ap.next': 'Más jueces', 'home.ap.n': '{n} apelaciones resueltas', 'home.ap.aff': '{n} confirmadas', 'home.ap.part': '{n} en parte', 'home.ap.rev': '{n} revocadas', 'home.profile': 'Mira cómo se ve un perfil', 'home.demo': 'demo',
     'map.h1a': 'Colorado, ', 'map.h1b': 'distrito por distrito', 'map.lead': 'Cada tono es un distrito judicial. Cuando un distrito tiene calificaciones, pasa de rojo (más bajas) a verde (más altas).', 'map.tints': 'Aún sin calificaciones: cada tono es un distrito',
     'map.lower': 'Menor', 'map.higher': 'Mayor', 'map.tap': 'Toca un distrito para ver sus tribunales.', 'map.district': 'Distrito judicial {n}',
@@ -182,7 +182,7 @@ const D = {
     'log.nodec': 'Aún no hay decisiones.', 'log.votes': 'Cómo votó la gente en los comentarios', 'log.public': 'Público', 'log.waiting': 'En espera', 'log.review': 'En revisión', 'log.nocm': 'Aún no hay comentarios.',
     'ago.m': 'hace {n} min', 'ago.h': 'hace {n} h', 'ago.d': 'hace {n} d',
     'role.short.party': 'En el caso', 'role.short.observer': 'Observando', 'role.short.juror': 'Jurado', 'role.short.attorney': 'Abogado / personal',
-    'page.title': 'Rate Your Judge Colorado — califica a quien tuviste enfrente',
+    'page.title': 'Rate Your Judge Colorado — califica a jueces y fiscales de Colorado',
   },
 };
 // server error messages (English) → Spanish

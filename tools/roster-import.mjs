@@ -1,7 +1,8 @@
 // Replace the invented pilot people with REAL Colorado officials.
 //   node tools/roster-import.mjs <roster.json> [--wipe-demo] [--dry]
 // roster.json (built from official sources only): { judges: [{ name, court_level: district|county, district, county|null, court_id|null,
-//   title, source_url, source_date }] (+ court_level 'appellate' with prefix 'Justice'|'Judge' and a display title), district_attorneys: [{ name, district, source_url }] }
+//   title, source_url, source_date }] (+ court_level 'appellate' with prefix 'Justice'|'Judge' and a display title), district_attorneys: [{ name, district, source_url }],
+//   deputy_prosecutors: [{ name, title, district, county|null, source_url, source_date }] }
 // - a judge with a known county sits at that county's courthouse; a district judge with no county is listed at every
 //   courthouse of the district (scope 'district'); the elected DA is listed at every courthouse of the district.
 // - --wipe-demo deletes every demo person AND all their ratings, votes, reports and moderation entries, so no pilot
@@ -53,6 +54,14 @@ for (const j of R.judges || []) {
 for (const d of R.district_attorneys || []) {
   const nm = String(d.name || '').trim();
   await add(seatOf(d.district), 'prosecutor', 'District Attorney ' + nm, 'district', d.source_url || d.office_url);
+}
+// deputy district attorneys: official sources only, each verified; a known county office = that county's
+// courthouse, otherwise the whole district (like the elected DA). Rank is kept in the source file, the name says "Deputy DA".
+for (const p of R.deputy_prosecutors || []) {
+  const nm = String(p.name || '').trim().replace(/^(Chief |Senior |Assistant )*(Deputy )?(District Attorney|DA)\s+/i, '');
+  const court = (p.county && byCounty.get(String(p.county).toLowerCase())) || null;
+  if (court && String(court.district) === String(p.district)) await add(court, 'prosecutor', 'Deputy DA ' + nm, 'court', p.source_url);
+  else await add(seatOf(p.district), 'prosecutor', 'Deputy DA ' + nm, 'district', p.source_url);
 }
 console.log(`${DRY ? 'would add' : 'added'} ${n} real officials, skipped ${skip}`);
 await db.close();

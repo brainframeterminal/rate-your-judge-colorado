@@ -18,6 +18,13 @@ const cases = [
   ['The judge explained every step and let both sides speak fully', 'ok'],
   ['Judge Ernst denied the motion to try the juvenile as an adult', 'ok'],
   ['The hearing started 40 minutes late and nobody told us why', 'ok'],
+  ['we tried getting her back because her foster parents abuse her and nobody listened', 'hold'],
+  ['the foster dad was let go as an EMT and he molested kids in his care', 'hold'],
+  ['El padrastro abusa de la niña y el juez no quiso escuchar a nadie', 'hold'],
+  ['The judge abused his discretion and ignored the evidence we brought', 'ok'],
+  ['I am a domestic violence victim and the abuse was ignored at the hearing', 'ok'],
+  ['we had witnesses to the abuse and files of complaints from other parents', 'ok'],
+  ['El juez violó mis derechos y no me dejó hablar en la audiencia', 'ok'],
 ];
 let bad = 0;
 for (const [txt, want] of cases) { const got = screen(txt, 'Judge Allison P. Ernst').verdict; const ok = got === want; if (!ok) bad++; console.log(`${ok ? 'PASS' : 'FAIL'}  ${want.padEnd(5)} got ${got.padEnd(5)}  ${txt}`); }

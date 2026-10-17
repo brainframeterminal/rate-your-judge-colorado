@@ -33,9 +33,9 @@ function loader(on, text, tip, force) {
     loadTimer = setTimeout(() => { el.hidden = true; }, Math.max(0, (forceN ? 900 : 600) - (Date.now() - shownAt))); // once seen, stays long enough to read
   }
 }
-async function api(path, body, retried) {
+async function api(path, body, retried) {   // reading never needs the device token: a search engine that cannot call /api/session still sees the page
   let r;
-  try { const device = await getDevice(), hdr = { 'content-type': 'application/json', 'x-device': device }; if (body && /^\/api\/(review|suggest|join|feedback)$/.test(path)) hdr['x-captcha'] = await captchaHeader(); r = await fetch(path, { method: body ? 'POST' : 'GET', headers: hdr, body: body ? JSON.stringify(body) : undefined }); }
+  try { const device = body ? await getDevice() : await getDevice().catch(() => ''), hdr = { 'content-type': 'application/json' }; if (device) hdr['x-device'] = device; if (body && /^\/api\/(review|suggest|join|feedback)$/.test(path)) hdr['x-captcha'] = await captchaHeader(); r = await fetch(path, { method: body ? 'POST' : 'GET', headers: hdr, body: body ? JSON.stringify(body) : undefined }); }
   catch { throw Object.assign(new Error(t('err.offline')), { status: 0 }); }
   const j = await r.json().catch(() => ({}));
   if (r.status === 401 && j.code === 'device' && !retried) { resetDevice(); return api(path, body, true); }   // a stale anonymous token: get a fresh one, try once more
@@ -49,7 +49,7 @@ function show(node, n, redo) {
   app.dataset.screen = { 0: 'home', 1: redo === stepMap ? 'map' : 'court', 2: 'who', 3: 'rate', 4: 'result' }[n] || 'other';   // desktop layouts key off this
   app.replaceChildren(h('div', { class: S.keepScroll ? '' : 'fade' }, node)); if (!S.keepScroll) window.scrollTo({ top: 0 }); S.keepScroll = false; focusHeading();
 }
-function focusHeading() { const h1 = app.querySelector('h1'); if (h1) { h1.setAttribute('tabindex', '-1'); h1.focus({ preventScroll: true }); document.title = h1.textContent.replace(/\s+/g, ' ').trim() + ' — Rate Your Judge Colorado'; } else app.focus({ preventScroll: true }); }
+function focusHeading() { const h1 = app.querySelector('h1'); if (h1) { h1.setAttribute('tabindex', '-1'); h1.focus({ preventScroll: true }); document.title = app.dataset.screen === 'home' ? t('page.title') : h1.textContent.replace(/\s+/g, ' ').trim() + ' — Rate Your Judge Colorado'; } else app.focus({ preventScroll: true }); }
 function goBack() {
   const f = { 1: stepRole, 2: S.browse ? stepMap : stepCourt, 3: stepWho, 4: S.court ? stepWho : stepRole }[S.step];
   S.popping = true; Promise.resolve((f || stepRole)()).finally(() => { S.popping = false; });
@@ -68,6 +68,9 @@ const fmtDist = m => { const ft = m * 3.28084; return ft < 1000 ? `${Math.max(10
 const avg = v => (v ? v.toFixed(1) : '–');
 const sumLine = s => (!s || !s.n) ? t('who.first') : s.hidden ? t('res.few', { n: s.n, min: 5 }) : `★ ${avg(s.overall)} · ${plural(s.n)}`;
 // names are stored as "Judge Priya Sato" / "Deputy DA Rebecca Moreau"; in Spanish the title is shown on its own line instead
+const ordEn = n => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+const placeOf = d => d.title ? d.title.replace(/^[^,]*,\s*/, '') : d.scope === 'district' ? `${ordEn(Number(d.court.district))} Judicial District` : d.court.name;   // mirrors placeOf() in server.js
+const profileTitle = d => `${d.name}, ${placeOf(d)}: ratings and reviews — Rate Your Judge Colorado`;
 const bare = n => n.replace(/^(Judge|Justice|Deputy DA|Deputy District Attorney|District Attorney)\s+/, '');
 const dName = n => (LANGNOW() === 'es' ? bare(n) : n);
 const LANGNOW = () => document.documentElement.lang === 'es' ? 'es' : 'en';
@@ -107,10 +110,12 @@ const latest = h('section', { class: 'latest', hidden: true, 'aria-labelledby': 
 function latestRail() {   // phones: the 3 newest, stacked. Desktop: up to 10 in a row that keeps moving; it stops under the mouse or keyboard focus
   api('/api/latest').then(list => {
     latest.hidden = !list.length;
-    const card = r => h('button', { class: 'choice lt', onclick: () => { S.sent = null; stepResult(r.official); } },
+    const thumbs = r => !r.text ? null : r.canReact ? h('div', { class: 'vote react lt-react' }, h('button', { 'aria-pressed': r.myVote === 1, 'aria-label': t('cm.like.a', { n: r.up }), onclick: () => latestVote(r.id, 1) }, `👍 ${r.up}`), h('button', { 'aria-pressed': r.myVote === -1, 'aria-label': t('cm.dislike.a', { n: r.down }), onclick: () => latestVote(r.id, -1) }, `👎 ${r.down}`))
+      : h('div', { class: 'vote react mine lt-react' }, h('button', { disabled: true, title: r.mine ? t('cm.own') : '' }, `👍 ${r.up}`), h('button', { disabled: true, title: r.mine ? t('cm.own') : '' }, `👎 ${r.down}`));
+    const card = r => h('div', { class: 'lt-card' }, h('button', { class: 'choice lt', onclick: () => { S.sent = null; stepResult(r.official); } },
         avatar(r.name), h('span', {}, dName(r.name), h('small', {}, `${titleOf(r.type)} · ${r.court}`),
-          h('span', { class: 'lt-q' }, r.text), answersTable(r),
-          h('small', {}, `${r.subrole ? t('lt.' + r.subrole) : roleShort(r.role)} · ${ago(r.at)}`)), h('span', { class: 'go' }, '›'));
+          r.text ? h('span', { class: 'lt-q' }, r.text) : null, answersTable(r),
+          h('small', {}, `${r.subrole ? t('lt.' + r.subrole) : roleShort(r.role)} · ${ago(r.at)}`)), h('span', { class: 'go' }, '›')), thumbs(r));   // the thumbs sit outside the button: a button inside a button is not allowed
     const head = [h('h2', { id: 'lth', style: 'margin-top:26px' }, t('home.latest')), h('p', { class: 'apsub lt-sub' }, t('home.latest.sub'))];
     if (!matchMedia('(min-width: 1024px)').matches) return latest.replaceChildren(...head, ...list.slice(0, 3).map(card));
     // desktop: moves from the very first comment. The real cards come
@@ -123,6 +128,7 @@ function latestRail() {   // phones: the 3 newest, stacked. Desktop: up to 10 in
     requestAnimationFrame(() => track.style.setProperty('--lt-dur', Math.max(20, Math.round(track.scrollWidth / 2 / 40)) + 's'));   // ~40 px a second, whatever the count
   }).catch(() => {});
 }
+async function latestVote(id, v) { try { await api('/api/vote', { review: id, vote: v }); latestRail(); } catch (e) { toast(e.message); } }
 const roleShort = r => t('role.short.' + r);
 // stars are drawn for the eye; a screen reader hears "1/5" (the card is a button, so its text is its name)
 const dots = v => v == null ? h('span', { class: 'na' }, t('lt.na')) : h('span', { class: 'sc' }, h('b', { 'aria-hidden': 'true' }, '★'.repeat(v), h('i', {}, '★'.repeat(5 - v))), h('span', { class: 'srt' }, ` ${v}/5`));
@@ -547,7 +553,7 @@ async function stepResult(id) {
     h('div', { class: 'cmt-who' }, h('b', {}, c.subrole ? t('lt.' + c.subrole) : roleShort(c.role)), h('span', { class: 'muted' }, ' · ' + ago(c.at)),
       c.hasText ? [' ', h('span', { class: 'pill' + (c.status === 'published' ? ' ok' : ' warn') }, c.status === 'published' ? t('cm.confirmed') : c.status === 'held' ? t('cm.held') : t('cm.waiting'))] : null),
     answersTable({ type: d.type, overall: c.overall, q: c.q }),
-    c.hasText ? h('p', {}, c.text || (c.pendingText ? c.pendingText : t('cm.hidden'))) : null,
+    c.hasText ? h('p', { 'data-nosnippet': c.status !== 'published' }, c.text || (c.pendingText ? c.pendingText : t('cm.hidden'))) : null,   // search engines may quote only what a moderator has read
     c.canVote ? h('div', { class: 'vote' }, h('button', { onclick: () => vote(c.id, 1, d.id) }, t('cm.up', { n: c.up })), h('button', { onclick: () => vote(c.id, -1, d.id) }, t('cm.down', { n: c.down })))
       : c.canReact ? h('div', { class: 'vote react' }, h('button', { 'aria-pressed': c.myVote === 1, 'aria-label': t('cm.like.a', { n: c.up }), onclick: () => vote(c.id, 1, d.id) }, `👍 ${c.up}`), h('button', { 'aria-pressed': c.myVote === -1, 'aria-label': t('cm.dislike.a', { n: c.down }), onclick: () => vote(c.id, -1, d.id) }, `👎 ${c.down}`))
       : c.mine && c.text ? h('div', { class: 'vote react mine' }, h('button', { disabled: true, title: t('cm.own') }, `👍 ${c.up}`), h('button', { disabled: true, title: t('cm.own') }, `👎 ${c.down}`), h('small', { class: 'muted' }, t('cm.own')))   // your own comment: you see the thumbs and the counts, but cannot press them
@@ -575,6 +581,7 @@ async function stepResult(id) {
     )),
     h('div', { class: 'row' }, h('button', { class: 'btn ghost', onclick: () => { S.sent = null; rateSomeoneElse(d); } }, t('res.else')), h('button', { class: 'btn ghost', onclick: () => { S.sent = null; stepRole(); } }, t('res.start'))),
   ], 4, () => stepResult(id));
+  if (!d.demo) document.title = profileTitle(d);   // the same <title> the server sends, so a search engine that runs JavaScript keeps it
   requestAnimationFrame(() => setTimeout(() => app.querySelectorAll('.bar i').forEach(i => { i.style.width = i.dataset.w + '%'; }), 60));
 }
 async function vote(review, v, id) {

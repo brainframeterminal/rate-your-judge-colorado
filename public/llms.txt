@@ -1,6 +1,13 @@
 # Rate Your Judge Colorado
 
-> An independent, open-source public project for the people of Colorado. After a hearing, a person can rate the judge or prosecutor in about 30 seconds from a phone, anonymously, in English or Spanish. Every comment is read by a human moderator before it is public; scores stay hidden until at least 5 people have rated. Not affiliated with the State of Colorado, its courts or any commission. Lists real Colorado judges and elected district attorneys, taken from official court and DA lists; ratings and comments are the opinions of the people who leave them.
+> An independent, open-source public project for the people of Colorado. After a hearing, a person can rate the judge or prosecutor in about 30 seconds from a phone, anonymously, in English or Spanish. Comments appear right away marked "Not reviewed yet"; an automated screen refuses insults, contact details and links and holds back possible private names, threats and accusations of crimes, and a moderator then approves, shortens or removes each comment. Scores stay hidden until at least 5 people have rated. Not affiliated with the State of Colorado, its courts or any commission.
+
+The people listed are real Colorado officials taken from official court and district attorney lists: trial and appellate judges, Supreme Court justices, elected district attorneys and deputy district attorneys named on official pages. Ratings and comments are the opinions of the people who leave them, not statements by this project.
+
+## Profiles
+- Every official has a public profile at https://rateyourjudgecolorado.com/p/<number> with their court, every rating, the moderator-reviewed comments, scores once there are 5 ratings, and for trial judges the Colorado Court of Appeals decisions on their rulings since June 2023 (public record, each linked to the opinion).
+- The full list of profiles is in the sitemap: https://rateyourjudgecolorado.com/sitemap.xml
+- Every moderator decision is logged in public: https://rateyourjudgecolorado.com/log.html
 
 ## Read first
 - [Why this site exists](https://rateyourjudgecolorado.com/about.html): Why this site exists: how few people take part in official judge evaluations in Colorado, and how an independent, open public project can help residents be heard.
@@ -9,13 +16,16 @@
 - [Security and trust](https://rateyourjudgecolorado.com/security.html): Security and privacy: what we store, what we never store, how we resist fake ratings, and what can still go wrong. Stated honestly.
 
 ## Participate
-- [Rate someone](https://rateyourjudgecolorado.com/): the rating tool (needs JavaScript and a phone).
+- [Rate someone](https://rateyourjudgecolorado.com/): the rating tool (needs JavaScript; works best on a phone).
 - [Get involved](https://rateyourjudgecolorado.com/join.html): Get involved: volunteer, program, test, translate, give legal help or spread the word about this independent Colorado public project.
 
-## Policies (drafts under legal review)
-- [Terms of use](https://rateyourjudgecolorado.com/terms.html): Terms of use for Rate Your Judge Colorado (draft for legal review).
-- [Privacy policy](https://rateyourjudgecolorado.com/privacy.html): Privacy policy for Rate Your Judge Colorado: what we keep, why and for how long (draft for legal review).
-- [Corrections and removal](https://rateyourjudgecolorado.com/corrections.html): Corrections and removal: how a judge, prosecutor or commenter can ask for a correction, a reply or a removal (draft for legal review).
+## Policies
+- [Terms of use](https://rateyourjudgecolorado.com/terms.html): Terms of use for Rate Your Judge Colorado: the rules for rating, how comments are moderated, and the law the site rests on.
+- [Privacy policy](https://rateyourjudgecolorado.com/privacy.html): Privacy policy for Rate Your Judge Colorado: what we keep, why and for how long.
+- [Corrections and removal](https://rateyourjudgecolorado.com/corrections.html): Corrections and removal: how a judge, prosecutor or commenter can ask for a correction, a reply or a removal.
+
+## Source code
+- [rate-your-judge-colorado on GitHub](https://github.com/brainframeterminal/rate-your-judge-colorado): the full code, MIT license, including the scoring math and the comment screen.
 
 ## Optional
 - [Full text of the main pages in one file](https://rateyourjudgecolorado.com/llms-full.txt)

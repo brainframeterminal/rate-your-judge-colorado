@@ -203,7 +203,7 @@ const deviceOf = (req, b) => String(req.headers['x-device'] || (b && b.device) |
 const eligibleVoter = async device => !!await db.prepare('SELECT 1 FROM reviews WHERE device = ? AND created_at <= ? LIMIT 1').get(device, Date.now() - VOTE_MIN_AGE_H * HOUR);
 
 function json(res, code, obj) {
-  res.writeHead(code, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' });
+  res.writeHead(code, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' });   // crawlers may READ the API to render pages (robots.txt allows the public reads) but never list it
   res.end(JSON.stringify(obj));
 }
 function readBody(req, limit = 20000) {
@@ -383,7 +383,10 @@ function profileFor(o) {
   const n = o.id, since = 2004 + (n * 7) % 18;
   return { ...base, since, focus: n % 3, room: `${1 + n % 6}${'ABC'[n % 3]}`, unitIdx: n % 4 };
 }
-const officialRow = async id => await db.prepare('SELECT id, court_id, type, name, demo, title FROM officials WHERE id = ?').get(id);   // title: appellate only ("Justice, Colorado Supreme Court")
+const officialRow = async id => await db.prepare('SELECT id, court_id, type, name, demo, title, scope FROM officials WHERE id = ?').get(id);   // title: appellate only ("Justice, Colorado Supreme Court")
+const ordEn = n => { const x = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (x[(v - 20) % 10] || x[v] || x[0]); };
+const placeOf = o => { const c = courtById.get(o.court_id); return o.title ? o.title.replace(/^[^,]*,\s*/, '') : o.scope === 'district' ? `${ordEn(Number(c.district))} Judicial District` : c.name; };   // a district-wide official's court_id is just one county of the district
+const profileTitle = o => `${o.name}, ${placeOf(o)}: ratings and reviews — Rate Your Judge Colorado`;   // public/app.js sets the same title
 
 // ---- routes ------------------------------------------------------------------------------------
 async function api(req, res, url, isMod) {
@@ -452,10 +455,15 @@ async function api(req, res, url, isMod) {
     }
     return json(res, 200, topAppeals.body);
   }
-  if (req.method === 'GET' && url.pathname === '/api/latest') {                  // home "Latest ratings": newest moderator-APPROVED comments on real people, each with that one person's own answers
-    const rows = await db.prepare(`SELECT r.id, r.official_id, r.role, r.subrole, r.comment, r.created_at, r.overall, r.q1, r.q2, r.q3, r.q4, r.q5, o.name, o.type, o.court_id FROM reviews r JOIN officials o ON o.id = r.official_id
-      WHERE r.status = 'published' AND r.comment IS NOT NULL AND r.comment != '' AND o.demo = 0 ORDER BY r.created_at DESC, r.id DESC LIMIT 10`).all();   // phones show 3, the desktop row moves through up to 10
-    return json(res, 200, rows.map(r => ({ id: Number(r.id), official: Number(r.official_id), name: r.name, type: r.type, court: courtById.get(r.court_id)?.name || '', role: r.role, subrole: r.subrole || '', text: r.comment, at: Number(r.created_at), overall: r.overall == null ? null : Number(r.overall), q: ['q1', 'q2', 'q3', 'q4', 'q5'].map(k => r[k] == null ? null : Number(r[k])) })));
+  if (req.method === 'GET' && url.pathname === '/api/latest') {                  // home "Latest ratings": every new rating on a real person, with that person's own answers; a comment's TEXT only once a moderator approved it (the official's AVERAGE still waits for MIN_N)
+    const me = validDevice(deviceOf(req)) ? deviceOf(req) : '';
+    const rows = await db.prepare(`SELECT r.id, r.official_id, r.role, r.subrole, r.comment, r.status, r.device, r.created_at, r.overall, r.q1, r.q2, r.q3, r.q4, r.q5, o.name, o.type, o.court_id,
+        (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = 1) up, (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = -1) down,
+        (SELECT vote FROM votes v WHERE v.review_id = r.id AND v.device = ?) myvote
+      FROM reviews r JOIN officials o ON o.id = r.official_id
+      WHERE r.status IN ('none', 'published', 'pending') AND o.demo = 0 ORDER BY r.created_at DESC, r.id DESC LIMIT 10`).all(me || '-');   // 👍/👎 on a card here are the same votes as on the profile   // phones show 3, the desktop row moves through up to 10
+    return json(res, 200, rows.map(r => ({ id: Number(r.id), official: Number(r.official_id), name: r.name, type: r.type, court: courtById.get(r.court_id)?.name || '', role: r.role, subrole: r.subrole || '', text: r.status === 'published' ? (r.comment || '') : '', at: Number(r.created_at),
+      up: Number(r.up), down: Number(r.down), myVote: r.myvote == null ? 0 : Number(r.myvote), mine: !!me && r.device === me, canReact: !!me && r.device !== me && r.status === 'published' && !!(r.comment || '').trim(), overall: r.overall == null ? null : Number(r.overall), q: ['q1', 'q2', 'q3', 'q4', 'q5'].map(k => r[k] == null ? null : Number(r[k])) })));
   }
   if (req.method === 'GET' && url.pathname === '/api/featured') {
     return json(res, 200, (await Promise.all([1, 3].map(async id => { const o = await officialRow(id); return o && o.demo ? { ...o, court: courtById.get(o.court_id).name, profile: profileFor(o), summary: (await aggregate(id)).all } : null; }))).filter(Boolean));
@@ -772,23 +780,39 @@ function makeHandler(isMod) {
       if ((pm = url.pathname.match(/^\/p\/(\d+)$/))) {                    // shareable profile link with a link preview
         const o = await officialRow(idOf(pm[1]));
         let html = fs.readFileSync(path.join(ROOT, 'public', 'index.html'), 'utf8').replace(/<!--seo-->[\s\S]*?<!--\/seo-->\n?/, '');
-        const a = o ? (await aggregate(o.id)).all : null;
-        const title = o ? `${o.name} — Rate Your Judge Colorado` : 'Rate Your Judge Colorado';
-        const desc = o ? (a && !a.hidden ? `${a.overall} out of 5 from ${a.n} ratings. Anonymous. See how people rated ${o.name}.` : a && a.n ? `${a.n} ${a.n === 1 ? 'rating' : 'ratings'} so far. See what people said about ${o.name}, or add yours: anonymous, 30 seconds.` : `Be the first to rate ${o.name}. Anonymous, 30 seconds.`) : 'Rate a Colorado judge or prosecutor in 30 seconds. Anonymous.';
+        const a = o ? (await aggregate(o.id)).all : null, place = o ? placeOf(o) : '';
+        const title = o ? (o.demo ? `${o.name} — Rate Your Judge Colorado` : profileTitle(o)) : 'Rate Your Judge Colorado';
+        const desc = o ? (a && !a.hidden ? `${place}. ${a.overall.toFixed(1)} out of 5 from ${a.n} ratings by people who were in the courtroom. Read every rating and comment, or add yours: anonymous, 30 seconds.`
+          : a && a.n ? `${place}. ${a.n} ${a.n === 1 ? 'rating' : 'ratings'} so far from people who were in the courtroom. Read what they said, or add yours: anonymous, 30 seconds.`
+          : `${place}. No ratings yet. Be the first to rate ${o.name}: anonymous, 30 seconds, from your phone.`) : 'Rate a Colorado judge or prosecutor in 30 seconds. Anonymous.';
         const esc = x => String(x).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
         const real = o && !o.demo, court = o ? courtById.get(o.court_id) : null, url1 = `https://rateyourjudgecolorado.com/p/${o ? o.id : ''}`;
-        const head = `<head>\n<base href="/">\n<meta name="robots" content="${real ? 'index, follow' : 'noindex'}">\n<meta name="description" content="${esc(desc)}">\n<link rel="canonical" href="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:title" content="${esc(title)}">\n<meta property="og:description" content="${esc(desc)}">\n<meta property="og:type" content="website">\n<meta property="og:site_name" content="Rate Your Judge Colorado"><meta property="og:url" content="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg">`;
+        const head = `<head>\n<base href="/">\n<meta name="robots" content="${real ? 'index, follow' : 'noindex'}">\n<meta name="description" content="${esc(desc)}">\n<link rel="canonical" href="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:title" content="${esc(title)}">\n<meta property="og:description" content="${esc(desc)}">\n<meta property="og:type" content="profile">\n<meta property="og:site_name" content="Rate Your Judge Colorado"><meta property="og:url" content="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg">`;
         html = html.replace(/<!--seo-->[\s\S]*?<!--\/seo-->\n?/, '')                // the home page's own SEO block would repeat (and contradict) the profile's: second canonical, second description
           .replace('<head>', () => head).replace(/<title>.*?<\/title>/, () => `<title>${esc(title)}</title>`);   // function replacers: no $-pattern injection
-        if (real) {                                                     // indexable profile: own canonical, structured data, and readable text before JavaScript runs
-          const bareName = o.name.replace(/^(Judge|Justice|District Attorney)\s+/, ''), job = o.title || (o.type === 'judge' ? 'Judge' : 'District Attorney');
-          const ap = await appealsOf(o), AP = { affirmed: 'affirmed', affirmed_in_part: 'partly affirmed', reversed: 'reversed', vacated: 'vacated', disapproved: 'ruling disapproved', remanded: 'sent back', dismissed: 'appeal dismissed' };
-          const apLine = ap ? `<p>Colorado Court of Appeals decisions on this judge’s rulings announced since June 2023: ${ap.items.length} (${APPEAL_OUTCOMES.filter(k => ap.counts[k]).map(k => `${ap.counts[k]} ${AP[k]}`).join(', ')}).</p>` : '';
-          const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: url1, mainEntity: { '@type': 'Person', name: bareName, jobTitle: job,
-            worksFor: { '@type': 'GovernmentOrganization', name: o.title ? o.title.replace(/^[^,]*,\s*/, '') : court.name + (o.type === 'judge' ? ' courts' : ' — District Attorney'), address: court.address } } }).replace(/</g, '\\u003c');
+        if (real) {                                                     // indexable profile: own canonical, structured data, and the whole profile as text before JavaScript runs
+          const bareName = o.name.replace(/^(Judge|Justice|Deputy DA|District Attorney)\s+/, ''), job = o.title ? o.title.replace(/,.*/, '') : o.type === 'judge' ? 'Judge' : o.name.startsWith('Deputy') ? 'Deputy District Attorney' : 'District Attorney';
+          const ap = await appealsOf(o), op = await opinionsOf(o), cms = await publicComments(o.id, '');
+          const AP = { affirmed: 'affirmed', affirmed_in_part: 'partly affirmed', reversed: 'reversed', vacated: 'vacated', disapproved: 'ruling disapproved', remanded: 'sent back', dismissed: 'appeal dismissed' };
+          const QL = o.type === 'judge' ? ['Let each side be heard', 'Treated both sides the same', 'Respectful to everyone', 'Clear decisions', 'On time'] : ['Respectful to everyone', 'Prepared', 'Stuck to the facts', 'Easy to follow', 'Fair to witnesses and defendant'];
+          const WHO = { party: 'In the case', observer: 'Watching', juror: 'Juror', attorney: 'Attorney or court staff', defendant: 'Defendant', plaintiff: 'Plaintiff', victim: 'Victim', witness: 'Witness', family: 'Family member', other: 'In the case' };
+          const isoDay = ms => new Date(Number(ms)).toLocaleDateString('en-CA', { timeZone: 'America/Denver' }), longDay = ms => new Date(Number(ms)).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver' });
+          const counts = (x, M) => Object.keys(M).filter(k => x.counts[k]).map(k => `${x.counts[k]} ${M[k]}`).join(', ');
+          const scores = a && !a.hidden ? `<h2>Scores</h2><ul><li>Overall: ${a.overall.toFixed(1)} out of 5</li>${METRICS.map((m, i) => a[m] ? `<li>${QL[i]}: ${a[m].toFixed(1)} out of 5</li>` : '').join('')}</ul>`
+            : a && a.n ? `<p>Scores appear once there are ${MIN_N} ratings.</p>` : '';
+          // comment TEXT only once a moderator has read it; an unreviewed comment is shown to people with a "Not reviewed yet" mark, never quoted to search engines
+          const list = cms.length ? `<h2>Every rating</h2><ul class="ssr-ratings">${cms.map(c => { const txt = c.status === 'published' && c.text ? c.text : '';
+            return `<li><p><b>${esc(WHO[c.subrole] || WHO[c.role] || 'Rating')}</b> · <time datetime="${isoDay(c.at)}">${longDay(c.at)}</time>${c.overall != null ? ` · overall ${c.overall} out of 5` : ''}${txt ? ' · reviewed by a moderator' : ''}</p>${txt ? `<blockquote>${esc(txt)}</blockquote>` : ''}</li>`; }).join('')}</ul>` : '';
+          const apLine = ap ? `<p>Colorado Court of Appeals decisions on this judge’s rulings announced since June 2023: ${ap.items.length} (${counts(ap, AP)}).</p>` : '';
+          const opLine = op ? `<p>Colorado Court of Appeals decisions this judge wrote: ${op.items.length} (${counts(op, AP)}).</p>` : '';
+          const last = cms.length ? Math.max(...cms.map(c => c.at)) : 0;
+          const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: url1, name: title, description: desc, ...(last ? { dateModified: new Date(last).toISOString() } : {}),
+            isPartOf: { '@type': 'WebSite', name: 'Rate Your Judge Colorado', url: 'https://rateyourjudgecolorado.com/' },
+            mainEntity: { '@type': 'Person', name: bareName, jobTitle: job,
+              worksFor: { '@type': 'GovernmentOrganization', name: o.title ? o.title.replace(/^[^,]*,\s*/, '') : o.type === 'judge' ? (o.scope === 'district' ? `Colorado ${place}` : court.name + ' courts') : `District Attorney, ${ordEn(Number(court.district))} Judicial District of Colorado`, address: court.address } } }).replace(/</g, '\\u003c');
           html = html.replace(/<link rel="canonical"[^>]*>/, () => `<link rel="canonical" href="${url1}">`)
             .replace('</head>', () => `<script type="application/ld+json">${ld}</script>\n</head>`)
-            .replace(/(<main id="app"[^>]*><!--ssr-->)[\s\S]*?(<\/main>)/, (m0, a1, a3) => `${a1}<div class="card doc"><h1>${esc(o.name)}</h1><p>${esc(job)}${o.title ? '' : ` · ${esc(court.name)}, Colorado`} · ${esc(court.address)}</p><p>${esc(desc)}</p>${apLine}<p><a href="/p/${o.id}">Rate ${esc(o.name)}</a> · <a href="/how.html">How it works</a></p></div>${a3}`);
+            .replace(/(<main id="app"[^>]*><!--ssr-->)[\s\S]*?(<\/main>)/, (m0, a1, a3) => `${a1}<div class="card doc"><h1>${esc(o.name)}</h1><p>${esc(job)} · ${esc(place)}${o.title ? '' : ', Colorado'} · ${esc(court.address)}</p><p>${esc(desc)}</p>${scores}${list}${apLine}${opLine}<p><a href="/p/${o.id}">Rate ${esc(o.name)}</a> · <a href="/how.html">How it works</a> · <a href="/method.html">Our method</a></p></div>${a3}`);
         }
         res.writeHead(o ? 200 : 404, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(html);
       }
