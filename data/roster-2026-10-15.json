@@ -1,0 +1,5464 @@
+{
+ "as_of": "2026-10-15",
+ "judges": [
+  {
+   "name": "Bradley Burback",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "J",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Nicholas Campbell",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "A",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Verna L. Carpenter",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "E",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Sara Garrido",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "F",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Timothy Lane",
+   "court_level": "county",
+   "district": "1",
+   "county": "Gilpin",
+   "counties": [
+    "Gilpin"
+   ],
+   "division": null,
+   "court_id": "gilpin-gilpin-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/gilpin-county/gilpin-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Corinne Magid",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "H",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jennifer Melton",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "B",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Graham Peper",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "D",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Mark Randall",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "G",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Retiring Dec 1, 2026 (1st JD release 2026-08-06); successor not yet appointed. Currently seated."
+  },
+  {
+   "name": "Kristan Wheeler",
+   "court_level": "county",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "C",
+   "court_id": "jefferson-jefferson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jason Carrithers",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "2",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Chantel Contiguglia",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "9",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Diego G. Hunt",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "14",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Adam Kendall",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "12",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Russell Klein",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "8",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Ryan P. Loewer",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "1",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Meegan A. Miloud",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "7",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Jeffrey R. Pilkington",
+   "court_level": "district",
+   "district": "1",
+   "county": null,
+   "counties": [],
+   "division": "3",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/gilpin-county/gilpin-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "district-wide; county not stated on source"
+  },
+  {
+   "name": "Andrew Poland",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "15",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Christopher B. Rhamey",
+   "court_level": "district",
+   "district": "1",
+   "county": "Jefferson",
+   "counties": [
+    "Jefferson"
+   ],
+   "division": "5",
+   "court_id": "jefferson-jefferson-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jefferson-county/jefferson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Jefferson County judges page"
+  },
+  {
+   "name": "Tamara S. Russell",
+   "court_level": "district",
+   "district": "1",
+   "county": null,
+   "counties": [],
+   "division": "4",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/gilpin-county/gilpin-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "district-wide; county not stated on source"
+  },
+  {
+   "name": "Lindsay VanGilder",
+   "court_level": "district",
+   "district": "1",
+   "county": null,
+   "counties": [],
+   "division": "10",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/gilpin-county/gilpin-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "district-wide; county not stated on source"
+  },
+  {
+   "name": "Todd L. Vriesman",
+   "court_level": "district",
+   "district": "1",
+   "county": null,
+   "counties": [],
+   "division": "11",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/gilpin-county/gilpin-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "district-wide; county not stated on source"
+  },
+  {
+   "name": "Christopher Zenisek",
+   "court_level": "district",
+   "district": "1",
+   "county": null,
+   "counties": [],
+   "division": "6",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/gilpin-county/gilpin-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "district-wide; county not stated on source"
+  },
+  {
+   "name": "David Blackett",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Kelly Cherry",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Marguerite Conboy",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Andrea Eddy",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Beth Faragher",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Olympia Fay",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Reneé Goble",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Kerri Lombardi",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment); Presiding Judge. Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Chelsea Malone",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Michelle Martinez-Thomas",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Isabel Pallarés",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Nicole Rodarte",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Isaam Shamsid-Deen",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Fran Simonet",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Judith Smith",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Theresa Spahn",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Brian Williamson",
+   "court_level": "county",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-county-court",
+   "title": "County Judge",
+   "source_url": "https://www.denvercountycourt.org/judicial-officers/",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Denver County Court (municipal-system court, mayoral appointment). Magistrates excluded. Page lists no update date; judges Rudolph (died 2026-05-15) and Schwartz (resigned) correctly absent."
+  },
+  {
+   "name": "Michael W.V. Angel",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5H",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lisa C. Arnolds",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "1H",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Mark T. Bailey",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "368",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Christopher J. Baumann",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "259",
+   "court_id": "denver-denver-district-court",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Nikea T. Bland",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "4H",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Angela Boykins",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "466",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Karen L. Brody",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5A",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Rachel A. Catt",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://kiowacountypress.net/content/governor-polis-appoints-rachel-catt-2nd-judicial-district-court",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Appointed by Gov. Polis to fill Martin F. Egelhoff vacancy (retired eff. 2026-08-01); nominees PDF https://www.coloradojudicial.gov/sites/default/files/2026-07/2JD_District_NomineesEgelhoffvacancy_July2026.pdf; listed on judicial.gov appointments page; NOT yet on the branch Denver District Court judges page. Appointment reported via Kiowa County Press (republished governor release); governor site blocked to our fetcher."
+  },
+  {
+   "name": "Laurie Clark",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "2F",
+   "court_id": "denver-denver-juvenile-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-juvenile/denver-juvenile-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jill D. Dorancy",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "4G",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "J. Eric Elliff",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "209",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Ericka F. H. Englert",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "424",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Adam J. Espinosa",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "203",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kandace C. Gerdes",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5B",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lisa Gomez",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "2E",
+   "court_id": "denver-denver-juvenile-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-juvenile/denver-juvenile-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jay S. Grant",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "376",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Eric M. Johnson",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "331",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "A. Bruce Jones",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "215",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Retiring; vacancy Jan 13, 2027 (2nd JD release 2026-08-06); V. William Scarpato III appointed to succeed. Currently seated."
+  },
+  {
+   "name": "Ian J. Kellogg",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "414",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Heidi L. Kutcher",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "280",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Elizabeth D. Leith",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": null,
+   "court_id": "denver-denver-probate-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-probate/denver-probate-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Source title: Presiding Judge"
+  },
+  {
+   "name": "Andrew J. Luxen",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5C",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Andrew P. McCallin",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "269",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Elizabeth (Libbie) McCarthy",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "2H",
+   "court_id": "denver-denver-juvenile-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-juvenile/denver-juvenile-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Source title: Presiding Juvenile Court Judge"
+  },
+  {
+   "name": "Marie Avery Moses",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5D",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Alex C. Myers",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "309",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jon J. Olafson",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "409",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Anita M. Schutte",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5E",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Stephanie L. Scoville",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5F",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Demetria E. Trujillo",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "5G",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Sarah B. Wallace",
+   "court_level": "district",
+   "district": "2",
+   "county": "Denver",
+   "counties": [
+    "Denver"
+   ],
+   "division": "311",
+   "court_id": "denver-denver-district-court",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/denver-district/denver-district-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Matthew Berumen",
+   "court_level": "county",
+   "district": "3",
+   "county": "Las Animas",
+   "counties": [
+    "Las Animas"
+   ],
+   "division": null,
+   "court_id": "las-animas-las-animas-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/las-animas-county/las-animas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Dawn Mann",
+   "court_level": "county",
+   "district": "3",
+   "county": "Huerfano",
+   "counties": [
+    "Huerfano"
+   ],
+   "division": null,
+   "court_id": "huerfano-huerfano-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/huerfano-county/huerfano-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Pierce L. Fowler",
+   "court_level": "district",
+   "district": "3",
+   "county": "Huerfano",
+   "counties": [
+    "Huerfano"
+   ],
+   "division": null,
+   "court_id": "huerfano-huerfano-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/huerfano-county/huerfano-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "John \"Clay\" McKisson",
+   "court_level": "district",
+   "district": "3",
+   "county": "Huerfano",
+   "counties": [
+    "Huerfano"
+   ],
+   "division": null,
+   "court_id": "huerfano-huerfano-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/huerfano-county/huerfano-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Charlotte Ankeny",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "C",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Douglas Bechtel",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "F",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Samorreyan Burney",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "E",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Meredith Patrick Cord",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "J",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Yolanda Fennick",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "B",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Marika Frady",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "D",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Shannon Gerhart",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "H",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Andrew Herlihy",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "A",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Elizabeth McClintock",
+   "court_level": "county",
+   "district": "4",
+   "county": "Teller",
+   "counties": [
+    "Teller"
+   ],
+   "division": "T",
+   "court_id": "teller-teller-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/teller-county/teller-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Cynthia McKedy",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "K",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Ann Rotolo",
+   "court_level": "county",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "G",
+   "court_id": "el-paso-el-paso-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "William Bain",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "22",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Eric Bentley",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "8",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Jill Brady",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "20",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Amy Cullen Cano",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "2",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Robin Chittum",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "19",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Jessica Curtis",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "5",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Samuel Evig",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "4",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Laura N. Findorff",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "12",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Sherri Gryboski",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "7",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Hilary Gurney",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "14",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Catherine Mitchell Helton",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "23",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Marcus Henson",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "13",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Frances Johnson",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "24",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Mary Linden",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "26",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Diana May",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "16",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Dennis McGuire",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "9",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Kelly McPherson",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "25",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Chad Miller",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "6",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "William Moller",
+   "court_level": "district",
+   "district": "4",
+   "county": "Teller",
+   "counties": [
+    "Teller"
+   ],
+   "division": "11",
+   "court_id": "teller-teller-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/teller-county/teller-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Teller County judges page"
+  },
+  {
+   "name": "Lara Y. Nafziger",
+   "court_level": "district",
+   "district": "4",
+   "county": null,
+   "counties": [
+    "El Paso",
+    "Teller"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://kiowacountypress.net/content/governor-polis-appoints-three-judges-colorado-district-and-county-courts",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Appointed 2026-08-28 effective 2026-10-01 to seat of Michael P. McHenry (retired 2026-10-01); not yet on branch El Paso County judges page."
+  },
+  {
+   "name": "Amanda Philipps",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "3",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Erin Sokol",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "10",
+   "court_id": "el-paso-el-paso-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lin Billings Vela",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "1",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Jennifer Viehman",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "17",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Gregory R. Werner",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "15",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Sarah Zane",
+   "court_level": "district",
+   "district": "4",
+   "county": "El Paso",
+   "counties": [
+    "El Paso"
+   ],
+   "division": "18",
+   "court_id": "el-paso-el-paso-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/el-paso-county/el-paso-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the El Paso County judges page"
+  },
+  {
+   "name": "Leslee K Balten",
+   "court_level": "county",
+   "district": "5",
+   "county": "Eagle",
+   "counties": [
+    "Eagle"
+   ],
+   "division": "1",
+   "court_id": "eagle-eagle-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/eagle-county/eagle-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Inga H. Causey",
+   "court_level": "county",
+   "district": "5",
+   "county": "Eagle",
+   "counties": [
+    "Eagle"
+   ],
+   "division": "2",
+   "court_id": "eagle-eagle-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/eagle-county/eagle-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "M. Chris Floyd",
+   "court_level": "county",
+   "district": "5",
+   "county": "Lake",
+   "counties": [
+    "Lake"
+   ],
+   "division": "F",
+   "court_id": "lake-lake-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/lake-county/lake-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Robert Gregory",
+   "court_level": "county",
+   "district": "5",
+   "county": "Summit",
+   "counties": [
+    "Summit"
+   ],
+   "division": "G",
+   "court_id": "summit-summit-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/summit-county/summit-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Cynthia J Jones",
+   "court_level": "county",
+   "district": "5",
+   "county": "Clear Creek",
+   "counties": [
+    "Clear Creek"
+   ],
+   "division": null,
+   "court_id": "clear-creek-clear-creek-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/clear-creek-county/clear-creek-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "source title also lists Magistrate"
+  },
+  {
+   "name": "Catherine J. Cheroutes",
+   "court_level": "district",
+   "district": "5",
+   "county": "Clear Creek",
+   "counties": [
+    "Clear Creek"
+   ],
+   "division": null,
+   "court_id": "clear-creek-clear-creek-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/clear-creek-county/clear-creek-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Paul R. Dunkelman",
+   "court_level": "district",
+   "district": "5",
+   "county": null,
+   "counties": [
+    "Clear Creek",
+    "Eagle",
+    "Lake"
+   ],
+   "division": "5",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/clear-creek-county/clear-creek-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Rachel J. Olguin-Fresquez",
+   "court_level": "district",
+   "district": "5",
+   "county": "Eagle",
+   "counties": [
+    "Eagle"
+   ],
+   "division": "3",
+   "court_id": "eagle-eagle-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/eagle-county/eagle-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Eagle County judges page"
+  },
+  {
+   "name": "Reed W. Owens",
+   "court_level": "district",
+   "district": "5",
+   "county": "Summit",
+   "counties": [
+    "Summit"
+   ],
+   "division": null,
+   "court_id": "summit-summit-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/summit-county/summit-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Summit County judges page"
+  },
+  {
+   "name": "Karen A. Romeo",
+   "court_level": "district",
+   "district": "5",
+   "county": "Summit",
+   "counties": [
+    "Summit"
+   ],
+   "division": null,
+   "court_id": "summit-summit-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/summit-county/summit-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Summit County judges page"
+  },
+  {
+   "name": "Jonathan Shamis",
+   "court_level": "district",
+   "district": "5",
+   "county": "Eagle",
+   "counties": [
+    "Eagle"
+   ],
+   "division": "4",
+   "court_id": "eagle-eagle-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/eagle-county/eagle-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Eagle County judges page"
+  },
+  {
+   "name": "Anthony Edwards",
+   "court_level": "county",
+   "district": "6",
+   "county": "Archuleta",
+   "counties": [
+    "Archuleta"
+   ],
+   "division": "1",
+   "court_id": "archuleta-archuleta-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/archuleta-county/archuleta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Douglas Reynolds",
+   "court_level": "county",
+   "district": "6",
+   "county": "La Plata",
+   "counties": [
+    "La Plata"
+   ],
+   "division": "A",
+   "court_id": "la-plata-la-plata-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/la-plata-county/la-plata-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Richard Schmittel",
+   "court_level": "county",
+   "district": "6",
+   "county": "La Plata",
+   "counties": [
+    "La Plata"
+   ],
+   "division": "B",
+   "court_id": "la-plata-la-plata-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/la-plata-county/la-plata-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kelly Tompkins",
+   "court_level": "county",
+   "district": "6",
+   "county": "San Juan",
+   "counties": [
+    "San Juan"
+   ],
+   "division": "A",
+   "court_id": "san-juan-san-juan-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/san-juan-county/san-juan-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "A. Nathaniel Baca",
+   "court_level": "district",
+   "district": "6",
+   "county": null,
+   "counties": [
+    "Archuleta",
+    "La Plata"
+   ],
+   "division": "1",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/archuleta-county/archuleta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Not standing for retention; seat vacates Jan 13, 2027; David K. Ottman appointed to succeed (6th JD). Currently seated."
+  },
+  {
+   "name": "Justin P. Fay",
+   "court_level": "district",
+   "district": "6",
+   "county": "Archuleta",
+   "counties": [
+    "Archuleta"
+   ],
+   "division": "1",
+   "court_id": "archuleta-archuleta-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/archuleta-county/archuleta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kim S. Shropshire",
+   "court_level": "district",
+   "district": "6",
+   "county": null,
+   "counties": [
+    "Archuleta",
+    "La Plata"
+   ],
+   "division": "2",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/archuleta-county/archuleta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "also Water Judge per source"
+  },
+  {
+   "name": "Reid Stewart",
+   "court_level": "district",
+   "district": "6",
+   "county": null,
+   "counties": [
+    "Archuleta",
+    "La Plata"
+   ],
+   "division": "3",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/archuleta-county/archuleta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kurt M. Beckenhauer",
+   "court_level": "county",
+   "district": "7",
+   "county": "Montrose",
+   "counties": [
+    "Montrose"
+   ],
+   "division": "E",
+   "court_id": "montrose-montrose-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/montrose-county/montrose-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Ryan L. Hess",
+   "court_level": "county",
+   "district": "7",
+   "county": "Montrose",
+   "counties": [
+    "Montrose"
+   ],
+   "division": "D",
+   "court_id": "montrose-montrose-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/montrose-county/montrose-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "James R. McDonald",
+   "court_level": "county",
+   "district": "7",
+   "county": "Hinsdale",
+   "counties": [
+    "Hinsdale"
+   ],
+   "division": null,
+   "court_id": "hinsdale-hinsdale-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/hinsdale-county/hinsdale-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "source title also lists Magistrate"
+  },
+  {
+   "name": "Melanie S. Morgan",
+   "court_level": "county",
+   "district": "7",
+   "county": "San Miguel",
+   "counties": [
+    "San Miguel"
+   ],
+   "division": "G",
+   "court_id": "san-miguel-san-miguel-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/san-miguel-county/san-miguel-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lane P. Thomasson",
+   "court_level": "county",
+   "district": "7",
+   "county": "Ouray",
+   "counties": [
+    "Ouray"
+   ],
+   "division": "F",
+   "court_id": "ouray-ouray-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/ouray-county/ouray-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Bo A. Zeerip",
+   "court_level": "county",
+   "district": "7",
+   "county": "Delta",
+   "counties": [
+    "Delta"
+   ],
+   "division": "A",
+   "court_id": "delta-delta-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/delta-county/delta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Laura E. H. Harvell",
+   "court_level": "district",
+   "district": "7",
+   "county": null,
+   "counties": [
+    "Delta",
+    "Gunnison",
+    "Hinsdale",
+    "Montrose",
+    "Ouray"
+   ],
+   "division": "5",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/delta-county/delta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "D. Cory Jackson",
+   "court_level": "district",
+   "district": "7",
+   "county": null,
+   "counties": [
+    "Delta",
+    "Gunnison",
+    "Hinsdale",
+    "Montrose",
+    "Ouray"
+   ],
+   "division": "4",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/delta-county/delta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Matthew G. Margeson",
+   "court_level": "district",
+   "district": "7",
+   "county": null,
+   "counties": [
+    "Delta",
+    "Gunnison",
+    "Hinsdale",
+    "Montrose",
+    "Ouray"
+   ],
+   "division": "6",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/delta-county/delta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Steven L. Schultz",
+   "court_level": "district",
+   "district": "7",
+   "county": null,
+   "counties": [
+    "Delta",
+    "Gunnison",
+    "Hinsdale",
+    "Montrose",
+    "Ouray"
+   ],
+   "division": "1",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/delta-county/delta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "also Water Judge per source"
+  },
+  {
+   "name": "Kellie Starritt",
+   "court_level": "district",
+   "district": "7",
+   "county": null,
+   "counties": [
+    "Delta",
+    "Gunnison",
+    "Hinsdale",
+    "Montrose",
+    "Ouray"
+   ],
+   "division": "2",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/delta-county/delta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Keri A. Yoder",
+   "court_level": "district",
+   "district": "7",
+   "county": null,
+   "counties": [
+    "Delta",
+    "Gunnison",
+    "Hinsdale",
+    "Montrose",
+    "Ouray"
+   ],
+   "division": "3",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/delta-county/delta-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Donald P. Delaney",
+   "court_level": "county",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "4D",
+   "court_id": "larimer-larimer-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Katharine \"Jenny\" Ellison",
+   "court_level": "county",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "CC",
+   "court_id": "larimer-larimer-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Leeah B. Lechuga",
+   "court_level": "county",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "L1",
+   "court_id": "larimer-larimer-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Joshua B Lehman",
+   "court_level": "county",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "5D",
+   "court_id": "larimer-larimer-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Thomas L. Lynch",
+   "court_level": "county",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "3D",
+   "court_id": "larimer-larimer-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Chelsea W. Ryan",
+   "court_level": "county",
+   "district": "8",
+   "county": "Jackson",
+   "counties": [
+    "Jackson"
+   ],
+   "division": "1",
+   "court_id": "jackson-jackson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jackson-county/jackson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "source title also lists Magistrate"
+  },
+  {
+   "name": "Matthew R. Zehe",
+   "court_level": "county",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "L2",
+   "court_id": "larimer-larimer-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "C.Michelle Brinegar",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "4A",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Larimer County judges page"
+  },
+  {
+   "name": "Kara E. Clark",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "3B",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Larimer County judges page"
+  },
+  {
+   "name": "Sarah B. Cure",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "5C",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Larimer County judges page"
+  },
+  {
+   "name": "Laurie K. Dean",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "4C",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Larimer County judges page"
+  },
+  {
+   "name": "Joseph D. Findley",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "3A",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jackson-county/jackson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Daniel M. St. John II",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "3C",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Larimer County judges page"
+  },
+  {
+   "name": "Gregory M. Lammons",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "5B",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/jackson-county/jackson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Daniel M. McDonald",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "4B",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Larimer County judges page"
+  },
+  {
+   "name": "Jeffrey M. Schwartz",
+   "court_level": "district",
+   "district": "8",
+   "county": "Larimer",
+   "counties": [
+    "Larimer"
+   ],
+   "division": "1B, 5A",
+   "court_id": "larimer-larimer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/larimer-county/larimer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Larimer County judges page"
+  },
+  {
+   "name": "Ashley Andrews",
+   "court_level": "county",
+   "district": "9",
+   "county": "Pitkin",
+   "counties": [
+    "Pitkin"
+   ],
+   "division": null,
+   "court_id": "pitkin-pitkin-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pitkin-county/pitkin-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jay Edwards",
+   "court_level": "county",
+   "district": "9",
+   "county": "Rio Blanco",
+   "counties": [
+    "Rio Blanco"
+   ],
+   "division": null,
+   "court_id": "rio-blanco-rio-blanco-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/rio-blanco-county/rio-blanco-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jonathan B Pototsky",
+   "court_level": "county",
+   "district": "9",
+   "county": "Garfield",
+   "counties": [
+    "Garfield"
+   ],
+   "division": null,
+   "court_id": "garfield-garfield-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/garfield-county/garfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Angela Roff",
+   "court_level": "county",
+   "district": "9",
+   "county": "Garfield",
+   "counties": [
+    "Garfield"
+   ],
+   "division": null,
+   "court_id": "garfield-garfield-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/garfield-county/garfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Alexander Haynes",
+   "court_level": "district",
+   "district": "9",
+   "county": null,
+   "counties": [],
+   "division": "1",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/garfield-county/garfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "district-wide; county not stated on source"
+  },
+  {
+   "name": "Laura C. Makar",
+   "court_level": "district",
+   "district": "9",
+   "county": "Garfield",
+   "counties": [
+    "Garfield"
+   ],
+   "division": "5",
+   "court_id": "garfield-garfield-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/garfield-county/garfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "also Water Judge per source"
+  },
+  {
+   "name": "Elise Myer",
+   "court_level": "district",
+   "district": "9",
+   "county": "Garfield",
+   "counties": [
+    "Garfield"
+   ],
+   "division": null,
+   "court_id": "garfield-garfield-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/garfield-county/garfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Anne K. Norrdin",
+   "court_level": "district",
+   "district": "9",
+   "county": null,
+   "counties": [
+    "Garfield",
+    "Pitkin"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/garfield-county/garfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Susan Ryan",
+   "court_level": "district",
+   "district": "9",
+   "county": null,
+   "counties": [
+    "Garfield",
+    "Rio Blanco"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/garfield-county/garfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Steve Fieldman",
+   "court_level": "county",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "306",
+   "court_id": "pueblo-pueblo-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Roberto Silva",
+   "court_level": "county",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "304",
+   "court_id": "pueblo-pueblo-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Margaret Vellar",
+   "court_level": "county",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "303",
+   "court_id": "pueblo-pueblo-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "William Alexander",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "504",
+   "court_id": "pueblo-pueblo-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page"
+  },
+  {
+   "name": "Michelle Chostner",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "405",
+   "court_id": "pueblo-pueblo-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page"
+  },
+  {
+   "name": "Allison P. Ernst",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "404",
+   "court_id": "pueblo-pueblo-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page"
+  },
+  {
+   "name": "Thomas Flesher",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "503",
+   "court_id": "pueblo-pueblo-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page"
+  },
+  {
+   "name": "Amiel Markenson",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "501",
+   "court_id": "pueblo-pueblo-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page"
+  },
+  {
+   "name": "Tim O'Shea",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "403",
+   "court_id": "pueblo-pueblo-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page"
+  },
+  {
+   "name": "Gregory Styduhar",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "502",
+   "court_id": "pueblo-pueblo-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page; also Water Judge per source"
+  },
+  {
+   "name": "Tayler Thomas",
+   "court_level": "district",
+   "district": "10",
+   "county": "Pueblo",
+   "counties": [
+    "Pueblo"
+   ],
+   "division": "406",
+   "court_id": "pueblo-pueblo-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/pueblo-county/pueblo-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Pueblo County judges page"
+  },
+  {
+   "name": "Diana C. Bull",
+   "court_level": "county",
+   "district": "11",
+   "county": "Chaffee",
+   "counties": [
+    "Chaffee"
+   ],
+   "division": null,
+   "court_id": "chaffee-chaffee-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/chaffee-county/chaffee-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Brian Green",
+   "court_level": "county",
+   "district": "11",
+   "county": "Park",
+   "counties": [
+    "Park"
+   ],
+   "division": null,
+   "court_id": "park-park-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/park-county/park-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Michael Halpin",
+   "court_level": "county",
+   "district": "11",
+   "county": "Custer",
+   "counties": [
+    "Custer"
+   ],
+   "division": null,
+   "court_id": "custer-custer-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/custer-county/custer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Alexandra Robak",
+   "court_level": "county",
+   "district": "11",
+   "county": "Fremont",
+   "counties": [
+    "Fremont"
+   ],
+   "division": "A",
+   "court_id": "fremont-fremont-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/fremont-county/fremont-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Amanda Hunter",
+   "court_level": "district",
+   "district": "11",
+   "county": null,
+   "counties": [
+    "Chaffee",
+    "Custer",
+    "Park"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/chaffee-county/chaffee-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lauren Swan",
+   "court_level": "district",
+   "district": "11",
+   "county": "Custer",
+   "counties": [
+    "Custer"
+   ],
+   "division": null,
+   "court_id": "custer-custer-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/custer-county/custer-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kaitlin Turner",
+   "court_level": "district",
+   "district": "11",
+   "county": "Fremont",
+   "counties": [
+    "Fremont"
+   ],
+   "division": "1",
+   "court_id": "fremont-fremont-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/fremont-county/fremont-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Fremont County judges page"
+  },
+  {
+   "name": "Dayna Vise",
+   "court_level": "district",
+   "district": "11",
+   "county": "Chaffee",
+   "counties": [
+    "Chaffee"
+   ],
+   "division": "2",
+   "court_id": "chaffee-chaffee-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/chaffee-county/chaffee-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Chaffee County judges page"
+  },
+  {
+   "name": "Ruth M. Acheson",
+   "court_level": "county",
+   "district": "12",
+   "county": "Mineral",
+   "counties": [
+    "Mineral"
+   ],
+   "division": null,
+   "court_id": "mineral-mineral-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mineral-county/mineral-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jason Kelly",
+   "court_level": "county",
+   "district": "12",
+   "county": "Alamosa",
+   "counties": [
+    "Alamosa"
+   ],
+   "division": null,
+   "court_id": "alamosa-alamosa-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/alamosa-county/alamosa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Same judge listed on several 12th JD county pages (serves multiple counties)"
+  },
+  {
+   "name": "Jason T. Kelly",
+   "court_level": "county",
+   "district": "12",
+   "county": "Conejos",
+   "counties": [
+    "Conejos"
+   ],
+   "division": null,
+   "court_id": "conejos-conejos-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/conejos-county/conejos-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "source title also lists Magistrate; Same judge listed on several 12th JD county pages (serves multiple counties)"
+  },
+  {
+   "name": "Jason Kelly",
+   "court_level": "county",
+   "district": "12",
+   "county": "Costilla",
+   "counties": [
+    "Costilla"
+   ],
+   "division": null,
+   "court_id": "costilla-costilla-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/costilla-county/costilla-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Same judge listed on several 12th JD county pages (serves multiple counties)"
+  },
+  {
+   "name": "Jason Kelly",
+   "court_level": "county",
+   "district": "12",
+   "county": "Mineral",
+   "counties": [
+    "Mineral"
+   ],
+   "division": null,
+   "court_id": "mineral-mineral-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mineral-county/mineral-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Same judge listed on several 12th JD county pages (serves multiple counties)"
+  },
+  {
+   "name": "Jason Kelly",
+   "court_level": "county",
+   "district": "12",
+   "county": "Rio Grande",
+   "counties": [
+    "Rio Grande"
+   ],
+   "division": null,
+   "court_id": "rio-grande-rio-grande-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/rio-grande-county/rio-grande-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Same judge listed on several 12th JD county pages (serves multiple counties)"
+  },
+  {
+   "name": "Jason Kelly",
+   "court_level": "county",
+   "district": "12",
+   "county": "Saguache",
+   "counties": [
+    "Saguache"
+   ],
+   "division": null,
+   "court_id": "saguache-saguache-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/saguache-county/saguache-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Same judge listed on several 12th JD county pages (serves multiple counties)"
+  },
+  {
+   "name": "Craig Schuenemann",
+   "court_level": "county",
+   "district": "12",
+   "county": "Saguache",
+   "counties": [
+    "Saguache"
+   ],
+   "division": null,
+   "court_id": "saguache-saguache-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/saguache-county/saguache-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "John W. Stenger",
+   "court_level": "county",
+   "district": "12",
+   "county": "Rio Grande",
+   "counties": [
+    "Rio Grande"
+   ],
+   "division": null,
+   "court_id": "rio-grande-rio-grande-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/rio-grande-county/rio-grande-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Tamara Sullivan",
+   "court_level": "county",
+   "district": "12",
+   "county": "Costilla",
+   "counties": [
+    "Costilla"
+   ],
+   "division": null,
+   "court_id": "costilla-costilla-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/costilla-county/costilla-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Daniel Walzl",
+   "court_level": "county",
+   "district": "12",
+   "county": "Alamosa",
+   "counties": [
+    "Alamosa"
+   ],
+   "division": null,
+   "court_id": "alamosa-alamosa-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/alamosa-county/alamosa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Hollie G. Wheelwright",
+   "court_level": "county",
+   "district": "12",
+   "county": "Mineral",
+   "counties": [
+    "Mineral"
+   ],
+   "division": null,
+   "court_id": "mineral-mineral-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mineral-county/mineral-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kim Cortez-Rodriguez",
+   "court_level": "district",
+   "district": "12",
+   "county": null,
+   "counties": [
+    "Alamosa",
+    "Conejos",
+    "Costilla",
+    "Mineral",
+    "Rio Grande"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/alamosa-county/alamosa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Michael A. Gonzales",
+   "court_level": "district",
+   "district": "12",
+   "county": null,
+   "counties": [
+    "Alamosa",
+    "Conejos",
+    "Costilla",
+    "Mineral",
+    "Rio Grande"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/alamosa-county/alamosa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "also Water Judge per source"
+  },
+  {
+   "name": "Amanda C. Hopkins",
+   "court_level": "district",
+   "district": "12",
+   "county": null,
+   "counties": [
+    "Alamosa",
+    "Conejos",
+    "Costilla",
+    "Mineral",
+    "Rio Grande"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/alamosa-county/alamosa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Crista Newmyer-Olsen",
+   "court_level": "district",
+   "district": "12",
+   "county": null,
+   "counties": [
+    "Alamosa",
+    "Conejos",
+    "Costilla",
+    "Mineral",
+    "Rio Grande"
+   ],
+   "division": "D",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/alamosa-county/alamosa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Ray Ann Brammer",
+   "court_level": "county",
+   "district": "13",
+   "county": "Logan",
+   "counties": [
+    "Logan"
+   ],
+   "division": "1",
+   "court_id": "logan-logan-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/logan-county/logan-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jeffrey M. Cure",
+   "court_level": "county",
+   "district": "13",
+   "county": "Kit Carson",
+   "counties": [
+    "Kit Carson"
+   ],
+   "division": "1",
+   "court_id": "kit-carson-kit-carson-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kit-carson-county/kit-carson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kelly S. Hansen",
+   "court_level": "county",
+   "district": "13",
+   "county": "Washington",
+   "counties": [
+    "Washington"
+   ],
+   "division": null,
+   "court_id": "washington-washington-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/washington-county/washington-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kristei R. Jones",
+   "court_level": "county",
+   "district": "13",
+   "county": "Yuma",
+   "counties": [
+    "Yuma"
+   ],
+   "division": "7",
+   "court_id": "yuma-yuma-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/yuma-county/yuma-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kimberlee Keleher",
+   "court_level": "county",
+   "district": "13",
+   "county": "Phillips",
+   "counties": [
+    "Phillips"
+   ],
+   "division": "4",
+   "court_id": "phillips-phillips-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/phillips-county/phillips-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Myka M. Landry",
+   "court_level": "county",
+   "district": "13",
+   "county": "Sedgwick",
+   "counties": [
+    "Sedgwick"
+   ],
+   "division": "5",
+   "court_id": "sedgwick-sedgwick-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/sedgwick-county/sedgwick-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Milla Lishchuk",
+   "court_level": "county",
+   "district": "13",
+   "county": "Morgan",
+   "counties": [
+    "Morgan"
+   ],
+   "division": "3",
+   "court_id": "morgan-morgan-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/morgan-county/morgan-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Matthew W. E. Bradley",
+   "court_level": "district",
+   "district": "13",
+   "county": null,
+   "counties": [
+    "Logan",
+    "Morgan",
+    "Phillips",
+    "Sedgwick",
+    "Washington",
+    "Yuma"
+   ],
+   "division": "F",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kit-carson-county/kit-carson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Dina M. Christiansen",
+   "court_level": "district",
+   "district": "13",
+   "county": null,
+   "counties": [
+    "Kit Carson",
+    "Logan",
+    "Morgan",
+    "Phillips",
+    "Sedgwick",
+    "Washington"
+   ],
+   "division": "C",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kit-carson-county/kit-carson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Stevie M.G. Gagliano",
+   "court_level": "district",
+   "district": "13",
+   "county": null,
+   "counties": [
+    "Kit Carson",
+    "Logan",
+    "Morgan",
+    "Phillips",
+    "Sedgwick",
+    "Washington"
+   ],
+   "division": "A",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kit-carson-county/kit-carson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Carl S. McGuire III",
+   "court_level": "district",
+   "district": "13",
+   "county": null,
+   "counties": [
+    "Kit Carson",
+    "Logan",
+    "Morgan",
+    "Phillips",
+    "Sedgwick",
+    "Washington"
+   ],
+   "division": "B",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kit-carson-county/kit-carson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Robert C. James",
+   "court_level": "district",
+   "district": "13",
+   "county": null,
+   "counties": [
+    "Kit Carson",
+    "Logan",
+    "Morgan",
+    "Phillips",
+    "Sedgwick",
+    "Washington"
+   ],
+   "division": "D",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kit-carson-county/kit-carson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kimbra L. Killin",
+   "court_level": "district",
+   "district": "13",
+   "county": null,
+   "counties": [
+    "Kit Carson",
+    "Logan",
+    "Morgan",
+    "Phillips",
+    "Sedgwick",
+    "Washington"
+   ],
+   "division": "E",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kit-carson-county/kit-carson-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Nicholas Catanzarite",
+   "court_level": "county",
+   "district": "14",
+   "county": "Grand",
+   "counties": [
+    "Grand"
+   ],
+   "division": null,
+   "court_id": "grand-grand-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/grand-county/grand-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "James Hesson",
+   "court_level": "county",
+   "district": "14",
+   "county": "Moffat",
+   "counties": [
+    "Moffat"
+   ],
+   "division": null,
+   "court_id": "moffat-moffat-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/moffat-county/moffat-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Erin Wilson",
+   "court_level": "county",
+   "district": "14",
+   "county": "Routt",
+   "counties": [
+    "Routt"
+   ],
+   "division": null,
+   "court_id": "routt-routt-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/routt-county/routt-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Billy-George Hertzke",
+   "court_level": "district",
+   "district": "14",
+   "county": null,
+   "counties": [
+    "Grand",
+    "Moffat"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/grand-county/grand-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "also Water Judge per source"
+  },
+  {
+   "name": "Mary C. Hoak",
+   "court_level": "district",
+   "district": "14",
+   "county": null,
+   "counties": [
+    "Grand",
+    "Moffat"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/grand-county/grand-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Brittany A. Schneider",
+   "court_level": "district",
+   "district": "14",
+   "county": null,
+   "counties": [
+    "Grand",
+    "Moffat"
+   ],
+   "division": null,
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/grand-county/grand-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Tyler K. Gibson",
+   "court_level": "county",
+   "district": "15",
+   "county": "Baca",
+   "counties": [
+    "Baca"
+   ],
+   "division": "A",
+   "court_id": "baca-baca-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/baca-county/baca-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "S. Dawn James",
+   "court_level": "county",
+   "district": "15",
+   "county": "Kiowa",
+   "counties": [
+    "Kiowa"
+   ],
+   "division": "A",
+   "court_id": "kiowa-kiowa-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/kiowa-county/kiowa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Stacy Noe",
+   "court_level": "county",
+   "district": "15",
+   "county": "Cheyenne",
+   "counties": [
+    "Cheyenne"
+   ],
+   "division": "A",
+   "court_id": "cheyenne-cheyenne-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/cheyenne-county/cheyenne-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lane Porter",
+   "court_level": "county",
+   "district": "15",
+   "county": "Prowers",
+   "counties": [
+    "Prowers"
+   ],
+   "division": null,
+   "court_id": "prowers-prowers-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/prowers-county/prowers-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Mike Davidson",
+   "court_level": "district",
+   "district": "15",
+   "county": null,
+   "counties": [
+    "Baca",
+    "Cheyenne",
+    "Prowers"
+   ],
+   "division": "D",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/baca-county/baca-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Tarryn L. Johnson",
+   "court_level": "district",
+   "district": "15",
+   "county": null,
+   "counties": [
+    "Baca",
+    "Cheyenne",
+    "Kiowa"
+   ],
+   "division": "J",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/baca-county/baca-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lance P. Clark",
+   "court_level": "county",
+   "district": "16",
+   "county": "Bent",
+   "counties": [
+    "Bent"
+   ],
+   "division": "C",
+   "court_id": "bent-bent-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/bent-county/bent-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "William J. Culver",
+   "court_level": "county",
+   "district": "16",
+   "county": "Otero",
+   "counties": [
+    "Otero"
+   ],
+   "division": "1",
+   "court_id": "otero-otero-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/otero-county/otero-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Deni E. Eiring",
+   "court_level": "district",
+   "district": "16",
+   "county": null,
+   "counties": [
+    "Bent",
+    "Otero"
+   ],
+   "division": "B",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/bent-county/bent-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Samuel S. Vigil",
+   "court_level": "district",
+   "district": "16",
+   "county": null,
+   "counties": [
+    "Bent",
+    "Otero"
+   ],
+   "division": "A",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/bent-county/bent-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Amanda DeWick",
+   "court_level": "county",
+   "district": "17",
+   "county": "Broomfield",
+   "counties": [
+    "Broomfield"
+   ],
+   "division": "1",
+   "court_id": "broomfield-broomfield-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/broomfield-county/broomfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Michael B. Garlan",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "6",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Martin J. Flaum II",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "5",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Marques Ivey",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "2",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Madoche Jean",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "7",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lara Jimenez",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "1",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Leroy Kirby",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "3",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Joshua Nowak",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "8",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Mariana Vielma",
+   "court_level": "county",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "4",
+   "court_id": "adams-adams-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Caryn A. Datz",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "M",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Sean Finn",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "T",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Emily Lieberman",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "S",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Priscilla J. Loew",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "A",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Michal Lord-Blegen",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "B",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Brett Martin",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "Q",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Sara Price",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "X",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Patrick H. Pugh",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "C",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Lochlin Rosen",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "K",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Jeffrey Ruff",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "F",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Meghan P. Saleebey",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "W",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Kyle Seedorf",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "Y",
+   "court_id": "adams-adams-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jeffrey Smith",
+   "court_level": "district",
+   "district": "17",
+   "county": "Broomfield",
+   "counties": [
+    "Broomfield"
+   ],
+   "division": "B",
+   "court_id": "broomfield-broomfield-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/broomfield-county/broomfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Broomfield County judges page"
+  },
+  {
+   "name": "Kelley R. Southerland",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "D",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Teri L. Vasquez",
+   "court_level": "district",
+   "district": "17",
+   "county": "Broomfield",
+   "counties": [
+    "Broomfield"
+   ],
+   "division": "A",
+   "court_id": "broomfield-broomfield-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/broomfield-county/broomfield-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Broomfield County judges page"
+  },
+  {
+   "name": "Thomas M. Ward",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "E",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Mark Warner",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "G",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Toni J. Wehman",
+   "court_level": "district",
+   "district": "17",
+   "county": "Adams",
+   "counties": [
+    "Adams"
+   ],
+   "division": "L",
+   "court_id": "adams-adams-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/adams-county/adams-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Adams County judges page"
+  },
+  {
+   "name": "Christina Apostoli",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "401",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Colleen Clark",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "304",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kathleen Finneran",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "405",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Garen Gervey",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "301",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Melina Hernandez",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "A2",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kelly LaFave",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "306",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Dalia Labrador",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "404",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Cheryl Rowles-Stokes",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "A1",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kathleen M. Tierney",
+   "court_level": "county",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": null,
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "County Judge",
+   "source_url": "https://www.colorado.gov/governor/news/governor-polis-appoints-kathleen-m-tierney-arapahoe-county-court",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Appointed Jan 2026 (effective 2026-02-16) to seat of Michael J. Roche (retired); not listed on branch Arapahoe judges page as of 2026-10-15. Verified via search-result summary, governor page blocked to fetcher."
+  },
+  {
+   "name": "Michelle Amico",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "201",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Laqunya Baker",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "402",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Jacob Edson",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "309",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Benjamin Figa",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "15",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Thomas Henderson",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "31",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "H. Clay Hurst",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "12",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Michelle Jones",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "33",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "David Karpel",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "207",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Bonnie McLean",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "35",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page; Retiring Dec 1, 2026 (18th JD release 2026-08-17); nominees published 2026-10-14. Currently seated."
+  },
+  {
+   "name": "James Quinn",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "C1",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Natalie Stricklin",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "308",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "A.Danielle Touart",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "22",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Don J. Toussaint",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "14",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Darren Vahle",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "206",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Christine Washburn",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "11",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Shay Whitaker",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "34",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Eric White",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "408",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "Joseph Whitfield",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "32",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "J. Jay Williford",
+   "court_level": "district",
+   "district": "18",
+   "county": "Arapahoe",
+   "counties": [
+    "Arapahoe"
+   ],
+   "division": "407",
+   "court_id": "arapahoe-arapahoe-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/arapahoe-county/arapahoe-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Arapahoe County judges page"
+  },
+  {
+   "name": "John Briggs",
+   "court_level": "county",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "6",
+   "court_id": "weld-weld-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Renee Sandoval Doak",
+   "court_level": "county",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "5",
+   "court_id": "weld-weld-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "Not standing for retention; seat vacates Jan 13, 2027; Michael M. Perez appointed to succeed. Currently seated."
+  },
+  {
+   "name": "Michele Meyer",
+   "court_level": "county",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "8",
+   "court_id": "weld-weld-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Dana Nichols",
+   "court_level": "county",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "9",
+   "court_id": "weld-weld-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Anita Jain Crowther",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "15",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Allison J. Esser",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "F",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Audrey Galloway",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "12",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Troy Hause",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "B",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Julie Hoskins",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "1",
+   "court_id": "weld-weld-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Timothy Kerns",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "E",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Annette Kundelius",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "16",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Sean J. Lacefield",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "11",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Shannon Lyons",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "3",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page; also Water Judge per source"
+  },
+  {
+   "name": "Kimberly B. Schutt",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "10",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Todd Taylor",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "4",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page; also Water Judge per source"
+  },
+  {
+   "name": "Vincente G. Vigil",
+   "court_level": "district",
+   "district": "19",
+   "county": "Weld",
+   "counties": [
+    "Weld"
+   ],
+   "division": "17",
+   "court_id": "weld-weld-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/weld-county/weld-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Weld County judges page"
+  },
+  {
+   "name": "Elizabeth Brodsky",
+   "court_level": "county",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "11",
+   "court_id": "boulder-boulder-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Monica Haenselman",
+   "court_level": "county",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "8",
+   "court_id": "boulder-boulder-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Zachary Malkinson",
+   "court_level": "county",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "9",
+   "court_id": "boulder-boulder-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Eang M. Man",
+   "court_level": "county",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "10",
+   "court_id": "boulder-boulder-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Jonathon P. Martin",
+   "court_level": "county",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "7",
+   "court_id": "boulder-boulder-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "J. Keith Collins",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "5",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Robert R. Gunning",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "4",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Andrew Hartman",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "6",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Timothy Johnson",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "14",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Michael Kotlarczyk",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "1",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "J. Chris Larson",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "12",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Dea M. Lindsey",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "2",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Thomas F. Mulvahill",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "3",
+   "court_id": "boulder-boulder-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Nancy W. Salomone",
+   "court_level": "district",
+   "district": "20",
+   "county": "Boulder",
+   "counties": [
+    "Boulder"
+   ],
+   "division": "13",
+   "court_id": "boulder-boulder-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/boulder-county/boulder-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Boulder County judges page"
+  },
+  {
+   "name": "Scott J. Burrill",
+   "court_level": "county",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "14",
+   "court_id": "mesa-mesa-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Courtney L. Dinnel",
+   "court_level": "county",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "1",
+   "court_id": "mesa-mesa-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Michael J. Grattan",
+   "court_level": "county",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "15",
+   "court_id": "mesa-mesa-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Bruce R. Raaum",
+   "court_level": "county",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "2",
+   "court_id": "mesa-mesa-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Matthew D. Barrett",
+   "court_level": "district",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "9",
+   "court_id": "mesa-mesa-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Mesa County judges page"
+  },
+  {
+   "name": "Jeremy L. Chaffin",
+   "court_level": "district",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "5",
+   "court_id": "mesa-mesa-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Mesa County judges page"
+  },
+  {
+   "name": "Brian J. Flynn",
+   "court_level": "district",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "11",
+   "court_id": "mesa-mesa-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Mesa County judges page"
+  },
+  {
+   "name": "Craig P. Henderson",
+   "court_level": "district",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "12",
+   "court_id": "mesa-mesa-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Mesa County judges page"
+  },
+  {
+   "name": "Gretchen B. Larson",
+   "court_level": "district",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "8",
+   "court_id": "mesa-mesa-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Mesa County judges page"
+  },
+  {
+   "name": "JenniLynn E. Lawrence",
+   "court_level": "district",
+   "district": "21",
+   "county": "Mesa",
+   "counties": [
+    "Mesa"
+   ],
+   "division": "10",
+   "court_id": "mesa-mesa-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/mesa-county/mesa-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Mesa County judges page"
+  },
+  {
+   "name": "Ian James MacLaren",
+   "court_level": "county",
+   "district": "22",
+   "county": "Montezuma",
+   "counties": [
+    "Montezuma"
+   ],
+   "division": "1",
+   "court_id": "montezuma-montezuma-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/montezuma-county/montezuma-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kristen Tarrin",
+   "court_level": "county",
+   "district": "22",
+   "county": "Dolores",
+   "counties": [
+    "Dolores"
+   ],
+   "division": "A",
+   "court_id": "dolores-dolores-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/dolores-county/dolores-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "William Young Furse",
+   "court_level": "district",
+   "district": "22",
+   "county": "Montezuma",
+   "counties": [
+    "Montezuma"
+   ],
+   "division": "4",
+   "court_id": "montezuma-montezuma-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/dolores-county/dolores-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Todd Jay Plewe",
+   "court_level": "district",
+   "district": "22",
+   "county": "Montezuma",
+   "counties": [
+    "Montezuma"
+   ],
+   "division": "2",
+   "court_id": "montezuma-montezuma-county",
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/dolores-county/dolores-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Lawrence Bowling",
+   "court_level": "county",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "D",
+   "court_id": "douglas-douglas-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Casey Brown",
+   "court_level": "county",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "F",
+   "court_id": "douglas-douglas-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Miles Cabral",
+   "court_level": "county",
+   "district": "23",
+   "county": "Lincoln",
+   "counties": [
+    "Lincoln"
+   ],
+   "division": "A",
+   "court_id": "lincoln-lincoln-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/lincoln-county/lincoln-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Rory Devlin",
+   "court_level": "county",
+   "district": "23",
+   "county": "Elbert",
+   "counties": [
+    "Elbert"
+   ],
+   "division": "A",
+   "court_id": "elbert-elbert-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/elbert-county/elbert-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kolony Fields",
+   "court_level": "county",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "G",
+   "court_id": "douglas-douglas-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Kelly Waidler",
+   "court_level": "county",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "E",
+   "court_id": "douglas-douglas-county",
+   "title": "County Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Andrew Baum",
+   "court_level": "district",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "B",
+   "court_id": "douglas-douglas-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Douglas County judges page"
+  },
+  {
+   "name": "Beth Elliott-Dumler",
+   "court_level": "district",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "4",
+   "court_id": "douglas-douglas-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Douglas County judges page"
+  },
+  {
+   "name": "Shelby Fyles",
+   "court_level": "district",
+   "district": "23",
+   "county": null,
+   "counties": [],
+   "division": "1",
+   "court_id": null,
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "district-wide; county not stated on source"
+  },
+  {
+   "name": "Stacy Guillon",
+   "court_level": "district",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "6",
+   "court_id": "douglas-douglas-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Douglas County judges page"
+  },
+  {
+   "name": "Victoria Klingensmith",
+   "court_level": "district",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "5",
+   "court_id": "douglas-douglas-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Douglas County judges page"
+  },
+  {
+   "name": "Theresa Slade",
+   "court_level": "district",
+   "district": "23",
+   "county": "Elbert",
+   "counties": [
+    "Elbert"
+   ],
+   "division": "1",
+   "court_id": "elbert-elbert-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/elbert-county/elbert-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Elbert County judges page"
+  },
+  {
+   "name": "Donna Stewart",
+   "court_level": "district",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "3",
+   "court_id": "douglas-douglas-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Douglas County judges page"
+  },
+  {
+   "name": "Ryan J. Stuart",
+   "court_level": "district",
+   "district": "23",
+   "county": null,
+   "counties": [
+    "Douglas",
+    "Elbert"
+   ],
+   "division": "1",
+   "court_id": null,
+   "title": "Chief Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": ""
+  },
+  {
+   "name": "Daniel Warhola",
+   "court_level": "district",
+   "district": "23",
+   "county": "Douglas",
+   "counties": [
+    "Douglas"
+   ],
+   "division": "C",
+   "court_id": "douglas-douglas-county",
+   "title": "District Judge",
+   "source_url": "https://www.coloradojudicial.gov/courts/trial-courts/douglas-county/douglas-county-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15",
+   "notes": "county inferred from being listed only on the Douglas County judges page"
+  }
+ ],
+ "district_attorneys": [
+  {
+   "name": "Alexis King",
+   "district": "1",
+   "office_url": "https://firstda.co",
+   "source_url": "https://firstda.co/who-we-are/da-alexis-king/",
+   "notes": "Jefferson, Gilpin. Reelected 2024; office page confirms."
+  },
+  {
+   "name": "John Walsh",
+   "district": "2",
+   "office_url": "https://www.denverda.org/",
+   "source_url": "https://www.denverda.org/",
+   "notes": "Denver. Took office Jan 2025; homepage confirms."
+  },
+  {
+   "name": "Nicholas (Nick) Dale",
+   "district": "3",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Huerfano, Las Animas. Elected 2024 per Law Week; CDAC job posting (coloradoprosecutors.org, 2026) also names \"Nick Dale\". LOWER confidence: no office site found."
+  },
+  {
+   "name": "Michael J. Allen",
+   "district": "4",
+   "office_url": "https://www.da4colorado.gov/",
+   "source_url": "https://www.da4colorado.gov/meet-the-district-attorney",
+   "notes": "El Paso, Teller. Reelected 2024; announced AG candidacy Jan 2026 (Gazette) but still DA as of sources."
+  },
+  {
+   "name": "Heidi McCollum",
+   "district": "5",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Clear Creek, Eagle, Lake, Summit. Unopposed 2024; no 2026 confirmation found, no office site found."
+  },
+  {
+   "name": "Sean P. Murray",
+   "district": "6",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Archuleta, La Plata, San Juan. Elected 2024 (appointed 2024); bridges.colorado.gov commissioner bio also confirms."
+  },
+  {
+   "name": "Anna Cooling",
+   "district": "7",
+   "office_url": "https://da7.org/",
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Delta, Gunnison, Hinsdale, Montrose, Ouray, San Miguel. Elected 2024 via vacancy committee; no 2026 confirmation found."
+  },
+  {
+   "name": "Gordon McLaughlin",
+   "district": "8",
+   "office_url": "https://www.larimer.gov/da",
+   "source_url": "https://www.larimer.gov/elected-officials/district-attorney",
+   "notes": "Larimer, Jackson. Search summary of larimer.gov (Oct 2026) confirms term Jan 2025-Jan 2029."
+  },
+  {
+   "name": "Benjamin Sollars",
+   "district": "9",
+   "office_url": "https://www.9daco.org/",
+   "source_url": "https://www.9daco.org/meet-the-district-attorney/",
+   "notes": "Garfield, Pitkin, Rio Blanco."
+  },
+  {
+   "name": "Kala Beauvais",
+   "district": "10",
+   "office_url": "https://pueblocounty.gov/district-attorneys-office",
+   "source_url": "https://pueblocounty.gov/district-attorneys-office/kala-beauvais",
+   "notes": "Pueblo. Took office Jan 2025."
+  },
+  {
+   "name": "Jeffrey (Jeff) Lindsey",
+   "district": "11",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Chaffee, Custer, Fremont, Park. Elected 2024. Gazette 2026-07-14: judge removed his office from a murder case (still DA)."
+  },
+  {
+   "name": "Anne Kelly",
+   "district": "12",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Alamosa, Conejos, Costilla, Mineral, Rio Grande, Saguache. Reelected 2024; CPR 2026-06-18 coverage refers to her as DA."
+  },
+  {
+   "name": "Travis Sides",
+   "district": "13",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Kit Carson, Logan, Morgan, Phillips, Sedgwick, Washington, Yuma. Reelected 2024. LOWER confidence: no 2025-26 confirmation found (a Washington County page naming Brittny Lewton is stale; she left office in 2020)."
+  },
+  {
+   "name": "Matthew Karzen",
+   "district": "14",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Grand, Moffat, Routt. Reelected 2024 (unaffiliated). No 2026 confirmation found."
+  },
+  {
+   "name": "Andrew Hayden",
+   "district": "15",
+   "office_url": "https://www.prowersco.gov/departments/districtattorney",
+   "source_url": "https://www.prowersco.gov/departments/districtattorney",
+   "notes": "Baca, Cheyenne, Kiowa, Prowers. Appointed Oct 2024, elected 2024; county page lists him."
+  },
+  {
+   "name": "James R. Bullock",
+   "district": "16",
+   "office_url": null,
+   "source_url": "https://www.lawweekcolorado.com/?p=120056",
+   "notes": "Bent, Crowley, Otero. Appointed 2024, elected 2024; April 2026 CDAC job listing from his office names him."
+  },
+  {
+   "name": "Brian S. Mason",
+   "district": "17",
+   "office_url": "https://adamsbroomfieldda.org/",
+   "source_url": "https://adamsbroomfieldda.org/About-Us",
+   "notes": "Adams, Broomfield. Reelected 2024; press releases of 2026 on site."
+  },
+  {
+   "name": "Amy Padden",
+   "district": "18",
+   "office_url": "https://www.da18.org/",
+   "source_url": "https://arapahoeco.gov/your_county/county_departments/coda18/index.php",
+   "notes": "Arapahoe only (since Jan 2025). Denver Gazette 2026-01-29 first-year story; a recall petition was launched (Yahoo/Gazette) - outcome not verified."
+  },
+  {
+   "name": "Michael J. Rourke",
+   "district": "19",
+   "office_url": "https://www.weldda.com/",
+   "source_url": "https://www.weldda.com/News/2025-News/District-Attorney-Michael-Rourke-sworn-in-for-final-term-in-Weld-County",
+   "notes": "Weld. Sworn in for final term 2025-01-14."
+  },
+  {
+   "name": "Michael T. Dougherty",
+   "district": "20",
+   "office_url": "https://bouldercounty.gov/district-attorney/",
+   "source_url": "https://bouldercounty.gov/district-attorney/",
+   "notes": "Boulder. Reelected 2024 (Law Week); office page undated."
+  },
+  {
+   "name": "Daniel P. Rubinstein",
+   "district": "21",
+   "office_url": "https://www.mesacounty.us/departments-and-services/district-attorney",
+   "source_url": "https://www.mesacounty.us/departments-and-services/district-attorney",
+   "notes": "Mesa. Reelected 2024; office page undated."
+  },
+  {
+   "name": "Jeremy Reed",
+   "district": "22",
+   "office_url": null,
+   "source_url": "https://www.the-journal.com/?p=127794",
+   "notes": "Dolores, Montezuma. Sworn in Jan 2025 (Cortez Journal); no office site found."
+  },
+  {
+   "name": "George H. Brauchler",
+   "district": "23",
+   "office_url": "https://coda23.gov/",
+   "source_url": "https://coda23.gov/?p=401",
+   "notes": "Douglas, Elbert, Lincoln. First DA of new 23rd JD, sworn in 2025-01-14."
+  }
+ ],
+ "gaps": [
+  "Crowley County Court (16th JD): branch page lists the judgeship as VACANT; no judge to list.",
+  "Gunnison County Court (7th JD): Ashley M. Burgemeister resigned effective 2026-10-15 (7th JD release 2026-08-31); nominees published 2026-10-08, no appointee yet. Removed from roster.",
+  "Official coloradojudicial.gov county 'Judges and Staff' pages carry NO last-updated date; they were cross-checked against the Judge Appointments page (2025-2026 vacancy/appointment releases). Three lag errors found: David Prince (4th, retired 2026-06-01) and Michael McHenry (4th, retired 2026-10-01) were still listed (removed); Rachel Catt (2nd), Lara Nafziger (4th) and Kathleen Tierney (Arapahoe County Court) were appointed but not yet listed (added from press-release coverage, flagged in notes). Other lag errors of the same kind may exist for events not announced via the appointments page.",
+  "Judges with known pending departures are KEPT because they sit today: Mark Randall (Jefferson Cty, Dec 1 2026), Bonnie McLean (18th, Dec 1 2026), A. Bruce Jones (2nd, Jan 13 2027), A. Nathaniel Baca (6th, Jan 13 2027), Renee Doak (Weld Cty Court, Jan 13 2027). See notes.",
+  "District judges: source pages give the county only for some judges. Where the county field was blank, county is set only if the judge appears on exactly one county page of that district (flagged 'inferred'); otherwise county is null (district-wide). 'counties' field holds what the source lists. Multi-county districts: court_id is null for judges serving several counties.",
+  "Denver: district judges are listed on three branch pages (District, Juvenile, Probate); Denver Juvenile/Probate presiding judges are included as District Judges. Denver County Court judges taken from denvercountycourt.org (17 judges, magistrates excluded).",
+  "Water judges, magistrates, senior/retired judges excluded. Titles like 'County Court Judge, Magistrate' (Cynthia J Jones 5th, Jason T. Kelly 12th, James R. McDonald 7th, Chelsea W. Ryan 8th) are county judges who also act as magistrates; included, flagged. Tamara Sullivan (Costilla) also acts as Domestic Relations acting district judge.",
+  "Miriah Sandoval (6th JD pages) has no title on the branch page and appears to be a self-help coordinator; excluded.",
+  "Judges' individual bios were not fetched; names are as published on the listing pages (some middle initials vary between pages for the same judge, e.g. Laura C. Makar / Laura Makar - longest form kept).",
+  "District Attorneys: 2024 election results (Law Week Colorado 2024-11-20) used as baseline for the Jan 2025 terms; individually re-confirmed in 2025-26 sources for districts 1,2,4,6,8,9,10,11,12,15,16,17,18,19,22,23 (see notes). Lower-confidence (no 2025-26 confirmation found): 3 (Dale), 5 (McCollum), 7 (Cooling), 13 (Sides), 14 (Karzen), 20, 21. No DA vacancy/appointment in 2025-26 surfaced in searches, but searches were not exhaustive. CDAC (coloradoprosecutors.org) Find-My-DA map is JavaScript-loaded and was not readable; Secretary of State DA list URL is gone (404).",
+  "DA office_url is null for districts 3, 5, 6, 11, 12, 13, 14, 16, 22 (no official site located in this pass).",
+  "Governor's office pages (colorado.gov/governor, governorsoffice.colorado.gov) returned 403 to scripted fetches; appointment facts for Catt/Nafziger/Tierney rest on Kiowa County Press republications and search summaries plus the branch's own vacancy PDFs.",
+  "Statewide court (Colorado Supreme Court / Court of Appeals, court id carr-judicial-center) not collected - task covered trial courts only."
+ ]
+}

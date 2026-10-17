@@ -1,0 +1,7 @@
+node_modules/
+data/judex.db*
+data/secret.txt
+data/archive/
+*.log
+.DS_Store
+send/

@@ -1,0 +1,2183 @@
+[
+{
+"slug": "andrews-ashley",
+"who": "Judge Andrews",
+"total": 34,
+"att": [
+"200",
+14
+],
+"nonatt": [
+"284",
+16
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "ankeny-charlotte",
+"who": "Judge Ankeny",
+"total": 20,
+"att": [
+"258",
+7
+],
+"nonatt": [
+"405",
+11
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "bailey-mark",
+"who": "Judge Bailey",
+"total": 44,
+"att": [
+"858",
+42
+],
+"nonatt": [
+"24",
+1
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "beckenhauer-kurt",
+"who": "Judge Beckenhauer",
+"total": 16,
+"att": [
+"173",
+14
+],
+"nonatt": [
+"16",
+0
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "bentley-eric",
+"who": "Judge Bentley",
+"total": 25,
+"att": [
+"821",
+22
+],
+"nonatt": [
+"48",
+2
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "berkenkotter-maria",
+"who": "Justice Berkenkotter",
+"total": 54,
+"att": [
+"531",
+20
+]
+},
+{
+"slug": "billings-vela-linda",
+"who": "Judge Billings-Vela",
+"total": 36,
+"att": [
+"310",
+27
+],
+"nonatt": [
+"170",
+5
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "blackett-david",
+"who": "Judge Blackett",
+"total": 14,
+"att": [
+"330",
+13
+],
+"nonatt": [
+"1",
+1
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "boatright-brian",
+"who": "Justice Boatright",
+"total": 72,
+"att": [
+"552",
+24
+]
+},
+{
+"slug": "brady-jill",
+"who": "Judge Brady",
+"total": 43,
+"att": [
+"427",
+10
+],
+"nonatt": [
+"855",
+24
+],
+"juror": [
+"-",
+2
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "brammer-ray",
+"who": "Judge Brammer",
+"total": 27,
+"att": [
+"160",
+13
+],
+"nonatt": [
+"205",
+8
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "bull-diana",
+"who": "Judge Bull",
+"total": 34,
+"att": [
+"151",
+7
+],
+"nonatt": [
+"375",
+20
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "burback-bradley",
+"who": "Judge Burback",
+"total": 46,
+"att": [
+"448",
+23
+],
+"nonatt": [
+"490",
+20
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "burgemeister-ashley",
+"who": "Judge Burgemeister",
+"total": 26,
+"att": [
+"163",
+8
+],
+"nonatt": [
+"270",
+17
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "carpenter-verna",
+"who": "Judge Carpenter",
+"total": 65,
+"att": [
+"586",
+18
+],
+"nonatt": [
+"606",
+41
+],
+"juror": [
+"-",
+3
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "carrithers-jason",
+"who": "Judge Carrithers",
+"total": 43,
+"att": [
+"609",
+29
+],
+"nonatt": [
+"248",
+13
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "cherry-kelly",
+"who": "Judge Cherry",
+"total": 13,
+"att": [
+"293",
+12
+],
+"nonatt": [
+"6",
+1
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "clark-lance",
+"who": "Judge Clark",
+"total": 5
+},
+{
+"slug": "collins-james",
+"who": "Judge Collins",
+"total": 33,
+"att": [
+"883",
+20
+],
+"nonatt": [
+"273",
+11
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "cortez-rodriguez-kimberly",
+"who": "Judge Cortez-Rodriguez",
+"total": 30,
+"att": [
+"174",
+16
+],
+"nonatt": [
+"97",
+0
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "crowther-anita",
+"who": "Judge Crowther",
+"total": 39,
+"att": [
+"367",
+23
+],
+"nonatt": [
+"453",
+14
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "cure-sarah",
+"who": "Judge Cure",
+"total": 36,
+"att": [
+"417",
+23
+],
+"nonatt": [
+"318",
+11
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "davidson-michael",
+"who": "Judge Davidson",
+"total": 22,
+"att": [
+"183",
+9
+],
+"nonatt": [
+"178",
+6
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "dewick-amanda",
+"who": "Judge DeWick",
+"total": 55,
+"att": [
+"385",
+16
+],
+"nonatt": [
+"607",
+37
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "dinnel-courtney",
+"who": "Judge Dinnel",
+"total": 25,
+"att": [
+"401",
+15
+],
+"nonatt": [
+"488",
+8
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "dunn-stephanie",
+"who": "Judge Dunn",
+"total": 50,
+"att": [
+"824",
+16
+]
+},
+{
+"slug": "ecton-kraig",
+"who": "Judge Ecton",
+"total": 33,
+"att": [
+"347",
+10
+],
+"nonatt": [
+"574",
+20
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "eiring-deni",
+"who": "Judge Eiring",
+"total": 6,
+"att": [
+"96",
+2
+],
+"nonatt": [
+"139",
+1
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "espinosa-adam",
+"who": "Judge Espinosa",
+"total": 21,
+"att": [
+"276",
+10
+],
+"nonatt": [
+"288",
+6
+],
+"juror": [
+"-",
+2
+],
+"citizen": [
+"-",
+1
+]
+},
+{
+"slug": "esser-allison",
+"who": "Judge Esser",
+"total": 21,
+"att": [
+"262",
+8
+],
+"nonatt": [
+"226",
+7
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "evig-samuel",
+"who": "Judge Evig ",
+"total": 36,
+"att": [
+"360",
+14
+],
+"nonatt": [
+"914",
+18
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "faragher-beth",
+"who": "Judge Faragher",
+"total": 23
+},
+{
+"slug": "fennick-yolanda",
+"who": "Judge Fennick ",
+"total": 23,
+"att": [
+"351",
+9
+],
+"nonatt": [
+"526",
+12
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "figa-benjamin",
+"who": "Judge Figa",
+"total": 87,
+"att": [
+"691",
+37
+],
+"nonatt": [
+"1506",
+48
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "findley-joseph",
+"who": "Judge Findley",
+"total": 31,
+"att": [
+"541",
+22
+],
+"nonatt": [
+"38",
+8
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "findorff-linda",
+"who": "Judge Findorff",
+"total": 43,
+"att": [
+"469",
+12
+],
+"nonatt": [
+"760",
+23
+],
+"juror": [
+"-",
+2
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "flaum-martin",
+"who": "Judge Flaum",
+"total": 17,
+"att": [
+"369",
+13
+],
+"nonatt": [
+"178",
+3
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "gerhart-shannon",
+"who": "Judge Gerhart",
+"total": 31,
+"att": [
+"360",
+9
+],
+"nonatt": [
+"571",
+19
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "goble-renee",
+"who": "Judge Goble",
+"total": 18,
+"att": [
+"350",
+16
+],
+"nonatt": [
+"1",
+1
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+1
+]
+},
+{
+"slug": "goman-keith",
+"who": "Judge Goman",
+"total": 35,
+"att": [
+"609",
+15
+],
+"nonatt": [
+"527",
+17
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "grant-jay",
+"who": "Judge Grant",
+"total": 22,
+"att": [
+"292",
+18
+],
+"nonatt": [
+"232",
+2
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "grattan-iii-michael",
+"who": null,
+"total": null,
+"att": [
+"307",
+13
+],
+"nonatt": [
+"509",
+7
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "gunning-robert",
+"who": "Judge Gunning",
+"total": 50,
+"att": [
+"1026",
+43
+],
+"nonatt": [
+"274",
+7
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "haenlein-justin",
+"who": "Judge Haenlein",
+"total": 28,
+"att": [
+"315",
+17
+],
+"nonatt": [
+"255",
+5
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "harvell-laura",
+"who": "Judge Harvell",
+"total": 28,
+"att": [
+"245",
+18
+],
+"nonatt": [
+"97",
+4
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "hernandez-melina",
+"who": "Judge Hernandez",
+"total": 48,
+"att": [
+"565",
+24
+],
+"nonatt": [
+"729",
+20
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "holbrook-sharon",
+"who": "Judge Holbrook",
+"total": 24,
+"att": [
+"377",
+18
+],
+"nonatt": [
+"247",
+5
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "hunt-diego",
+"who": "Judge Hunt",
+"total": 38,
+"att": [
+"577",
+28
+],
+"nonatt": [
+"246",
+9
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "ivey-marques",
+"who": "Judge Ivey",
+"total": 24,
+"att": [
+"422",
+14
+],
+"nonatt": [
+"518",
+10
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "james-robert",
+"who": "Judge James",
+"total": 14,
+"att": [
+"308",
+8
+],
+"nonatt": [
+"143",
+3
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "jean-madoche",
+"who": "Judge Jean",
+"total": 15,
+"att": [
+"395",
+9
+],
+"nonatt": [
+"151",
+5
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "jones-cynthia",
+"who": "Judge Jones",
+"total": 42,
+"att": [
+"349",
+15
+],
+"nonatt": [
+"619",
+24
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "jones-jerry",
+"who": "Judge Jones",
+"total": 47,
+"att": [
+"820",
+20
+]
+},
+{
+"slug": "jones-kristei",
+"who": "Judge Jones",
+"total": 6,
+"att": [
+"104",
+2
+],
+"nonatt": [
+"29",
+1
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "katzman-steven",
+"who": "Judge Katzman",
+"total": 28,
+"att": [
+"402",
+9
+],
+"nonatt": [
+"556",
+16
+],
+"juror": [
+"-",
+2
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "kelly-jason",
+"who": "Judge Kelly",
+"total": 16,
+"att": [
+"133",
+9
+],
+"nonatt": [
+"57",
+2
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "kirby-leroy",
+"who": "Judge Kirby",
+"total": 30,
+"att": [
+"694",
+20
+],
+"nonatt": [
+"331",
+8
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "kuhn-eric",
+"who": "Judge Kuhn",
+"total": 42,
+"att": [
+"1072",
+18
+]
+},
+{
+"slug": "landry-myka",
+"who": "Judge Landry",
+"total": 9,
+"att": [
+"243",
+5
+],
+"nonatt": [
+"40",
+2
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "lehman-joshua",
+"who": "Judge Lehman",
+"total": 36,
+"att": [
+"367",
+12
+],
+"nonatt": [
+"566",
+24
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "leutwyler-ben",
+"who": "Judge Leutwyler",
+"total": 40,
+"att": [
+"1240",
+36
+],
+"nonatt": [
+"46",
+3
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "lindsey-dea-marie",
+"who": "Judge Lindsey",
+"total": 40,
+"att": [
+"975",
+24
+],
+"nonatt": [
+"308",
+16
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "lung-robert",
+"who": "Judge Lung",
+"total": 112,
+"att": [
+"711",
+59
+],
+"nonatt": [
+"1415",
+53
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "marquez-monica",
+"who": "Justice M\u00e1rquez",
+"total": 61,
+"att": [
+"525",
+19
+]
+},
+{
+"slug": "martin-brett",
+"who": "Judge Martin",
+"total": 39,
+"att": [
+"678",
+21
+],
+"nonatt": [
+"892",
+17
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "martin-jonathon",
+"who": "Judge Martin",
+"total": 47,
+"att": [
+"327",
+20
+],
+"nonatt": [
+"524",
+25
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "may-diana",
+"who": "Judge May",
+"total": 43,
+"att": [
+"370",
+17
+],
+"nonatt": [
+"659",
+21
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+2
+]
+},
+{
+"slug": "mcguire-iii-carl",
+"who": null,
+"total": null,
+"att": [
+"216",
+11
+],
+"nonatt": [
+"106",
+3
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "mckedy-cynthia",
+"who": "Judge McKedy",
+"total": 24,
+"att": [
+"341",
+10
+],
+"nonatt": [
+"544",
+10
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "mclean-bonnie",
+"who": "Judge McLean",
+"total": 42,
+"att": [
+"374",
+21
+],
+"nonatt": [
+"221",
+13
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "moller-william",
+"who": "Judge Moller",
+"total": 43,
+"att": [
+"406",
+15
+],
+"nonatt": [
+"212",
+11
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+15
+]
+},
+{
+"slug": "moses-marie",
+"who": "Judge Moses",
+"total": 66,
+"att": [
+"626",
+35
+],
+"nonatt": [
+"1573",
+29
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "mulvahill-thomas",
+"who": "Judge Mulvahill",
+"total": 58,
+"att": [
+"447",
+28
+],
+"nonatt": [
+"773",
+30
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "myers-alex",
+"who": "Judge Myers",
+"total": 23,
+"att": [
+"348",
+16
+],
+"nonatt": [
+"248",
+7
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "norrdin-anne",
+"who": "Judge Norrdin",
+"total": 44,
+"att": [
+"457",
+25
+],
+"nonatt": [
+"435",
+14
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "nowak-joshua",
+"who": "Judge Nowak",
+"total": 23,
+"att": [
+"430",
+13
+],
+"nonatt": [
+"443",
+8
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "olguin-fresquez-rachel",
+"who": "Judge Olguin-Fresquez",
+"total": 49,
+"att": [
+"320",
+20
+],
+"nonatt": [
+"447",
+25
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "oshea-timothy",
+"who": "Judge O\u2019Shea",
+"total": 41,
+"att": [
+"538",
+32
+],
+"nonatt": [
+"116",
+3
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+1
+]
+},
+{
+"slug": "pallares-isabel",
+"who": "Judge Pallares",
+"total": 18
+},
+{
+"slug": "peper-graham",
+"who": "Judge Peper",
+"total": 29,
+"att": [
+"705",
+11
+],
+"nonatt": [
+"451",
+16
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "plewe-todd",
+"who": "Judge Plewe",
+"total": 20,
+"att": [
+"194",
+10
+],
+"nonatt": [
+"223",
+7
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "rodarte-nicole",
+"who": "Judge Rodarte",
+"total": 12
+},
+{
+"slug": "roff-angela",
+"who": "Judge Roff",
+"total": 39,
+"att": [
+"275",
+20
+],
+"nonatt": [
+"502",
+15
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "roman-gilbert",
+"who": "Judge Roman",
+"total": 47,
+"att": [
+"711",
+12
+]
+},
+{
+"slug": "rowe-wilson-erin",
+"who": "Judge Rowe Wilson",
+"total": 61,
+"att": [
+"190",
+21
+],
+"nonatt": [
+"676",
+34
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "rudolph-andre",
+"who": "Judge Rudolph",
+"total": 11,
+"att": [
+"79",
+11
+],
+"nonatt": [
+"14",
+0
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "schuenemann-craig",
+"who": "Judge Schuenemann",
+"total": 10,
+"att": [
+"150",
+4
+],
+"nonatt": [
+"31",
+2
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "schultz-steven",
+"who": "Judge Schultz",
+"total": 34,
+"att": [
+"235",
+23
+],
+"nonatt": [
+"94",
+6
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "schutte-anita",
+"who": "Judge Schutte",
+"total": 37,
+"att": [
+"574",
+14
+],
+"nonatt": [
+"1575",
+21
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "schutz-timothy",
+"who": "Judge Schutz",
+"total": 50,
+"att": [
+"938",
+19
+]
+},
+{
+"slug": "schwartz-barry",
+"who": "Judge Schwartz",
+"total": 25,
+"att": [
+"155",
+15
+],
+"nonatt": [
+"692",
+6
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+3
+]
+},
+{
+"slug": "scoville-stephanie",
+"who": "Judge Scoville",
+"total": 42,
+"att": [
+"922",
+37
+],
+"nonatt": [
+"42",
+3
+],
+"juror": [
+"-",
+2
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "shakes-david",
+"who": "Judge Shakes",
+"total": 42,
+"att": [
+"692",
+18
+],
+"nonatt": [
+"293",
+21
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "shropshire-kim",
+"who": "Judge Shropshire",
+"total": 34,
+"att": [
+"235",
+26
+],
+"nonatt": [
+"149",
+8
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "silva-roberto",
+"who": "Judge Silva",
+"total": 39,
+"att": [
+"305",
+20
+],
+"nonatt": [
+"340",
+15
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "simonet-frances",
+"who": "Judge Simonet",
+"total": 34
+},
+{
+"slug": "spahn-theresa",
+"who": "Judge Spahn",
+"total": 23
+},
+{
+"slug": "stenger-john",
+"who": "Judge Stenger",
+"total": 23,
+"att": [
+"149",
+5
+],
+"nonatt": [
+"73",
+6
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "taylor-todd",
+"who": "Judge Taylor",
+"total": 57,
+"att": [
+"892",
+53
+],
+"nonatt": [
+"362",
+4
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "thomasson-lane",
+"who": "Judge Thomasson",
+"total": 12,
+"att": [
+"169",
+7
+],
+"nonatt": [
+"52",
+4
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "toussaint-don",
+"who": "Judge Toussaint",
+"total": 30,
+"att": [
+"665",
+25
+],
+"nonatt": [
+"24",
+3
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "trujillo-demetria",
+"who": "Judge Trujillo",
+"total": 51,
+"att": [
+"613",
+20
+],
+"nonatt": [
+"1535",
+28
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "turner-kaitlin",
+"who": "Judge Turner ",
+"total": 19,
+"att": [
+"175",
+9
+],
+"nonatt": [
+"230",
+9
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "vasquez-teri",
+"who": "Judge Vasquez",
+"total": 69,
+"att": [
+"1230",
+57
+],
+"nonatt": [
+"757",
+12
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "vellar-margaret",
+"who": "Judge Vellar",
+"total": 16,
+"att": [
+"195",
+7
+],
+"nonatt": [
+"377",
+6
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "vigil-samuel",
+"who": "Judge Vigil",
+"total": 18,
+"att": [
+"179",
+8
+],
+"nonatt": [
+"62",
+6
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "waidler-kelly",
+"who": "Judge Waidler",
+"total": 71,
+"att": [
+"374",
+27
+],
+"nonatt": [
+"540",
+41
+],
+"juror": [
+"-",
+1
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "wheeler-kristan",
+"who": "Judge Wheeler",
+"total": 52,
+"att": [
+"563",
+16
+],
+"nonatt": [
+"616",
+34
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "whitaker-shay",
+"who": "Judge Whitaker",
+"total": 20,
+"att": [
+"365",
+14
+],
+"nonatt": [
+"265",
+6
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "whitfield-jr-joseph",
+"who": null,
+"total": null,
+"att": [
+"343",
+24
+],
+"nonatt": [
+"265",
+12
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "williford-joshua",
+"who": "Judge Williford",
+"total": 43,
+"att": [
+"403",
+16
+],
+"nonatt": [
+"473",
+25
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+1
+]
+},
+{
+"slug": "yoder-keri",
+"who": "Judge Yoder",
+"total": 31,
+"att": [
+"312",
+17
+],
+"nonatt": [
+"189",
+9
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+},
+{
+"slug": "zeerip-bough",
+"who": "Judge Zeerip",
+"total": 29,
+"att": [
+"201",
+19
+],
+"nonatt": [
+"253",
+5
+],
+"juror": [
+"-",
+0
+],
+"citizen": [
+"-",
+0
+]
+}
+]

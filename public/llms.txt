@@ -1,0 +1,22 @@
+# Rate Your Judge Colorado
+
+> An independent, open-source public project for the people of Colorado. After a hearing, a person can rate the judge or prosecutor in about 30 seconds from a phone, anonymously, in English or Spanish. Every comment is read by a human moderator before it is public; scores stay hidden until at least 5 people have rated. Not affiliated with the State of Colorado, its courts or any commission. Lists real Colorado judges and elected district attorneys, taken from official court and DA lists; ratings and comments are the opinions of the people who leave them.
+
+## Read first
+- [Why this site exists](https://rateyourjudgecolorado.com/about.html): Why this site exists: how few people take part in official judge evaluations in Colorado, and how an independent, open public project can help residents be heard.
+- [How it works](https://rateyourjudgecolorado.com/how.html): How rating a Colorado judge or prosecutor works: roles, the courthouse check, the five questions, comments reviewed by a human moderator, and every situation explained.
+- [Our method](https://rateyourjudgecolorado.com/method.html): The research behind the questions: procedural-justice studies, court-user surveys and the standards used to evaluate judges and prosecutors, with sources.
+- [Security and trust](https://rateyourjudgecolorado.com/security.html): Security and privacy: what we store, what we never store, how we resist fake ratings, and what can still go wrong. Stated honestly.
+
+## Participate
+- [Rate someone](https://rateyourjudgecolorado.com/): the rating tool (needs JavaScript and a phone).
+- [Get involved](https://rateyourjudgecolorado.com/join.html): Get involved: volunteer, program, test, translate, give legal help or spread the word about this independent Colorado public project.
+
+## Policies (drafts under legal review)
+- [Terms of use](https://rateyourjudgecolorado.com/terms.html): Terms of use for Rate Your Judge Colorado (draft for legal review).
+- [Privacy policy](https://rateyourjudgecolorado.com/privacy.html): Privacy policy for Rate Your Judge Colorado: what we keep, why and for how long (draft for legal review).
+- [Corrections and removal](https://rateyourjudgecolorado.com/corrections.html): Corrections and removal: how a judge, prosecutor or commenter can ask for a correction, a reply or a removal (draft for legal review).
+
+## Optional
+- [Full text of the main pages in one file](https://rateyourjudgecolorado.com/llms-full.txt)
+- Contact: hello@rateyourjudgecolorado.com · corrections@rateyourjudgecolorado.com · security@rateyourjudgecolorado.com

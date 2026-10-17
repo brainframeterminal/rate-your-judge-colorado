@@ -1,0 +1,957 @@
+[
+{
+"id": "adams-adams-county",
+"county": "Adams",
+"district": "17",
+"name": "Adams County",
+"address": "1100 Judicial Center Dr., Brighton, CO 80601",
+"lat": 39.9684284,
+"lon": -104.7632229,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "alamosa-alamosa-county",
+"county": "Alamosa",
+"district": "12",
+"name": "Alamosa County",
+"address": "8955 Independence Way, Alamosa, CO 81101",
+"lat": 37.4682005,
+"lon": -105.8678353,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court",
+"Water Court Division 3"
+]
+},
+{
+"id": "arapahoe-arapahoe-county",
+"county": "Arapahoe",
+"district": "18",
+"name": "Arapahoe County",
+"address": "7325 S. Potomac Street, Centennial, CO 80112",
+"lat": 39.5813986,
+"lon": -104.8295137,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "archuleta-archuleta-county",
+"county": "Archuleta",
+"district": "6",
+"name": "Archuleta County",
+"address": "109 Harman Park Drive, Pagosa Springs, CO 81147",
+"lat": 37.2661504,
+"lon": -107.0514695,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "baca-baca-county",
+"county": "Baca",
+"district": "15",
+"name": "Baca County",
+"address": "741 Main Street Suite 5, Springfield, CO 81073",
+"lat": 37.4041197,
+"lon": -102.6165631,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "bent-bent-county",
+"county": "Bent",
+"district": "16",
+"name": "Bent County",
+"address": "725 Bent Avenue, Las Animas, CO 81054",
+"lat": 38.0658886,
+"lon": -103.2200622,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "boulder-boulder-county",
+"county": "Boulder",
+"district": "20",
+"name": "Boulder County",
+"address": "1777 Sixth Street, Boulder, CO 80302",
+"lat": 40.0149856,
+"lon": -105.270545,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "broomfield-broomfield-county",
+"county": "Broomfield",
+"district": "17",
+"name": "Broomfield County",
+"address": "17 Descombes Dr., Broomfield, CO 80020",
+"lat": 39.9206894,
+"lon": -105.0679516,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "clear-creek-clear-creek-county",
+"county": "Clear Creek",
+"district": "5",
+"name": "Clear Creek County",
+"address": "405 Argentine St., Georgetown, CO 80444",
+"lat": 39.7056325,
+"lon": -105.6986433,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "conejos-conejos-county",
+"county": "Conejos",
+"district": "12",
+"name": "Conejos County",
+"address": "603 Main Street, Antonito, CO 81120",
+"lat": 37.0771708,
+"lon": -106.008874,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "crowley-crowley-county",
+"county": "Crowley",
+"district": "16",
+"name": "Crowley County",
+"address": "110 East 6th Street Room 303, Ordway, CO 81063",
+"lat": 38.2180608,
+"lon": -103.7560606,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "delta-delta-county",
+"county": "Delta",
+"district": "7",
+"name": "Delta County",
+"address": "501 Palmer St. #338, Delta, CO 81416",
+"lat": 38.745439,
+"lon": -108.0710991,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "denver-denver-district-court",
+"county": "Denver",
+"district": "2",
+"name": "Denver District Court",
+"address": "2 East 14th Avenue, Denver, CO 80203",
+"lat": 39.7378376,
+"lon": -104.9867517,
+"kind": "trial",
+"houses": [
+"District Court"
+]
+},
+{
+"id": "denver-denver-juvenile-court",
+"county": "Denver",
+"district": "2",
+"name": "Denver Juvenile Court",
+"address": "2 East 14th Avenue, Denver, CO 80203",
+"lat": 39.7378376,
+"lon": -104.9867517,
+"kind": "trial",
+"houses": [
+"Juvenile Court"
+]
+},
+{
+"id": "denver-denver-probate-court",
+"county": "Denver",
+"district": "2",
+"name": "Denver Probate Court",
+"address": "1437 Bannock Street Room 230, Denver, CO 80202",
+"lat": 39.7392364,
+"lon": -104.984862,
+"kind": "trial",
+"houses": [
+"Probate Court"
+]
+},
+{
+"id": "denver-denver-county-court",
+"county": "Denver",
+"district": "2",
+"name": "Denver County Court",
+"address": "520 W Colfax Ave, Denver, CO 80204",
+"lat": 39.7402224,
+"lon": -104.994544,
+"kind": "trial",
+"houses": [
+"County Court"
+]
+},
+{
+"id": "dolores-dolores-county",
+"county": "Dolores",
+"district": "22",
+"name": "Dolores County",
+"address": "409 N. Main Street, Dove Creek, CO 81324",
+"lat": 37.765471,
+"lon": -108.9036891,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "douglas-douglas-county",
+"county": "Douglas",
+"district": "23",
+"name": "Douglas County",
+"address": "4000 Justice Way Ste. 2009, Castle Rock, CO 80109",
+"lat": 39.3722552,
+"lon": -104.858682,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "eagle-eagle-county",
+"county": "Eagle",
+"district": "5",
+"name": "Eagle County",
+"address": "885 Chambers Ave Eagle, CO 81631",
+"lat": 39.6632677,
+"lon": -106.8181867,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "elbert-elbert-county",
+"county": "Elbert",
+"district": "23",
+"name": "Elbert County",
+"address": "751 Ute Ave. Kiowa, CO 80117",
+"lat": 39.342283,
+"lon": -104.4640819,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "fremont-fremont-county",
+"county": "Fremont",
+"district": "11",
+"name": "Fremont County",
+"address": "136 Justice Center Road #104, Canon City, CO 81212",
+"lat": 38.4422506,
+"lon": -105.2348795,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "garfield-garfield-county",
+"county": "Garfield",
+"district": "9",
+"name": "Garfield County",
+"address": "200 E. 18th St. Suite 103, Rifle, CO 81650",
+"lat": 39.5347023,
+"lon": -107.7831199,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court",
+"Water Court Division 5"
+]
+},
+{
+"id": "gilpin-gilpin-county",
+"county": "Gilpin",
+"district": "1",
+"name": "Gilpin County",
+"address": "2960 Dory Hill Road Suite 200, Black Hawk, CO 80422",
+"lat": 39.8011469,
+"lon": -105.4932708,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "grand-grand-county",
+"county": "Grand",
+"district": "14",
+"name": "Grand County",
+"address": "307 Moffat Avenue, Hot Sulphur Springs, CO 80451",
+"lat": 40.072115,
+"lon": -106.1039337,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "gunnison-gunnison-county",
+"county": "Gunnison",
+"district": "7",
+"name": "Gunnison County",
+"address": "200 E. Virginia Avenue, Gunnison, CO 81230",
+"lat": 38.545607,
+"lon": -106.925464,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "hinsdale-hinsdale-county",
+"county": "Hinsdale",
+"district": "7",
+"name": "Hinsdale County",
+"address": "317 Henson St., Lake City, CO 81235",
+"lat": 38.0284597,
+"lon": -107.3148654,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "huerfano-huerfano-county",
+"county": "Huerfano",
+"district": "3",
+"name": "Huerfano County",
+"address": "200 West 5th Street Suite 141, Walsenburg, CO 81089",
+"lat": 37.6235234,
+"lon": -104.780995,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "jefferson-jefferson-county",
+"county": "Jefferson",
+"district": "1",
+"name": "Jefferson County",
+"address": "100 Jefferson County Parkway, Golden, CO 80401",
+"lat": 39.7281807,
+"lon": -105.2016602,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "kit-carson-kit-carson-county",
+"county": "Kit Carson",
+"district": "13",
+"name": "Kit Carson County",
+"address": "1650 Donelan Avenue Suite 104, Burlington, CO 80807",
+"lat": 39.3046827,
+"lon": -102.2680065,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "lake-lake-county",
+"county": "Lake",
+"district": "5",
+"name": "Lake County",
+"address": "1205 Harrison Avenue, Leadville, CO 80461",
+"lat": 39.2536415,
+"lon": -106.2938141,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "larimer-larimer-county",
+"county": "Larimer",
+"district": "8",
+"name": "Larimer County",
+"address": "1600 Prospect Park Way Suite 109, Fort Collins, CO 80525",
+"lat": 40.5871782,
+"lon": -105.0770113,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "las-animas-las-animas-county",
+"county": "Las Animas",
+"district": "3",
+"name": "Las Animas County",
+"address": "200 E. 1st St. Room 304, Trinidad, CO 81082",
+"lat": 37.169397,
+"lon": -104.500541,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "lincoln-lincoln-county",
+"county": "Lincoln",
+"district": "23",
+"name": "Lincoln County",
+"address": "103 Third Ave. Hugo, CO 80821",
+"lat": 39.1389973,
+"lon": -103.4777333,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "logan-logan-county",
+"county": "Logan",
+"district": "13",
+"name": "Logan County",
+"address": "110 N. Riverview Road Room 205, Sterling, CO 80751",
+"lat": 40.6255415,
+"lon": -103.207709,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "mesa-mesa-county",
+"county": "Mesa",
+"district": "21",
+"name": "Mesa County",
+"address": "200 S. Spruce Street, Grand Junction, CO 81501",
+"lat": 39.0660537,
+"lon": -108.5717493,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "moffat-moffat-county",
+"county": "Moffat",
+"district": "14",
+"name": "Moffat County",
+"address": "1198 W. Victory Way STE 208, Craig, CO 81625",
+"lat": 40.5152491,
+"lon": -107.5464541,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "montezuma-montezuma-county",
+"county": "Montezuma",
+"district": "22",
+"name": "Montezuma County",
+"address": "865 North Park Street Suite 100, Cortez, CO 81321",
+"lat": 37.3494528,
+"lon": -108.584073,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "montrose-montrose-county",
+"county": "Montrose",
+"district": "7",
+"name": "Montrose County",
+"address": "1200 North Grand Avenue Montrose, CO 81401",
+"lat": 38.4788068,
+"lon": -107.8654387,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court",
+"Water Court Division 4"
+]
+},
+{
+"id": "morgan-morgan-county",
+"county": "Morgan",
+"district": "13",
+"name": "Morgan County",
+"address": "400 Warner Street, Fort Morgan, CO 80701",
+"lat": 40.2520754,
+"lon": -103.7892328,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "otero-otero-county",
+"county": "Otero",
+"district": "16",
+"name": "Otero County",
+"address": "13 West Third St. Room 207, La Junta, CO 81050",
+"lat": 37.9850091,
+"lon": -103.543832,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "phillips-phillips-county",
+"county": "Phillips",
+"district": "13",
+"name": "Phillips County",
+"address": "221 S. Interocean Ave., Holyoke, CO 80734",
+"lat": 40.584081,
+"lon": -102.3014623,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "pitkin-pitkin-county",
+"county": "Pitkin",
+"district": "9",
+"name": "Pitkin County",
+"address": "506 E Main Street, Aspen, CO 81611",
+"lat": 39.190679,
+"lon": -106.8176034,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "prowers-prowers-county",
+"county": "Prowers",
+"district": "15",
+"name": "Prowers County",
+"address": "301 South Main St. #110, Lamar, CO 81052",
+"lat": 38.0872306,
+"lon": -102.620749,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "pueblo-pueblo-county",
+"county": "Pueblo",
+"district": "10",
+"name": "Pueblo County",
+"address": "501 N. Elizabeth Street, Pueblo, CO 81003",
+"lat": 38.272102,
+"lon": -104.614523,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court",
+"Water Court Division 2"
+]
+},
+{
+"id": "rio-blanco-rio-blanco-county",
+"county": "Rio Blanco",
+"district": "9",
+"name": "Rio Blanco County",
+"address": "209 E. Main Street, Rangely, CO 81648",
+"lat": 40.087052,
+"lon": -108.8027581,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "rio-grande-rio-grande-county",
+"county": "Rio Grande",
+"district": "12",
+"name": "Rio Grande County",
+"address": "925 Sixth St. Room 203, Del Norte, CO 81132",
+"lat": 37.6788919,
+"lon": -106.353368,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "routt-routt-county",
+"county": "Routt",
+"district": "14",
+"name": "Routt County",
+"address": "1955 Shield Drive Unit 200, Steamboat Springs, CO 80487",
+"lat": 40.4848003,
+"lon": -106.831735,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court",
+"Water Court Division 6"
+]
+},
+{
+"id": "sedgwick-sedgwick-county",
+"county": "Sedgwick",
+"district": "13",
+"name": "Sedgwick County",
+"address": "315 Cedar Street, Julesburg, CO 80737",
+"lat": 40.9883807,
+"lon": -102.2647947,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "summit-summit-county",
+"county": "Summit",
+"district": "5",
+"name": "Summit County",
+"address": "504 Airport Road, Breckenridge, CO 80424",
+"lat": 39.491023,
+"lon": -106.0479115,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "washington-washington-county",
+"county": "Washington",
+"district": "13",
+"name": "Washington County",
+"address": "26861 Hwy 34 Akron, CO 80720",
+"lat": 40.164558,
+"lon": -103.2189852,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "yuma-yuma-county",
+"county": "Yuma",
+"district": "13",
+"name": "Yuma County",
+"address": "310 Ash Street Suite L, Wray, CO 80758",
+"lat": 40.0758822,
+"lon": -102.223253,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "el-paso-el-paso-county",
+"county": "El Paso",
+"district": "4",
+"name": "El Paso County",
+"address": "270 S Tejon St Colorado Springs, CO 80903",
+"lat": 38.8303193,
+"lon": -104.8251756,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "chaffee-chaffee-county",
+"county": "Chaffee",
+"district": "11",
+"name": "Chaffee County",
+"address": "142 Crestone Avenue P.O. Box 279 Salida, CO 81201",
+"lat": 38.5379308,
+"lon": -105.9988576,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "cheyenne-cheyenne-county",
+"county": "Cheyenne",
+"district": "15",
+"name": "Cheyenne County",
+"address": "51 S. 1st St. P.O. Box 696 Cheyenne Wells, CO 80810",
+"lat": 38.8209677,
+"lon": -102.3492048,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "costilla-costilla-county",
+"county": "Costilla",
+"district": "12",
+"name": "Costilla County",
+"address": "304 Main Street P.O. Box 301 San Luis, CO 81152",
+"lat": 37.0844703,
+"lon": -105.4938535,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "custer-custer-county",
+"county": "Custer",
+"district": "11",
+"name": "Custer County",
+"address": "205 S. 6th St. PO Box 60 Westcliffe, CO 81252",
+"lat": 38.134228,
+"lon": -105.463677,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "jackson-jackson-county",
+"county": "Jackson",
+"district": "8",
+"name": "Jackson County",
+"address": "396 Lafever St. PO BOX 308 Walden, CO 80480",
+"lat": 40.7250247,
+"lon": -106.2881887,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "kiowa-kiowa-county",
+"county": "Kiowa",
+"district": "15",
+"name": "Kiowa County",
+"address": "1305 Goff Street PO Box 353 Eads, CO 81036",
+"lat": 38.4795156,
+"lon": -102.7799926,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "la-plata-la-plata-county",
+"county": "La Plata",
+"district": "6",
+"name": "La Plata County",
+"address": "1060 East Second Ave Suite 106 Durango, CO 81301",
+"lat": 37.2912928,
+"lon": -107.8730911,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court",
+"Water Court Division 7"
+]
+},
+{
+"id": "mineral-mineral-county",
+"county": "Mineral",
+"district": "12",
+"name": "Mineral County",
+"address": "1201 North Main P.O. Box 337 Creede, CO 81130",
+"lat": 37.8541492,
+"lon": -106.927309,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "ouray-ouray-county",
+"county": "Ouray",
+"district": "7",
+"name": "Ouray County",
+"address": "541 4th St P.O. Box 643 Ouray, CO 81427",
+"lat": 38.0225061,
+"lon": -107.6697309,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "park-park-county",
+"county": "Park",
+"district": "11",
+"name": "Park County",
+"address": "300 Fourth St. P.O. Box 190 Fairplay, CO 80440",
+"lat": 39.2223361,
+"lon": -105.995563,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "saguache-saguache-county",
+"county": "Saguache",
+"district": "12",
+"name": "Saguache County",
+"address": "501 4th Street P.O. Box 197 Saguache, CO 81149",
+"lat": 38.085503,
+"lon": -106.136947,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "san-juan-san-juan-county",
+"county": "San Juan",
+"district": "6",
+"name": "San Juan County",
+"address": "1557 Greene Street P O Box 900 Silverton, CO 81433",
+"lat": 37.8151462,
+"lon": -107.6619943,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "san-miguel-san-miguel-county",
+"county": "San Miguel",
+"district": "7",
+"name": "San Miguel County",
+"address": "305 W. Colorado Ave. P.O. Box 919 Telluride, CO 81435",
+"lat": 37.937983,
+"lon": -107.812819,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "teller-teller-county",
+"county": "Teller",
+"district": "4",
+"name": "Teller County",
+"address": "101 W. Bennett Avenue P.O. Box 997 Cripple Creek, CO 80813",
+"lat": 38.7467943,
+"lon": -105.1806443,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court"
+]
+},
+{
+"id": "weld-weld-county",
+"county": "Weld",
+"district": "19",
+"name": "Weld County",
+"address": "901 9th Ave Greeley, CO 80631",
+"lat": 40.4235203,
+"lon": -104.6931645,
+"kind": "trial",
+"houses": [
+"District Court",
+"County Court",
+"Water Court Division 1"
+]
+},
+{
+"id": "carr-judicial-center",
+"county": "Denver",
+"district": "Statewide",
+"name": "Colorado Supreme Court and Court of Appeals",
+"kind": "appellate",
+"address": "2 East 14th Avenue, Denver, CO 80203",
+"lat": 39.738374,
+"lon": -104.987338,
+"houses": [
+"Supreme Court",
+"Court of Appeals"
+]
+}
+]

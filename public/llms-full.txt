@@ -1,0 +1,363 @@
+# Rate Your Judge Colorado — full text
+
+> Independent, open-source public project for Colorado residents. Pilot stage; the people listed are real Colorado officials from official lists. Source: https://rateyourjudgecolorado.com
+
+---
+
+# Why this site exists — Rate Your Judge Colorado
+URL: https://rateyourjudgecolorado.com/about.html
+
+Why this site exists
+
+Colorado voters are asked every two years whether judges should keep their jobs. The people who actually watch judges work (people in the case, jurors, observers, attorneys) rarely get a simple way to say what they saw. And voters rarely get a simple way to read it.
+
+The problem in three minutes
+Plays from YouTube
+Recorded on 13 October 2026. Since then the site lists real Colorado judges and prosecutors instead of the made-up demo people in the video, and a new comment shows at once, marked “not reviewed yet”, until a moderator approves or removes it. Watch on YouTube
+What the state does today
+
+Colorado’s Office of Judicial Performance Evaluation (OJPE) and its commissions evaluate judges using surveys, courtroom observation, interviews and public reports. That work matters, and the results are published online.
+
+The surveys are run by a private research firm outside Colorado. The state’s 2024 survey reports name it on the cover: Market Decisions Research of Portland, Maine.
+Invitations go out by email. The reports count the emails sent, not the emails that reached an inbox rather than a spam folder.
+What the state’s own numbers show
+In the state’s 2024 voter survey (423 voters), 53% knew that judges are evaluated, and only 23% knew the commissions exist. 33% said most voters do not have the information they need.
+In the 2024 cycle, 117,355 members of the public were invited by email to evaluate judges. 6,614 responded: 6%.
+Jurors and citizens are not sampled evenly. The state’s own report says their response rate “cannot be calculated”, because court staff choose which judges are evaluated and citizens choose to take part.
+The number of people behind one judge’s score can be small. One district judge’s 2024 report rests on 42 people, and in it 18 of 1,072 invited attorneys responded. A 2017 report for another judge counts 5 completed juror surveys out of 13 sent.
+
+These are the state’s own published figures. They are not accusations. They are the reason a second, simpler and open way to share what you saw in court is useful.
+
+Three examples from the state’s own reports
+
+Every official 2024 survey report opens with a table like these, showing how many invitations were sent and how many people answered. The pictures are cropped straight from the state’s PDFs. Tap one to open the whole report.
+
+Judge Kimberly D. Cortez-Rodriguez, District Court: 97 email invitations to people other than attorneys, 0 responses. (our saved copy)
+Judge Deni E. Eiring, County Court: the whole report rests on 6 people. 96 emails to attorneys brought 2 answers, 139 emails to other people brought 1. (our saved copy)
+Judge Anita M. Schutte, District Court: 1,575 email invitations to people other than attorneys, 21 responses (1.3%). (our saved copy)
+
+These three are not the exception. We read every 2024 report that uses this table: 96 trial-court judges.
+
+Half of the reports rest on 33 people or fewer. 20 of them rest on 20 people or fewer.
+The juror survey row shows 0 in 82 of the 96 reports. Citizen feedback shows 0 in 89.
+Across all 96, 37,501 email invitations to people other than attorneys brought 1,234 answers (3.3%). 40,276 email invitations to attorneys brought 1,749 (4.3%).
+
+These numbers describe how the information was collected. They say nothing about the judges themselves.
+
+What we do differently
+You can rate in about 30 seconds, on your phone, in English or Spanish, right after you leave the courtroom.
+No account and no name. The site is built to know as little about you as possible.
+The questions ask about what people can actually see, not about legal outcomes.
+Results are public right away, split by who was rating, and every moderator decision is on the record.
+It is an independent, open-source public project made for the residents of Colorado. Anyone can read the code, test it and suggest changes, and the code belongs to the public, not to a company or an agency. Our rule: moderators and maintainers must be verified Colorado residents (the verification process will be published here). Everything is done in the open so that anyone can check it.
+A public record, not only a scorecard
+
+This is not only a scorecard for voters. It is a standing public record, and a record changes behavior on its own: officials act differently when the people they serve can see and compare their work.
+
+What this site is not
+It is independent. It is not part of, endorsed by, or connected to the State of Colorado, its courts or any commission.
+It is not an official evaluation and not legal advice. It does not replace the commissions’ work.
+Ratings are opinions about conduct in a courtroom. They are not findings of fact.
+Comments are the personal opinions of the people who wrote them. We collect them so that anyone who was in court can be heard. A moderator checks that a comment follows our rules, not whether what it says is true. Verify anything important yourself.
+The judges and prosecutors here are public officials. Honest opinions about how public officials conduct themselves are protected speech. False statements of fact are not, which is why we ask only about what people saw.
+The judges and prosecutors listed are real Colorado officials, taken from the official lists of the Colorado Judicial Branch and the district attorneys’ offices. Every rating comes from a person who used this site.
+Join in
+
+Want to help as a volunteer, programmer, tester, translator, lawyer or by spreading the word? Use the “Get involved” form in the footer. The code will be published as open source before launch, and the repository address will be posted here.
+
+State of Colorado, 2024 voter survey report (OJPE)
+A 2024 district judge retention report (OJPE) — Table 1 and “Response Rates”
+A 2017 interim report for one judge (OJPE) — Table 4 “Response Rates”
+Colorado Office of Judicial Performance Evaluation
+Market Decisions Research, Portland, Maine (the firm named on the state’s 2024 survey reports)
+
+---
+
+# How it works — Rate Your Judge Colorado
+URL: https://rateyourjudgecolorado.com/how.html
+
+How it works
+
+From leaving the courtroom to seeing the result takes about a minute. Here is every step, and what happens behind it.
+
+1. Tell us who you were
+
+Choose one: part of the case (defendant, victim, witness, family), watching, juror, or attorney or court staff. A defendant, a juror and an observer see different things, so we show their ratings side by side and never blend them.
+
+2. Pick the courthouse
+
+Your phone can suggest the nearest courthouse, or you can search. If you allow location, it is used once to check that you were near the courthouse (within 1,000 feet). We keep only “near” or “not near”, never where you were.
+
+3. Pick the judge or prosecutor
+
+Choose the courthouse, then the judges or the prosecutors tab, then the person.
+
+4. Answer five short questions
+Each question is a tap from 1 to 5. If you did not see something, tap “I didn’t see this”. You need to answer at least three of the five.
+Add an overall star rating.
+Optional: how it went for you (I won, I lost, mixed, I only watched). This helps readers see whether low scores come from the process or only from losing.
+Optional comment, typed or spoken. A spoken comment is turned into text and the recording is deleted right away.
+If you were a victim or witness and are rating a prosecutor, two extra optional questions appear. Their answers are shown separately.
+5. See the result right away
+
+You see the overall score, each question, the scores by group, a note on how people who lost their case rated, and the trend over recent weeks.
+
+How scores are counted
+Each question’s score is the plain average of the 1 to 5 answers, counting only people who answered that question.
+Every rating counts the same. We mark the ratings made near the courthouse and show how many there are, so you can judge for yourself.
+No average score is shown until a person has at least 5 ratings. Each single rating is shown with its answers and the rater’s role in the case, never with a name or anything that identifies the person who left it.
+Scores are shown by group (in the case, watching, jurors, attorneys and staff). We do not hide a secret formula that mixes them.
+One phone can rate the same judge or prosecutor once every 30 days.
+How comments and moderation work
+A comment appears right away, marked “Not reviewed yet”. A moderator then approves it or removes it. Comments with insults, swearing, contact details, case numbers or links are not accepted at all; comments that may name private people, threaten anyone or accuse someone of a crime are held, visible only to their author, until a moderator reads them.
+Once a moderator approves it, it is marked “Reviewed”.
+People who have rated someone can report a published comment. When two different people report it, it is hidden until a moderator decides again.
+Moderators remove insults, threats, private details, accusations of crimes and things that are not about the courtroom. They do not remove harsh but factual criticism.
+Every moderator decision is public, with the moderator’s name and the reason, on the moderation log.
+Every situation
+You were a defendant or family member
+
+Choose “part of the case”, then “Defendant or family”. You answer the five questions. Say if you won or lost.
+
+You were a victim or witness and are rating a prosecutor
+
+Two extra optional questions appear: whether the prosecutor listened and kept you informed, and whether you felt safe and treated with dignity. They are shown separately.
+
+You were a juror or just watching
+
+Pick that role. Skip anything you did not see.
+
+You are an attorney or court staff
+
+You are counted as your own group. You know the most, and you may also have a stake, so your scores are shown on their own.
+
+You saw only part of the hearing
+
+Tap “I didn’t see this” on what you missed. Answer at least three.
+
+You lost and you are upset
+
+You can say so. Your rating counts, and readers can see how people who lost rated the judge.
+
+Your phone’s location is off, or you rate later from home
+
+It works. Your rating just isn’t marked as made near the courthouse.
+
+You already rated this person recently
+
+It is blocked for 30 days from your last rating of that person. You can rate other people right away.
+
+You see a published comment that is wrong or abusive
+
+Tap Report and choose a reason. Two reports hide it until a moderator decides again.
+
+You want to send a profile to someone
+
+Tap Share on the profile. The link opens that profile with a preview.
+
+You prefer Spanish
+
+Tap EN/ES at the top right. The site also follows your phone’s language.
+
+Your connection drops
+
+You see a clear message and a Try again button. Nothing is sent twice.
+
+---
+
+# Our method — Rate Your Judge Colorado
+URL: https://rateyourjudgecolorado.com/method.html
+
+Our method
+
+The questions come from published standards and research on how courts should be judged by the people who use them. Here is what we used, why, and what the result cannot tell you.
+
+The rules we followed
+Ask about what people can see (the process), not about legal correctness or the verdict.
+One idea per question.
+Plain language, at about an 8th-grade level.
+Give an honest way out: “I didn’t see this”. Require at least three answers.
+Ask whether the person won or lost, and show it, because losing colors how people rate.
+Show groups of raters separately instead of blending them.
+The five judge questions
+Did the judge let each side be heard?
+
+Measures “voice”. Based on the court-user survey of the National Center for State Courts (“I had a chance to tell my side of the story”), the Arizona juror survey, and research by Lind, Tyler and Huo on what makes people feel a court treated them fairly.
+
+Did the judge treat both sides the same?
+
+Measures neutrality, the best everyday stand-in for impartiality. Based on NCSC (“I was treated the same as everyone else”) and the Arizona survey.
+
+Was the judge respectful to everyone?
+
+Measures respect and temperament. Based on NCSC (“courtesy and respect”), the Arizona survey, and the temperament criterion of the ABA guidelines.
+
+Was it clear what the judge decided, and why?
+
+Measures understanding. Based on NCSC (“I could follow what was happening”, “I know what to do next”) and the communication criterion of the ABA guidelines.
+
+Did the judge run things on time?
+
+Measures time and organization. Based on NCSC (“a reasonable amount of time”), the Arizona survey, and the case-management category used by Colorado’s own evaluations. In Rhode Island’s 2023 survey, time was one of the lowest-scoring areas.
+
+The five prosecutor questions
+
+No official questionnaire for prosecutors exists. These are a careful first draft built from the ABA prosecution standards, the same procedural-justice research, and the Stanford “Rate My District Attorney” report.
+
+Was the prosecutor respectful to everyone in the courtroom?
+
+Respect. Same research as above.
+
+Did the prosecutor seem prepared?
+
+The duty to prepare. Visible in court.
+
+Did the prosecutor stick to the facts?
+
+Candor and the standard against inflammatory argument. It asks about conduct a person can see, not whether the facts were true.
+
+Could you follow what the prosecutor was saying and doing?
+
+Understanding, one of the elements of procedural justice.
+
+Did the prosecutor treat witnesses and the defendant fairly?
+
+Fair conduct toward people in the room. We ask about behavior, not about motives.
+
+Only for victims and witnesses (optional): Did the prosecutor listen to you and keep you informed? Did you feel safe and treated with dignity?
+
+Based on research on victims’ and witnesses’ experience, where being informed and listened to matters most. Shown separately and never merged into the main score.
+
+What we deliberately do not ask
+Whether a verdict, sentence or plea was fair, or whether a judge got the law right. People in the room cannot judge that, and answers would mostly reflect who won.
+Whether someone is “good”, “honest” or “corrupt”. We ask about things people did that others can see.
+About charging decisions, plea deals or evidence disclosure. These happen where the public cannot see them.
+About looks, politics or personal life.
+Where the questions come from
+ABA Black Letter Guidelines for the Evaluation of Judicial Performance (summary by IAALS)
+Rhode Island Judiciary, 2023 Access and Fairness Survey (uses the NCSC CourTools Measure 1 items)
+Arizona Supreme Court Administrative Order 2010-22 (juror and litigant evaluation questions)
+ABA Criminal Justice Standards for the Prosecution Function
+Prosecutorial Performance Indicators project
+Stanford Law School, “Rate My District Attorney” (2018)
+
+Also: Lind, Tyler and Huo (1997) and Tyler and Huo, “Trust in the Law”, on how people judge courts by fair treatment more than by outcome.
+
+The appeals record on judge profiles
+Source: the Colorado Court of Appeals’ own weekly announcements of its decisions, from June 2023. Each entry opens the announcement it came from, on the right page.
+We keep our own copy of every announcement we link to. Next to each entry, “our saved copy” opens it, so it can still be checked if the court’s file is moved or removed. The official link always comes first.
+A decision is listed under a judge only when the announcement names that judge as the trial judge and the name matches exactly one judge on our list in that court district (or the same full name, once in the whole state, for judges who changed courts). Magistrates are not included.
+The outcome uses the court’s own wording. “Partly affirmed” means part of the ruling was reversed or vacated and the rest stands. When the court only declined to hear part of an appeal, that is not counted against the judge.
+We do not name the people in the case, only the type of case.
+We show the list, not a reversal rate: there is no public count of every case a judge decides, and some kinds of cases are appealed far more often than others.
+A denied petition, including a denied C.A.R. 21 petition, is not an endorsement of the lower court’s ruling. We list decisions only, and never count a denial in a judge’s favor.
+Updated every week. If you see a mistake, tell us on the Corrections page.
+Judicial discipline in Colorado, statewide
+
+The Colorado Commission on Judicial Discipline reviews complaints about judges (it calls them Requests for Evaluation). Its annual reports give statewide numbers only, never per judge, so these figures say nothing about any single judge on this site.
+
+2024: 368 requests received. 318 were dismissed at the first review. The Commission considered 65 matters and dismissed 29 of them. 3 formal proceedings, each ending in public censure. 12 private disciplinary actions, all for missed financial-disclosure filings. 2 diversion plans and 1 temporary suspension.
+2023: 344 requests received. 251 were dismissed at the first review.
+Most complaints never become public. Since Amendment H (2024), a case becomes public when the Commission starts formal proceedings; informal proceedings, where most complaints end, stay confidential (Colorado Constitution, art. VI, § 23(3)(g)).
+Colorado Commission on Judicial Discipline, 2024 Annual Report
+Colorado Commission on Judicial Discipline, 2023 Annual Report
+How the state’s surveys are collected
+
+For comparison, this is how the official surveys work, taken from the state’s own 2024 survey reports.
+
+They are conducted by a private research firm outside Colorado. The reports name it on the cover: Market Decisions Research, 511 Congress Street, Portland, Maine.
+Invitations go out by email, in quarterly batches with email reminders: to attorneys, to other people who appeared in court, and to court staff. Jurors are also invited by email, and anyone can answer through a public link.
+The invitation can come months after the hearing: attorneys who appeared in court from January to June 2023 were first emailed on September 10, 2023.
+The reports count invitations sent, not invitations delivered. Whether an email reached an inbox, landed in a spam folder or went to an old address is not reported.
+119,479 email invitations to attorneys produced 5,682 evaluations. 117,355 people other than attorneys were invited by email, and 6,614 of them responded (6%).
+
+Three real tables, cropped from individual judges’ reports, are on the About page.
+
+A 2024 district judge retention report (OJPE) — Table 1 and “Response Rates”
+Market Decisions Research, Portland, Maine (the firm named on the state’s 2024 survey reports)
+The limits, honestly
+These questions are drafted from standards and research. They have not yet been tested with real users, so we do not claim they are a validated scientific instrument.
+People who choose to rate are not a random sample of everyone who goes to court.
+A score summarizes opinions about conduct in a courtroom. It is not a finding about a judge’s legal skill.
+We could confirm some of our sources only through summaries. We will replace them with the primary documents as we read them.
+How we will check and improve them (planned)
+A pilot with real courtroom visitors in Colorado.
+Checking that people understand each question the same way and that the answers hang together.
+Review by independent judicial-performance researchers, survey methodologists and practicing Colorado attorneys.
+Review of the Spanish by native speakers.
+Publishing every change to a question and the reason.
+
+---
+
+# Security and trust — Rate Your Judge Colorado
+URL: https://rateyourjudgecolorado.com/security.html
+
+Security and trust
+
+A public rating site is only worth something if people can trust the numbers. Here is how we protect against bots and fake ratings, what we store, what we never store, and what is still a risk.
+
+Protections that work today
+One rating per phone per official every 30 days
+
+Each phone gets a random anonymous token that our server signs, so nobody can invent one. A second rating of the same person within 30 days is blocked.
+
+Rate limits
+
+Every action (rating, report, voice note, suggestion, feedback) is limited per phone and per network each hour, and new tokens are limited per network each day. Bursts from one source get slowed down.
+
+Courthouse check
+
+If you allow location, we check your phone is within 1,000 feet of the courthouse and keep only yes or no. Ratings made near the courthouse are marked, and every profile shows how many are. It is a signal, not proof.
+
+Every comment is checked twice
+
+First by automatic rules the moment it is sent (no insults, contact details, links, or names of private people), then by a human moderator, who approves or removes it.
+
+Reports
+
+Only phones that have rated someone can report a comment. When two different phones report one, it is hidden until a moderator decides. A report can never overturn a moderator’s approval.
+
+Moderators on the record
+
+Every decision is public with the moderator’s name and the reason. The moderator tools are not on the public site. They live at a separate address that needs a personal sign-in with a password (a one-time code is planned).
+
+Cleaned text
+
+Comments are plain text only. Markup, scripts and control characters are stripped. They are limited in length.
+
+Our own server only
+
+No ads, no trackers or analytics from other companies, no outside fonts or scripts. Everything loads from our own server, so no outside company learns who visits. The one exception is the video on About: it plays from YouTube in its privacy-enhanced mode, and nothing loads from YouTube until you press play.
+
+A puzzle instead of an outside captcha
+
+Before a rating or other submission the phone solves a small puzzle by itself. It is hosted by us, so no outside company is involved, and it slows down bots.
+
+Hardened server
+
+Encrypted connection, a strict browser rule that blocks any outside code, no embedding in other sites, no referrer sent, same-site-only requests, and protection against fake form posts from other websites.
+
+Hidden until it is safe
+
+No average score is shown until at least 5 people have rated, and group results appear only when each group is large enough. Each single rating is shown with its answers and the rater’s role only: no name, no location, and the time rounded to the hour.
+
+What we store, and what we never store
+We store: your ratings and optional comment; whether you said you won or lost; your role; whether your phone was near the courthouse (yes or no); the time rounded to the hour; and the random token of your phone.
+We never store: your name, email, phone number, exact location, or your IP address. Your network address is held only in the server’s memory for a short time to slow down bursts, and is never written to the database.
+Voice recordings are turned into text and deleted immediately. They are never kept.
+The token on your phone is random and tied to nothing about you, but it does link your own ratings to each other. After 30 days we cut that link. Clear your browser data and the token disappears from your phone.
+What can still go wrong, honestly
+A determined person with many phones, different networks or a location-faking tool could still stuff the ballot box.
+Clearing your browser data, or using another phone, gets a new anonymous token, so the one-rating-every-30-days rule is a speed bump, not a wall.
+The courthouse check can be fooled by a phone that fakes its location. That is why we show how many ratings were made near the courthouse instead of pretending it is proof.
+People who are angry, or who are supporters, are more likely to take part. Any open rating site has this bias, which is why we show whether raters won or lost.
+Rating a real, named official carries a risk of unfair or false statements. We reduce it with fact-only questions, moderation and a correction process (see below), but we cannot remove it.
+Planned before public launch
+A harder puzzle when activity looks unusual.
+Automatic alerts for unusual bursts: many ratings from one network or in a few minutes.
+An independent security review (a test where experts try to break in). To report a weak spot now, write to security@rateyourjudgecolorado.com.
+A right of reply and a correction process for officials who believe something is false.
+Publishing the code so anyone can verify these claims, and a public audit of the moderation log.
+Terms of use, a privacy policy and a corrections and takedown process, reviewed by a lawyer, and a legal review of publishing ratings about named public officials.
+
+This page lists what is built and what is planned. We will update it as things change, and we will say so when a protection is not there yet.

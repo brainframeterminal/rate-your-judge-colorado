@@ -1,0 +1,299 @@
+{
+ "as_of": "2026-10-15",
+ "judges": [
+  {
+   "name": "Monica M. Márquez",
+   "prefix": "Justice",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Chief Justice, Colorado Supreme Court",
+   "bench": "csc",
+   "source_url": "https://www.coloradojudicial.gov/supreme-court/supreme-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Brian D. Boatright",
+   "prefix": "Justice",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Justice, Colorado Supreme Court",
+   "bench": "csc",
+   "source_url": "https://www.coloradojudicial.gov/supreme-court/supreme-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "William W. Hood, III",
+   "prefix": "Justice",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Justice, Colorado Supreme Court",
+   "bench": "csc",
+   "source_url": "https://www.coloradojudicial.gov/supreme-court/supreme-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Richard L. Gabriel",
+   "prefix": "Justice",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Justice, Colorado Supreme Court",
+   "bench": "csc",
+   "source_url": "https://www.coloradojudicial.gov/supreme-court/supreme-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Carlos A. Samour, Jr.",
+   "prefix": "Justice",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Justice, Colorado Supreme Court",
+   "bench": "csc",
+   "source_url": "https://www.coloradojudicial.gov/supreme-court/supreme-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Maria E. Berkenkotter",
+   "prefix": "Justice",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Justice, Colorado Supreme Court",
+   "bench": "csc",
+   "source_url": "https://www.coloradojudicial.gov/supreme-court/supreme-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Susan Blanco",
+   "prefix": "Justice",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Justice, Colorado Supreme Court",
+   "bench": "csc",
+   "source_url": "https://www.coloradojudicial.gov/supreme-court/supreme-court-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Ted C. Tow III",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Chief Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Jerry N. Jones",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Terry Fox",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Stephanie Dunn",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Elizabeth L. Harris",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Rebecca R. Freyre",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Craig R. Welling",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Lino S. Lipinsky de Orlov",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Matthew D. Grove",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Neeti V. Pawar",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Jaclyn Casey Brown",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Sueanna P. Johnson",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Christina F. Gomez",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "David H. Yun",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "W. Eric Kuhn",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Timothy J. Schutz",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Karl L. Schock",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Katharine E. Lum",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Pax L. Moultrie",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Grant T. Sullivan",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Melissa C. Meirink",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  },
+  {
+   "name": "Kyle Brenton",
+   "prefix": "Judge",
+   "court_level": "appellate",
+   "court_id": "carr-judicial-center",
+   "title": "Judge, Colorado Court of Appeals",
+   "bench": "coa",
+   "source_url": "https://www.coloradojudicial.gov/court-appeals/court-appeals-judges-and-staff",
+   "source_date": "page undated; live site 2026-10-15"
+  }
+ ],
+ "district_attorneys": [],
+ "gaps": [
+  "Official 'Judges and Staff' pages carry no date; every current Court of Appeals judge on the page also signed opinions in the court's 2026 announcements (checked)."
+ ]
+}

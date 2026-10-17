@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Rate Your Judge Colorado">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd23f"/><stop offset=".55" stop-color="#ff8a3d"/><stop offset="1" stop-color="#d8456f"/></linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fffbe0"/><stop offset=".6" stop-color="#ffd23f"/><stop offset="1" stop-color="#ffb02e"/></radialGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d73d6"/><stop offset="1" stop-color="#4a4cb8"/></linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2f96"/><stop offset="1" stop-color="#0d1650"/></linearGradient>
+    <clipPath id="in"><circle cx="31" cy="32" r="20"/></clipPath>
+  </defs>
+  <path d="M51.4 14.6A26.5 26.5 0 1 0 51.4 49.4" fill="none" stroke="url(#ring)" stroke-width="7.5" stroke-linecap="round"/>
+  <g clip-path="url(#in)">
+    <circle cx="31" cy="27" r="10.5" fill="url(#sun)"/>
+    <path d="M8 52l14-21 6 7 9-15 8 13 5-6 10 22z" fill="url(#far)"/>
+    <path d="M37 23l-4.2 6.6 3-1.6 1.2 2.1 1.6-2 2.2 1.6z" fill="#fff" opacity=".95"/>
+    <path d="M5 54l17-15 9 7 9-9 9 8 13 9z" fill="url(#near)"/>
+  </g>
+</svg>

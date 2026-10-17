@@ -1,0 +1,5 @@
+{ "name": "rate-your-judge-colorado", "version": "0.2.0", "private": true, "type": "module",
+  "description": "Anonymous, phone-first ratings of Colorado judges and prosecutors. Independent open-source public project.",
+  "engines": { "node": ">=24" }, "scripts": { "start": "node --no-warnings server.js" },
+  "dependencies": { "pg": "8.23.1" },
+  "devDependencies": { "playwright": "1.62.1" } }
