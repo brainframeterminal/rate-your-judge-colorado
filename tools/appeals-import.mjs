@@ -28,7 +28,8 @@ for (const r of rows) {
     : !/^\d{4}-\d\d-\d\d$/.test(r.decided || '') ? 'date' : !/^https:\/\//.test(r.url || '') ? 'url' : !r.case_name || !r.citation ? 'name/citation' : '';
   if (why) { bad++; console.log('SKIP', why, r.citation || r.case_name); continue; }
   if (flag !== '--dry') {
-    await db.prepare(`DELETE FROM ${T} WHERE official_id = ? AND citation = ?`).run(o.id, r.citation);
+    if (r.source) await db.prepare(`DELETE FROM ${T} WHERE official_id = ? AND citation = ? AND source = ?`).run(o.id, r.citation, r.source);   // audit 10-25: a row of one source never replaces another's
+    else await db.prepare(`DELETE FROM ${T} WHERE official_id = ? AND citation = ?`).run(o.id, r.citation);
     if (T === 'opinions') await db.prepare('INSERT INTO opinions (official_id, case_name, citation, decided, outcome, url, published, note, source, checked) VALUES (?,?,?,?,?,?,?,?,?,?)')
       .run(o.id, r.case_name, r.citation, r.decided, r.outcome, r.url, r.published ? 1 : 0, r.note || '', r.source || '', r.checked || '');
     else await db.prepare('INSERT INTO appeals (official_id, court, case_name, citation, decided, outcome, url, note, source, checked) VALUES (?,?,?,?,?,?,?,?,?,?)')

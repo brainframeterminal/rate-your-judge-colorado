@@ -1,0 +1,2 @@
+# Lines that announce a case but that the parser does not take, each with the reason (balance.py).
+2024-01_78050D08-10-23_.pdf: of Appeals No. 22CA1922	PDF lost the word Court; Industrial Claim Appeals Office review, no trial judge to credit

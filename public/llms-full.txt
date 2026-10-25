@@ -247,10 +247,11 @@ The appeals record on judge profiles
 Source: the Colorado Court of Appeals’ own weekly announcements of its decisions, from June 2023. Each entry opens the announcement it came from, on the right page.
 We keep our own copy of every announcement we link to. Next to each entry, “our saved copy” opens it, so it can still be checked if the court’s file is moved or removed. The official link always comes first.
 A decision is listed under a judge only when the announcement names that judge as the trial judge and the name matches exactly one judge on our list in that court district (or the same full name, once in the whole state, for judges who changed courts). Magistrates are not included.
-The outcome uses the court’s own wording. “Partly affirmed” means part of the ruling was reversed or vacated and the rest stands. When the court only declined to hear part of an appeal, that is not counted against the judge.
+The outcome uses the court’s own wording. “Affirmed in part, reversed in part” means part of the ruling was reversed or vacated and the rest stands. When the court only declined to hear part of an appeal, that is not counted against the judge.
 We do not name the people in the case, only the type of case.
 We show the list, not a reversal rate: there is no public count of every case a judge decides, and some kinds of cases are appealed far more often than others.
 A denied petition, including a denied C.A.R. 21 petition, is not an endorsement of the lower court’s ruling. We list decisions only, and never count a denial in a judge’s favor.
+When we find no decisions on a judge’s rulings, the profile says so in words, with the dates we searched, instead of leaving the section out.
 Updated every week. If you see a mistake, tell us on the Corrections page.
 How to read an appeal
 
@@ -260,9 +261,9 @@ Affirmed
 
 The Court of Appeals agreed with the trial judge’s ruling. It stands.
 
-Partly affirmed
+Affirmed in part, reversed in part
 
-Part of the ruling stands; another part was reversed, vacated or sent back.
+Part of the ruling stands; another part was reversed or vacated, and that part usually goes back to the trial court (remanded).
 
 Reversed
 
@@ -272,11 +273,11 @@ Vacated
 
 The ruling was set aside, often so the trial court can decide again.
 
-Sent back (remanded)
+Sent back
 
 The case returns to the trial court for more steps: a new hearing, new findings, or a corrected calculation. Usually paired with a reversal or a vacated ruling.
 
-Dismissed
+Appeal dismissed
 
 The appeal ended without a decision on the merits, for example filed late or withdrawn. The ruling stands.
 
@@ -350,17 +351,35 @@ Unpublished opinions	0	0	–
 
 Publication status can change: an opinion first issued as unpublished is sometimes later designated for publication.
 
+Compare the judges where you live
+
+Pick a judicial district and a type of case to see its trial judges side by side: how many of their rulings were decided on appeal, and how many of those the Court of Appeals changed.
+
+Judicial district
+All
+Family
+Criminal
+Civil
+Other
+
+…
+
+The numbers could not be loaded. Try again in a minute.
+
+These are counts of appealed decisions, not a score. A judge with more decisions appealed may simply hear more cases or cases more often appealed, and whether a ruling is changed depends partly on which appeals panel is drawn (see “Same law, different judge?”).
+
 How to read this table
 Only rulings that someone appealed appear here. Most rulings are never appealed, and there is no public count of every case a judge decided, so none of these numbers is a rate for a judge’s work as a whole.
-“Changed on appeal” counts decisions that were reversed, partly affirmed, vacated or sent back (remanded). A ruling “affirmed and remanded with directions” counts as affirmed: the ruling stands and the trial court is told to take a further step. “Share of appealed” divides that count by the appealed decisions in the same row, and by nothing else.
+“Changed on appeal” counts decisions that were reversed, affirmed in part and reversed in part, vacated or sent back (remanded). A ruling “affirmed and remanded with directions” counts as affirmed: the ruling stands and the trial court is told to take a further step. “Share of appealed” divides that count by the appealed decisions in the same row, and by nothing else.
 A judge with a busy docket has more appeals, and more changed decisions, than a judge with a small one. Some types of cases are appealed far more often than others.
 A remand can be narrow: for example a new calculation or one more finding, with the rest of the ruling intact.
 A change in the law between the ruling and the appeal can cause a reversal that no judge could have avoided.
 None of this is a finding of misconduct. Reviewing and correcting rulings is the normal work of an appeals court.
 Where the numbers come from
 The Court of Appeals’ own weekly announcements of its decisions, from June 2023, matched to the trial judge named in each one. How the matching works, and what each outcome and each published or unpublished opinion means, is on the Our method page.
+Each judge’s profile also lists earlier decisions, from January 2013 to May 2023: unpublished decisions from the court’s own case-law database and published opinions from CourtListener (few for 2013–2014). Those years are not complete, so they are listed but not counted in this table, the comparison or any share.
 Every judge’s own list, with a link to each decision, is on that judge’s profile. Updated every week.
-How each number is calculated. Appealed decisions: every decision in those announcements on a ruling by a trial judge on this site, counted once. Changed on appeal: the decisions announced as reversed, partly affirmed, vacated or sent back. Share: changed ÷ appealed, rounded to a whole percent. Published or unpublished: as printed in the announcement.
+How each number is calculated. Appealed decisions: every decision in those announcements on a ruling by a trial judge on this site, counted once. Changed on appeal: the decisions announced as reversed, affirmed in part and reversed in part, vacated or sent back. Share: changed ÷ appealed, rounded to a whole percent. Published or unpublished: as printed in the announcement.
 Colorado Court of Appeals, weekly case announcements (the source of every appeal listed here)
 The open-source code that matches and counts them (GitHub)
 
@@ -378,18 +397,30 @@ Same law, different judge?
 
 The same law should produce the same result whatever courtroom you are assigned to. Research in several court systems has found that the judge you draw can matter a lot. Here is what careful studies found, with their own limits, and what this site can and cannot show.
 
+Same law, different judge, different result. Careful US studies measured how much the judge you draw can change.
+
+Same law
+Different judge
+Different result
+61% vs 34%
+Federal appeals: liberal rulings, by which three judges were drawn
+27.6 points
+Federal sentencing: spread between judges in the same city
+2×
+Federal sentencing: differences between judges after the rules loosened
+5% vs 88%
+Asylum: two judges in the same Miami court
 What the research found
 
 Each card gives one finding with its number, where and when it was measured, and the study’s own main caveat. The link opens the study.
 
-Asylum: 5% before one judge, 88% before another
+Sentencing rules narrowed the gap between judges. They did not close it.
 
-Colombian applicants in the Miami immigration court had a 5% chance of prevailing before one judge and an 88% chance before another judge in the same building. The study covered US asylum decisions by 225 immigration judges over four and a half years.
-
-Caveat: grant rates are not adjusted for the merits of each case, and the links to judges’ backgrounds are correlations, not causes.
-
-Ramji-Nogales, Schoenholtz & Schrag, Refugee Roulette: Disparities in Asylum Adjudication, 60 Stanford Law Review 295 (2007–2008)
-
+Before the rules, 1986–87
+17%
+After the rules, 1988–93
+11%
+Expected gap between two typical judges’ average sentence lengths
 Federal sentences: a gap of about 17%, narrowed to about 11% by sentencing rules
 
 For comparable caseloads, the expected difference between two typical federal judges’ average sentence lengths was about 17 percent (4.9 months) in 1986–87, before the Sentencing Guidelines, and about 11 percent (3.9 months) in 1988–93, after them.
@@ -398,6 +429,15 @@ Caveat: the authors did not measure parole before the Guidelines, or other sourc
 
 Anderson, Kling & Stith, Measuring Interjudge Sentencing Disparity: Before and After the Federal Sentencing Guidelines, 42 Journal of Law and Economics 271 (1999)
 
+Same city, cases assigned at random, and the gap between judges kept growing.
+
+First period
+18.2
+Second period
+23.7
+Third period
+27.6
+Spread between the highest and lowest judge, in points from the guideline minimum; average of 30 cities, fiscal years 2005–2017
 Federal sentences: the spread between judges in the same city grew from 18.2 to 27.6 points
 
 Averaged over 30 cities, the spread between the highest and lowest judge, measured as percentage points of distance from the guideline minimum, rose from 18.2 to 23.7 to 27.6 across three periods between fiscal years 2005 and 2017.
@@ -406,6 +446,13 @@ Caveat: the comparison relies on cases being assigned at random within a city; t
 
 U.S. Sentencing Commission, Intra-City Differences in Federal Sentencing Practices (January 2019)
 
+When the rules became advisory, the differences between judges doubled.
+
+Before Booker
+1×
+After Booker
+2×
+Differences between judges, relative to before the Booker decision
 Federal sentences: differences between judges “doubled” after the Guidelines became advisory
 
 With data on almost 400,000 federal defendants linked to their sentencing judges, differences between judges doubled after the Booker decision made the Guidelines advisory.
@@ -414,13 +461,35 @@ Caveat: the author finds that prosecutors’ charging choices, which vary with t
 
 Crystal S. Yang, Have Interjudge Sentencing Disparities Increased in an Advisory Guidelines Regime? Evidence from Booker, 89 New York University Law Review, no. 4 (2014)
 
-Appeals: whether a ruling is reversed depends partly on which appeals panel is drawn
+On appeal, which three judges you draw changed the result.
 
-In Norway’s courts, where cases are assigned at random at both stages, randomly assigned appeal panels differ in how often they reverse, and trial judges who are reversed shift their later decisions in the reversal’s direction.
+Three Democratic appointees
+61%
+Three Republican appointees
+34%
+Share of liberal rulings in the contested cases studied
+Federal appeals: 61% or 34%, depending on which three judges are drawn
 
-Caveat: a Norwegian study, read from its abstract; it is not a test of reversal as a measure of a judge’s quality. It is the important limit on reading any reversal record, including the one on this site.
+In the US federal courts of appeals, where judges in a circuit are assigned to three-judge panels at random, panels of three judges appointed by Democratic presidents issued a liberal ruling 61% of the time and panels of three Republican appointees 34% of the time, across published decisions in contested areas such as campaign finance, affirmative action, sex discrimination and environmental regulation, mostly from 1995 on.
 
-Bhuller & Sigstad, Feedback and Learning: The Causal Effects of Reversals on Judicial Decision-Making, 92 Review of Economic Studies 2359 (2025)
+Caveat: in the authors’ words, the differences “do not show that the likely result is foreordained by the composition of the panel”. The study measures the direction of rulings in contested areas, not how often a trial judge is reversed, and covers published opinions only.
+
+Sunstein, Schkade & Ellman, Ideological Voting on Federal Courts of Appeals: A Preliminary Investigation, 90 Virginia Law Review 301 (2004)
+
+Same court, same country of origin: 5% with one judge, 88% with another.
+
+One judge
+5%
+Another judge, same building
+88%
+Chance a Colombian applicant won asylum, Miami immigration court
+Asylum: 5% before one judge, 88% before another
+
+Colombian applicants in the Miami immigration court had a 5% chance of prevailing before one judge and an 88% chance before another judge in the same building. The study covered US asylum decisions by 225 immigration judges over four and a half years.
+
+Caveat: grant rates are not adjusted for the merits of each case, and the links to judges’ backgrounds are correlations, not causes.
+
+Ramji-Nogales, Schoenholtz & Schrag, Refugee Roulette: Disparities in Asylum Adjudication, 60 Stanford Law Review 295 (2007–2008)
 
 What this means for Colorado, and what this site shows
 Ratings from people who were in the courtroom: parties, jurors, observers and attorneys, shown separately, about conduct people can see.
@@ -429,7 +498,7 @@ Colorado context: in a 2008 survey of Colorado judges by IAALS, 64% of appellate
 IAALS, The Bench Speaks on Judicial Performance Evaluation: A Survey of Colorado Judges (January 2008)
 What this site cannot show
 A judge’s whole caseload. Only appealed rulings appear in an appeals record, and there is no public count of every case a judge decided, so we show counts, never a rate.
-Whether a reversal says more about the ruling or about the panel: reversal outcomes depend partly on which appeals panel is drawn (the last study above).
+Whether a reversal says more about the ruling or about the panel: reversal outcomes depend partly on which appeals panel is drawn (the federal appeals study above).
 Whether one judge is “better” than another. No page here says that, and the research above does not support reading any single record that way.
 Gaps we did not fill
 We found no rigorous published study of how much family-court judges differ from one another. Studies of child-welfare decisions exist, but they measure caseworkers, not judges.

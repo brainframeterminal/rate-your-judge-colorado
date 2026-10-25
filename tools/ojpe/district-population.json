@@ -1,0 +1,569 @@
+{
+ "as_of": "2026-10-23",
+ "measure": "2020 Census total population (P1_001N / P0010001), April 1 2020",
+ "population_source": {
+  "name": "U.S. Census Bureau, 2020 Census Redistricting Data (P.L. 94-171) Summary File, Colorado, table P1 (segment 1 P0010001); county rows = geo header SUMLEV 050; POP100 in the geo header agrees for all counties",
+  "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Colorado/co2020.pl.zip",
+  "note": "The Census API (api.census.gov) needs a key, so the official P.L. 94-171 file was used instead. Sums are of the county figures; nothing rounded."
+ },
+ "composition_source": {
+  "name": "Colorado Judicial Branch, Trial Courts by District",
+  "url": "https://www.coloradojudicial.gov/trial-courts-district",
+  "note": "Lists 23 districts incl. 23rd = Douglas, Elbert, Lincoln; 18th = Arapahoe only. The page lists county/district courts per district (Denver listed as Denver District/Juvenile/Probate/County Court; Broomfield County under 17th). The 2024 18th is the list 18th + 23rd per the task statement."
+ },
+ "districts": {
+  "1": {
+   "counties": [
+    {
+     "county": "Gilpin",
+     "geoid": "0500000US08047",
+     "census_name": "Gilpin County",
+     "pop_2020": 5808
+    },
+    {
+     "county": "Jefferson",
+     "geoid": "0500000US08059",
+     "census_name": "Jefferson County",
+     "pop_2020": 582910
+    }
+   ],
+   "pop_2020": 588718,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "2": {
+   "counties": [
+    {
+     "county": "Denver",
+     "geoid": "0500000US08031",
+     "census_name": "Denver County",
+     "pop_2020": 715522
+    }
+   ],
+   "pop_2020": 715522,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "3": {
+   "counties": [
+    {
+     "county": "Huerfano",
+     "geoid": "0500000US08055",
+     "census_name": "Huerfano County",
+     "pop_2020": 6820
+    },
+    {
+     "county": "Las Animas",
+     "geoid": "0500000US08071",
+     "census_name": "Las Animas County",
+     "pop_2020": 14555
+    }
+   ],
+   "pop_2020": 21375,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "4": {
+   "counties": [
+    {
+     "county": "El Paso",
+     "geoid": "0500000US08041",
+     "census_name": "El Paso County",
+     "pop_2020": 730395
+    },
+    {
+     "county": "Teller",
+     "geoid": "0500000US08119",
+     "census_name": "Teller County",
+     "pop_2020": 24710
+    }
+   ],
+   "pop_2020": 755105,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "5": {
+   "counties": [
+    {
+     "county": "Clear Creek",
+     "geoid": "0500000US08019",
+     "census_name": "Clear Creek County",
+     "pop_2020": 9397
+    },
+    {
+     "county": "Eagle",
+     "geoid": "0500000US08037",
+     "census_name": "Eagle County",
+     "pop_2020": 55731
+    },
+    {
+     "county": "Lake",
+     "geoid": "0500000US08065",
+     "census_name": "Lake County",
+     "pop_2020": 7436
+    },
+    {
+     "county": "Summit",
+     "geoid": "0500000US08117",
+     "census_name": "Summit County",
+     "pop_2020": 31055
+    }
+   ],
+   "pop_2020": 103619,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "6": {
+   "counties": [
+    {
+     "county": "Archuleta",
+     "geoid": "0500000US08007",
+     "census_name": "Archuleta County",
+     "pop_2020": 13359
+    },
+    {
+     "county": "La Plata",
+     "geoid": "0500000US08067",
+     "census_name": "La Plata County",
+     "pop_2020": 55638
+    },
+    {
+     "county": "San Juan",
+     "geoid": "0500000US08111",
+     "census_name": "San Juan County",
+     "pop_2020": 705
+    }
+   ],
+   "pop_2020": 69702,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "7": {
+   "counties": [
+    {
+     "county": "Delta",
+     "geoid": "0500000US08029",
+     "census_name": "Delta County",
+     "pop_2020": 31196
+    },
+    {
+     "county": "Gunnison",
+     "geoid": "0500000US08051",
+     "census_name": "Gunnison County",
+     "pop_2020": 16918
+    },
+    {
+     "county": "Hinsdale",
+     "geoid": "0500000US08053",
+     "census_name": "Hinsdale County",
+     "pop_2020": 788
+    },
+    {
+     "county": "Montrose",
+     "geoid": "0500000US08085",
+     "census_name": "Montrose County",
+     "pop_2020": 42679
+    },
+    {
+     "county": "Ouray",
+     "geoid": "0500000US08091",
+     "census_name": "Ouray County",
+     "pop_2020": 4874
+    },
+    {
+     "county": "San Miguel",
+     "geoid": "0500000US08113",
+     "census_name": "San Miguel County",
+     "pop_2020": 8072
+    }
+   ],
+   "pop_2020": 104527,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "8": {
+   "counties": [
+    {
+     "county": "Jackson",
+     "geoid": "0500000US08057",
+     "census_name": "Jackson County",
+     "pop_2020": 1379
+    },
+    {
+     "county": "Larimer",
+     "geoid": "0500000US08069",
+     "census_name": "Larimer County",
+     "pop_2020": 359066
+    }
+   ],
+   "pop_2020": 360445,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "9": {
+   "counties": [
+    {
+     "county": "Garfield",
+     "geoid": "0500000US08045",
+     "census_name": "Garfield County",
+     "pop_2020": 61685
+    },
+    {
+     "county": "Pitkin",
+     "geoid": "0500000US08097",
+     "census_name": "Pitkin County",
+     "pop_2020": 17358
+    },
+    {
+     "county": "Rio Blanco",
+     "geoid": "0500000US08103",
+     "census_name": "Rio Blanco County",
+     "pop_2020": 6529
+    }
+   ],
+   "pop_2020": 85572,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "10": {
+   "counties": [
+    {
+     "county": "Pueblo",
+     "geoid": "0500000US08101",
+     "census_name": "Pueblo County",
+     "pop_2020": 168162
+    }
+   ],
+   "pop_2020": 168162,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "11": {
+   "counties": [
+    {
+     "county": "Chaffee",
+     "geoid": "0500000US08015",
+     "census_name": "Chaffee County",
+     "pop_2020": 19476
+    },
+    {
+     "county": "Custer",
+     "geoid": "0500000US08027",
+     "census_name": "Custer County",
+     "pop_2020": 4704
+    },
+    {
+     "county": "Fremont",
+     "geoid": "0500000US08043",
+     "census_name": "Fremont County",
+     "pop_2020": 48939
+    },
+    {
+     "county": "Park",
+     "geoid": "0500000US08093",
+     "census_name": "Park County",
+     "pop_2020": 17390
+    }
+   ],
+   "pop_2020": 90509,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "12": {
+   "counties": [
+    {
+     "county": "Alamosa",
+     "geoid": "0500000US08003",
+     "census_name": "Alamosa County",
+     "pop_2020": 16376
+    },
+    {
+     "county": "Conejos",
+     "geoid": "0500000US08021",
+     "census_name": "Conejos County",
+     "pop_2020": 7461
+    },
+    {
+     "county": "Costilla",
+     "geoid": "0500000US08023",
+     "census_name": "Costilla County",
+     "pop_2020": 3499
+    },
+    {
+     "county": "Mineral",
+     "geoid": "0500000US08079",
+     "census_name": "Mineral County",
+     "pop_2020": 865
+    },
+    {
+     "county": "Rio Grande",
+     "geoid": "0500000US08105",
+     "census_name": "Rio Grande County",
+     "pop_2020": 11539
+    },
+    {
+     "county": "Saguache",
+     "geoid": "0500000US08109",
+     "census_name": "Saguache County",
+     "pop_2020": 6368
+    }
+   ],
+   "pop_2020": 46108,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "13": {
+   "counties": [
+    {
+     "county": "Kit Carson",
+     "geoid": "0500000US08063",
+     "census_name": "Kit Carson County",
+     "pop_2020": 7087
+    },
+    {
+     "county": "Logan",
+     "geoid": "0500000US08075",
+     "census_name": "Logan County",
+     "pop_2020": 21528
+    },
+    {
+     "county": "Morgan",
+     "geoid": "0500000US08087",
+     "census_name": "Morgan County",
+     "pop_2020": 29111
+    },
+    {
+     "county": "Phillips",
+     "geoid": "0500000US08095",
+     "census_name": "Phillips County",
+     "pop_2020": 4530
+    },
+    {
+     "county": "Sedgwick",
+     "geoid": "0500000US08115",
+     "census_name": "Sedgwick County",
+     "pop_2020": 2404
+    },
+    {
+     "county": "Washington",
+     "geoid": "0500000US08121",
+     "census_name": "Washington County",
+     "pop_2020": 4817
+    },
+    {
+     "county": "Yuma",
+     "geoid": "0500000US08125",
+     "census_name": "Yuma County",
+     "pop_2020": 9988
+    }
+   ],
+   "pop_2020": 79465,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "14": {
+   "counties": [
+    {
+     "county": "Grand",
+     "geoid": "0500000US08049",
+     "census_name": "Grand County",
+     "pop_2020": 15717
+    },
+    {
+     "county": "Moffat",
+     "geoid": "0500000US08081",
+     "census_name": "Moffat County",
+     "pop_2020": 13292
+    },
+    {
+     "county": "Routt",
+     "geoid": "0500000US08107",
+     "census_name": "Routt County",
+     "pop_2020": 24829
+    }
+   ],
+   "pop_2020": 53838,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "15": {
+   "counties": [
+    {
+     "county": "Baca",
+     "geoid": "0500000US08009",
+     "census_name": "Baca County",
+     "pop_2020": 3506
+    },
+    {
+     "county": "Cheyenne",
+     "geoid": "0500000US08017",
+     "census_name": "Cheyenne County",
+     "pop_2020": 1748
+    },
+    {
+     "county": "Kiowa",
+     "geoid": "0500000US08061",
+     "census_name": "Kiowa County",
+     "pop_2020": 1446
+    },
+    {
+     "county": "Prowers",
+     "geoid": "0500000US08099",
+     "census_name": "Prowers County",
+     "pop_2020": 11999
+    }
+   ],
+   "pop_2020": 18699,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "16": {
+   "counties": [
+    {
+     "county": "Bent",
+     "geoid": "0500000US08011",
+     "census_name": "Bent County",
+     "pop_2020": 5650
+    },
+    {
+     "county": "Crowley",
+     "geoid": "0500000US08025",
+     "census_name": "Crowley County",
+     "pop_2020": 5922
+    },
+    {
+     "county": "Otero",
+     "geoid": "0500000US08089",
+     "census_name": "Otero County",
+     "pop_2020": 18690
+    }
+   ],
+   "pop_2020": 30262,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "17": {
+   "counties": [
+    {
+     "county": "Adams",
+     "geoid": "0500000US08001",
+     "census_name": "Adams County",
+     "pop_2020": 519572
+    },
+    {
+     "county": "Broomfield",
+     "geoid": "0500000US08014",
+     "census_name": "Broomfield County",
+     "pop_2020": 74112
+    }
+   ],
+   "pop_2020": 593684,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "18": {
+   "counties": [
+    {
+     "county": "Arapahoe",
+     "geoid": "0500000US08005",
+     "census_name": "Arapahoe County",
+     "pop_2020": 655070
+    }
+   ],
+   "pop_2020": 655070,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "19": {
+   "counties": [
+    {
+     "county": "Weld",
+     "geoid": "0500000US08123",
+     "census_name": "Weld County",
+     "pop_2020": 328981
+    }
+   ],
+   "pop_2020": 328981,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "20": {
+   "counties": [
+    {
+     "county": "Boulder",
+     "geoid": "0500000US08013",
+     "census_name": "Boulder County",
+     "pop_2020": 330758
+    }
+   ],
+   "pop_2020": 330758,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "21": {
+   "counties": [
+    {
+     "county": "Mesa",
+     "geoid": "0500000US08077",
+     "census_name": "Mesa County",
+     "pop_2020": 155703
+    }
+   ],
+   "pop_2020": 155703,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "22": {
+   "counties": [
+    {
+     "county": "Dolores",
+     "geoid": "0500000US08033",
+     "census_name": "Dolores County",
+     "pop_2020": 2326
+    },
+    {
+     "county": "Montezuma",
+     "geoid": "0500000US08083",
+     "census_name": "Montezuma County",
+     "pop_2020": 25849
+    }
+   ],
+   "pop_2020": 28175,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "23": {
+   "counties": [
+    {
+     "county": "Douglas",
+     "geoid": "0500000US08035",
+     "census_name": "Douglas County",
+     "pop_2020": 357978
+    },
+    {
+     "county": "Elbert",
+     "geoid": "0500000US08039",
+     "census_name": "Elbert County",
+     "pop_2020": 26062
+    },
+    {
+     "county": "Lincoln",
+     "geoid": "0500000US08073",
+     "census_name": "Lincoln County",
+     "pop_2020": 5675
+    }
+   ],
+   "pop_2020": 389715,
+   "composition_since": "2025-01 (23 districts)"
+  },
+  "18_as_of_2024": {
+   "counties": [
+    {
+     "county": "Arapahoe",
+     "geoid": "0500000US08005",
+     "census_name": "Arapahoe County",
+     "pop_2020": 655070
+    },
+    {
+     "county": "Douglas",
+     "geoid": "0500000US08035",
+     "census_name": "Douglas County",
+     "pop_2020": 357978
+    },
+    {
+     "county": "Elbert",
+     "geoid": "0500000US08039",
+     "census_name": "Elbert County",
+     "pop_2020": 26062
+    },
+    {
+     "county": "Lincoln",
+     "geoid": "0500000US08073",
+     "census_name": "Lincoln County",
+     "pop_2020": 5675
+    }
+   ],
+   "pop_2020": 1044785,
+   "composition_since": "18th as in 2024: Arapahoe, Douglas, Elbert, Lincoln"
+  }
+ },
+ "total_state": 5773714
+}

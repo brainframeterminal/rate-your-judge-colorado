@@ -10,7 +10,7 @@ const $ = s => document.querySelector(s);
 const app = $('#app');
 const ROLE_IDS = [['party', '⚖️'], ['observer', '👀'], ['juror', '🧑‍⚖️'], ['attorney', '💼']];
 const METRIC_IDS = ['q1', 'q2', 'q3', 'q4', 'q5'];
-const S = { step: 0, role: null, court: null, official: null, type: 'judge', pos: null, courts: [], ratings: {}, overall: 0, outcome: '', subrole: '', x: {}, comment: '', redo: null };
+const S = { step: 0, role: null, court: null, official: null, type: 'judge', pos: null, courts: [], ratings: {}, overall: 0, outcome: '', subrole: '', caseType: '', x: {}, comment: '', redo: null };
 
 function h(tag, attrs = {}, ...kids) {
   const e = document.createElement(tag);
@@ -78,7 +78,7 @@ const titleOf = type => t('title.' + type);
 
 // ---- 1. role -------------------------------------------------------------------------------------
 function stepRole() {
-  if (/^\/p\/\d+/.test(location.pathname)) history.replaceState(history.state, '', '/');   // leaving a deep-linked profile: the address bar follows
+  if (/^\/(p\/\d+|judge\/|prosecutor\/)/.test(location.pathname)) history.replaceState(history.state, '', '/');   // leaving a deep-linked profile: the address bar follows
   const featuredH = h('h2', { style: 'margin-top:26px', hidden: true }, t('home.profile'));   // only when there is a featured profile
   show([
     h('div', { class: 'hero-grid' }, h('picture', { class: 'hero-logo' }, h('source', { media: '(min-width: 1024px)', srcset: 'img/logo-640.webp' }), h('img', { src: 'img/logo-128.webp', alt: '', width: 320, height: 320, decoding: 'async' })),   // desktop only: his logo (10-16) in place of the 3D scene; phones get the header's small file (already loaded), never the big one
@@ -87,17 +87,19 @@ function stepRole() {
       h('p', { class: 'lead hero-lead' }, t('home.lead')))),
     h('h2', {}, t('home.who')),
     S.after && isAppellate(S.after.court) ? h('p', { class: 'appnote' }, t('app.only')) : null,
-    h('div', { class: 'roles-grid' }, ROLE_IDS.filter(([id]) => !(S.after && isAppellate(S.after.court)) || APPELLATE_ROLES.includes(id)).map(([id, ico]) => h('button', { class: 'choice', onclick: () => { S.role = id; if (S.after) { S.court = S.after.court; S.official = S.after.official; S.ratings = {}; S.overall = 0; S.outcome = ''; S.subrole = ''; S.x = {}; S.comment = ''; S.after = null; stepRate(); } else if (S.keepCourt && S.court) { S.keepCourt = false; stepWho(); } else stepCourt(); } },
+    h('div', { class: 'roles-grid' }, ROLE_IDS.filter(([id]) => !(S.after && isAppellate(S.after.court)) || APPELLATE_ROLES.includes(id)).map(([id, ico]) => h('button', { class: 'choice', onclick: () => { S.role = id; if (S.after) { S.court = S.after.court; S.official = S.after.official; S.ratings = {}; S.overall = 0; S.outcome = ''; S.subrole = ''; S.caseType = ''; S.x = {}; S.comment = ''; S.after = null; stepRate(); } else if (S.keepCourt && S.court) { S.keepCourt = false; stepWho(); } else stepCourt(); } },
       h('span', { class: 'ico' }, ico), h('span', {}, t('role.' + id), h('small', {}, t('role.' + id + '.sub'))), h('span', { class: 'go' }, '›')))),
     h('div', { class: 'home-tools' }, h('h2', { style: 'margin-top:26px' }, t('home.lookup')), searchBox(), searchOut,
     h('div', { class: 'home-btns' }, h('button', { class: 'btn ghost', style: 'margin-top:12px', onclick: stepMap }, t('home.map')),
     h('button', { class: 'btn ghost', style: 'margin-top:10px', onclick: openAppellate }, t('home.appellate')))),
     latest,
+    added,
     asks,
     apHome,
     featuredH, featured,
   ], 0, stepRole);
   latestRail();
+  addedRail();
   asksRail();
   appealsRail();
   api('/api/featured').then(list => (featuredH.hidden = !list.length, list)).then(list => featured.replaceChildren(...list.map(p => h('button', { class: 'choice', onclick: () => { S.sent = null; stepResult(p.id); } },
@@ -111,11 +113,12 @@ function latestRail() {   // phones: the 3 newest, stacked. Desktop: up to 10 in
   api('/api/latest').then(list => {
     latest.hidden = !list.length;
     const thumbs = r => !r.text ? null : r.canReact ? h('div', { class: 'vote react lt-react' }, h('button', { 'aria-pressed': r.myVote === 1, 'aria-label': t('cm.like.a', { n: r.up }), onclick: () => latestVote(r.id, 1) }, `👍 ${r.up}`), h('button', { 'aria-pressed': r.myVote === -1, 'aria-label': t('cm.dislike.a', { n: r.down }), onclick: () => latestVote(r.id, -1) }, `👎 ${r.down}`))
-      : h('div', { class: 'vote react mine lt-react' }, h('button', { disabled: true, title: r.mine ? t('cm.own') : '' }, `👍 ${r.up}`), h('button', { disabled: true, title: r.mine ? t('cm.own') : '' }, `👎 ${r.down}`));
+      : h('div', { class: 'vote react mine lt-react' }, h('button', { disabled: true, title: r.mine ? t('cm.own') : '' }, `👍 ${r.up}`), h('button', { disabled: true, title: r.mine ? t('cm.own') : '' }, `👎 ${r.down}`),
+          r.mine ? h('small', { class: 'muted' }, t('cm.own')) : null);   // a title tooltip never shows on a phone: say it in words (tester, 10-23: "the thumbs are not working" on his own comment)
     const card = r => h('div', { class: 'lt-card' }, h('button', { class: 'choice lt', onclick: () => { S.sent = null; stepResult(r.official); } },
         avatar(r.name), h('span', {}, dName(r.name), h('small', {}, `${titleOf(r.type)} · ${r.court}`),
           r.text ? h('span', { class: 'lt-q' }, r.text) : null, answersTable(r),
-          h('small', {}, `${r.subrole ? t('lt.' + r.subrole) : roleShort(r.role)} · ${ago(r.at)}`)), h('span', { class: 'go' }, '›')), thumbs(r));   // the thumbs sit outside the button: a button inside a button is not allowed
+          h('small', {}, [r.subrole ? t('lt.' + r.subrole) : roleShort(r.role), caseLabel(r.caseType), ago(r.at)].filter(Boolean).join(' · '))), h('span', { class: 'go' }, '›')), thumbs(r));   // the thumbs sit outside the button: a button inside a button is not allowed
     const head = [h('h2', { id: 'lth', style: 'margin-top:26px' }, t('home.latest')), h('p', { class: 'apsub lt-sub' }, t('home.latest.sub'))];
     if (!matchMedia('(min-width: 1024px)').matches) return latest.replaceChildren(...head, ...list.slice(0, 3).map(card));
     // desktop: moves from the very first comment. The real cards come
@@ -126,6 +129,16 @@ function latestRail() {   // phones: the 3 newest, stacked. Desktop: up to 10 in
     const track = h('div', { class: 'lt-track' }, ...lap, ...lap.map((_, i) => echo(list[i % list.length])));
     latest.replaceChildren(...head, h('div', { class: 'lt-marquee', role: 'region', 'aria-labelledby': 'lth' }, track));
     requestAnimationFrame(() => track.style.setProperty('--lt-dur', Math.max(20, Math.round(track.scrollWidth / 2 / 40)) + 's'));   // ~40 px a second, whatever the count
+  }).catch(() => {});
+}
+// home: judges and prosecutors a visitor asked us to list and a moderator added — newest first, 3 at most on every screen
+const added = h('section', { class: 'latest added', hidden: true, 'aria-labelledby': 'adh' });
+function addedRail() {
+  api('/api/added').then(list => {
+    added.hidden = !list.length; if (!list.length) return;
+    added.replaceChildren(h('h2', { id: 'adh', style: 'margin-top:26px' }, t('home.added')), h('p', { class: 'apsub lt-sub' }, t('home.added.sub')),
+      ...list.slice(0, 3).map(p => h('div', { class: 'lt-card' }, h('button', { class: 'choice lt', onclick: () => { S.sent = null; stepResult(p.id); } },
+        avatar(p.name), h('span', {}, dName(p.name), h('small', {}, `${titleOf(p.type)} · ${p.court}`), h('small', {}, `${t('home.added.by')} · ${ago(p.at)}`)), h('span', { class: 'go' }, '›')))));
   }).catch(() => {});
 }
 async function latestVote(id, v) { try { await api('/api/vote', { review: id, vote: v }); latestRail(); } catch (e) { toast(e.message); } }
@@ -238,7 +251,7 @@ function coMap(map, byD, onPick) {
     const f = document.activeElement;
     paths.forEach(p => { p.el.classList.toggle('on', p.d === dnum); p.el.setAttribute('aria-pressed', String(p.d === dnum)); (p.d === dnum ? gSel : gAll).append(p.el); });
     svg.classList.toggle('picked', paths.some(p => p.d === dnum));
-    gSel.setAttribute('filter', `url(${location.href.split('#')[0]}#selout)`);   // full URL: <base href="/"> would send a bare #selout to "/" on /p/N pages
+    gSel.setAttribute('filter', `url(${location.href.split('#')[0]}#selout)`);   // full URL: <base href="/"> would send a bare #selout to "/" on /p/N and /judge/<name> pages
     if (f && f.isConnected && svg.contains(f)) f.focus({ preventScroll: true });
     document.querySelectorAll('.chipbtn[data-d]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.d === dnum)));
     onPick(dnum);
@@ -345,7 +358,7 @@ async function stepWho() {
     return show([h('h1', {}, t('court.appellate')), h('div', { class: 'card' }, h('p', { class: 'appnote', style: 'margin-top:0' }, t('app.only')),
       ...APPELLATE_ROLES.map(r => h('button', { class: 'choice', style: 'box-shadow:none;background:#f2f4ff', onclick: () => { S.role = r; stepWho(); } }, h('span', {}, t('app.as.' + r)), h('span', { class: 'go' }, '›'))))], 2, stepWho);
   }
-  const draw = () => body.replaceChildren(...people.filter(p => p.type === S.type).map(p => h('button', { class: 'choice', onclick: () => { if (S.browse) { S.sent = null; return stepResult(p.id); } S.official = p; S.ratings = {}; S.overall = 0; S.outcome = ''; S.subrole = ''; S.x = {}; S.comment = ''; stepRate(); } },
+  const draw = () => body.replaceChildren(...people.filter(p => p.type === S.type).map(p => h('button', { class: 'choice', onclick: () => { if (S.browse) { S.sent = null; return stepResult(p.id); } S.official = p; S.ratings = {}; S.overall = 0; S.outcome = ''; S.subrole = ''; S.caseType = ''; S.x = {}; S.comment = ''; stepRate(); } },
     h('span', { class: 'ico' }, { judge: '⚖️', prosecutor: '📜' }[p.type]),
     h('span', {}, dName(p.name), p.title ? h('small', {}, t('jt.' + p.title)) : null, h('small', {}, sumLine(p.summary))),
     h('span', { class: 'go' }, '›'))));
@@ -366,7 +379,7 @@ function addPerson(type) {
   const draw = () => {
     const err = h('div', { class: 'err', role: 'alert', hidden: true }, t('add.err'));
     const body = done ? h('div', {}, h('p', { class: 'fbthanks' }, '✅ ' + t(done)), h('button', { class: 'btn', type: 'button', onclick: close }, t('fb.close')))
-      : matches ? h('div', {}, h('div', { class: 'q' }, t('add.match')), matches.map(m => h('button', { class: 'choice', style: 'box-shadow:none;background:#f2f4ff', onclick: () => { close(); S.sent = null; S.browse = false; S.official = { id: m.id, name: m.name, type }; S.ratings = {}; S.overall = 0; S.outcome = ''; S.comment = ''; stepRate(); } }, h('span', {}, t('add.match.yes', { n: dName(m.name) })), h('span', { class: 'go' }, '›'))),
+      : matches ? h('div', {}, h('div', { class: 'q' }, t('add.match')), matches.map(m => h('button', { class: 'choice', style: 'box-shadow:none;background:#f2f4ff', onclick: () => { close(); S.sent = null; S.browse = false; S.official = { id: m.id, name: m.name, type }; S.ratings = {}; S.overall = 0; S.outcome = ''; S.subrole = ''; S.caseType = ''; S.x = {}; S.comment = ''; stepRate(); } }, h('span', {}, t('add.match.yes', { n: dName(m.name) })), h('span', { class: 'go' }, '›'))),
           h('button', { class: 'btn ghost', style: 'background:#eef0ff;color:#12358f;margin-top:8px', type: 'button', onclick: () => submit(true) }, t('add.match.no')))
       : h('div', {}, h('p', { class: 'muted' }, t('add.sub')), h('p', { class: 'muted' }, t('add.court', { c: S.court.name })),
         h('label', { class: 'q', for: 'addName' }, t('add.name')), h('input', { id: 'addName', type: 'text', value: name, placeholder: t('add.name.ph'), maxlength: 60, autocomplete: 'off', autocapitalize: 'words', oninput: e => { name = e.target.value; } }),
@@ -437,13 +450,13 @@ function stepRate() {
     submit.disabled = true; err.hidden = true; loader(true, t('load.send'), undefined, true);
     try {
       const rs = Object.fromEntries(Object.entries(S.ratings).map(([k, v]) => [k, v === 'na' ? null : v]));
-      const r = await api('/api/review', { official: o.id, role: S.role, ...rs, overall: S.overall, outcome: S.outcome, subrole: S.subrole, x1: S.x.x1 ?? null, x2: S.x.x2 ?? null, comment: S.comment, lat: S.pos?.lat, lon: S.pos?.lon });
+      const r = await api('/api/review', { official: o.id, role: S.role, ...rs, overall: S.overall, outcome: S.outcome, subrole: S.subrole, case_type: S.caseType, x1: S.x.x1 ?? null, x2: S.x.x2 ?? null, comment: S.comment, lat: S.pos?.lat, lon: S.pos?.lon });
       S.sent = r; await stepResult(o.id);
     } catch (e) { loader(false); err.textContent = e.message; err.hidden = false; submit.disabled = false; if (e.status === 409) setTimeout(() => stepResult(o.id), 1200); }
   }
   show([
     h('h1', {}, t('rate.h1'), h('em', {}, dName(o.name))),
-    h('div', { class: 'card' }, sub[0], ...blocks, sub[1], h('div', { class: 'q', id: 'q-overall' }, t('rate.overall')), h('div', { class: 'stars', role: 'group', 'aria-labelledby': 'q-overall' }, stars),
+    h('div', { class: 'card' }, caseTypeBlock(() => mark('casetype')), sub[0], ...blocks, sub[1], h('div', { class: 'q', id: 'q-overall' }, t('rate.overall')), h('div', { class: 'stars', role: 'group', 'aria-labelledby': 'q-overall' }, stars),
       h('div', { class: 'q' }, t('oc.ask')), outcomeChips(),
       h('div', { class: 'q' }, t('rate.more')), h('details', { class: 'rules' }, h('summary', {}, t('rate.rules')), h('ul', {}, ['r1', 'r2', 'r3', 'r4'].map(k => h('li', {}, t('rate.' + k)))), h('a', { class: 'inlink', href: 'method.html' }, t('why.q'))), mic(ta), ta, h('p', { class: 'muted' }, t('rate.hint'))),
     h('div', { class: 'cta' }, err, need, submit),
@@ -455,22 +468,118 @@ function stepRate() {
 const CHANGED_ON_APPEAL = new Set(['reversed', 'affirmed_in_part', 'vacated', 'remanded']);
 const changedOnAppeal = x => CHANGED_ON_APPEAL.has(x.outcome);
 const pubOf = note => /Unpublished opinion\./.test(note || '') ? 'unpublished' : /Published opinion\./.test(note || '') ? 'published' : '';   // the announcement's own words, kept in note
-const AP_GROUP = { 'Domestic relations appeal': 'family', 'Criminal appeal': 'criminal', 'Civil appeal': 'civil' };   // the filter chips; everything else (dependency and neglect, mental health, probate…) is "Other"
+const AP_GROUP = { 'Domestic relations appeal': 'family', 'Adoption appeal': 'family', 'Relinquishment appeal': 'family',   // the same groups the rating form asks about (10-23)
+  'Criminal appeal': 'criminal', 'Misdemeanor appeal': 'criminal', 'Traffic appeal': 'criminal',
+  'Civil appeal': 'civil', 'County civil appeal': 'civil', 'Small claims appeal': 'civil', 'Water appeal': 'civil' };   // the filter chips; everything else (dependency and neglect, mental health, probate…) is "Other"
 const apGroup = name => AP_GROUP[name] || 'other';
+const longDay = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString(LANG === 'es' ? 'es' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });   // 2023-06-01 → June 1, 2023 / 1 de junio de 2023
 function appealsBlock(d) {   // public appellate record of a trial judge: listed with citations, no percentage (no public caseload to divide by)
-  const a = d.appeals; if (!a || !a.items || !a.items.length) return [];
+  const a = d.appeals; if (!a || !a.items) return [];
+  if (!a.items.length) return a.since ? [h('h3', {}, t('ap.h')), h('p', {}, t('ap.none', { since: longDay(a.since), until: longDay(a.until) })), h('p', { class: 'muted' }, t('ap.none.why')), ...olderBlock(a)] : [];   // nothing found: say so, with the dates searched
   const order = ['affirmed', 'affirmed_in_part', 'reversed', 'vacated', 'disapproved', 'remanded', 'dismissed'].filter(k => a.counts[k]);
-  const types = new Map(), pub = { published: 0, unpublished: 0 };   // counts only: appealed and changed per type of case, published and unpublished
-  for (const x of a.items) { const y = types.get(x.case_name) || types.set(x.case_name, { n: 0, changed: 0 }).get(x.case_name); y.n++; if (changedOnAppeal(x)) y.changed++; const p = pubOf(x.note); if (p) pub[p]++; }
+  // by type of case: the same four groups as the filter chips below and the same outcomes as the counts above (a tester, 10-23:
+  // "the top section has 3 buckets and the appeals by type has different classifications"); "Other" names the kinds it holds
+  const groups = new Map(), pub = { published: 0, unpublished: 0 };
+  for (const x of a.items) {
+    const g = apGroup(x.case_name), y = groups.get(g) || groups.set(g, { n: 0, c: {}, kinds: new Map() }).get(g);
+    y.n++; y.c[x.outcome] = (y.c[x.outcome] || 0) + 1; y.kinds.set(x.case_name, (y.kinds.get(x.case_name) || 0) + 1);
+    const p = pubOf(x.note); if (p) pub[p]++;
+  }
+  const G = ['family', 'criminal', 'civil', 'other'];
+  const meaning = (() => { const id = `apo-${d.id}`, box = h('div', { class: 'muted apwhat', id, hidden: true }, order.map(k => h('p', {}, h('b', {}, t('ap.' + k)), ': ', t('apw.' + k))));
+    return h('div', { class: 'apline' }, h('button', { type: 'button', class: 'linkbtn apinfo', 'aria-expanded': 'false', 'aria-controls': id, onclick: e => { box.hidden = !box.hidden; e.currentTarget.setAttribute('aria-expanded', String(!box.hidden)); } }, t('ap.what')), box); })();
   const what = k => { const id = `apw-${k}-${d.id}`, p = h('p', { class: 'muted apwhat', id, hidden: true }, t(k === 'published' ? 'pub.what' : 'unpub.what'));   // one plain-language explanation behind a toggle
     return h('div', { class: 'apline' }, h('span', {}, `${t('ap.' + k)}: `, h('b', {}, String(pub[k]))),
       h('button', { type: 'button', class: 'linkbtn apinfo', 'aria-expanded': 'false', 'aria-controls': id, onclick: e => { p.hidden = !p.hidden; e.currentTarget.setAttribute('aria-expanded', String(!p.hidden)); } }, t('ap.what')), p); };
-  return [h('h3', {}, t('ap.h')), h('p', { class: 'muted' }, t('ap.note')),
-    h('div', { class: 'roles' }, order.map(k => h('div', {}, h('b', {}, String(a.counts[k])), h('span', {}, t('ap.' + k))))),
+  return [h('h3', {}, t('ap.h')), h('div', { class: 'jp-why' }, h('b', {}, t('apx.why.h')), ' ', t('apx.why')),
+    ...outcomeBar(a, order), meaning, ...rateBlock(d), h('p', { class: 'muted' }, t('ap.note')),
     h('h4', {}, t('ap.bytype')),
-    h('ul', { class: 'aptypes' }, [...types].sort((p, q) => q[1].n - p[1].n || p[0].localeCompare(q[0])).map(([name, y]) => h('li', {}, h('b', {}, apType(name)), `: ${t(y.n === 1 ? 'ap.appealed.one' : 'ap.appealed.other', { n: y.n })} · ${t(y.changed === 1 ? 'ap.changed.one' : 'ap.changed.other', { n: y.changed })}`))),
+    h('ul', { class: 'aptypes' }, [...groups].sort((p, q) => q[1].n - p[1].n || G.indexOf(p[0]) - G.indexOf(q[0])).map(([g, y]) => h('li', {}, h('b', {}, t('af.' + g)), `: ${t(y.n === 1 ? 'ap.appealed.one' : 'ap.appealed.other', { n: y.n })} · `,
+      order.filter(k => y.c[k]).map(k => `${y.c[k]} ${t('ap.' + k).toLowerCase()}`).join(' · '),
+      g === 'other' ? h('small', { class: 'muted' }, ` (${[...y.kinds].sort((p, q) => q[1] - p[1]).map(([k, n]) => apType(k).toLowerCase() + (y.kinds.size > 1 ? ` ${n}` : '')).join(', ')})`) : null))),
     h('h4', {}, t('ap.pubh')), what('published'), what('unpublished'),
-    appealsList(a.items, true)];
+    appealsList(a.items, true), ...olderBlock(a)];
+}
+function ojpeBlock(d) {   // the state's own evaluation per retention cycle, newest first, each linked to the state's page (tester 10-23)
+  const x = d.ojpe; if (!x) return [];
+  const rec = c => t(`oj.${c.rec}${c.year <= 2016 ? '.2016' : ''}`);
+  return [h('h3', {}, t('oj.h')), h('p', { class: 'muted' }, t('oj.lead')),
+    x.cycles.length ? h('ul', { class: 'appeals' }, x.cycles.map(c => h('li', {}, h('b', {}, String(c.year)), ' ', h('span', { class: 'pill' + (c.rec === 'meets' ? ' ok' : ' warn') }, rec(c)),
+      h('small', {}, c.as ? `${t('oj.as', { c: c.as })} · ` : '', c.vote ? `${t('oj.vote', { v: c.vote.replace('-', '–') })} · ` : '', h('a', { href: c.url, target: '_blank', rel: 'noopener' }, t('oj.read'))),
+      c.vote_text ? h('small', { class: 'jp-q' }, `“${c.vote_text}”`) : null, c.note ? h('small', { class: 'jp-q' }, c.note[LANG] || c.note.en) : null)))
+      : h('p', {}, t('oj.none')),
+    x.appointed ? h('p', {}, t('oj.bench', { y: x.appointed.year })) : null, h('p', { class: 'muted' }, t('oj.src'))];
+}
+function rateBlock(d) {   // appeals decided per year on the bench: a data point beside the statewide middle, never a rate of reversals
+  const r = d.ojpe && d.ojpe.rate; if (!r) return [];
+  const late = d.ojpe.appointed && String(d.ojpe.appointed.day || `${d.ojpe.appointed.year}-07-01`) > d.ojpe.since;
+  const max = Math.max(r.perYear, r.median || 0) * 1.08 || 1, pos = v => `${Math.min(97, Math.max(3, v / max * 100)).toFixed(1)}%`;
+  return [h('h4', {}, t('ar.h')),
+    r.median != null ? h('div', { class: 'jp-gauge', 'aria-hidden': 'true' }, h('div', { class: 'tr' }),
+      h('div', { class: 'pin me', style: `left:${pos(r.perYear)}` }, t('ar.me', { r: num(r.perYear) }), h('b')),
+      h('div', { class: 'pin mid', style: `left:${pos(r.median)}` }, h('b'), t('ar.mid', { m: num(r.median) }))) : null,
+    h('p', {}, late ? t('ar.line.late', { r: num(r.perYear), y: d.ojpe.appointed.year }) : t('ar.line', { r: num(r.perYear), since: longDay(d.ojpe.since) })),
+    r.median != null ? h('p', {}, t('ar.cmp', { j: r.judges, m: num(r.median), p: Math.round(r.above * 100) })) : null, h('p', { class: 'muted' }, t('ar.note'))];
+}
+// ---- judge page: who the judge is, the state's evaluation, then the record ----------------
+const num = (v, o) => Number(v).toLocaleString(LANG === 'es' ? 'es' : 'en-US', o);
+const OUT_COLORS = { affirmed: '#2fb36b', affirmed_in_part: '#f0a800', reversed: '#e8590c', vacated: '#c2255c', disapproved: '#8a3ffc', remanded: '#d9480f', dismissed: '#9aa3c7' };
+function outcomeBar(a, order) {   // one colour per outcome code, widths from the counts; the legend carries the numbers
+  const n = order.reduce((s, k) => s + a.counts[k], 0) || 1;
+  return [h('div', { class: 'jp-obar', role: 'img', 'aria-label': order.map(k => `${a.counts[k]} ${t('ap.' + k)}`).join(', ') }, order.map(k => h('i', { style: `width:${(a.counts[k] / n * 100).toFixed(2)}%;background:${OUT_COLORS[k]}` }))),
+    h('div', { class: 'jp-leg' }, order.map(k => h('span', { style: `--c:${OUT_COLORS[k]}` }, `${a.counts[k]} ${t('ap.' + k).toLowerCase()}`)))];
+}
+function heroBlock(d, rateBtn) {   // who this judge is: official photo, court, appointment, a short biography from the state's own pages
+  const w = d.who || {}, oj = d.ojpe || {}, ap = oj.appointed, bio = w.bio && (w.bio[LANG] || w.bio.en);
+  const pic = w.photo ? h('img', { class: 'jp-photo', src: w.photo.src, alt: dName(d.name), width: 96, height: 128, loading: 'eager', decoding: 'async' }) : avatar(d.name, true);
+  const tags = [ap ? t('hero.since', { y: ap.year }) : null, w.docket ? (w.docket[LANG] || w.docket.en) : null].filter(Boolean);
+  const src = [bio ? h('a', { href: w.bio.source, target: '_blank', rel: 'noopener' }, t('hero.biosrc')) : null, w.photo ? h('a', { href: w.photo.page, target: '_blank', rel: 'noopener' }, w.photo.from === 'ojpe' ? t('hero.photosrc.oj', { y: w.photo.year }) : t('hero.photosrc')) : null].filter(Boolean);
+  return h('div', { class: 'card jp-hero' },
+    h('div', { class: 'jp-top' }, pic, h('div', {}, h('h2', {}, dName(d.name)),
+      h('p', { class: 'jp-sub' }, d.title ? t('jt.' + d.title) : `${titleOf(d.type)} · ${d.court.name}`, d.court.district ? [h('br'), t('court.dist', { n: d.court.district })] : null),
+      tags.length ? h('div', { class: 'jp-tags' }, tags.map(x => h('span', { class: 'jp-tag' }, x))) : null)),
+    ap && ap.by ? h('p', { class: 'jp-appt' }, t('hero.by', { g: ap.by, y: ap.year })) : null,
+    ...(bio ? bio.split(/\n\n+/).map(p => h('p', { class: 'jp-bio' }, p)) : []),
+    src.length ? h('p', { class: 'jp-src' }, src.flatMap((x, i) => i ? [' · ', x] : [x])) : null,
+    rateBtn);
+}
+function glanceBlock(d) {   // four tiles: our rating, the state's evaluation, appeals, the state's own survey
+  const a = d.stats.all || { n: 0 }, oj = d.ojpe || {}, c = (oj.cycles || [])[0], ap = d.appeals, sv = oj.survey;
+  const tile = (cls, k, v, n) => h('div', { class: 'jp-tile ' + cls }, h('div', { class: 'k' }, k), h('div', { class: 'v' }, v), n ? h('div', { class: 'n' }, n) : null);
+  const ch = ap && ap.items ? ap.items.filter(changedOnAppeal).length : 0, an = ap && ap.items ? ap.items.length : 0;
+  const tot = sv ? sv.groups.filter(g => g.sent > 0).reduce((s, g) => ({ sent: s.sent + g.sent, answered: s.answered + g.answered }), { sent: 0, answered: 0 }) : null;
+  const appellate = d.court && d.court.kind === 'appellate', op = d.opinions && d.opinions.items ? d.opinions.items.length : 0;   // appellate judges have no trial appeals record: their own opinions instead
+  return h('div', { class: 'card' }, h('h3', {}, t('gl.h')), h('div', { class: 'jp-glance' },
+    !a.n ? tile('grey', t('gl.ours'), t('gl.none'), t('gl.first')) : a.hidden ? tile('', t('gl.ours'), plural(a.n), t('gl.few', { min: d.stats.min })) : tile('', t('gl.ours'), `★ ${avg(a.overall)}`, plural(a.n)),
+    c ? tile(c.rec === 'meets' && !c.note ? 'ok' : 'warn', t('gl.state', { y: c.year }), t(c.rec === 'meets' ? 'gl.meets' : 'gl.not'), c.note ? t('gl.split') : c.vote ? t('oj.vote', { v: c.vote.replace('-', '–') }) : c.vote_text ? t('gl.voted') : null) : tile('grey', t('gl.state0'), t('gl.noeval'), null),
+    appellate ? (op ? tile('', t('gl.op'), t('gl.opn', { n: op }), null) : tile('grey', t('gl.op'), t('gl.op0'), null)) :
+    ap && an ? tile('warn', t('gl.ap'), t('gl.apn', { n: an }), t('gl.apch', { c: ch, p: Math.round(ch / an * 100) }) + (oj.rate ? ' · ' + t('gl.apy', { r: num(oj.rate.perYear) }) : '')) : tile('grey', t('gl.ap'), t('gl.ap0'), null),
+    tot && tot.sent ? tile('', t('gl.sv', { y: sv.year }), t('gl.svn', { a: num(tot.answered), s: num(tot.sent) }), t('gl.svp', { p: num(tot.answered / tot.sent * 100, { maximumFractionDigits: 1 }) })) : tile('grey', t('gl.sv0'), t('gl.svnone'), null)));   // the tile counts the email invitations only: the people invited about THIS judge
+}
+function surveyBlock(d, rateBtn) {   // how the state heard about this judge: official numbers, the district's population, what is not published
+  const sv = d.ojpe && d.ojpe.survey && { ...d.ojpe.survey, groups: d.ojpe.survey.groups.filter(g => g.sent > 0) }; if (!sv || !sv.groups.length) return null;   // a row with nothing sent has no share to show
+  const tot = sv.groups.reduce((s, g) => ({ sent: s.sent + g.sent, answered: s.answered + g.answered }), { sent: 0, answered: 0 });
+  const pct = (a, s) => num(a / s * 100, { maximumFractionDigits: 1 }) + '%', dist = sv.district, all = sv.answered_total ?? tot.answered;
+  const dname = dist ? t('sv.dist', { n: dist.number, o: ordinal(dist.number), c: dist.counties.join(', '), y: dist.year }) : '';
+  const dots = tot.sent <= 2000 ? h('div', { class: 'jp-dots', 'aria-hidden': 'true' }, Array.from({ length: tot.sent }, (_, i) => h('i', { class: i < tot.answered ? 'on' : '' }))) : null;
+  return h('div', { class: 'card' }, h('h3', {}, t('sv.h')), h('span', { class: 'pill' }, t('sv.official')),
+    h('p', { class: 'jp-lead' }, t('sv.lead', { y: sv.year })),
+    h('div', { class: 'jp-survey' }, sv.groups.map(g => h('div', { class: 'jp-srow' }, h('div', { class: 'l' }, h('span', {}, t('sv.row', { g: t('sv.g.' + g.group), a: num(g.answered), s: num(g.sent) })), h('b', {}, pct(g.answered, g.sent))),
+      h('div', { class: 'sb' }, h('i', { style: `width:${Math.max(1, g.answered / g.sent * 100).toFixed(2)}%` }))))),
+    sv.extra && sv.extra.length ? h('ul', { class: 'jp-extra' }, sv.extra.map(e => h('li', {}, `${e.key ? t(e.key) : e.label}: ` + (e.sent != null ? t('sv.ex', { a: num(e.answered), s: num(e.sent) }) : t('sv.ex0', { a: num(e.answered) }))))) : null,
+    h('div', { class: 'jp-big' }, h('b', {}, num(all)), h('span', {}, dist ? t('sv.big', { p: num(dist.population), d: dname, sh: num(all / dist.population * 100, { maximumSignificantDigits: 2 }) }) : t('sv.big0'))),
+    dots, dots ? h('p', { class: 'jp-src' }, t('sv.dots', { a: num(tot.answered), s: num(tot.sent) })) : null,
+    h('div', { class: 'jp-note' }, h('b', {}, t('sv.note.h')), ' ', t('sv.note')),
+    h('p', { class: 'jp-src' }, h('a', { href: sv.pdf, target: '_blank', rel: 'noopener' }, t('sv.pdf', { y: sv.year })), sv.copy ? [' · ', h('a', { href: sv.copy, target: '_blank', rel: 'noopener' }, t('ap.copy'))] : null,
+      dist && dist.source ? [' · ', h('a', { href: dist.source, target: '_blank', rel: 'noopener' }, t('sv.census'))] : null),
+    h('p', { class: 'jp-lead' }, t('sv.us')), rateBtn);
+}
+function newsBlock(d) {   // public reporting that names the judge: reputable outlets only, checked by hand; 3 shown, the rest behind one tap
+  const ns = d.who && d.who.news; if (!ns || !ns.length) return null;
+  const li = n => h('li', {}, h('a', { href: n.url, target: '_blank', rel: 'noopener' }, n.title), h('small', {}, `${n.outlet} · ${longDay(n.date)}`));
+  const ul = h('ul', { class: 'jp-news' }, ns.slice(0, 3).map(li));
+  const more = ns.length > 3 ? h('button', { type: 'button', class: 'linkbtn', onclick: e => { ul.replaceChildren(...ns.map(li)); e.currentTarget.remove(); } }, t('nw.more', { n: ns.length - 3 })) : null;
+  return h('div', { class: 'card' }, h('h3', {}, t('nw.h')), ul, more, h('p', { class: 'jp-src' }, t('nw.note')));
 }
 function opinionsBlock(a) {
   const order = ['affirmed', 'affirmed_in_part', 'reversed', 'vacated', 'disapproved', 'remanded', 'dismissed'].filter(k => a.counts[k]);
@@ -479,11 +588,17 @@ function opinionsBlock(a) {
       ...order.map(k => h('div', {}, h('b', {}, String(a.counts[k])), h('span', {}, t('ap.' + k))))),
     appealsList(a.items)];
 }
+function olderBlock(a) {   // 2013 → May 2023 (his choice 10-24): listed apart, never counted — unpublished only for those years
+  const o = a.older; if (!o || !o.items || !o.items.length) return [];
+  return [h('details', { class: 'apolder' }, h('summary', {}, t('apo.h', { n: o.items.length })), h('p', { class: 'muted' }, t('apo.note')), appealsList(o.items, true))];
+}
 function appealsList(items, filters) {   // newest 10, the rest behind one tap (a busy judge has 50+); on a trial judge's profile, chips narrow the WHOLE list first
   const SHOW = 10, ul = h('ul', { class: 'appeals' });
   const li = x => { const k = t('ak.' + x.case_name);
     return h('li', {}, h('span', { class: 'pill' + (x.outcome === 'affirmed' ? ' ok' : x.outcome === 'dismissed' ? '' : ' warn') }, t('ap.' + x.outcome)), ' ',   // dismissed: the ruling stands, not a loss
-      h('a', { href: x.url, target: '_blank', rel: 'noopener' }, k.startsWith('ak.') ? x.case_name : k), h('small', {}, `${x.citation} · ${x.decided} · ${x.court === 'csc' ? t('ap.csc') : t('ap.coa')}`, x.copy ? [' · ', h('a', { href: x.copy, target: '_blank', rel: 'noopener' }, t('ap.copy'))] : null), x.note ? h('p', {}, x.note) : null); };
+      h('a', { href: x.url, target: '_blank', rel: 'noopener' }, k.startsWith('ak.') ? x.case_name : k), h('small', {}, `${x.citation} · ${x.decided} · ${x.court === 'csc' ? t('ap.csc') : t('ap.coa')}`, x.copy ? [' · ', h('a', { href: x.copy, target: '_blank', rel: 'noopener' }, t('ap.copy'))] : null),
+      x.reason ? h('p', { class: 'jp-reason' }, h('b', {}, t('rs.why')), ' ', x.reason[LANG] || x.reason.en, x.reason.pdf ? [' ', h('a', { href: x.reason.pdf, target: '_blank', rel: 'noopener' }, t('rs.read'))] : null) : null,   // tester point 7: the court's reason in one plain line
+      x.note ? h('p', {}, x.note) : null); };
   let group = 'all', changedOnly = false, shown = items;
   const more = h('button', { class: 'btn ghost', style: 'margin-top:8px', hidden: true, onclick: () => { ul.replaceChildren(...shown.map(li)); more.hidden = true; } });
   const none = h('p', { class: 'muted', hidden: true }, t('af.none'));
@@ -515,6 +630,13 @@ function subroleBlock(o) {
   };
   draw(); return [chipsEl, extraEl];
 }
+// "What kind of case was it?" — optional, the same four groups as the appeals filter (tester 10-23: a family case had no place in the form)
+const CASE_TYPES = ['family', 'criminal', 'civil', 'other'];
+function caseTypeBlock(onPick = () => {}) {
+  const btns = CASE_TYPES.map(k => h('button', { type: 'button', class: 'chipbtn', 'aria-pressed': S.caseType === k, onclick: () => { S.caseType = S.caseType === k ? '' : k; btns.forEach((b, i) => b.setAttribute('aria-pressed', String(S.caseType === CASE_TYPES[i]))); } }, t('ct.' + k)));
+  return h('div', { role: 'group', 'aria-labelledby': 'q-ct' }, h('div', { class: 'q', id: 'q-ct' }, t('ct.ask')), h('div', { class: 'chips' }, btns), h('p', { class: 'muted cthint' }, t('ct.hint')));
+}
+const caseLabel = k => CASE_TYPES.includes(k) ? t('ct.case.' + k) : '';
 function outcomeChips() {
   const btns = ['won', 'lost', 'mixed', 'watching'].map(k => h('button', { type: 'button', class: 'chipbtn', 'aria-pressed': S.outcome === k, onclick: () => { S.outcome = S.outcome === k ? '' : k; btns.forEach((b, i) => b.setAttribute('aria-pressed', S.outcome === ['won', 'lost', 'mixed', 'watching'][i])); } }, t('oc.' + k)));
   return h('div', { class: 'chips' }, btns);
@@ -537,7 +659,7 @@ function sparkline(tr) {
   return h('div', {}, svg, h('div', { class: 'ends' }, h('span', {}, i1 === i0 ? '' : t('tr.ago', { n: i1 - i0 + 1 })), h('span', {}, t('tr.' + dir)), h('span', {}, t('tr.now'))));
 }
 async function shareProfile(d) {
-  const url = `${location.origin}/p/${d.id}`, a = d.stats.all;
+  const url = location.origin + (d.path || `/p/${d.id}`), a = d.stats.all;
   const text = (a.n && !a.hidden) ? t('share.text', { name: dName(d.name), avg: a.overall, n: a.n }) : t('share.first', { name: dName(d.name) });
   try { if (navigator.share) { await navigator.share({ title: dName(d.name), text, url }); return; } } catch { return; }
   try { await navigator.clipboard.writeText(url); toast(t('share.copied')); } catch { prompt(t('share.copy'), url); }
@@ -578,7 +700,7 @@ async function stepResult(id) {
   const SUBS = ['defendant', 'plaintiff', 'victim', 'witness', 'family', 'other'].filter(k => d.stats.sub && d.stats.sub[k] && d.stats.sub[k].n);
   const subs = SUBS.length ? [h('h3', { style: 'margin-top:14px' }, t('res.bysub')), h('div', { class: 'roles' }, SUBS.map(k => { const s = d.stats.sub[k]; return h('div', {}, h('b', {}, s.hidden ? '–' : avg(s.overall)), h('span', {}, `${t('sl.' + k)} · ${s.n}`)); }))] : [];
   const cm = d.comments.map(c => h('div', { class: 'cmt' },
-    h('div', { class: 'cmt-who' }, h('b', {}, c.subrole ? t('lt.' + c.subrole) : roleShort(c.role)), h('span', { class: 'muted' }, ' · ' + ago(c.at)),
+    h('div', { class: 'cmt-who' }, h('b', {}, c.subrole ? t('lt.' + c.subrole) : roleShort(c.role)), h('span', { class: 'muted' }, [caseLabel(c.caseType), ago(c.at)].filter(Boolean).map(x => ' · ' + x).join('')),
       c.hasText ? [' ', h('span', { class: 'pill' + (c.status === 'published' ? ' ok' : ' warn') }, c.status === 'published' ? t('cm.confirmed') : c.status === 'held' ? t('cm.held') : t('cm.waiting'))] : null),
     answersTable({ type: d.type, overall: c.overall, q: c.q }),
     c.hasText ? h('p', { 'data-nosnippet': c.status !== 'published' }, c.text || (c.pendingText ? c.pendingText : t('cm.hidden'))) : null,   // search engines may quote only what a moderator has read
@@ -588,14 +710,16 @@ async function stepResult(id) {
       : c.hasText && (c.up || c.down) ? h('p', { class: 'muted react-n' }, `👍 ${c.up} · 👎 ${c.down}`) : null,
     c.text && !c.mine ? reportMenu(c, d.id) : null));
   const sent = S.sent;
+  const rateBtn = () => h('button', { class: 'btn', style: 'margin-top:12px', onclick: () => { S.after = { court: d.court, official: { id: d.id, name: d.name, type: d.type } }; stepRole(); } }, t('res.rate', { name: dName(d.name) }));
   show([
     h('h1', {}, sent ? h('span', {}, t('res.thanks'), h('em', {}, t('res.counted'))) : h('span', {}, t('res.profile'))),
     sent ? h('p', { class: 'lead' }, sent.present ? t('res.ver') : t('res.notver')) : null,
     h('div', { class: 'pcols' }, h('div', { class: 'pcol-l' },
-    h('div', { class: 'card profile' }, avatar(d.name, true), h('div', {}, h('h2', { style: 'margin:0' }, dName(d.name)),
+    d.demo || d.type !== 'judge' ? h('div', { class: 'card profile' }, avatar(d.name, true), h('div', {}, h('h2', { style: 'margin:0' }, dName(d.name)),
       h('div', { class: 'muted' }, d.title ? t('jt.' + d.title) : `${titleOf(d.type)} · ${d.court.name}`), hasBio ? h('div', { class: 'muted' }, `${t('unit.' + d.type)}: ${unit} · ${t('since', { y: pf.since })}`) : null,
-      hasBio ? h('p', { style: 'margin:6px 0 0' }, bio) : null, d.demo ? h('span', { class: 'pill warn' }, t('res.demo')) : null),
-      h('button', { class: 'btn', style: 'margin-top:12px', onclick: () => { S.after = { court: d.court, official: { id: d.id, name: d.name, type: d.type } }; stepRole(); } }, t('res.rate', { name: dName(d.name) }))),
+      hasBio ? h('p', { style: 'margin:6px 0 0' }, bio) : null, d.demo ? h('span', { class: 'pill warn' }, t('res.demo')) : null), rateBtn())
+      : heroBlock(d, rateBtn()),
+    d.type === 'judge' && !d.demo ? glanceBlock(d) : null,
     a.hidden ? h('div', { class: 'card' }, h('h3', {}, plural(a.n)), h('p', {}, a.n ? `${t(a.n === 1 ? 'res.fewline.one' : 'res.fewline.other', { n: a.n })} ${t('res.few.min', { min: d.stats.min })}` : t('res.few', { n: a.n, min: d.stats.min })), h('button', { class: 'btn ghost', style: 'margin-top:8px;background:#eef0ff;color:#12358f', onclick: () => shareProfile(d) }, t('res.share')))   // a neutral count, never a hidden average
     : h('div', { class: 'card' }, h('div', { class: 'muted' }, plural(a.n)), a.n ? h('div', { class: 'muted' }, t('res.verified', { v: a.verified || 0, n: a.n })) : null,
       h('div', { class: 'ring', style: `--p:${(a.overall || 0) * 20}` }, h('div', {}, h('div', {}, h('b', {}, avg(a.overall)), h('br'), h('span', {}, t('res.of5'))))),
@@ -604,6 +728,8 @@ async function stepResult(id) {
     // comments right under the rating, then the appeals history
     h('div', { class: 'card every' }, h('h3', {}, t('res.comments')), cm.length ? h('div', { class: 'cmts' }, cm) : h('p', { class: 'muted' }, t('res.nocomments'))),
     appealsBlock(d).length ? h('div', { class: 'card' }, ...appealsBlock(d)) : null,
+    surveyBlock(d, rateBtn()), newsBlock(d),
+    ojpeBlock(d).length ? h('div', { class: 'card' }, ...ojpeBlock(d)) : null,
     d.opinions && d.opinions.items.length ? h('div', { class: 'card' }, ...opinionsBlock(d.opinions)) : null,   // appellate judges: the decisions they wrote
     d.type === 'judge' && !d.demo ? h('div', { class: 'card' }, h('h3', {}, t('disc.h')), h('p', { class: 'muted', style: 'margin:6px 0 0' }, t('disc.p')), h('a', { href: 'method.html', style: 'display:inline-block;padding:8px 0;font-weight:600' }, t('disc.more'))) : null,   // statewide numbers from the discipline commission's report — never about this judge   // public record: shown with or without ratings (every real judge starts at 0)
     )),
@@ -623,6 +749,7 @@ let splashOn = true; const endSplash = () => { if (splashOn) { splashOn = false;
 setTimeout(endSplash, 3200);   // one second longer than before
 $('#loader').addEventListener('click', endSplash);   // a tap skips the opening splash (never an in-app loading screen)
 shownAt = Date.now();
-const deep = location.pathname.match(/^\/p\/(\d+)$/) || (location.search.match(/[?&]p=(\d+)/) || []);
+const metaId = document.querySelector('meta[name="ryg-profile"]')?.content;   // /judge/<name>, /prosecutor/<name>: the server names the id in the page
+const deep = location.pathname.match(/^\/p\/(\d+)$/) || (metaId ? [, metaId] : null) || (location.search.match(/[?&]p=(\d+)/) || []);
 if (deep && deep[1]) { S.sent = null; stepResult(Number(deep[1])).catch(stepRole); } else stepRole();
 if ('serviceWorker' in navigator && location.protocol === 'https:') addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));

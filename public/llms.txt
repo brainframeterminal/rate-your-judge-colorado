@@ -5,7 +5,7 @@
 The people listed are real Colorado officials taken from official court and district attorney lists: trial and appellate judges, Supreme Court justices, elected district attorneys and deputy district attorneys named on official pages. Ratings and comments are the opinions of the people who leave them, not statements by this project.
 
 ## Profiles
-- Every official has a public profile at https://rateyourjudgecolorado.com/p/<number> with their court, every rating, the moderator-reviewed comments, scores once there are 5 ratings, and for trial judges the Colorado Court of Appeals decisions on their rulings since June 2023 (public record, each linked to the opinion).
+- Every official has a public profile at https://rateyourjudgecolorado.com/judge/<name> (judges and justices) or https://rateyourjudgecolorado.com/prosecutor/<name> with their court, every rating, the moderator-reviewed comments, scores once there are 5 ratings, and for trial judges the Colorado Court of Appeals decisions on their rulings since June 2023 (public record, each linked to the opinion).
 - [All judges and prosecutors by courthouse](https://rateyourjudgecolorado.com/judges): one page per courthouse, each linking to every profile.
 - [District attorneys by judicial district](https://rateyourjudgecolorado.com/prosecutors): all 23 elected district attorneys and the deputies named on official pages.
 - The full list of profiles is also in the sitemap: https://rateyourjudgecolorado.com/sitemap.xml

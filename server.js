@@ -48,6 +48,7 @@ const TYPES = ['judge', 'prosecutor'];
 const METRICS = ['q1', 'q2', 'q3', 'q4', 'q5'];                 // meaning depends on the official's type — wording lives in the client
 const OUTCOMES = ['won', 'lost', 'mixed', 'watching'];
 const SUBROLES = ['defendant', 'plaintiff', 'victim', 'witness', 'family', 'other'];
+const CASE_TYPES = ['family', 'criminal', 'civil', 'other'];   // "What kind of case was it?" — the same four groups as the appeals filter (tester 10-23: the form did not list family)
 const HOUR = 3600e3, DAY = 86400e3;
 
 const courts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'courts.json'), 'utf8'));
@@ -87,7 +88,8 @@ try { await db.exec("ALTER TABLE officials ADD COLUMN scope TEXT NOT NULL DEFAUL
 // 'published' = a moderator read it · 'held' = the screen found a possible private name/threat, hidden until a moderator decides · 'hidden' = removed
 for (const col of ["share INTEGER NOT NULL DEFAULT 0", "pub TEXT NOT NULL DEFAULT ''", "pub_by TEXT NOT NULL DEFAULT ''", `pub_at ${BI}`]) { try { await db.exec(`ALTER TABLE feedback ADD COLUMN ${col}`); } catch {} }
 await db.exec(`CREATE TABLE IF NOT EXISTS feedback_votes (feedback_id ${BI} NOT NULL, device TEXT NOT NULL, vote INTEGER NOT NULL, created_at ${BI} NOT NULL, PRIMARY KEY (feedback_id, device))`);
-for (const col of ["source TEXT NOT NULL DEFAULT ''", "checked TEXT NOT NULL DEFAULT ''", "title TEXT NOT NULL DEFAULT ''"]) { try { await db.exec(`ALTER TABLE officials ADD COLUMN ${col}`); } catch {} }   // where a real name came from, and when it was checked (tools/roster-import.mjs)   // 'district' = listed at every courthouse of the judicial district (elected DA, district-wide judges)
+for (const col of ["source TEXT NOT NULL DEFAULT ''", "checked TEXT NOT NULL DEFAULT ''", "title TEXT NOT NULL DEFAULT ''"]) { try { await db.exec(`ALTER TABLE officials ADD COLUMN ${col}`); } catch {} }
+try { await db.exec("ALTER TABLE reviews ADD COLUMN case_type TEXT NOT NULL DEFAULT ''"); } catch {}   // '' = not answered (optional question, added 10-23)   // where a real name came from, and when it was checked (tools/roster-import.mjs)   // 'district' = listed at every courthouse of the judicial district (elected DA, district-wide judges)
 // ---- demo roster: INVENTED names for prototype testing (SEED_DEMO=0 in production) --------------------
 const FIRST = ['Marcus','Elena','Thomas','Priya','Daniel','Grace','Victor','Naomi','Samuel','Lucia','Henry','Aisha','Peter','Carmen','Walter','Julia','Omar','Rebecca','Isaac','Teresa'];
 const LAST = ['Hartwell','Okafor','Delgado','Lindqvist','Brennan','Sato','Whitlock','Moreau','Castellan','Ferris','Novak','Abernathy','Quill','Ramos','Thornbury','Kessler','Bellamy','Ortega','Pemberton','Valdez'];
@@ -246,9 +248,14 @@ const CHANGED_ON_APPEAL = new Set(['reversed', 'affirmed_in_part', 'vacated', 'r
 const changedOnAppeal = a => CHANGED_ON_APPEAL.has(a.outcome);
 const pubOf = note => /Unpublished opinion\./.test(note || '') ? 'unpublished' : /Published opinion\./.test(note || '') ? 'published' : '';   // the announcement's own words (tools/appeals/match.py writes them into note)
 let apSummary = null;   // /api/appeals/summary cache (10 min, like the home rail)
+const EARLIER = new Set(['court index', 'CourtListener earlier']);   // 2013 → May 2023: listed on profiles, never counted (unpublished from the court's index, published from CourtListener; incomplete years)
+const APPEALS_FROM = '2023-06-01';   // first announcement collected (tools/appeals/refresh.sh --since); the data's own first date is used whenever there are rows
+const longDate = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+// a trial judge with nothing found says so in words, with the dates searched: an empty zero reads as "no data". Same text as i18n 'ap.none' + 'ap.none.why'
+const apNoneText = ap => `We searched the Colorado Court of Appeals’ weekly announcements from ${longDate(ap.since)} to ${longDate(ap.until)} and found no decisions on this judge’s rulings. This is not a grade: only appealed rulings appear in those announcements, and a judge with few appealable rulings, or one appointed recently, will often have none.`;
 async function appealsSummary() {   // statewide counts by type of case: appealed decisions and how many were changed — shares are of APPEALED decisions, never of a caseload
   if (apSummary && Date.now() - apSummary.at < 10 * 60 * 1000) return apSummary.body;
-  const rows = (await db.prepare('SELECT a.case_name, a.outcome, a.note, a.decided, a.official_id FROM appeals a JOIN officials o ON o.id = a.official_id WHERE o.demo = 0').all()).filter(a => APPEAL_OUTCOMES.includes(a.outcome));
+  const rows = (await db.prepare("SELECT a.case_name, a.outcome, a.note, a.decided, a.official_id FROM appeals a JOIN officials o ON o.id = a.official_id WHERE o.demo = 0 AND a.source NOT IN ('court index', 'CourtListener earlier')").all()).filter(a => APPEAL_OUTCOMES.includes(a.outcome));
   const blank = () => ({ n: 0, changed: 0 }), add = (x, a) => { x.n++; if (changedOnAppeal(a)) x.changed++; };
   const all = blank(), types = new Map(), pub = { published: blank(), unpublished: blank() }, outcomes = {}, judges = new Set();
   for (const a of rows) { add(all, a); add(types.get(a.case_name) || types.set(a.case_name, blank()).get(a.case_name), a); const p = pubOf(a.note); if (p) add(pub[p], a); outcomes[a.outcome] = (outcomes[a.outcome] || 0) + 1; judges.add(a.official_id); }
@@ -256,6 +263,33 @@ async function appealsSummary() {   // statewide counts by type of case: appeale
   apSummary = { at: Date.now(), body: { decisions: all.n, changed: all.changed, judges: judges.size, since: days[0] || '', until: days[days.length - 1] || '', outcomes,
     types: [...types].map(([type, x]) => ({ type, ...x })).sort((a, b) => b.n - a.n || a.type.localeCompare(b.type)), published: pub.published, unpublished: pub.unpublished } };
   return apSummary.body;
+}
+// /api/appeals/compare (tester 10-24: "what's it like where I live, or with the judge I'm interested in"): every trial judge of a
+// judicial district with appealed / changed counts per group of cases. The groups are public/app.js's AP_GROUP (the profile chips).
+const AP_GROUP = { 'Domestic relations appeal': 'family', 'Adoption appeal': 'family', 'Relinquishment appeal': 'family',
+  'Criminal appeal': 'criminal', 'Misdemeanor appeal': 'criminal', 'Traffic appeal': 'criminal',
+  'Civil appeal': 'civil', 'County civil appeal': 'civil', 'Small claims appeal': 'civil', 'Water appeal': 'civil' };
+const apGroupOf = name => AP_GROUP[name] || 'other';
+let apCompare = null;   // 10-min cache, like the summary: the record changes weekly
+async function appealsCompare() {
+  if (apCompare && Date.now() - apCompare.at < 10 * 60 * 1000) return apCompare.body;
+  const S = await slugs(), s = await appealsSummary(), blank = () => ({ n: 0, changed: 0 }), by = new Map();
+  const rows = (await db.prepare("SELECT a.official_id, a.case_name, a.outcome FROM appeals a JOIN officials o ON o.id = a.official_id WHERE o.demo = 0 AND a.source NOT IN ('court index', 'CourtListener earlier')").all()).filter(a => APPEAL_OUTCOMES.includes(a.outcome));
+  for (const a of rows) {
+    const k = Number(a.official_id), x = by.get(k) || by.set(k, { all: blank() }).get(k), g = apGroupOf(a.case_name);
+    x[g] = x[g] || blank();
+    for (const y of [x.all, x[g]]) { y.n++; if (changedOnAppeal(a)) y.changed++; }
+  }
+  const D = new Map();
+  for (const o of await db.prepare("SELECT id, name, court_id, scope FROM officials WHERE demo = 0 AND type = 'judge'").all()) {
+    const c = courtById.get(o.court_id); if (!c || c.kind === 'appellate') continue;   // appellate judges belong to no district here — incl. those elevated from a trial court, whose old trial rulings stay on their profile and in the statewide table
+    if (!D.has(c.district)) D.set(c.district, []);
+    D.get(c.district).push({ id: Number(o.id), name: o.name, path: S.byId.get(Number(o.id)) || `/p/${o.id}`, court: o.scope === 'district' ? '' : c.name, g: by.get(Number(o.id)) || { all: blank() } });
+  }
+  const counties = d => [...new Set(courts.filter(c => c.district === d && c.kind !== 'appellate').map(c => c.county))].join(', ');
+  apCompare = { at: Date.now(), body: { since: s.since, until: s.until, districts: [...D].sort((a, b) => Number(a[0]) - Number(b[0]))
+    .map(([d, list]) => ({ d, ord: ordEn(Number(d)), counties: counties(d), judges: list.sort((a, b) => b.g.all.n - a.g.all.n || a.name.localeCompare(b.name)) })) } };
+  return apCompare.body;
 }
 const AP_TYPE = { 'Domestic relations appeal': 'Family (domestic relations)', 'Appeal': 'Type not stated' }, typeLabel = s => AP_TYPE[s] || s.replace(/ appeal$/, '');
 function appealsTable(s) {   // the crawler copy of /appeals.html (EN); public/pages.js draws the same table in both languages
@@ -281,10 +315,55 @@ async function sameSurnameAt(courtId, name) {
 }
 async function appealsOf(o) {   // a list of decided appeals with citations, never a reversal RATE: there is no public count of every case a judge heard
   if (o.demo && !APPEALS_ON_DEMO) return null;
-  const items = (await db.prepare('SELECT court, case_name, citation, decided, outcome, url, note FROM appeals WHERE official_id = ? ORDER BY decided DESC').all(o.id)).filter(a => APPEAL_OUTCOMES.includes(a.outcome)).map(a => ({ ...a, copy: copyOf(a.url) }));
-  if (!items.length) return null;
+  const all = (await db.prepare('SELECT court, case_name, citation, decided, outcome, url, note, source FROM appeals WHERE official_id = ? ORDER BY decided DESC').all(o.id)).filter(a => APPEAL_OUTCOMES.includes(a.outcome)).map(a => ({ ...a, copy: copyOf(a.url), ...(REASONS[a.citation] && changedOnAppeal(a) ? { reason: REASONS[a.citation] } : {}) }));
+  const older = all.filter(a => EARLIER.has(a.source)).map(({ source, ...a }) => a), items = all.filter(a => !EARLIER.has(a.source)).map(({ source, ...a }) => a);   // 2013 → May 2023 from the court's index: listed, never counted (unpublished only for those years)
+  const olderOf = () => older.length ? { since: older[older.length - 1].decided, until: older[0].decided, items: older } : undefined;
   const counts = {}; for (const a of items) counts[a.outcome] = (counts[a.outcome] || 0) + 1;
-  return { counts, items };
+  if (!items.length) {   // nothing found: a trial judge still gets a record, empty, with the dates searched — the profile says so in words
+    if (o.type !== 'judge' || courtById.get(o.court_id)?.kind === 'appellate') return null;   // prosecutors and defenders have no appeals record; appellate judges have the decisions they wrote (opinionsOf)
+    const s = await appealsSummary();
+    return { counts, items, since: s.since || APPEALS_FROM, until: s.until || today(), older: olderOf() };   // a demo/QA copy has no real rows: the collection start and today
+  }
+  return { counts, items, older: olderOf() };
+}
+// ---- the state's own evaluation (OJPE, the voter guide's "Blue Book") and the year a judge took the bench
+// data/ojpe.json is built by tools/ojpe/build-data.py from the state's evaluation pages; each item keeps the page it came from
+let OJPE = {}; try { OJPE = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'ojpe.json'), 'utf8')); } catch {}
+// data/profiles.json: official photo (Colorado Judicial Branch contact page), biography written from the state's own evaluation pages,
+// public reporting that names the judge — every entry checked by hand before it lands here
+let PROFILES = {}; try { PROFILES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'profiles.json'), 'utf8')); } catch {}
+// data/reasons.json: one plain line per changed decision, written from the opinion itself, no private names; each line's
+// supporting quote was found verbatim in the opinion before it was published
+let REASONS = {}; try { REASONS = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'reasons.json'), 'utf8')); } catch {}
+const whoFor = o => { if (o.demo) return null; const p = PROFILES[String(o.id)]; if (!p) return null;
+  return { photo: p.photo ? { src: '/' + p.photo.file, page: p.photo.page, from: p.photo.from || 'court', year: p.photo.year || null } : null, bio: p.bio || null, docket: p.docket || null, news: p.news || [] }; };
+let apRates = null;
+async function appealRates() {   // appeals decided per year ON THE BENCH since the record starts: a data point, never a prediction or a grade
+  if (apRates && Date.now() - apRates.at < 10 * 60 * 1000) return apRates;
+  const s = await appealsSummary(), until = s.until || today(), from = s.since || APPEALS_FROM;
+  const rows = await db.prepare("SELECT o.id, o.court_id, COUNT(a.id) n FROM officials o LEFT JOIN appeals a ON a.official_id = o.id AND a.source NOT IN ('court index', 'CourtListener earlier') WHERE o.demo = 0 AND o.type = 'judge' GROUP BY o.id, o.court_id").all();
+  const by = new Map();
+  for (const r of rows) {
+    if (courtById.get(r.court_id)?.kind === 'appellate') continue;
+    const ap = OJPE[String(r.id)]?.appointed; if (!ap) continue;   // without the year on the bench a per-year figure would be invented
+    const start = [from, ap.day || `${ap.year}-07-01`].sort()[1];   // only the year known → mid-year
+    const years = (Date.parse(until) - Date.parse(start)) / (365.25 * DAY);
+    if (years < 0.5) continue;
+    by.set(Number(r.id), { n: Number(r.n), years, rate: Number(r.n) / years, approx: !ap.day && ap.year >= Number(from.slice(0, 4)) });
+  }
+  const sorted = [...by.values()].filter(x => x.n > 0).map(x => x.rate).sort((a, b) => a - b);
+  const median = sorted.length ? (sorted[(sorted.length - 1) >> 1] + sorted[sorted.length >> 1]) / 2 : null;
+  apRates = { at: Date.now(), by, median, sorted, from, until };
+  return apRates;
+}
+async function ojpeFor(o) {
+  if (o.demo || o.type !== 'judge') return null;
+  const x = OJPE[String(o.id)] || { cycles: [] }, R = await appealRates(), mine = R.by.get(Number(o.id));
+  const rate = mine && mine.n > 0 ? { perYear: Math.round(mine.rate * 10) / 10, years: Math.round(mine.years * 10) / 10, approx: mine.approx, n: mine.n,
+    median: R.median == null ? null : Math.round(R.median * 10) / 10, judges: R.sorted.length,
+    above: R.sorted.length > 1 ? R.sorted.filter(v => v < mine.rate).length / (R.sorted.length - 1) : 0 } : null;   // share of the OTHER judges below this one   // share of judges with appeals whose yearly figure is lower
+  return { cycles: x.cycles, appointed: x.appointed || null, rate, since: R.from,
+    survey: x.survey ? { ...x.survey, copy: x.survey.pdf ? copyOf(x.survey.pdf) : null } : null };
 }
 async function opinionsOf(o) {   // an appellate judge's own written decisions: what the panel did with the trial court's ruling (a list + counts, never a rate)
   const items = (await db.prepare('SELECT case_name, citation, decided, outcome, url, published, note FROM opinions WHERE official_id = ? ORDER BY decided DESC').all(o.id)).filter(a => APPEAL_OUTCOMES.includes(a.outcome)).map(a => ({ ...a, copy: copyOf(a.url) }));
@@ -306,13 +385,13 @@ async function publicComments(officialId, device) {
   const me = validDevice(device) ? device : '';
   const eligible = PUBLISH_MODE === 'peer' && !!me && await eligibleVoter(me);
   // every rating, newest first, each with who left it and that person's own answers; a comment's TEXT keeps its own rules
-  return (await db.prepare(`SELECT id, role, subrole, overall, q1, q2, q3, q4, q5, comment, created_at, status, device,
+  return (await db.prepare(`SELECT id, role, subrole, case_type, overall, q1, q2, q3, q4, q5, comment, created_at, status, device,
       (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = 1) AS up,
       (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = -1) AS down,
       (SELECT vote FROM votes v WHERE v.review_id = r.id AND v.device = ?) AS myvote
     FROM reviews r WHERE official_id = ? ORDER BY created_at DESC, id DESC LIMIT 50`).all(me || '-', officialId))
     .map(r => (r.comment && (r.status === 'held' || r.status === 'rejected' || r.status === 'flagged') && !(me && r.device === me) ? { ...r, comment: null } : r))   // held/rejected text: only its author sees it
-    .map(r => ({ id: Number(r.id), role: r.role, subrole: r.subrole || '', overall: r.overall == null ? null : Number(r.overall), q: [r.q1, r.q2, r.q3, r.q4, r.q5].map(v => v == null ? null : Number(v)),
+    .map(r => ({ id: Number(r.id), role: r.role, subrole: r.subrole || '', caseType: r.case_type || '', overall: r.overall == null ? null : Number(r.overall), q: [r.q1, r.q2, r.q3, r.q4, r.q5].map(v => v == null ? null : Number(v)),
       hasText: !!(r.comment && r.comment.trim()), status: r.status, up: r.up, down: r.down, at: Number(r.created_at),
       text: r.status === 'published' || (r.status === 'pending' && PUBLISH_MODE === 'visible') || (me && r.device === me) ? r.comment : null,
       pendingText: r.status === 'pending' && eligible && r.device !== me ? r.comment : null,       // 'mod' mode: nobody but the author sees unreviewed text
@@ -408,6 +487,25 @@ function profileFor(o) {
   const n = o.id, since = 2004 + (n * 7) % 18;
   return { ...base, since, focus: n % 3, room: `${1 + n % 6}${'ABC'[n % 3]}`, unitIdx: n % 4 };
 }
+// Profile addresses by NAME (his 6969, 10-23, for search): /judge/shay-whitaker, /prosecutor/john-kellner. Initials and
+// nicknames drop out; a namesake gets the court added (jason-kelly-conejos-county) and the LOWER id keeps the plain name, so
+// adding someone never moves an existing address. /p/<id> answers 301 to it; demo people stay on /p/<id> (noindex).
+const foldSlug = s => String(s).normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 1).join('-');
+let SLUG = { at: 0, byId: new Map(), byPath: new Map() };
+async function slugs() {   // rebuilt at most once a minute, so a person a moderator adds gets an address within a minute (until then /p/<id> serves)
+  if (Date.now() - SLUG.at < 60000) return SLUG;
+  const byId = new Map(), byPath = new Map();
+  for (const o of await db.prepare('SELECT id, court_id, type, name FROM officials WHERE demo = 0 ORDER BY id').all()) {
+    const base = foldSlug(o.name.replace(/^(Chief Justice|Justice|Judge|Deputy DA|District Attorney)\s+/, '').replace(/\([^)]*\)|"[^"]*"|“[^”]*”/g, ' '));
+    const dir = `/${o.type === 'judge' ? 'judge' : 'prosecutor'}/`;
+    let p = dir + base;
+    if (byPath.has(p)) p = `${dir}${base}-${foldSlug(courtById.get(o.court_id)?.name || o.court_id)}`;
+    if (byPath.has(p)) p = `${dir}${base}-${o.id}`;
+    byId.set(Number(o.id), p); byPath.set(p, Number(o.id));
+  }
+  return (SLUG = { at: Date.now(), byId, byPath });
+}
+const profilePath = async o => (!o.demo && (await slugs()).byId.get(Number(o.id))) || `/p/${o.id}`;
 const officialRow = async id => await db.prepare('SELECT id, court_id, type, name, demo, title, scope FROM officials WHERE id = ?').get(id);   // title: appellate only ("Justice, Colorado Supreme Court")
 const ordEn = n => { const x = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (x[(v - 20) % 10] || x[v] || x[0]); };
 const placeOf = o => { const c = courtById.get(o.court_id); return o.title ? o.title.replace(/^[^,]*,\s*/, '') : o.scope === 'district' ? `${ordEn(Number(c.district))} Judicial District` : c.name; };   // a district-wide official's court_id is just one county of the district
@@ -419,7 +517,8 @@ const escH = x => String(x).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;'
 const surname = n => { const w = n.replace(/^(Judge|Justice|Chief Justice|Deputy DA|District Attorney)\s+/, '').replace(/\(.*?\)/g, '').trim().split(/\s+/).filter(x => !/^(Jr\.?|Sr\.?|II|III|IV)$/.test(x)); return (w.pop() || '') + ' ' + w.join(' '); };
 async function directoryRows() {
   const rows = await db.prepare('SELECT o.id, o.name, o.type, o.court_id, o.scope, o.title, COUNT(r.id) AS n, AVG(r.overall) AS av, MAX(r.created_at) AS last FROM officials o LEFT JOIN reviews r ON r.official_id = o.id WHERE o.demo = 0 GROUP BY o.id, o.name, o.type, o.court_id, o.scope, o.title').all();
-  return rows.map(r => ({ ...r, id: Number(r.id), n: Number(r.n), av: r.av == null ? null : Number(r.av), last: r.last ? Number(r.last) : 0, district: courtById.get(r.court_id)?.district }))
+  const S = await slugs();
+  return rows.map(r => ({ ...r, id: Number(r.id), path: S.byId.get(Number(r.id)) || `/p/${r.id}`, n: Number(r.n), av: r.av == null ? null : Number(r.av), last: r.last ? Number(r.last) : 0, district: courtById.get(r.court_id)?.district }))
     .sort((a, b) => surname(a.name).localeCompare(surname(b.name)));
 }
 function courtPeople(c, rows) {   // the same people the rating tool lists for this courthouse
@@ -459,22 +558,22 @@ async function directoryProsecutors() {   // /prosecutors: the 23 district attor
   const keys = [...byD.keys()].sort((a, b) => Number(a) - Number(b));
   const das = rows.filter(r => /^District Attorney/.test(r.name)), deps = rows.length - das.length;
   const body = keys.map(k => { const l = byD.get(k), da = l.filter(r => /^District Attorney/.test(r.name)), dep = l.filter(r => !/^District Attorney/.test(r.name));
-    return `<div class="card doc" id="d-${k}"><h2>${ordEn(Number(k))} Judicial District</h2><p class="muted">${escH(counties(k))}</p><ul class="dirlist">${[...da, ...dep].map(r => `<li><a href="/p/${r.id}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul>${dep.length ? '' : '<p class="muted">We have not added this office’s deputy district attorneys yet.</p>'}</div>`; }).join('');
+    return `<div class="card doc" id="d-${k}"><h2>${ordEn(Number(k))} Judicial District</h2><p class="muted">${escH(counties(k))}</p><ul class="dirlist">${[...da, ...dep].map(r => `<li><a href="${r.path}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul>${dep.length ? '' : '<p class="muted">We have not added this office’s deputy district attorneys yet.</p>'}</div>`; }).join('');
   const title = 'Colorado district attorneys by judicial district: ratings and reviews — Rate Your Judge Colorado';
   const desc = `All ${das.length} elected district attorneys in Colorado and ${deps} deputy district attorneys named on official pages, by judicial district. Read how people rated them, or rate one anonymously in 30 seconds.`;
   return dirShell({ title, desc, canon: `${SITE}/prosecutors`, h1: 'Colorado district attorneys <em>by judicial district</em>', lead: escH(`Every elected district attorney in Colorado (${das.length}) and the ${deps} deputies named on their offices’ official pages. Open a name to see how people rated them.`),
     body: `<div class="card doc"><p><a href="/">Rate a prosecutor</a> · <a href="/judges">Judges and prosecutors by courthouse</a></p></div>` + body,
-    ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/prosecutors`, description: desc, mainEntity: { '@type': 'ItemList', numberOfItems: das.length, itemListElement: das.sort((a, b) => Number(a.district) - Number(b.district)).map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/p/${r.id}`, name: r.name })) } },
+    ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/prosecutors`, description: desc, mainEntity: { '@type': 'ItemList', numberOfItems: das.length, itemListElement: das.sort((a, b) => Number(a.district) - Number(b.district)).map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: SITE + r.path, name: r.name })) } },
       crumbsLd([['Rate Your Judge Colorado', SITE + '/'], ['District attorneys', `${SITE}/prosecutors`]])] } });
 }
 async function directoryCourt(c) {
   const rows = await directoryRows(), groups = courtPeople(c, rows).filter(([, l]) => l.length);
   const body = `<div class="card doc"><p>${escH(c.address)}</p>${c.houses ? `<p class="muted">${escH(c.houses.join(' · '))}</p>` : ''}<p><a href="/">Rate someone at this courthouse</a> · <a href="/judges">All courthouses</a></p></div>` +
-    groups.map(([h, l]) => `<div class="card doc"><h2>${escH(h)}</h2>${h === 'Prosecutors' ? `<p class="muted"><a href="/prosecutors#d-${c.district}">All district attorneys by judicial district</a></p>` : ''}<ul class="dirlist">${l.map(r => `<li><a href="/p/${r.id}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul></div>`).join('');
+    groups.map(([h, l]) => `<div class="card doc"><h2>${escH(h)}</h2>${h === 'Prosecutors' ? `<p class="muted"><a href="/prosecutors#d-${c.district}">All district attorneys by judicial district</a></p>` : ''}<ul class="dirlist">${l.map(r => `<li><a href="${r.path}">${escH(r.name)}</a> <span class="muted">${scoreLine(r)}</span></li>`).join('')}</ul></div>`).join('');
   const all = groups.flatMap(([, l]) => l), title = `${c.name} judges and prosecutors: ratings and reviews — Rate Your Judge Colorado`;
   const desc = c.kind === 'appellate' ? `The justices of the Colorado Supreme Court and the judges of the Colorado Court of Appeals: ratings and reviews from people who saw them at work.` : `${all.length} judges and prosecutors who work at ${c.name}, ${c.district ? `${ordEn(Number(c.district))} Judicial District, ` : ''}Colorado. Read how people rated them, or rate one anonymously in 30 seconds.`;
   return dirShell({ title, desc, canon: `${SITE}/judges/${c.id}`, h1: `${escH(c.name)} <em>judges and prosecutors</em>`, lead: escH(c.kind === 'appellate' ? 'Colorado Supreme Court and Court of Appeals, 2 E. 14th Ave., Denver.' : `Everyone on this site who works at ${c.name}, ${ordEn(Number(c.district))} Judicial District.`), body,
-    ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/judges/${c.id}`, description: desc, mainEntity: { '@type': 'ItemList', numberOfItems: all.length, itemListElement: all.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/p/${r.id}`, name: r.name })) } },
+    ld: { '@context': 'https://schema.org', '@graph': [{ '@type': 'CollectionPage', name: title, url: `${SITE}/judges/${c.id}`, description: desc, mainEntity: { '@type': 'ItemList', numberOfItems: all.length, itemListElement: all.map((r, i) => ({ '@type': 'ListItem', position: i + 1, url: SITE + r.path, name: r.name })) } },
       crumbsLd([['Rate Your Judge Colorado', SITE + '/'], ['Judges and prosecutors', `${SITE}/judges`], [c.name, `${SITE}/judges/${c.id}`]])] } });
 }
 
@@ -537,7 +636,7 @@ async function api(req, res, url, isMod) {
   if (req.method === 'GET' && url.pathname === '/api/appeals/top') {   // home rail: real judges by number of appeals decided (a count, never a rate)
     if (!topAppeals || Date.now() - topAppeals.at > 10 * 60 * 1000) {
       const rows = await db.prepare(`SELECT o.id, o.name, o.type, o.court_id, a.outcome, COUNT(*) n FROM appeals a JOIN officials o ON o.id = a.official_id
-        WHERE o.demo = 0 GROUP BY o.id, o.name, o.type, o.court_id, a.outcome`).all();
+        WHERE o.demo = 0 AND a.source NOT IN ('court index', 'CourtListener earlier') GROUP BY o.id, o.name, o.type, o.court_id, a.outcome`).all();
       const by = new Map();
       for (const r of rows) { if (!APPEAL_OUTCOMES.includes(r.outcome)) continue; const x = by.get(r.id) || by.set(r.id, { id: r.id, name: r.name, type: r.type, court: courtById.get(r.court_id)?.name || '', n: 0, counts: {} }).get(r.id); x.n += Number(r.n); x.counts[r.outcome] = Number(r.n); }
       const all = [...by.values()].sort((a, b) => b.n - a.n || a.name.localeCompare(b.name));
@@ -545,16 +644,22 @@ async function api(req, res, url, isMod) {
     }
     return json(res, 200, topAppeals.body);
   }
+  if (req.method === 'GET' && url.pathname === '/api/appeals/compare') return json(res, 200, await appealsCompare());   // /appeals.html: the judges of one district side by side (read-only, 10 min cache)
   if (req.method === 'GET' && url.pathname === '/api/appeals/summary') return json(res, 200, await appealsSummary());   // /appeals.html: statewide, by type of case (read-only, 10 min cache)
   if (req.method === 'GET' && url.pathname === '/api/latest') {                  // home "Latest ratings": every new rating on a real person, with that person's own answers; a comment's TEXT only once a moderator approved it (the official's AVERAGE still waits for MIN_N)
     const me = validDevice(deviceOf(req)) ? deviceOf(req) : '';
-    const rows = await db.prepare(`SELECT r.id, r.official_id, r.role, r.subrole, r.comment, r.status, r.device, r.created_at, r.overall, r.q1, r.q2, r.q3, r.q4, r.q5, o.name, o.type, o.court_id,
+    const rows = await db.prepare(`SELECT r.id, r.official_id, r.role, r.subrole, r.case_type, r.comment, r.status, r.device, r.created_at, r.overall, r.q1, r.q2, r.q3, r.q4, r.q5, o.name, o.type, o.court_id,
         (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = 1) up, (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = -1) down,
         (SELECT vote FROM votes v WHERE v.review_id = r.id AND v.device = ?) myvote
       FROM reviews r JOIN officials o ON o.id = r.official_id
       WHERE r.status IN ('none', 'published', 'pending') AND o.demo = 0 ORDER BY r.created_at DESC, r.id DESC LIMIT 10`).all(me || '-');   // 👍/👎 on a card here are the same votes as on the profile   // phones show 3, the desktop row moves through up to 10
-    return json(res, 200, rows.map(r => ({ id: Number(r.id), official: Number(r.official_id), name: r.name, type: r.type, court: courtById.get(r.court_id)?.name || '', role: r.role, subrole: r.subrole || '', text: r.status === 'published' ? (r.comment || '') : '', at: Number(r.created_at),
+    return json(res, 200, rows.map(r => ({ id: Number(r.id), official: Number(r.official_id), name: r.name, type: r.type, court: courtById.get(r.court_id)?.name || '', role: r.role, subrole: r.subrole || '', caseType: r.case_type || '', text: r.status === 'published' ? (r.comment || '') : '', at: Number(r.created_at),
       up: Number(r.up), down: Number(r.down), myVote: r.myvote == null ? 0 : Number(r.myvote), mine: !!me && r.device === me, canReact: !!me && r.device !== me && r.status === 'published' && !!(r.comment || '').trim(), overall: r.overall == null ? null : Number(r.overall), q: ['q1', 'q2', 'q3', 'q4', 'q5'].map(k => r[k] == null ? null : Number(r[k])) })));
+  }
+  if (req.method === 'GET' && url.pathname === '/api/added') {   // home "Recently added": people a visitor asked us to list and a moderator then added — 3 at most, every screen. A request linked to someone ALREADY listed is not an addition: roster people carry a source URL, visitor additions have none
+    const rows = await db.prepare(`SELECT o.id, o.name, o.type, o.court_id, MAX(s.decided_at) AS at FROM suggestions s JOIN officials o ON o.id = s.official_id
+      WHERE s.status = 'added' AND o.demo = 0 AND o.source = '' GROUP BY o.id, o.name, o.type, o.court_id ORDER BY at DESC LIMIT 3`).all();
+    return json(res, 200, rows.map(r => ({ id: Number(r.id), name: r.name, type: r.type, court: courtById.get(r.court_id)?.name || '', at: Number(r.at) })));
   }
   if (req.method === 'GET' && url.pathname === '/api/featured') {
     return json(res, 200, (await Promise.all([1, 3].map(async id => { const o = await officialRow(id); return o && o.demo ? { ...o, court: courtById.get(o.court_id).name, profile: profileFor(o), summary: (await aggregate(id)).all } : null; }))).filter(Boolean));
@@ -565,7 +670,7 @@ async function api(req, res, url, isMod) {
     const o = await officialRow(idOf(m[1]));
     if (!o) return json(res, 404, { error: 'not found' });
     const stats = await aggregate(o.id);
-    return json(res, 200, { ...o, profile: profileFor(o), trend: await trend(o.id, stats.all.n), court: courtById.get(o.court_id), stats, appeals: await appealsOf(o), opinions: await opinionsOf(o), comments: await publicComments(o.id, deviceOf(req)) });
+    return json(res, 200, { ...o, path: await profilePath(o), profile: profileFor(o), trend: await trend(o.id, stats.all.n), court: courtById.get(o.court_id), stats, appeals: await appealsOf(o), opinions: await opinionsOf(o), ojpe: await ojpeFor(o), who: whoFor(o), comments: await publicComments(o.id, deviceOf(req)) });
   }
 
   if (req.method === 'POST' && url.pathname === '/api/review') {
@@ -581,6 +686,7 @@ async function api(req, res, url, isMod) {
     for (let i = 0; i < q.length; i++) if (q[i] === 'na') q[i] = null;
     const outcome = OUTCOMES.includes(b.outcome) ? b.outcome : '';
     const subrole = b.role === 'party' && SUBROLES.includes(b.subrole) ? b.subrole : '';
+    const caseType = CASE_TYPES.includes(b.case_type) ? b.case_type : '';
     const xs = o.type === 'prosecutor' && (subrole === 'victim' || subrole === 'witness') ? [int15(b.x1), int15(b.x2)] : [null, null];
     if (await db.prepare('SELECT 1 FROM reviews WHERE official_id = ? AND device = ? AND created_at > ?').get(o.id, device, Date.now() - REPEAT_DAYS * DAY))
       return json(res, 409, { error: 'You already rated this person recently.' });
@@ -593,9 +699,9 @@ async function api(req, res, url, isMod) {
     if (sc.verdict === 'block') return json(res, 400, { error: SCREEN_MESSAGES[sc.reason] || SCREEN_MESSAGES.language, screen: sc.reason });
     const cstatus = !comment ? 'none' : sc.verdict === 'hold' ? 'held' : 'pending';   // 'held' = only the author and moderators see it
     try {
-      const r = await db.prepare(`INSERT INTO reviews (official_id, role, q1, q2, q3, q4, q5, overall, outcome, subrole, x1, x2, present, device, day, comment, status, created_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`)
-        .run(o.id, b.role, ...q, overall, outcome, subrole, xs[0], xs[1], present, device, today(), comment, cstatus, hourFloor(Date.now()));
+      const r = await db.prepare(`INSERT INTO reviews (official_id, role, q1, q2, q3, q4, q5, overall, outcome, subrole, case_type, x1, x2, present, device, day, comment, status, created_at)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`)
+        .run(o.id, b.role, ...q, overall, outcome, subrole, caseType, xs[0], xs[1], present, device, today(), comment, cstatus, hourFloor(Date.now()));
       return json(res, 200, { ok: true, id: Number(r.lastInsertRowid), present: !!present, commentStatus: cstatus, held: sc.verdict === 'hold' ? sc.reason : undefined });
     } catch (e) {
       if (e.code === '23505' || String(e.message).includes('UNIQUE')) return json(res, 409, { error: 'You already rated this person recently.' });
@@ -725,12 +831,19 @@ async function api(req, res, url, isMod) {
 
   if (req.method === 'GET' && url.pathname === '/api/log') { // PUBLIC transparency: decisions + how people voted
     const decisions = await Promise.all((await db.prepare('SELECT m.created_at AS at, m.action, m.note, m.mod, r.official_id, r.role FROM mod_log m JOIN reviews r ON r.id = m.review_id ORDER BY m.created_at DESC LIMIT 50').all())
-      .map(async d => ({ at: d.at, action: d.action, note: d.note, mod: d.mod, role: d.role, official: await officialLabel(d.official_id) })));
+      .map(async d => ({ at: Number(d.at), action: d.action, note: d.note, mod: d.mod, role: d.role, official: await officialLabel(d.official_id) })));
+    // people visitors asked us to list. "added" = a new profile; "listed" = the request pointed
+    // at someone already on the roster (roster people carry a source URL); a rejected request shows no name — a visitor can type anything
+    const people = (await db.prepare(`SELECT s.decided_at AS at, s.status, s.decided_by AS mod, s.type, s.court_id, o.name AS official_name, o.source
+      FROM suggestions s LEFT JOIN officials o ON o.id = s.official_id WHERE s.status IN ('added', 'rejected') AND s.decided_at IS NOT NULL ORDER BY s.decided_at DESC LIMIT 50`).all())
+      .map(s => ({ at: Number(s.at), kind: 'person', action: s.status === 'rejected' ? 'rejected' : (s.source || '') === '' ? 'added' : 'listed', mod: s.mod || '', type: s.type, note: '',
+        official: { name: s.status === 'rejected' ? '' : (s.official_name || ''), court: courtById.get(s.court_id)?.name || '' } }));
+    const decisionsAll = [...decisions, ...people].sort((a, b) => b.at - a.at).slice(0, 50);
     const comments = await Promise.all((await db.prepare(`SELECT id, official_id, role, comment, status, created_at,
         (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = 1) up, (SELECT COUNT(*) FROM votes v WHERE v.review_id = r.id AND v.vote = -1) down
       FROM reviews r WHERE comment IS NOT NULL AND comment != '' ORDER BY created_at DESC LIMIT 50`).all())
       .map(async c => ({ id: c.id, at: c.created_at, role: c.role, status: c.status, up: c.up, down: c.down, text: c.status === 'published' ? c.comment : null, official: await officialLabel(c.official_id) })));
-    return json(res, 200, { rules: { confirmsToPublish: CONFIRMS_TO_PUBLISH, presenceFeet: PRESENCE_FEET, publishMode: PUBLISH_MODE, minN: MIN_N, repeatDays: REPEAT_DAYS }, decisions, comments });
+    return json(res, 200, { rules: { confirmsToPublish: CONFIRMS_TO_PUBLISH, presenceFeet: PRESENCE_FEET, publishMode: PUBLISH_MODE, minN: MIN_N, repeatDays: REPEAT_DAYS }, decisions: decisionsAll, comments });
   }
 
   if (url.pathname.startsWith('/api/mod/')) {
@@ -860,7 +973,7 @@ function makeHandler(isMod) {
       if (url.pathname.startsWith('/api/')) { res.setHeader('x-robots-tag', 'noindex'); return await api(req, res, url, isMod); }
       if (!isMod && MOD_ONLY.has(url.pathname)) { res.writeHead(404); return res.end('Not found'); }
       const dest = req.headers['sec-fetch-dest'];                                                   // the service worker's background pre-caching is not a visit
-      let pm;
+      let pm, sp;
       if ((pm = url.pathname.match(/^\/archive\/(coa|ojpe)\/([\w.-]+\.pdf)$/))) {        // our saved copy of a court document (never a page view, never indexed)
         const file = path.join(ARCHIVE, pm[1], pm[2]);
         if (!file.startsWith(ARCHIVE) || !fs.existsSync(file)) { res.writeHead(404); return res.end('Not found'); }
@@ -878,8 +991,11 @@ function makeHandler(isMod) {
         const html = c ? await directoryCourt(c) : await directoryIndex();
         res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(html);
       }
-      if ((pm = url.pathname.match(/^\/p\/(\d+)$/))) {                    // shareable profile link with a link preview
-        const o = await officialRow(idOf(pm[1]));
+      if ((pm = url.pathname.match(/^\/p\/(\d+)$/)) && (sp = (await slugs()).byId.get(idOf(pm[1])))) {   // the old numbered address → the named one
+        res.writeHead(301, { location: sp + url.search, 'cache-control': 'public, max-age=3600' }); return res.end();
+      }
+      if (pm || /^\/(judge|prosecutor)\/[a-z0-9-]+$/.test(url.pathname)) {   // shareable profile link with a link preview
+        const o = await officialRow(pm ? idOf(pm[1]) : (await slugs()).byPath.get(url.pathname) || 0);
         let html = fs.readFileSync(path.join(ROOT, 'public', 'index.html'), 'utf8').replace(/<!--seo-->[\s\S]*?<!--\/seo-->\n?/, '');
         const a = o ? (await aggregate(o.id)).all : null, place = o ? placeOf(o) : '';
         const title = o ? (o.demo ? `${o.name} — Rate Your Judge Colorado` : profileTitle(o)) : 'Rate Your Judge Colorado';
@@ -887,25 +1003,31 @@ function makeHandler(isMod) {
           : a && a.n ? `${place}. ${a.n} ${a.n === 1 ? 'rating' : 'ratings'} so far from people who were in the courtroom. Read what they said, or add yours: anonymous, 30 seconds.`
           : `${place}. No ratings yet. Be the first to rate ${o.name}: anonymous, 30 seconds, from your phone.`) : 'Rate a Colorado judge or prosecutor in 30 seconds. Anonymous.';
         const esc = x => String(x).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-        const real = o && !o.demo, court = o ? courtById.get(o.court_id) : null, url1 = `https://rateyourjudgecolorado.com/p/${o ? o.id : ''}`;
-        const head = `<head>\n<base href="/">\n<meta name="robots" content="${real ? 'index, follow' : 'noindex'}">\n<meta name="description" content="${esc(desc)}">\n<link rel="canonical" href="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:title" content="${esc(title)}">\n<meta property="og:description" content="${esc(desc)}">\n<meta property="og:type" content="profile">\n<meta property="og:site_name" content="Rate Your Judge Colorado"><meta property="og:url" content="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg">`;
+        const real = o && !o.demo, court = o ? courtById.get(o.court_id) : null, url1 = `https://rateyourjudgecolorado.com${o ? await profilePath(o) : '/'}`;
+        const head = `<head>\n<base href="/">\n${o ? `<meta name="ryg-profile" content="${o.id}">\n` : ''}<meta name="robots" content="${real ? 'index, follow' : 'noindex'}">\n<meta name="description" content="${esc(desc)}">\n<link rel="canonical" href="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:title" content="${esc(title)}">\n<meta property="og:description" content="${esc(desc)}">\n<meta property="og:type" content="profile">\n<meta property="og:site_name" content="Rate Your Judge Colorado"><meta property="og:url" content="${real ? url1 : 'https://rateyourjudgecolorado.com/'}">\n<meta property="og:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">\n<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://rateyourjudgecolorado.com/img/og-card.jpg">`;
         html = html.replace(/<!--seo-->[\s\S]*?<!--\/seo-->\n?/, '')                // the home page's own SEO block would repeat (and contradict) the profile's: second canonical, second description
           .replace('<head>', () => head).replace(/<title>.*?<\/title>/, () => `<title>${esc(title)}</title>`);   // function replacers: no $-pattern injection
         if (real) {                                                     // indexable profile: own canonical, structured data, and the whole profile as text before JavaScript runs
           const bareName = o.name.replace(/^(Judge|Justice|Deputy DA|District Attorney)\s+/, ''), job = o.title ? o.title.replace(/,.*/, '') : o.type === 'judge' ? 'Judge' : o.name.startsWith('Deputy') ? 'Deputy District Attorney' : 'District Attorney';
           const ap = await appealsOf(o), op = await opinionsOf(o), cms = await publicComments(o.id, '');
-          const AP = { affirmed: 'affirmed', affirmed_in_part: 'partly affirmed', reversed: 'reversed', vacated: 'vacated', disapproved: 'ruling disapproved', remanded: 'sent back', dismissed: 'appeal dismissed' };
+          const AP = { affirmed: 'affirmed', affirmed_in_part: 'affirmed in part, reversed in part', reversed: 'reversed', vacated: 'vacated', disapproved: 'ruling disapproved', remanded: 'sent back', dismissed: 'appeal dismissed' };
           const QL = o.type === 'judge' ? ['Let each side be heard', 'Treated both sides the same', 'Respectful to everyone', 'Clear decisions', 'On time'] : ['Respectful to everyone', 'Prepared', 'Stuck to the facts', 'Easy to follow', 'Fair to witnesses and defendant'];
-          const WHO = { party: 'In the case', observer: 'Watching', juror: 'Juror', attorney: 'Attorney or court staff', defendant: 'Defendant', plaintiff: 'Plaintiff', victim: 'Victim', witness: 'Witness', family: 'Family member', other: 'In the case' };
+          const WHO = { party: 'In the case', observer: 'Watching', juror: 'Juror', attorney: 'Attorney or court staff', defendant: 'Defendant or respondent', plaintiff: 'Plaintiff or petitioner', victim: 'Victim', witness: 'Witness', family: 'Relative of someone in the case', other: 'In the case' };
           const isoDay = ms => new Date(Number(ms)).toLocaleDateString('en-CA', { timeZone: 'America/Denver' }), longDay = ms => new Date(Number(ms)).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver' });
           const counts = (x, M) => Object.keys(M).filter(k => x.counts[k]).map(k => `${x.counts[k]} ${M[k]}`).join(', ');
           const scores = a && !a.hidden ? `<h2>Scores</h2><ul><li>Overall: ${a.overall.toFixed(1)} out of 5</li>${METRICS.map((m, i) => a[m] ? `<li>${QL[i]}: ${a[m].toFixed(1)} out of 5</li>` : '').join('')}</ul>`
             : a && a.n ? `<p>${a.n} ${a.n === 1 ? 'rating' : 'ratings'} so far — too few to compare yet. Scores appear once there are ${MIN_N}.</p>` : '';   // a neutral count, never a hidden average
           // comment TEXT only once a moderator has read it; an unreviewed comment is shown to people with a "Not reviewed yet" mark, never quoted to search engines
           const list = cms.length ? `<h2>Every rating</h2><ul class="ssr-ratings">${cms.map(c => { const txt = c.status === 'published' && c.text ? c.text : '';
-            return `<li><p><b>${esc(WHO[c.subrole] || WHO[c.role] || 'Rating')}</b> · <time datetime="${isoDay(c.at)}">${longDay(c.at)}</time>${c.overall != null ? ` · overall ${c.overall} out of 5` : ''}${txt ? ' · reviewed by a moderator' : ''}</p>${txt ? `<blockquote>${esc(txt)}</blockquote>` : ''}</li>`; }).join('')}</ul>` : '';
-          const apLine = ap ? `<p>Colorado Court of Appeals decisions on this judge’s rulings announced since June 2023: ${ap.items.length} (${counts(ap, AP)}).</p>` : '';
+            const CT = { family: 'family case', criminal: 'criminal case', civil: 'civil case', other: 'other kind of case' };
+            return `<li><p><b>${esc(WHO[c.subrole] || WHO[c.role] || 'Rating')}</b>${CT[c.caseType] ? ` · ${CT[c.caseType]}` : ''} · <time datetime="${isoDay(c.at)}">${longDay(c.at)}</time>${c.overall != null ? ` · overall ${c.overall} out of 5` : ''}${txt ? ' · reviewed by a moderator' : ''}</p>${txt ? `<blockquote>${esc(txt)}</blockquote>` : ''}</li>`; }).join('')}</ul>` : '';
+          const apLine = ap ? `<p>${ap.items.length ? `Colorado Court of Appeals decisions on this judge’s rulings announced since June 2023: ${ap.items.length} (${counts(ap, AP)}).` : apNoneText(ap)}${ap.older ? ` Earlier, ${longDate(ap.older.since)} to ${longDate(ap.older.until)}: ${ap.older.items.length} decision${ap.older.items.length === 1 ? '' : 's'}, listed but not counted.` : ''}</p>` : '';
           const opLine = op ? `<p>Colorado Court of Appeals decisions this judge wrote: ${op.items.length} (${counts(op, AP)}).</p>` : '';
+          const OJ = OJPE[String(o.id)], ojWords = c => c.rec === 'not' ? (c.year <= 2016 ? 'do not retain' : 'does not meet performance standards') : (c.year <= 2016 ? 'retain' : 'meets performance standards');
+          const W = whoFor(o), SV = OJ && OJ.survey;
+          const whoLine = (W && W.bio ? W.bio.en.split(/\n\n+/).map(p => `<p>${esc(p)}</p>`).join('') : '') + (OJ && OJ.appointed && OJ.appointed.by ? `<p>Appointed by ${esc(OJ.appointed.by)} in ${OJ.appointed.year}.</p>` : '');
+          const svLine = SV && SV.groups.length ? `<p>State survey for the ${SV.year} evaluation (run by Market Decisions Research): ${SV.groups.map(g => `${g.answered} of ${g.sent} ${esc(g.group)} invited by email answered`).join('; ')}${SV.district ? `; the judicial district has ${SV.district.population.toLocaleString('en-US')} residents (2020 Census)` : ''}. <a href="${esc(SV.pdf)}">State survey report</a>.</p>` : '';
+          const ojLine = !o.demo && OJ && OJ.cycles.length ? `<p>State evaluation (Colorado Commission on Judicial Performance): ${OJ.cycles.map(c => `<a href="${esc(c.url)}">${c.year}</a>: ${ojWords(c)}${c.vote ? ` (vote ${esc(c.vote)})` : ''}${c.note ? ` — ${esc(c.note.en.replace(/\.$/, ''))}` : ''}`).join('; ')}.${OJ.appointed ? ` On the bench since ${OJ.appointed.year}.` : ''}</p>` : '';
           const last = cms.length ? Math.max(...cms.map(c => c.at)) : 0;
           const ld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', url: url1, name: title, description: desc, ...(last ? { dateModified: new Date(last).toISOString() } : {}),
             isPartOf: { '@type': 'WebSite', name: 'Rate Your Judge Colorado', url: 'https://rateyourjudgecolorado.com/' },
@@ -914,7 +1036,7 @@ function makeHandler(isMod) {
               worksFor: { '@type': 'GovernmentOrganization', name: o.title ? o.title.replace(/^[^,]*,\s*/, '') : o.type === 'judge' ? (o.scope === 'district' ? `Colorado ${place}` : court.name + ' courts') : `District Attorney, ${ordEn(Number(court.district))} Judicial District of Colorado`, address: court.address } } }).replace(/</g, '\\u003c');
           html = html.replace(/<link rel="canonical"[^>]*>/, () => `<link rel="canonical" href="${url1}">`)
             .replace('</head>', () => `<script type="application/ld+json">${ld}</script>\n</head>`)
-            .replace(/(<main id="app"[^>]*><!--ssr-->)[\s\S]*?(<\/main>)/, (m0, a1, a3) => `${a1}<div class="card doc"><nav aria-label="Breadcrumb"><a href="/judges">Judges and prosecutors</a> › <a href="/judges/${court.id}">${esc(court.name)}</a></nav><h1>${esc(o.name)}</h1><p>${esc(job)} · ${esc(place)}${o.title ? '' : ', Colorado'} · ${esc(court.address)}</p><p>${esc(desc)}</p>${scores}${list}${apLine}${opLine}<p><a href="/p/${o.id}">Rate ${esc(o.name)}</a> · <a href="/how.html">How it works</a> · <a href="/method.html">Our method</a></p></div>${a3}`);
+            .replace(/(<main id="app"[^>]*><!--ssr-->)[\s\S]*?(<\/main>)/, (m0, a1, a3) => `${a1}<div class="card doc"><nav aria-label="Breadcrumb"><a href="/judges">Judges and prosecutors</a> › <a href="/judges/${court.id}">${esc(court.name)}</a></nav><h1>${esc(o.name)}</h1><p>${esc(job)} · ${esc(place)}${o.title ? '' : ', Colorado'} · ${esc(court.address)}</p><p>${esc(desc)}</p>${whoLine}${scores}${list}${ojLine}${svLine}${apLine}${opLine}<p><a href="${url1.replace(SITE, '')}">Rate ${esc(o.name)}</a> · <a href="/how.html">How it works</a> · <a href="/method.html">Our method</a></p></div>${a3}`);
         }
         res.writeHead(o ? 200 : 404, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(html);
       }
@@ -927,7 +1049,7 @@ function makeHandler(isMod) {
         const base = fs.readFileSync(path.join(ROOT, 'public', 'sitemap.xml'), 'utf8');
         const rows = await db.prepare("SELECT o.id, o.checked, MAX(r.created_at) last FROM officials o LEFT JOIN reviews r ON r.official_id = o.id WHERE o.demo = 0 GROUP BY o.id, o.checked ORDER BY o.id").all();
         const dir = [`  <url><loc>${SITE}/judges</loc></url>`, `  <url><loc>${SITE}/prosecutors</loc></url>`, ...courts.map(c => `  <url><loc>${SITE}/judges/${c.id}</loc></url>`)].join('\n') + '\n';   // the directory: lastmod left out, it changes with every rating
-        const urls = dir + rows.map(r => `  <url><loc>https://rateyourjudgecolorado.com/p/${r.id}</loc><lastmod>${r.last ? new Date(Number(r.last)).toISOString().slice(0, 10) : (r.checked || '2026-10-15')}</lastmod></url>`).join('\n');
+        const S = await slugs(), urls = dir + rows.map(r => `  <url><loc>${SITE}${S.byId.get(Number(r.id)) || '/p/' + r.id}</loc><lastmod>${r.last ? new Date(Number(r.last)).toISOString().slice(0, 10) : (r.checked || '2026-10-15')}</lastmod></url>`).join('\n');
         res.writeHead(200, { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'no-cache' }); return res.end(base.replace('</urlset>', () => urls + '\n</urlset>'));
       }
       let p = path.normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, '');

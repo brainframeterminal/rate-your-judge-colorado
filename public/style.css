@@ -106,7 +106,7 @@ textarea{min-height:96px;resize:vertical}
 .foot a{color:#fff;text-decoration:underline}
 .log .card{padding:14px}.log table{width:100%;border-collapse:collapse;font-size:14px}.log td{padding:8px 4px;border-top:1px solid #e6e8f7;vertical-align:top}
 .chip{display:inline-block;border-radius:99px;padding:3px 10px;font-size:13px;font-weight:700}
-.chip.published{background:#e0f7ec;color:#0c7a49}.chip.rejected{background:#ffe3e0;color:#9b1c13}.chip.pending,.chip.flagged{background:#fff2d6;color:#8a5a00}
+.chip.published{background:#e0f7ec;color:#0c7a49}.chip.rejected{background:#ffe3e0;color:#9b1c13}.chip.pending,.chip.flagged{background:#fff2d6;color:#8a5a00}.chip.added{background:#e0f7ec;color:#0c7a49}.chip.listed{background:#e8ecff;color:#12358f}
 .tally{font-variant-numeric:tabular-nums;font-weight:700}
 .modrow{border-top:1px solid #e6e8f7;padding:12px 0}.modrow textarea{min-height:60px;margin-top:6px}
 
@@ -484,3 +484,86 @@ table.apsum{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}.a
 .docrow .cav{color:#5a628a;font-size:14px}.docrow .cite{font-size:14px}.docrow .cite a{display:inline-block;padding:6px 0;color:#12358f;font-weight:600;text-decoration:underline;overflow-wrap:anywhere}
 .doclinks{display:flex;flex-wrap:wrap;gap:0 18px;margin:8px 0 0}.doclinks a{display:inline-flex;align-items:center;min-height:44px;color:#12358f;font-weight:600;text-decoration:underline;overflow-wrap:anywhere}
 @media (max-width:480px){.apsum{font-size:14px}.apsum th,.apsum td{padding:8px 4px}.apsum thead th{font-size:12px}}   /* phones: the type column keeps whole words, the number columns give way */
+
+.cthint{margin:2px 0 8px;font-size:13px}
+
+/* judge page redesign (10-23): who first, four tiles, appeals framed, the state's survey, news — jp-* so nothing older is touched */
+.jp-hero .jp-top{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.jp-photo{width:96px;height:128px;object-fit:cover;border-radius:14px;box-shadow:0 6px 18px rgba(18,36,90,.25);background:#dfe4f7}
+.jp-hero h2{margin:2px 0 4px;font-size:22px;line-height:1.15;overflow-wrap:anywhere}
+.jp-sub{margin:0 0 8px;font-size:14px;line-height:1.35;color:var(--muted)}
+.jp-tags{display:flex;flex-wrap:wrap;gap:6px}.jp-tag{font-weight:650;font-size:12px;line-height:1;padding:6px 9px;border-radius:999px;background:#eef0ff;color:#12358f}
+.jp-appt{margin:12px 0 0;font-weight:600;font-size:14.5px}
+.jp-bio{margin:10px 0 0;font-size:15.5px;line-height:1.55}
+.jp-src{font-size:12.5px;color:var(--muted);margin:8px 0 0;line-height:1.45}.jp-src a{color:inherit}
+.jp-lead{margin:8px 0 0;font-size:15px;line-height:1.5}
+.jp-glance{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.jp-tile{border-radius:16px;padding:12px 12px 11px;background:#f3f5ff;border:1px solid #e3e7fb;min-width:0}
+.jp-tile .k{font-weight:700;font-size:11px;line-height:1.25;letter-spacing:.05em;text-transform:uppercase;color:#5b648a}
+.jp-tile .v{font-weight:800;font-size:20px;line-height:1.15;color:#101a3a;margin:7px 0 3px;overflow-wrap:anywhere}
+.jp-tile .n{font-size:12.5px;color:#4a5578;line-height:1.35}
+.jp-tile.ok{background:#eafaf0;border-color:#c8efd6}.jp-tile.ok .v{color:#0d7a3e}
+.jp-tile.warn{background:#fff4e5;border-color:#ffe0b3}.jp-tile.warn .v{color:#a35a00}
+.jp-tile.grey .v{color:#7a819c;font-size:17px}
+.jp-why{background:#fff8e6;border-left:4px solid #f0a800;border-radius:10px;padding:10px 12px;font-size:14.5px;line-height:1.5;color:#3d3313;margin:6px 0 14px}
+.jp-obar{display:flex;height:22px;border-radius:999px;overflow:hidden;background:#e9ecf7;margin:8px 0 6px}.jp-obar i{display:block;height:100%}
+.jp-leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;margin-bottom:6px}
+.jp-leg span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.jp-gauge{position:relative;height:60px;margin:14px 10px 4px}
+.jp-gauge .tr{position:absolute;left:0;right:0;top:22px;height:8px;border-radius:99px;background:linear-gradient(90deg,#dfe4f7,#b9c3ef)}
+.jp-gauge .pin{position:absolute;top:0;transform:translateX(-50%);text-align:center;font-weight:700;font-size:12px;line-height:1.1;white-space:nowrap}
+.jp-gauge .pin b{display:block;width:16px;height:16px;border-radius:50%;margin:3px auto 0;border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.jp-gauge .me{color:#12358f}.jp-gauge .me b{background:#12358f}
+.jp-gauge .mid{color:#6b7393;top:20px}.jp-gauge .mid b{background:#9aa3c7;margin:0 auto 3px}
+.jp-survey{display:grid;gap:12px;margin-top:12px}
+.jp-srow .l{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;margin-bottom:5px}
+.jp-srow .sb{height:14px;border-radius:99px;background:#e9ecf7;overflow:hidden}.jp-srow .sb i{display:block;height:100%;background:#12358f;border-radius:99px}
+.jp-big{display:flex;align-items:baseline;gap:10px;margin:16px 0 4px}.jp-big b{font-weight:800;font-size:34px;line-height:1;color:#101a3a}.jp-big span{font-size:14px;line-height:1.4;color:#4a5578}
+.jp-dots{display:grid;grid-template-columns:repeat(35,1fr);gap:2px;margin:10px 0 4px}.jp-dots i{aspect-ratio:1;border-radius:50%;background:#dfe4f7}.jp-dots i.on{background:#e8590c}
+.jp-note{background:#f1f3fb;border-left:4px solid #5b648a;border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.5;margin:12px 0 0}
+.jp-news{list-style:none;padding:0;margin:6px 0 0}.jp-news li{padding:10px 0;border-top:1px solid #e8ebf6}.jp-news li:first-child{border-top:0}
+.jp-news a{font-weight:650;color:#12358f;text-decoration:none;line-height:1.35}.jp-news small{display:block;color:var(--muted);margin-top:3px}
+.jp-extra{list-style:none;padding:0;margin:10px 0 0;font-size:13px;color:var(--muted)}.jp-extra li{padding:2px 0}
+.jp-q{display:block;margin-top:4px;color:var(--muted);font-size:12.5px;line-height:1.45}
+.jp-reason{margin:6px 0 0;padding:8px 10px;border-radius:10px;background:#fff8e6;font-size:14px;line-height:1.45}.jp-reason a{font-weight:600}
+/* /fairness: take-away block + a hero line and a small chart per study (tester feedback 2026-10-24) */
+main.log>.takeaway{max-width:1040px;margin-left:auto;margin-right:auto}
+.takeaway{margin:4px 0 16px;background:rgba(255,255,255,.96);color:var(--ink);border-radius:var(--radius);padding:18px 20px;box-shadow:0 14px 40px rgba(5,10,50,.35)}
+.tk-line{margin:0 0 12px;font-family:var(--display);font-weight:800;font-size:21px;line-height:1.3;letter-spacing:-.01em}
+.tk-steps{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;list-style:none;margin:0 0 14px;padding:0}
+.tk-steps li{padding:7px 14px;border-radius:999px;background:#eef1ff;color:var(--navy);font-weight:700;font-size:15px}
+.tk-steps li:not(:last-child)::after{content:"→";margin-left:10px;color:#8a90b0;font-weight:600}
+.tk-steps li:last-child{background:var(--gold);color:#1a1200}
+.tk-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.tk-tile{background:#f2f4ff;border-radius:14px;padding:10px 12px}
+.tk-tile b{display:block;font-family:var(--display);font-weight:800;font-size:23px;line-height:1.15;color:var(--blue)}
+.tk-tile span{display:block;margin-top:4px;font-size:14px;line-height:1.35;color:#2b3258}
+.docrow .hero-line{margin:2px 0 8px;font-family:var(--display);font-weight:800;font-size:18px;line-height:1.3;color:var(--navy)}
+.mchart{margin:6px 0 10px;display:grid;gap:7px}
+.mrow{display:grid;grid-template-columns:minmax(120px,36%) minmax(0,1fr) auto;align-items:center;gap:10px;font-size:14px}
+.mlab{color:#2b3258;line-height:1.3}
+.mbar{height:14px;border-radius:7px;background:#dfe3f7;overflow:hidden}
+.mbar i{display:block;height:100%;border-radius:7px;background:#7c86c4}
+.mbar i.hi{background:var(--blue)}
+.mval{min-width:46px;text-align:right;font-family:var(--display);font-weight:800;color:var(--ink)}
+.mchart .mnote{margin:0;font-size:13px;line-height:1.4;color:#5a628a}
+@media(max-width:760px){.tk-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.tk-line{font-size:19px}}
+@media(max-width:520px){.mrow{grid-template-columns:minmax(0,1fr) auto;gap:4px 10px}.mrow .mbar{grid-column:1/-1;order:3}}
+/* /appeals.html: compare the judges of one district (tester feedback 2026-10-24) */
+.apcmp-box{margin:6px 0 4px}
+.apcmp-lab{display:block;font-weight:700;margin:6px 0 4px}
+.apcmp-sel{width:100%;max-width:560px;min-height:44px;padding:8px 10px;border:1px solid #c9cfe8;border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:16px}
+.apcmp-box .apchips{margin:10px 0 4px}
+.apcmp-cap{margin:8px 0 6px}
+.apcmp thead th:first-child,.apcmp th[scope=row]{text-align:left}
+.apcmp th[scope=row] a{font-weight:700;color:var(--blue)}
+.apcmp-court{display:block;font-weight:400;font-size:13px;color:#5a628a}
+.apcmp td .apcmp-n{display:inline-block;min-width:28px;font-weight:700}
+.apcmp td .mbar{display:inline-block;vertical-align:middle;width:90px;height:10px;margin-left:6px}
+.apcmp td .mbar i{background:var(--blue)}
+@media(max-width:520px){.apcmp td .mbar{display:none}}
+/* earlier decisions on a profile: a real tap target and room around it */
+.apolder{margin:14px 0 4px;border-top:1px solid #e6e8f7;padding-top:8px}
+.apolder>summary{min-height:44px;display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:700;color:var(--blue)}
+.apolder>summary:focus-visible{outline:2px solid #12358f;outline-offset:2px;border-radius:6px}
+.apolder>.muted{margin:4px 0 8px}

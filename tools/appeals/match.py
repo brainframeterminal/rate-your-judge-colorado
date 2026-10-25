@@ -10,7 +10,7 @@ Outcome from the announcement's own disposition line:
 
     python3 match.py <roster.json from the live DB: /api export or tools output> <entries.json> <out.json>
 """
-import json, re, sys, unicodedata
+import json, os, re, sys, unicodedata
 
 def norm(s):   # apostrophes go entirely: the sheets write O’Shea (U+2019, dropped by the ASCII fold) and the roster O'Shea —
     return re.sub(r"['`]", "", unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower())   # 55 decisions lost until 2026-10-17
@@ -122,9 +122,26 @@ def matcher(officials):
 def main(roster_path, entries_path, out_path):
     find = matcher(json.load(open(roster_path)))          # [{id, name, type, court_id}] real officials only
     entries = json.load(open(entries_path)); rows, unmatched, ambiguous = [], 0, 0
-    originals = {e["coa_no"] for e in entries if e.get("section") != "modified"}
+    # MODIFIED OPINIONS are re-issued texts, never new decisions, and are skipped below. The skip must not be silent:
+    # the court can re-announce under a DIFFERENT appeal number (24CA1674 re-issued 24CA0803, same Jefferson
+    # 22CV30158), so the original is looked up by number first, then by trial court + trial-court case number; whatever
+    # has no original in the sheets is printed by name (decided before our coverage, or the sheet lacks the trial-court line).
+    mod = [e for e in entries if e.get("section") == "modified"]
+    if mod:
+        reg = [e for e in entries if e.get("section") != "modified"]
+        nums = {e["coa_no"] for e in reg}
+        cases = {(e.get("court"), e.get("lower_case")): e for e in reg if e.get("court") and e.get("lower_case")}
+        by_number, by_case, none = 0, [], []
+        for e in mod:
+            if e["coa_no"] in nums: by_number += 1
+            elif (e.get("court"), e.get("lower_case")) in cases: by_case.append((e, cases[(e["court"], e["lower_case"])]))
+            else: none.append(e)
+        print(f"modified opinions: {len(mod)} re-issued texts skipped — {by_number} with the original under the same number, "
+              f"{len(by_case)} under another number (same trial court + case), {len(none)} with no original in the sheets:")
+        for e, o in by_case: print(f"   {e['day']} {e['coa_no']} = {o['coa_no']} of {o['day']} ({e.get('court')} {e.get('lower_case')}, {e.get('judge')})")
+        for e in none: print(f"   {e['day']} {e['coa_no']} {e.get('court', '(no trial-court line)')} {e.get('lower_case', '')} {e.get('judge', '')} — decided before coverage, or unresolvable")
     for e in entries:
-        if e.get("section") == "modified" and e["coa_no"] in originals: continue   # a re-issued text of a decision we already have
+        if e.get("section") == "modified": continue   # see above. Measured 10-18 on 41 modified texts: none changes the outcome of its original.
         if not e.get("judge") or not e.get("court") or e.get("judge_role", "").lower().startswith(("magistrate", "juvenile", "district court magistrate")): continue
         oc = outcome(e.get("disposition", ""))
         if not oc: unmatched += 1; continue
@@ -141,6 +158,9 @@ def main(roster_path, entries_path, out_path):
                              ("" if re.fullmatch(r"(JUDG?E?MENTS?|ORDERS?|SENTENCES?|JUDGMENT AND SENTENCE) AFFIRMED\.?", e["disposition"].strip()) else f" As announced: {e['disposition'].strip().rstrip('.').capitalize()}."),
                      "source": "COA announcement", "checked": e["day"], "_key": (cands[0]["id"], e["coa_no"])})
     rows = collapse(rows)
+    fix = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "outcome-from-opinion.json")))
+    for r in rows:                                      # the opinion read in full beats the one-line announcement
+        if r["citation"] in fix: r["outcome"] = fix[r["citation"]]["outcome"]
     json.dump(rows, open(out_path, "w"), indent=1)
     from collections import Counter
     print(f"{len(rows)} decisions matched to {len({r['official'] for r in rows})} judges; unmatched {unmatched}, ambiguous {ambiguous}")

@@ -31,7 +31,7 @@ const T = {
       'Entrégalo a tu senador y representante estatal, a los comisionados del condado, a la fiscalía, a las asociaciones de abogados y a los defensores de víctimas, y pídeles que lo compartan.',
       'Envía el PDF por correo o publícalo en grupos de tu comunidad. Cualquiera puede copiarlo e imprimirlo.'],
     aboutJoin: '¿Quieres ayudar a organizarlo en tu condado? Cuéntanos en Participa.',
-    back: 'Volver al sitio', flyer: 'Volante', cards: '4 tarjetas', print: 'Imprimir', pdf: 'Descargar PDF', hint: 'Tamaño carta. Imprime al 100 % («tamaño real»). Tarjetas: corta por las líneas punteadas.',
+    back: 'Volver al sitio', flyer: 'Volante', cards: '4 tarjetas', print: 'Imprimir', pdf: 'Descargar PDF', hint: 'Tamaño carta. Imprime al 100 %. Tarjetas: corta por las líneas punteadas.',
   },
 };
 const URL_TEXT = 'rateyourjudgecolorado.com';

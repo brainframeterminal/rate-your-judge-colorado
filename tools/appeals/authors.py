@@ -13,12 +13,11 @@ TYPO = {"FREYE": "FREYRE"}                       # the court's own misspellings 
 def main(off_path, entries_path, out_path):
     coa = [o for o in json.load(open(off_path)) if o.get("court_id") == "carr-judicial-center" and o["name"].startswith("Judge ")]
     entries = json.load(open(entries_path))
-    originals = {e["coa_no"] for e in entries if e.get("section") != "modified"}
     rows, unknown = [], {}
     for e in entries:
         a = e.get("author")
         if not a or a == "PER CURIAM": continue
-        if e.get("section") == "modified" and e["coa_no"] in originals: continue
+        if e.get("section") == "modified": continue   # re-issued text, never a new opinion (see match.py)
         oc = outcome(e.get("disposition", ""))
         if not oc: continue
         at = toks(TYPO.get(norm(a).upper(), a))        # "J. JONES" → ['j','jones'], "LIPINSKY" → ['lipinsky']

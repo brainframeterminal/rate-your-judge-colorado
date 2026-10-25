@@ -1,0 +1,92 @@
+[
+ {
+  "name_on_report": "Michael J. Davidson",
+  "official_id": 431,
+  "why": "nickname, same district (15th)"
+ },
+ {
+  "name_on_report": "Linda Margaret Billings-Vela",
+  "official_id": 313,
+  "why": "nickname, same court (El Paso)"
+ },
+ {
+  "name_on_report": "Frances E. Simonet",
+  "official_id": 241,
+  "why": "nickname, same court (Denver County)"
+ },
+ {
+  "name_on_report": "Andy McCallin",
+  "official_id": 267,
+  "why": "nickname, same court (Denver District)"
+ },
+ {
+  "name_on_report": "Sam Burney",
+  "official_id": 282,
+  "why": "nickname, same court (El Paso County)"
+ },
+ {
+  "name_on_report": "Stephanie M. G. Gagliano",
+  "official_id": 417,
+  "why": "nickname + same middle initials, same district (13th)"
+ },
+ {
+  "name_on_report": "Curtis Lane Porter",
+  "official_id": 430,
+  "why": "middle name used, same court (Prowers)"
+ },
+ {
+  "name_on_report": "Steven B. Fieldman",
+  "official_id": 373,
+  "why": "nickname, same court (Pueblo County)"
+ },
+ {
+  "name_on_report": "W. Troy Hause",
+  "official_id": 499,
+  "why": "first initial dropped, same district (19th)"
+ },
+ {
+  "name_on_report": "Jeffery Ralph Pilkington",
+  "official_id": 221,
+  "why": "spelling Jeffery/Jeffrey, same district (1st)"
+ },
+ {
+  "name_on_report": "Courtney L. Dinnel",
+  "official_id": 523,
+  "why": "same full name, unique in the state; court differs (moved or multi-county)"
+ },
+ {
+  "name_on_report": "Milla Lishchuk",
+  "official_id": 414,
+  "why": "same name (Milla = Lyudmyla), unique; court differs"
+ },
+ {
+  "name_on_report": "Deni Estelle Eiring",
+  "official_id": 435,
+  "why": "same name + middle initial, unique; court differs"
+ },
+ {
+  "name_on_report": "Anthony D. Edwards",
+  "official_id": 328,
+  "why": "same name, unique; both 6th district county courts"
+ },
+ {
+  "name_on_report": "JenniLynn E. Lawrence",
+  "official_id": 531,
+  "why": "same full name + initial, unique; court differs"
+ },
+ {
+  "name_on_report": "Meghan Patrice Saleebey",
+  "official_id": 456,
+  "why": "same name + middle initial, unique; court differs"
+ },
+ {
+  "name_on_report": "Chantel E. Contiguglia",
+  "official_id": 215,
+  "why": "same name, unique; court differs"
+ },
+ {
+  "name_on_report": "Anthony Nathaniel Baca",
+  "official_id": 332,
+  "why": "same middle name + first initial, unique; court differs"
+ }
+]

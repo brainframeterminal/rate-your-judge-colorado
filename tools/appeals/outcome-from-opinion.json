@@ -1,0 +1,5 @@
+{
+ "_why": "The announcement line alone cannot tell whether 'X in part and Y in part' leaves anything standing; match.py reads it as partly changed (fair to the judge). Where the opinion itself shows nothing was affirmed (found while writing the 'Why it changed' lines, tools/reasons), the opinion wins.",
+ "2023 COA 82": {"outcome": "reversed", "opinion": "7 counts vacated as time-barred, the other 21 reversed: nothing affirmed"},
+ "No. 20CA1910": {"outcome": "reversed", "opinion": "one conviction reversed, the rest vacated pending a competency finding: nothing affirmed"}
+}

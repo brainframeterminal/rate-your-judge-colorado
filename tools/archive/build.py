@@ -35,5 +35,14 @@ if od and os.path.exists(tsv):
     for line in open(tsv):
         slug, url = line.rstrip('\n').split('\t'); src = os.path.join(od, slug + '.pdf')
         if os.path.exists(src): add(rows, 'ojpe', 'ojpe-2024-' + slug + '.pdf', url, src)
+# every survey report of every cycle (2016–2026) kept by tools/ojpe
+sj = os.path.join(ROOT, 'tools', 'ojpe', 'surveys.json')
+if os.path.exists(sj):
+    have = {(r['dir'], r['name']) for r in rows}
+    for slug, years in json.load(open(sj)).items():
+        for y, v in years.items():
+            src = os.path.join(ROOT, 'tools', 'ojpe', v.get('local') or '') if v.get('local') else None
+            name = f'ojpe-{y}-{slug}.pdf'
+            if src and os.path.exists(src) and v.get('pdf') and ('ojpe', name) not in have: add(rows, 'ojpe', name, v['pdf'], src); have.add(('ojpe', name))
 json.dump(rows, open(os.path.join(OUT, 'manifest.json'), 'w'), indent=0)
 print(f"archive: {sum(r['dir']=='coa' for r in rows)} coa + {sum(r['dir']=='ojpe' for r in rows)} ojpe files, {sum(r['bytes'] for r in rows)/1e6:.1f} MB → {OUT}")
