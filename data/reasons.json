@@ -304,10 +304,525 @@
   "es": "El juez ordenó unos $62,500 en restitución sin conclusiones que mostraran qué reclamos médicos componían esa cifra; deberá hacerlas.",
   "pdf": "https://colorado.vlex.io/pdf_viewer/1128497886"
  },
+ "No. 25CA1186": {
+  "en": "The judge entered the parenting judgments over the mother's objection and without the hearing she requested, so she had no meaningful chance to be heard; new proceedings are required.",
+  "es": "El juez dictó las decisiones de responsabilidades parentales pese a la objeción de la madre y sin la audiencia que pidió, por lo que no pudo ser escuchada; se requieren nuevos trámites.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1127667007"
+ },
+ "2026 COA 55": {
+  "en": "The judge dismissed the case as a sanction for a pattern of discovery violations without letting the prosecutor respond to that claim first; a new sanctions hearing is required.",
+  "es": "El juez desestimó el caso como sanción por un patrón de violaciones en la entrega de pruebas sin dejar antes que el fiscal respondiera a esa acusación; se requiere una nueva audiencia de sanciones.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1127666944"
+ },
+ "2026 COA 54": {
+  "en": "The judge ruled a party waived his objection to arbitration, but he raised it before the hearing began, as the statute requires; that part was reversed and the rest stood.",
+  "es": "El juez resolvió que una parte renunció a su objeción al arbitraje, pero la planteó antes de la audiencia, como exige la ley; esa parte se revocó y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1126430385"
+ },
+ "No. 25CA1101": {
+  "en": "The judge split the value of an unfinished home equally without enough findings on whether it was marital property and without weighing the required factors; these must be redone.",
+  "es": "El juez dividió por igual el valor de una casa sin terminar sin suficientes conclusiones sobre si era bien conyugal y sin ponderar los factores exigidos; esto debe rehacerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1126436109"
+ },
+ "No. 25CA0277": {
+  "en": "The judge ordered the companies to pay the wife half their income, which a court cannot compel, and left the spouses sharing ownership; the property division must be redone.",
+  "es": "El juez ordenó que las empresas pagaran a la esposa la mitad de sus ingresos, algo que un tribunal no puede imponer, y dejó a los cónyuges como copropietarios; la división de bienes debe rehacerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1126434727"
+ },
+ "No. 25CA0275": {
+  "en": "The judge's property division was unclear, partly from a math error: it could not be told if the estate was meant to be split equally or mostly to the wife.",
+  "es": "La división de bienes era poco clara, en parte por un error matemático: no se sabía si se quiso repartir por igual o casi todo a la esposa.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1126434601"
+ },
+ "No. 19CA1278": {
+  "en": "The judge did not tell the jury all the elements of the drug possession charge; that conviction was reversed for a new trial and the rest of the judgment stood.",
+  "es": "El juez no explicó al jurado todos los elementos del cargo de posesión de drogas; esa condena se revocó para un nuevo juicio y el resto del fallo se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1122239896"
+ },
+ "No. 25CA1632": {
+  "en": "The judge denied a request to undo parts of a divorce agreement as late, using a six-month deadline that was the wrong legal standard; the judge must decide timeliness again.",
+  "es": "El juez negó por tardía una solicitud para anular partes de un acuerdo de divorcio, usando un plazo de seis meses que era el estándar legal equivocado; deberá decidir de nuevo si fue oportuna.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121485291"
+ },
+ "No. 25CA2357": {
+  "en": "The judge ruled the child dependent and neglected without a trial, but the facts allowed different reasonable conclusions about the mother's ability to care for the child; the case returns.",
+  "es": "El juez declaró al niño dependiente y desatendido sin juicio, pero los hechos permitían conclusiones razonables distintas sobre la capacidad de la madre para cuidarlo; el caso vuelve.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121485298"
+ },
+ "No. 22CA1334": {
+  "en": "The judge refused to suppress evidence from the defendant's phone although parts of the search warrant were invalid; most convictions were reversed for a new trial and the rest stood.",
+  "es": "El juez no excluyó la evidencia del teléfono del acusado aunque partes de la orden de registro eran inválidas; la mayoría de las condenas se revocaron para un nuevo juicio y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121485203"
+ },
+ "No. 25CA1591": {
+  "en": "The judge made math errors valuing the husband's property interests and gave too few findings on back child support; both must be redone, and the other orders stood.",
+  "es": "El juez cometió errores de cálculo al valorar los bienes del esposo y dio pocas conclusiones sobre la manutención retroactiva; ambos puntos deben rehacerse y las demás órdenes se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121485288"
+ },
+ "No. 24CA1358": {
+  "en": "The judge labeled the defendant a sexually violent predator, but nothing showed he began the relationship mainly to sexually victimize; that label was vacated and the convictions stood.",
+  "es": "El juez calificó al acusado como depredador sexual violento, pero nada demostró que iniciara la relación principalmente para victimizar sexualmente; esa calificación se anuló y las condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121031329"
+ },
+ "No. 25CA1276": {
+  "en": "The judge also awarded fees for an earlier appeal that the winning side never requested in that appeal; that part was reversed, and the fee award for groundless claims stood.",
+  "es": "El juez también otorgó honorarios por una apelación anterior que la parte ganadora nunca solicitó en esa apelación; esa parte se revocó y la condena en honorarios por reclamos infundados se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121031616"
+ },
+ "No. 24CA1008": {
+  "en": "The judge enforced promises to cover costs for intentional wrongdoing by looking at the type of damages, not the conduct; the judgment and fee award were reversed.",
+  "es": "El juez hizo valer promesas de cubrir costos por conducta intencional fijándose en el tipo de daños y no en la conducta; se revocaron el fallo y los honorarios.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121031298"
+ },
+ "No. 23CA0860": {
+  "en": "The judge refused to tell the jury that first degree trespass is a lesser offense of first degree burglary; that conviction was reversed and the other convictions stood.",
+  "es": "El juez se negó a decir al jurado que el allanamiento en primer grado es un delito menor incluido en el robo con allanamiento en primer grado; esa condena se revocó y las demás se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121031077"
+ },
+ "No. 23CA0749": {
+  "en": "The judge entered separate convictions for two pairs of drug conspiracy counts that were each really one conspiracy; each pair must be merged, and the other convictions stood.",
+  "es": "El juez dictó condenas separadas por dos pares de cargos de conspiración de drogas que eran cada uno una sola conspiración; cada par debe fusionarse y las demás condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121031063"
+ },
+ "2026 COA 48": {
+  "en": "The judge set a bond so high it worked as a denial of bail, wrongly assuming voters meant to bar bail for older murder charges; the bond must be reconsidered.",
+  "es": "El juez fijó una fianza tan alta que equivalía a negar la libertad bajo fianza, suponiendo erróneamente que los votantes quisieron prohibirla en casos de homicidio anteriores; la fianza debe reconsiderarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121030997"
+ },
+ "2026 COA 44": {
+  "en": "The judge did not properly instruct the jury on the standard of care for criminally negligent homicide, and the error was not harmless; the conviction was reversed.",
+  "es": "El juez no instruyó bien al jurado sobre el estándar de cuidado en el homicidio por negligencia criminal, y el error no fue inofensivo; la condena se revocó.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121030884"
+ },
+ "2026 COA 43": {
+  "en": "The judge gave the jury the wrong standard of care for criminally negligent homicide, and the error was not harmless; that conviction was reversed and the assault conviction stood.",
+  "es": "El juez dio al jurado un estándar de cuidado equivocado para el homicidio por negligencia criminal, y el error no fue inofensivo; esa condena se revocó y la de agresión se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1121030870"
+ },
+ "2026 COA 41": {
+  "en": "The judge refused to seal the records of a man found not guilty by reason of insanity, but that verdict counts as an acquittal under the sealing law.",
+  "es": "El juez se negó a sellar los registros de un hombre declarado inocente por demencia, pero ese veredicto cuenta como absolución según la ley de sellado.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120361844"
+ },
+ "No. 25CA1319": {
+  "en": "The judge used a rule for fixing clerical mistakes to change sentences from concurrent to consecutive, which is more than a clerical change; the order was vacated.",
+  "es": "El juez usó una regla para corregir errores de forma para cambiar las penas de concurrentes a consecutivas, lo cual es más que una corrección de forma; la orden se anuló.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120362067"
+ },
+ "No. 25CA1196": {
+  "en": "The magistrate changed decision-making responsibility without enough findings under the correct legal standard; that part was reversed and must be redone, while the other parenting rulings stood.",
+  "es": "El magistrado modificó la toma de decisiones parentales sin suficientes conclusiones bajo el estándar legal correcto; esa parte se revocó y debe rehacerse, mientras que las demás decisiones de crianza se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120362062"
+ },
+ "No. 25CA0941": {
+  "en": "The judge decided on summary judgment who pays for a drainage repair, but the condominium's governing document is ambiguous, so a fact finder must resolve what it means.",
+  "es": "El juez decidió por juicio sumario quién paga una reparación de drenaje, pero el documento que rige el condominio es ambiguo, por lo que un juzgador de hechos debe resolver qué significa.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120362018"
+ },
+ "No. 25CA0129": {
+  "en": "The judge denied a new trial on economic damages although the jury's medical-expense award matched no bills and was far too low; a new trial on economic damages is required.",
+  "es": "El juez negó un nuevo juicio sobre daños económicos aunque la cifra del jurado por gastos médicos no coincidía con ninguna factura y era muy baja; se requiere un nuevo juicio sobre daños económicos.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120361972"
+ },
+ "No. 24CA1323": {
+  "en": "The judge dismissed the tenants' claims, wrongly finding the landlords' default notices lawful even when they demanded attorney fees not yet incurred or barred by statute; the claims go forward.",
+  "es": "El juez desestimó los reclamos de los inquilinos, considerando erróneamente legales los avisos de incumplimiento aunque exigían honorarios aún no generados o prohibidos por ley; los reclamos continúan.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120361948"
+ },
+ "No. 23CA1700": {
+  "en": "The judge told the jury a trespasser has no right to self-defense against lawful force, ignoring the defendant's reasonable belief about the other person's acts; a new trial is required.",
+  "es": "El juez dijo al jurado que un intruso no puede defenderse de una fuerza lícita, sin considerar la creencia razonable del acusado sobre los actos de la otra persona; se requiere un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120361909"
+ },
+ "Nos. 23CA1309 & 23CA1317": {
+  "en": "The judge refused to instruct the jury on defense of a third person, which lowered the prosecution's burden and likely affected the other verdicts; a new trial is required.",
+  "es": "El juez se negó a instruir al jurado sobre la defensa de un tercero, lo que redujo la carga de la fiscalía y probablemente afectó los demás veredictos; se requiere un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120361879"
+ },
+ "No. 21CA0744": {
+  "en": "The judge did not enter the required restitution order at sentencing, so the later order was invalid; it was vacated and an order that no restitution is owed must follow.",
+  "es": "El juez no dictó en la sentencia la orden de restitución exigida, por lo que la posterior fue inválida; se anuló y debe dictarse una orden de que no se debe restitución.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120361868"
+ },
+ "2026 COA 39": {
+  "en": "The judge reduced an aggravated robbery charge to robbery, but saying a weapon is easily accessible nearby is enough, not only on the person; the charge is reinstated.",
+  "es": "El juez redujo un cargo de robo agravado a robo, pero basta decir que un arma está fácilmente al alcance cerca, no solo sobre la persona; el cargo se restablece.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120021433"
+ },
+ "No. 24CA1052": {
+  "en": "The judge dismissed the charges for outrageous government conduct by the district attorney, but the conduct did not meet the very strict legal standard; the charges are reinstated.",
+  "es": "El juez desestimó los cargos por conducta gubernamental escandalosa de la fiscal de distrito, pero esa conducta no cumplía el estricto estándar legal; los cargos se restablecen.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120021773"
+ },
+ "No. 23CA1702": {
+  "en": "The judge ordered restitution before the defendant was told the amount requested or given a chance to challenge it; the restitution order was reversed and the convictions stood.",
+  "es": "El juez ordenó la restitución antes de que se informara al acusado del monto solicitado o se le diera oportunidad de impugnarlo; la orden de restitución se revocó y las condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120021580"
+ },
+ "No. 23CA1502": {
+  "en": "The judge revoked a deferred sentence for unpaid restitution, but the prosecution did not present enough evidence that the defendant was able to pay; the order was reversed.",
+  "es": "El juez revocó una sentencia diferida por restitución impaga, pero la fiscalía no presentó pruebas suficientes de que el acusado pudiera pagar; la orden se revocó.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120021549"
+ },
+ "No. 21CA0814": {
+  "en": "The judge entered separate convictions for both first degree murder and felony murder for the same killings; the felony murder convictions were vacated and the other convictions stood.",
+  "es": "El juez dictó condenas separadas por homicidio en primer grado y por homicidio durante un delito grave por las mismas muertes; las condenas por homicidio durante un delito grave se anularon y las demás se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120021455"
+ },
+ "2026 COA 38": {
+  "en": "The judge ordered a debtor's trust share paid to a bank, wrongly using claim preclusion and judicial estoppel to reject the argument that the trust's spendthrift clause protected it.",
+  "es": "El juez ordenó pagar al banco la parte de un deudor en un fideicomiso, aplicando erróneamente la preclusión de reclamos y el impedimento judicial para rechazar el argumento de que la cláusula de protección del fideicomiso lo amparaba.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1120021394"
+ },
+ "No. 25CA1130": {
+  "en": "The judge ordered attorney fees under a settlement without holding the hearing the defendant requested on whether the fees were reasonable; the order was reversed for further proceedings.",
+  "es": "El juez ordenó honorarios de abogado conforme a un acuerdo sin celebrar la audiencia que la demandada pidió sobre si eran razonables; la orden se revocó para más trámites.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1119105798"
+ },
+ "No. 25CA1707": {
+  "en": "The judge awarded attorney fees against a self-represented party without finding he knew or should have known his position was groundless; that ruling and the amount order were undone.",
+  "es": "El juez otorgó honorarios contra una parte sin abogado sin concluir que sabía o debía saber que su postura era infundada; esa decisión y la del monto quedaron sin efecto.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1119105813"
+ },
+ "No. 23CA1571": {
+  "en": "The judge allowed evidence that the defendant handled guns before and after the robbery to suggest he was armed, which was improper; the convictions were reversed for a new trial.",
+  "es": "El juez admitió evidencia de que el acusado manejó armas antes y después del robo para sugerir que estaba armado, lo cual fue indebido; las condenas se revocaron para un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118610980"
+ },
+ "No. 25CA1807": {
+  "en": "The judge required proof of endangerment to change an equal parenting-time schedule, but the best interests standard applies; parenting time must be reconsidered, while the child support ruling stood.",
+  "es": "El juez exigió prueba de peligro para cambiar un horario de crianza igualitario, pero se aplica el estándar del mejor interés del niño; el tiempo de crianza debe reconsiderarse y la decisión sobre manutención se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118611017"
+ },
+ "No. 25CA1325": {
+  "en": "The judge refused to dismiss an accounting claim against the City and its employees, but it is a tort claim barred by the Governmental Immunity Act; it must be dismissed.",
+  "es": "El juez se negó a desestimar una demanda de rendición de cuentas contra la Ciudad y sus empleados, pero es un reclamo por agravio prohibido por la Ley de Inmunidad Gubernamental; debe desestimarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118611014"
+ },
+ "No. 25CA1036": {
+  "en": "The judge reformed a trust to name a different charity, but the trust showed no general charitable purpose, so that doctrine did not apply; the intended beneficiary must be named.",
+  "es": "El juez modificó un fideicomiso para nombrar a otra organización benéfica, pero no mostraba un propósito benéfico general, por lo que esa doctrina no aplicaba; debe nombrarse al beneficiario previsto.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118611013"
+ },
+ "No. 25CA0324": {
+  "en": "The judge awarded attorney fees without making findings on the factors the fee statute requires; the finding that the case lacked substantial justification stood, but those findings must be made.",
+  "es": "El juez otorgó honorarios sin hacer conclusiones sobre los factores que exige la ley; la conclusión de que el caso carecía de justificación sustancial se mantuvo, pero deben hacerse esas conclusiones.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118611006"
+ },
+ "No. 25CA0037": {
+  "en": "The judge dismissed one claim against the attorney regulation office for lack of standing, but the plaintiff had standing; that claim goes forward and the other two dismissals stood.",
+  "es": "El juez desestimó un reclamo contra la oficina de regulación de abogados por falta de legitimación, pero el demandante sí la tenía; ese reclamo sigue y las otras dos desestimaciones se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118611001"
+ },
+ "No. 24CA1344": {
+  "en": "The judge denied a request to fix an obvious clerical mistake in a plea agreement, but such mistakes can be corrected at any time; the judge must correct it.",
+  "es": "El juez negó una solicitud para corregir un error de forma evidente en un acuerdo de culpabilidad, pero esos errores pueden corregirse en cualquier momento; el juez deberá corregirlo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118610993"
+ },
+ "No. 24CA1327": {
+  "en": "The judge wrongly found no harm from the appeal lawyer missing a new sentencing ruling and wrongly said the defendant admitted the crimes; those two claims must be reconsidered.",
+  "es": "El juez concluyó erróneamente que no hubo perjuicio porque el abogado de apelación omitió un nuevo fallo sobre penas, y que el acusado admitió los delitos; esos dos reclamos deben reconsiderarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118610992"
+ },
+ "No. 24CA0891": {
+  "en": "The judge dismissed a drunk driving case as a discovery sanction without finding willful misconduct or considering lesser sanctions like reducing the charge; the charge is reinstated.",
+  "es": "El juez desestimó un caso de manejo en estado de ebriedad como sanción sin concluir que hubo mala conducta deliberada ni considerar sanciones menores como reducir el cargo; el cargo se restablece.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118610987"
+ },
+ "No. 23CA1549": {
+  "en": "The judge treated as established fact that the defendant had been told about the protection orders earlier, though that fact was open to reasonable dispute; the conviction was reversed.",
+  "es": "El juez trató como hecho establecido que se había informado al acusado de las órdenes de protección antes, aunque podía discutirse razonablemente; la condena se revocó.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118610979"
+ },
+ "No. 23CA0517": {
+  "en": "The judge entered separate DUI and DUI per se convictions for one crash with one victim; they must merge into the vehicular homicide conviction, and the rest stood.",
+  "es": "El juez dictó condenas separadas por conducir ebrio y per se por un solo choque con una víctima; deben fusionarse con la de homicidio vehicular y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1118236525"
+ },
  "2026 COA 31": {
   "en": "The judge denied the claim about the lawyer's parole advice by requiring proof of a firm plea offer, the wrong test, and rejected the related claim without a hearing.",
   "es": "El juez negó el reclamo sobre el consejo del abogado acerca de la libertad condicional exigiendo prueba de una oferta de acuerdo firme, que era el criterio equivocado, y rechazó el reclamo relacionado sin audiencia.",
   "pdf": "https://colorado.vlex.io/pdf_viewer/1136193372"
+ },
+ "No. 25CA0530": {
+  "en": "The judge held an individual jointly liable for fees under a contract he did not sign and awarded all costs without addressing objections; fees fall on the company only.",
+  "es": "El juez responsabilizó solidariamente a una persona por honorarios de un contrato que no firmó y concedió todos los costos sin abordar objeciones; los honorarios recaen solo en la empresa.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1117650954"
+ },
+ "No. 25CA0664": {
+  "en": "The judge awarded a guardian ad litem's pay without first holding the hearing the statute requires; the order was reversed for further proceedings.",
+  "es": "El juez otorgó la compensación de un tutor ad litem sin celebrar antes la audiencia que exige la ley; la orden se revocó para más trámites.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1117650961"
+ },
+ "No. 24CA0111": {
+  "en": "The judge entered a separate reckless driving conviction that had to merge into the vehicular eluding conviction; it was vacated, and the other convictions stood.",
+  "es": "El juez dictó una condena separada por conducción temeraria que debía fusionarse con la de huida en vehículo; se anuló y las demás condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1117650940"
+ },
+ "No. 25CA0901": {
+  "en": "The judge dismissed a sign company's case against the transportation department for lack of standing, assuming the sign was illegal; the company has standing, so the case goes on.",
+  "es": "El juez desestimó el caso de una empresa de anuncios contra el departamento de transporte por falta de legitimación, asumiendo que el anuncio era ilegal; la empresa sí tiene legitimación, así que el caso continúa.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116953641"
+ },
+ "No. 25CA0143": {
+  "en": "The judge changed a divorce settlement as unconscionable, but it was already an enforceable court order; that change was reversed, the rest stood, and attorney fees must be considered.",
+  "es": "El juez modificó un acuerdo de divorcio por considerarlo abusivo, pero ya era una orden judicial exigible; ese cambio se revocó, el resto se mantuvo y deben considerarse los honorarios.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116953606"
+ },
+ "No. 23CA0719": {
+  "en": "The judge barred the defense from asking a witness about her pending criminal charges, violating the right to confront accusers; the error was not harmless, so the conviction was reversed.",
+  "es": "El juez impidió que la defensa preguntara a una testigo sobre sus cargos penales pendientes, violando el derecho a confrontar a los acusadores; el error no fue inofensivo, así que la condena se revocó.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116953544"
+ },
+ "No. 23CA0697": {
+  "en": "The judge ran the kidnapping sentence at the same time as the sexual offense sentences when the law requires them to run consecutively; resentencing is required and the convictions stood.",
+  "es": "El juez impuso la pena por secuestro al mismo tiempo que las de delitos sexuales cuando la ley exige que sean consecutivas; se requiere nueva sentencia y las condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116953526"
+ },
+ "No. 23CA0011": {
+  "en": "The judge refused to instruct the jury on the scope of the paramedics' lawful authority to use force, which the case required; the conviction was reversed for a new trial.",
+  "es": "El juez se negó a instruir al jurado sobre el alcance de la autoridad legal de los paramédicos para usar la fuerza, algo que el caso requería; la condena se revocó para un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116953499"
+ },
+ "2026 COA 29": {
+  "en": "The judge denied a request to amend the pleadings using the wrong legal standard; the judgment was reversed and the case sent back for further proceedings, possibly a new trial.",
+  "es": "El juez negó una solicitud de modificar los escritos usando el estándar legal equivocado; el fallo se revocó y el caso volvió para más trámites, posiblemente un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116953405"
+ },
+ "No. 25CA0642": {
+  "en": "On remand the judge decided maintenance and child support using only old exhibits instead of current circumstances; the judge must take updated evidence and make the required findings.",
+  "es": "Al reenviarse el caso, el juez decidió la manutención conyugal e infantil usando solo pruebas antiguas en lugar de las circunstancias actuales; debe recibir pruebas actualizadas y hacer las conclusiones exigidas.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116196556"
+ },
+ "No. 24CA1382": {
+  "en": "The district court disapproved the magistrate's acquittal of a juvenile, but the evidence did not show he acted for sexual arousal, gratification, or abuse; the acquittal stands.",
+  "es": "El tribunal de distrito desaprobó la absolución de un menor dictada por el magistrado, pero la prueba no mostró que actuara con fines de excitación, gratificación o abuso sexual; la absolución se mantiene.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116196400"
+ },
+ "2026 COA 28": {
+  "en": "The judge ruled the State Public Defender's office is a criminal justice agency under the records act and imposed penalties, but the office defends accused people and is not covered.",
+  "es": "El juez resolvió que la Oficina del Defensor Público estatal es una agencia de justicia penal según la ley de registros e impuso sanciones, pero la oficina defiende a acusados y no está cubierta.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1116196079"
+ },
+ "2026 COA 22": {
+  "en": "The judge refused to remove a juror whose son-in-law worked for the prosecutor, though the law required it; a biased juror deliberated, so the convictions were reversed.",
+  "es": "El juez se negó a retirar a un jurado cuyo yerno trabajaba para el fiscal, aunque la ley lo exigía; un jurado parcial deliberó, por lo que las condenas se revocaron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115847756"
+ },
+ "2026 COA 23": {
+  "en": "The judge counted a spouse's disability-care program payments as income when setting maintenance and child support; those parts were reversed and must be redone, while the pension division stood.",
+  "es": "El juez contó como ingreso de un cónyuge los pagos de un programa de cuidado por discapacidad al fijar la manutención conyugal y de los hijos; esas partes se revocaron y deben rehacerse, y la división de la pensión se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115847762"
+ },
+ "No. 24CA1633": {
+  "en": "The judge valued a spouse's stock units using a severance payment and did not divide the vested units; the property division, maintenance and child support must be redone.",
+  "es": "El juez valoró las unidades de acciones de un cónyuge usando una indemnización por despido y no dividió las unidades ya adquiridas; la división de bienes, la manutención conyugal y la de los hijos deben rehacerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115847811"
+ },
+ "No. 23CA2033": {
+  "en": "The judge entered a separate conviction and sentence on the special offender count, which only increases a sentence; that count was vacated and the other convictions stood.",
+  "es": "El juez dictó una condena y pena separadas por el cargo de delincuente especial, que solo aumenta la pena; ese cargo se anuló y las demás condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115847807"
+ },
+ "2026 COA 24": {
+  "en": "The judge relied partly on the defendant's protected free speech when setting the sentence; the sentence was reversed for resentencing, while the convictions stood.",
+  "es": "El juez se basó en parte en la libertad de expresión protegida de la acusada al fijar la pena; la pena se revocó para dictarla de nuevo y las condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115847764"
+ },
+ "No. 25CA0458": {
+  "en": "The judge treated equalization payments to a spouse as income instead of property and denied maintenance; maintenance and child support must be reconsidered, while the property division stood.",
+  "es": "El juez trató los pagos de igualación a un cónyuge como ingreso y no como bienes y negó la manutención conyugal; esta y la de los hijos deben reconsiderarse, y la división de bienes se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115347339"
+ },
+ "No. 25CA1197": {
+  "en": "The judge refused to make the child support increase effective from the date the parent asked for it; the court must recalculate from that date, and the rest stood.",
+  "es": "El juez se negó a aplicar el aumento de la manutención de los hijos desde la fecha en que la madre lo solicitó; deberá recalcularse desde esa fecha, y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115347346"
+ },
+ "No. 25CA0856": {
+  "en": "After denying a parent's move, the judge set no new parenting schedule and left child support unchanged; those parts must be redone, while the denial of relocation stood.",
+  "es": "Tras negar la mudanza de un padre, el juez no fijó un nuevo régimen de crianza y mantuvo la manutención sin cambios; esas dos partes deben rehacerse, y la negativa de la mudanza se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115347342"
+ },
+ "No. 23CA2042": {
+  "en": "The judge entered a restitution order after sentencing, but none was ordered at sentencing, so it came too late; the order was vacated and no restitution is owed.",
+  "es": "El juez dictó una orden de restitución después de la sentencia, pero no se ordenó ninguna al dictarla, por lo que llegó tarde; la orden se anuló y no se debe restitución.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115347323"
+ },
+ "No. 24CA1208": {
+  "en": "The evidence did not prove the serious bodily injury needed for second-degree assault, so that conviction was reversed and a third-degree assault conviction must be entered instead.",
+  "es": "La prueba no demostró la lesión corporal grave necesaria para agresión de segundo grado, por lo que esa condena se revocó y deberá dictarse una por agresión de tercer grado.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115243622"
+ },
+ "No. 25CA0317": {
+  "en": "The judge used the wrong legal standard on government immunity, accepting a basic showing from the plaintiff, and left out relevant evidence; the court must hold a new hearing.",
+  "es": "El juez aplicó un criterio legal equivocado sobre la inmunidad gubernamental, aceptando una demostración básica del demandante, y dejó fuera pruebas relevantes; deberá celebrarse una nueva audiencia.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115243770"
+ },
+ "No. 25CA0219": {
+  "en": "The judge upheld two separate tax assessments of a lease-holder's interest in land and buildings; the appeals court ordered one combined assessment, and the refusal of the county's motion stood.",
+  "es": "El juez avaló dos avalúos de impuestos separados sobre el derecho de un arrendatario en terreno y edificios; el tribunal de apelaciones ordenó un solo avalúo combinado, y el rechazo de la moción del condado se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115243717"
+ },
+ "No. 23CA0002": {
+  "en": "The evidence showed only that the defendant sat near the drugs, which was not enough to prove possession or distribution; the conviction was vacated and retrial barred.",
+  "es": "La prueba solo mostró que el acusado estaba sentado cerca de las drogas, lo cual no bastaba para probar que las conocía o las distribuyó; la condena se anuló y no puede haber nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1115243129"
+ },
+ "No. 25CA0481": {
+  "en": "The judge dismissed the case over a one-day delay in filing proof of service, though defendants were timely served, and refused to reopen it; the complaint must be reinstated.",
+  "es": "El juez desestimó el caso por un día de retraso en presentar la constancia de notificación, aunque los demandados fueron notificados a tiempo, y luego se negó a reabrirlo; la demanda debe reinstalarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1114367508"
+ },
+ "2026 COA 11": {
+  "en": "The judge dismissed an insurance disclosure claim as late under a one-year deadline; the appeals court said it is not a penalty law, so a two-year deadline applies.",
+  "es": "El juez desestimó por tardía, con un plazo de un año, una demanda por falta de información de seguro; el tribunal de apelaciones dijo que no es una ley de sanciones, por lo que rige un plazo de dos años.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1114367309"
+ },
+ "2026 COA 10": {
+  "en": "The judge refused to reform a will so land could be sold or encumbered for research, and refused a wind-lease ruling; those two rulings were reversed, and the rest stood.",
+  "es": "El juez se negó a reformar un testamento para permitir vender o gravar unas tierras para la investigación, y a decidir sobre un arrendamiento eólico; esas dos decisiones se revocaron y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112808888"
+ },
+ "No. 25CA1307": {
+  "en": "The judge set child support using 106 overnights without showing how that number was reached; the court must make findings on overnights, and the rest of the judgment stood.",
+  "es": "El juez fijó la manutención de los hijos con 106 pernoctas sin explicar cómo llegó a ese número; debe hacer conclusiones sobre las pernoctas, y el resto de la sentencia se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112808982"
+ },
+ "No. 25CA0438": {
+  "en": "The judge did not address the worker's request for costs; that part was reversed for the judge to decide, while the wage judgment and the denial of attorney fees stood.",
+  "es": "El juez no se pronunció sobre la solicitud de costas de la trabajadora; esa parte se revocó para que la decida, y la sentencia salarial y la negativa de honorarios de abogado se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112808972"
+ },
+ "No. 25CA0206": {
+  "en": "The judge increased supervision of a parent's family time without the required hearing, then found reasonable efforts to reunite the family; the termination was reversed and hearings ordered.",
+  "es": "El juez aumentó la supervisión del tiempo familiar de un padre sin la audiencia exigida y luego halló que se hicieron esfuerzos razonables de reunificación; se revocó la terminación y se ordenaron audiencias.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112808968"
+ },
+ "No. 24CA2196": {
+  "en": "The judge decided whether apartments were marital property without first deciding which country's law governs the marriage agreement; that must be done on remand, while other property rulings stood.",
+  "es": "El juez decidió si unos departamentos eran bienes matrimoniales sin determinar primero qué ley rige el acuerdo matrimonial; esto debe hacerse al regresar el caso, y otras decisiones sobre bienes se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112808960"
+ },
+ "No. 24CA0029": {
+  "en": "The judge refused a jury instruction on an independent cause of death despite evidence the passenger used drugs at the hospital; the conviction was reversed for a new trial.",
+  "es": "El juez negó una instrucción al jurado sobre una causa independiente de la muerte, aunque había pruebas de que la pasajera consumió drogas en el hospital; la condena se revocó para un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112808937"
+ },
+ "No. 23CA1396": {
+  "en": "A trespass conviction and a burglary conviction should have been merged because trespass is a lesser included offense; that part was reversed and the other convictions stood.",
+  "es": "Una condena por allanamiento y una por robo con allanamiento debieron fusionarse porque el allanamiento es un delito menor incluido; esa parte se revocó y las demás condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112312930"
+ },
+ "No. 24CA1736": {
+  "en": "The judge held two related companies liable for a third company's misrepresentation, though no one asked to disregard its separate legal status; that part was reversed.",
+  "es": "El juez declaró responsables a dos empresas relacionadas por una tergiversación hecha solo por una tercera empresa, sin que se pidiera ignorar su personalidad jurídica separada; esa parte se revocó.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112312943"
+ },
+ "No. 25CA1244": {
+  "en": "The judge let hearsay-filled reports into the child-neglect trial; the error was not harmless, so the neglect finding was reversed for a new trial.",
+  "es": "El juez admitió en el juicio por negligencia un informe policial, una petición y un informe de admisión con testimonio de oídas; el error no fue inofensivo, por lo que la declaración de negligencia se revocó para un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112312967"
+ },
+ "No. 25CA0035": {
+  "en": "The judge awarded attorney fees the contracts did not allow, and costs against two related companies that were not parties; those parts were reversed, and costs against one company stood.",
+  "es": "El juez otorgó honorarios de abogado bajo un contrato que no los permitía, y costas contra dos empresas relacionadas que no eran parte del contrato; esas partes se revocaron y las costas contra una empresa se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1112312960"
+ },
+ "No. 25CA0133": {
+  "en": "The judge overturned a county board's approval of a waste transfer station, but the record supported the board's findings; the ruling and injunction were reversed and the approval reinstated.",
+  "es": "El juez anuló la aprobación de una estación de transferencia de residuos por una junta del condado, pero el expediente respaldaba sus conclusiones; se revocó la anulación y la orden judicial para reinstalar la decisión de la junta.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1111799405"
+ },
+ "No. 24CA1881": {
+  "en": "The judge set aside a default judgment without identifying the legal rule or finding extraordinary circumstances; the order and later damages judgment were vacated for reconsideration.",
+  "es": "El juez dejó sin efecto una sentencia en rebeldía sin identificar la regla aplicable ni constatar circunstancias extraordinarias; la orden y la sentencia de daños posterior se anularon para reconsiderarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1111799401"
+ },
+ "No. 24CA1197": {
+  "en": "The judge awarded attorney fees against a spouse for a failed motion without the findings the law requires; the fee award was reversed for findings, while the maintenance denial stood.",
+  "es": "El juez otorgó honorarios de abogado contra un cónyuge por una moción fallida sin las conclusiones que exige la ley; se revocó para que las haga, y la negativa de modificar la manutención se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1111799391"
+ },
+ "No. 23CA1627": {
+  "en": "The judge counted income for a spouse without the required finding that he was avoiding work; child support and maintenance were reversed to be recalculated, while parenting orders stood.",
+  "es": "El juez le atribuyó ingresos a un cónyuge sin la conclusión requerida de que evitaba trabajar; la manutención de los hijos y la conyugal se revocaron para recalcularse, y las órdenes de crianza se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1111799364"
+ },
+ "No. 22CA1854": {
+  "en": "The judge refused a self-defense instruction on multiple attackers or apparent necessity that the evidence supported; the main convictions were reversed for a new trial and the weapon conviction stood.",
+  "es": "El juez negó una instrucción de defensa propia sobre varios agresores o necesidad aparente que la prueba respaldaba; las condenas principales se revocaron para un nuevo juicio y la de arma se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1111799354"
+ },
+ "No. 24CA2099": {
+  "en": "The judge denied a request about jail credit, but the oral sentence gave 182 days of credit on every concurrent sentence; the written record must be corrected to match.",
+  "es": "El juez negó una solicitud sobre el abono de días de cárcel, pero la sentencia oral otorgó 182 días de abono en cada pena concurrente; el registro escrito debe corregirse para coincidir.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1105648932"
+ },
+ "No. 25CA0176": {
+  "en": "The judge awarded costs to the insurer, but the appeals court later partly reversed the underlying ruling, leaving it unknown who prevailed; the cost order was vacated.",
+  "es": "El juez otorgó costas a la aseguradora, pero el tribunal de apelaciones luego revocó en parte la decisión de fondo, por lo que no se sabe quién ganó; la orden de costas se anuló.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1105648967"
+ },
+ "No. 24CA1889": {
+  "en": "The judge's later ruling adding penalties, interest and fees came after the motion was already denied by law; those issues are sent back, and the jury award stood.",
+  "es": "La decisión posterior del juez que sumaba multas legales, intereses y honorarios llegó cuando la moción ya estaba denegada por ley; esos puntos regresan al juez, y el monto del jurado se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1105648925"
+ },
+ "No. 24CA1473": {
+  "en": "The judge ordered a sentence to run after the defendant's other prison sentences without explaining why; the sentence was vacated for a new hearing where reasons must be stated.",
+  "es": "El juez ordenó que una pena se cumpliera después de las otras penas del acusado sin explicar por qué; la pena se anuló para una nueva audiencia en la que deberá exponer sus razones.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1105648919"
+ },
+ "2026 COA 6": {
+  "en": "The judge ended the insurer's daily penalty after six days; the appeals court said it runs until the policy is produced, so the full amount is owed, and liability stood.",
+  "es": "El juez limitó la sanción diaria a la aseguradora a seis días; el tribunal de apelaciones dijo que corre hasta que se entregue la póliza, por lo que debe otorgarse el monto completo, y la responsabilidad se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1104777437"
+ },
+ "No. 24CA2270": {
+  "en": "The judge denied attorney fees under a settlement agreement by reading its fee clause too narrowly; the judge must now decide whether the plaintiff was the prevailing party.",
+  "es": "El juez negó honorarios de abogado bajo un acuerdo de conciliación al interpretar su cláusula de honorarios de forma demasiado estrecha; ahora debe decidir si el demandante fue la parte ganadora.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1104777866"
+ },
+ "No. 24CA2151": {
+  "en": "The judge ruled that an earlier arbitration decision barred the trustees' claims; the appeals court said the arbitrator never decided whether the builder kept the homeowners association fees.",
+  "es": "El juez resolvió que una decisión arbitral anterior impedía las reclamaciones de los fiduciarios; el tribunal de apelaciones dijo que el árbitro nunca decidió si el constructor se quedó con las cuotas de la asociación de propietarios.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1104777822"
+ },
+ "No. 24CA1610": {
+  "en": "The judge ruled on postconviction claims the defendant never raised, so that part was vacated; the denial of a sentence proportionality review stood.",
+  "es": "El juez resolvió reclamos posteriores a la condena que el acusado nunca presentó, por lo que esa parte se anuló; la negativa a revisar la proporcionalidad de la sentencia se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1103590815"
+ },
+ "No. 24CA1199": {
+  "en": "The judge shortened a habitual-offender sentence as too harsh, but the appeals court said a 48-year sentence for second degree murder is not grossly disproportionate, so the sentence was reversed.",
+  "es": "El juez redujo una sentencia por reincidencia por considerarla demasiado severa, pero el tribunal de apelaciones dijo que 48 años por homicidio en segundo grado no es groseramente desproporcionado, por lo que revocó la sentencia.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1103590802"
+ },
+ "No. 25CA0760": {
+  "en": "The judge granted summary judgment to the car seller on contract claims after treating the statutory title-delivery deadline as not part of the contract; the claims return for further proceedings.",
+  "es": "El juez dictó sentencia sumaria a favor del vendedor del auto tras considerar que el plazo legal para entregar el título no formaba parte del contrato; los reclamos vuelven para más trámites.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1103590841"
+ },
+ "No. 25CA0457": {
+  "en": "In a divorce, the judge denied one spouse's request for attorney fees without enough findings to review; that part must be redone and the rest of the orders stood.",
+  "es": "En un divorcio, el juez negó la solicitud de honorarios de abogado de un cónyuge sin conclusiones suficientes para revisarla; esa parte debe rehacerse y el resto de las órdenes se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1103590838"
+ },
+ "No. 25CA0348": {
+  "en": "In a divorce, the judge awarded spousal maintenance without required findings explaining its amount and length; that part must be redone and the rest of the judgment stood.",
+  "es": "En un divorcio, el juez otorgó manutención conyugal sin las conclusiones requeridas que explicaran su monto y duración; esa parte debe rehacerse y el resto de la sentencia se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1103590837"
+ },
+ "No. 25CA0108": {
+  "en": "The judge ordered attorney fees against a self-represented party without the findings the statute requires, so the fee order was vacated; the appeal of the summary judgment was dismissed.",
+  "es": "El juez ordenó honorarios de abogado contra una parte sin abogado sin las conclusiones que exige la ley, por lo que se anuló esa orden; se desestimó la apelación de la sentencia sumaria.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1103590826"
+ },
+ "No. 24CA1256": {
+  "en": "The judge let a negligence verdict stand against a medical practice company, but the appeals court said it was entitled to a directed verdict; the verdict for the doctors stood.",
+  "es": "El juez dejó vigente un veredicto por negligencia contra una empresa de práctica médica, pero el tribunal de apelaciones dijo que tenía derecho a un veredicto dirigido; el veredicto a favor de los médicos se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1103590803"
  },
  "2026 COA 4": {
   "en": "The judge approved attorney fees without evidence that hourly rates matched local rates, relying on its own experience; the fee award is reversed, and the late parenting-order appeal was dismissed.",
@@ -373,6 +888,51 @@
   "en": "The judge charged a victims assistance surcharge on each of fifteen convictions, but the law allows one surcharge per case; that part was reversed and the rest stood.",
   "es": "El juez impuso un recargo de asistencia a víctimas por cada una de quince condenas, pero la ley permite un solo recargo por caso; esa parte se revocó y lo demás se mantuvo.",
   "pdf": "https://colorado.vlex.io/pdf_viewer/1098197478"
+ },
+ "No. 24CA0199": {
+  "en": "The judge dismissed a staffing company's indemnity claim by misreading the contract and calling it void as against public policy; that claim returns and other rulings stood.",
+  "es": "El juez desestimó el reclamo de indemnización de una empresa de personal al interpretar mal el contrato y declararlo nulo por política pública; ese reclamo vuelve para más trámites y las demás decisiones se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1096310568"
+ },
+ "No. 23CA1481": {
+  "en": "The judge never entered a required restitution order at sentencing, which made the later restitution order an illegal sentence; the order was vacated.",
+  "es": "El juez no dictó en la sentencia una orden de restitución exigida, lo que hizo que la orden de restitución posterior fuera una sentencia ilegal; la orden se anuló.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1096310563"
+ },
+ "No. 24CA0080": {
+  "en": "The judge entered judgment on unjust enrichment and promissory estoppel claims even though a contract covered the same subject; that part was vacated and the rest stood.",
+  "es": "El juez dictó sentencia por enriquecimiento sin causa y exclusión por promesa aunque un contrato cubría el mismo asunto; esa parte se anuló y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1096310567"
+ },
+ "No. 23CA2059": {
+  "en": "The judge made inconsistent findings about the type and location of one road easement, so that ruling and the costs award must be redone; the other easement rulings stood.",
+  "es": "El juez hizo conclusiones contradictorias sobre el tipo y la ubicación de una servidumbre de paso, por lo que esa decisión y la condena en costas deben rehacerse; las demás decisiones sobre servidumbres se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1095728670"
+ },
+ "No. 22CA1586": {
+  "en": "The judge told the jury about the initial-aggressor exception to self-defense even though the prosecution offered no evidence for it; a new trial is required.",
+  "es": "El juez instruyó al jurado sobre la excepción del agresor inicial a la legítima defensa aunque la fiscalía no presentó pruebas que la respaldaran; se requiere un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1095727339"
+ },
+ "No. 25CA0499": {
+  "en": "In a parenting case, the judge awarded attorney fees without any findings to justify them; that award was reversed and must be reconsidered, and the holiday parenting-time order stood.",
+  "es": "En un caso de crianza, el juez otorgó honorarios de abogado sin conclusiones que los justificaran; ese otorgamiento se revocó y debe reconsiderarse, y la orden de tiempo de crianza en festivos se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1095729642"
+ },
+ "No. 24CA2262": {
+  "en": "The judge awarded attorney fees to an insurance company after calling the customer's claim groundless; the appeals court said the judge misapplied the standard, so the fee awards were reversed.",
+  "es": "El juez otorgó honorarios de abogado a una aseguradora tras calificar de infundado el reclamo de la clienta; el tribunal de apelaciones dijo que aplicó mal el criterio, por lo que revocó los honorarios.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1095729401"
+ },
+ "No. 24CA1644": {
+  "en": "The judge overturned a state transportation agency's order by rejecting the administrative judge's factual findings about the agency's intent; the agency's order must be reinstated.",
+  "es": "El juez anuló una orden de la agencia estatal de transporte al rechazar las conclusiones de hecho del juez administrativo sobre la intención de la agencia; la orden de la agencia debe restablecerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1095729189"
+ },
+ "No. 23CA1382": {
+  "en": "The judge dismissed the malpractice claims, but the neighbors plausibly alleged the landowners owed them a duty of care in the earlier fire case, so the claims go forward.",
+  "es": "El juez desestimó los reclamos por negligencia profesional, pero el tribunal de apelaciones dijo que los vecinos alegaron de forma plausible que los propietarios les debían un deber de cuidado en el caso del incendio, por lo que los reclamos continúan.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1095728005"
  },
  "No. 25CA0832": {
   "en": "The judge reduced the felony charge as a sanction for deleted police video, using the wrong test and without showing the footage had value to the defense.",
@@ -469,20 +1029,400 @@
   "es": "El juez permitió que un perito describiera lesiones por estrangulamiento que no encajaban con este caso, y el tribunal de apelaciones no pudo descartar que influyera en el veredicto.",
   "pdf": "https://colorado.vlex.io/pdf_viewer/1099240450"
  },
+ "No. 25CA0691": {
+  "en": "The judge denied a name-change petition by relying on a rule for people with felony convictions, though the record showed no felony conviction; the denial was reversed.",
+  "es": "El juez negó una solicitud de cambio de nombre basándose en una regla para personas con condenas por delito grave, aunque el expediente no mostraba tal condena; se revocó la negativa.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1093731629"
+ },
+ "No. 24CA1987": {
+  "en": "The judge granted summary judgment on the constructive trust and bona fide purchaser issues even though the facts allowed an inference of a confidential relationship; the adverse possession ruling stood.",
+  "es": "El juez dictó sentencia sumaria sobre el fideicomiso constructivo y los compradores de buena fe aunque los hechos permitían inferir una relación de confianza; la decisión sobre posesión adversa se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1093731608"
+ },
+ "No. 24CA0972": {
+  "en": "The judge denied a sentencing-lawyer claim without a hearing, but the appeals court said the facts alleged required one; the denial of the other claim stood.",
+  "es": "El juez negó sin audiencia un reclamo sobre el abogado en la sentencia, pero el tribunal de apelaciones dijo que los hechos alegados exigían una audiencia; la negativa del otro reclamo se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1093731571"
+ },
+ "No. 23CA0568": {
+  "en": "The evidence did not prove the weight needed for the more-than-four-grams fentanyl conviction, so it was reversed and a lesser conviction must be entered; the methamphetamine conviction stood.",
+  "es": "La prueba no demostró el peso necesario para la condena por más de cuatro gramos de fentanilo, por lo que se revocó y debe dictarse una condena menor; la condena por metanfetamina se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1093436848"
+ },
+ "No. 23CA0994": {
+  "en": "The judge allowed the prosecutor to question and comment on the defendant's failure to raise self-defense before trial, which violated his rights and requires a new trial.",
+  "es": "El juez permitió que el fiscal cuestionara y comentara que el acusado no planteó la legítima defensa antes del juicio, lo que violó sus derechos y exige un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092869225"
+ },
+ "No. 22CA1333": {
+  "en": "The judge's habitual-offender sentence review did not consider how harsh the penalty was, so a new review is required; the conviction and other rulings stood.",
+  "es": "La revisión que hizo el juez de la sentencia por reincidencia no consideró lo severa que era la pena, por lo que se requiere una nueva revisión; la condena y las demás decisiones se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092869216"
+ },
  "No. 22CA2256": {
   "en": "The jury was not told it had to find the thefts were one scheme to combine them into a higher felony; theft was reduced to a lower felony class.",
   "es": "No se le dijo al jurado que debía hallar que los hurtos eran un solo plan para sumarlos en un delito mayor; el hurto se rebajó a una clase menor de delito grave.",
   "pdf": "https://colorado.vlex.io/pdf_viewer/1094820303"
+ },
+ "No. 25CA0716": {
+  "en": "The judge found the Department made reasonable efforts to reunify the mother without holding the required hearing before moving her visits online; her termination was reversed and the father's stood.",
+  "es": "El juez concluyó que el Departamento hizo esfuerzos razonables para reunificar a la madre sin la audiencia exigida antes de pasar sus visitas a modalidad virtual; se revocó su terminación y la del padre se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092449294"
+ },
+ "No. 25CA0320": {
+  "en": "The judge issued a parenting-time order that did not account for the mother's plan to live in Alabama; a new order is needed and the rest stood.",
+  "es": "El juez dictó una orden de tiempo de crianza que no tomaba en cuenta que la madre planeaba vivir en Alabama; se necesita una nueva orden y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092449289"
+ },
+ "No. 24CA1148": {
+  "en": "In a divorce, the judge made the husband pay attorney fees that overlapped a debt already divided between the spouses; the fee award must be reconsidered and the rest stood.",
+  "es": "En un divorcio, el juez hizo que el esposo pagara honorarios de abogado que coincidían con una deuda ya repartida entre los cónyuges; los honorarios deben reconsiderarse y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092449270"
+ },
+ "No. 24CA0803": {
+  "en": "The judge dismissed criminal charges for outrageous government conduct over a prosecutor's public comments, but the appeals court said that dismissal fits only two situations and neither applied.",
+  "es": "El juez desestimó cargos penales por conducta gubernamental escandalosa debido a comentarios públicos de un fiscal, pero el tribunal de apelaciones dijo que la desestimación solo procede en dos situaciones y ninguna aplicaba.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092449267"
+ },
+ "2025 COA 81": {
+  "en": "The judge dismissed an injured repair worker's lawsuit as filed too late under a two-year deadline; the appeals court said the three-year motor vehicle deadline applies, so the case continues.",
+  "es": "El juez desestimó por tardía la demanda de un trabajador lesionado durante una reparación, aplicando un plazo de dos años; el tribunal de apelaciones dijo que se aplica el plazo de tres años para vehículos motorizados, por lo que el caso continúa.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092449231"
+ },
+ "No. 24CA1234": {
+  "en": "In a divorce, the judge set spousal maintenance without findings on rental income from the properties awarded to the wife; maintenance must be redone and the property division stood.",
+  "es": "En un divorcio, el juez fijó la manutención conyugal sin conclusiones sobre el ingreso por alquiler de las propiedades asignadas a la esposa; la manutención debe rehacerse y la división de bienes se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092088718"
+ },
+ "Nos. 24CA1417 & 24CA1814": {
+  "en": "The judge ordered a town to pay attorney fees for frivolous claims based on a wrong view of those claims; the fee order was vacated and the dismissal stood.",
+  "es": "El juez ordenó a un municipio pagar honorarios de abogado por reclamos frívolos basándose en una visión equivocada de esos reclamos; se anuló la orden de honorarios y la desestimación se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092088720"
+ },
+ "No. 23CA0861": {
+  "en": "The judge refused to suppress evidence found after an arrest, but the appeals court said the prosecution did not show the arrest was supported by probable cause.",
+  "es": "El juez se negó a suprimir pruebas halladas tras un arresto, pero el tribunal de apelaciones dijo que la fiscalía no demostró que el arresto tuviera causa probable.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1092088711"
+ },
+ "No. 23CA1867": {
+  "en": "The judge told the jury about self-defense although no evidence supported it; the appeals court disapproved that ruling, and the acquittal verdict stands.",
+  "es": "El juez instruyó al jurado sobre legítima defensa aunque ninguna prueba la respaldaba; el tribunal de apelaciones desaprobó esa decisión, y el veredicto de absolución se mantiene.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1091644477"
+ },
+ "No. 25CA0580": {
+  "en": "The judge let a therapeutic supervisor decide how long the mother's weekly visits last without any guidance; that part was reversed and the rest of the order stood.",
+  "es": "El juez permitió que un supervisor terapéutico decidiera la duración de las visitas semanales de la madre sin darle ninguna orientación; esa parte se revocó y el resto de la orden se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1091644510"
+ },
+ "No. 24CA1033": {
+  "en": "The judge entered the contract judgment against a company's owner together with the company; the appeals court said it should be against the company only, and the rest stood.",
+  "es": "El juez dictó la sentencia contractual contra el dueño de una empresa junto con la empresa; el tribunal de apelaciones dijo que debía ser solo contra la empresa, y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1091644498"
+ },
+ "No. 24CA0801": {
+  "en": "The judge changed the parole term in a corrected sentence, but that made the sentence illegal; the order was reversed and the record must be corrected.",
+  "es": "El juez cambió el período de libertad condicional en una sentencia corregida, pero el tribunal de apelaciones dijo que el cambio hizo ilegal la sentencia; se revocó la orden y debe corregirse el registro.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1091644496"
+ },
+ "No. 23CA0678 (2025)": {
+  "en": "The restitution order came after the statutory deadline and the record shows no waiver of that deadline, so the order was vacated.",
+  "es": "La orden de restitución llegó después del plazo legal y el expediente no muestra que se renunciara a ese plazo, por lo que se anuló.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1091644475"
+ },
+ "No. 23CA0432": {
+  "en": "The judge entered both first and second degree burglary convictions, but the second degree conviction should have merged into the first; it was vacated and everything else stood.",
+  "es": "El juez dictó condenas por robo con allanamiento en primer y segundo grado, pero la de segundo grado debía fusionarse con la de primer grado; se anuló y todo lo demás se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1091644474"
+ },
+ "No. 25CA0250": {
+  "en": "The judge found the father unfit and shifted the burden to him to prove fitness; the Department had not proved unfitness as required, so the judgment was reversed.",
+  "es": "El juez declaró inepto al padre y le trasladó la carga de probar su aptitud; el tribunal de apelaciones dijo que el Departamento no probó la ineptitud como se exige, por lo que se revocó la sentencia.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090697381"
+ },
+ "No. 24CA1442": {
+  "en": "The judge let an attorney's lien reach settlement money held in escrow, but the lien could not attach because the attorney's client had no interest in the funds yet.",
+  "es": "El juez permitió que el gravamen de un abogado alcanzara dinero de un acuerdo en depósito, pero el tribunal de apelaciones dijo que no podía aplicarse porque el cliente del abogado aún no tenía derecho sobre esos fondos.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090697368"
+ },
+ "No. 23CA0687": {
+  "en": "The judge denied a postconviction claim without appointing a lawyer, but the appeals court said the claim that trial counsel should have consulted a DNA expert had arguable merit.",
+  "es": "El juez negó un reclamo posterior a la condena sin nombrar abogado, pero el tribunal de apelaciones dijo que el reclamo de que el abogado debió consultar a un experto en ADN tenía mérito discutible.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090697356"
+ },
+ "2025 COA 77": {
+  "en": "The judge denied return of some seized property based only on the prosecution's unsworn statements; that was reversed for those items, while the denial for other items stood.",
+  "es": "El juez negó la devolución de algunos bienes incautados basándose solo en declaraciones no juradas de la fiscalía; eso se revocó para esos bienes, mientras que la negativa para los demás se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090697350"
+ },
+ "No. 23CA0332": {
+  "en": "The judge entered separate assault convictions along with a burglary conviction, but the assaults should have merged into the burglary; they were vacated and the rest stood.",
+  "es": "El juez dictó condenas separadas por agresión junto con una por allanamiento, pero las agresiones debían fusionarse con el allanamiento; se anularon y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090054232"
+ },
+ "No. 24CA1454": {
+  "en": "In a divorce, the judge did not make the wife update her financial disclosures, then denied the husband maintenance; both must be redone and the property division stood.",
+  "es": "En un divorcio, el juez no obligó a la esposa a actualizar sus declaraciones financieras y luego negó la manutención al esposo; ambas decisiones se revocaron y deben rehacerse, y la división de bienes se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090054266"
+ },
+ "No. 25CA0743": {
+  "en": "The judge denied the State's request to medicate a patient involuntarily without findings on key legal factors, so it could not be reviewed; that denial must be reconsidered.",
+  "es": "El juez negó la solicitud del Estado de medicar involuntariamente a un paciente sin conclusiones sobre factores legales clave, por lo que la decisión no podía revisarse; la negativa sobre ese medicamento debe reconsiderarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090054294"
+ },
+ "No. 22CA0003": {
+  "en": "The judge did not give the jury the cautionary instruction that state law requires for a child's out-of-court statements, so the conviction was reversed and a new trial ordered.",
+  "es": "El juez no dio al jurado la instrucción de advertencia que exige la ley estatal sobre las declaraciones fuera de la corte de un menor, por lo que se revocó la condena y se ordenó un nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090054213"
+ },
+ "2025 COA 76": {
+  "en": "The juvenile court admitted caseworkers' expert testimony without the specific findings the evidence rule requires; the error was not harmless, so a new trial on the adjudication is needed.",
+  "es": "El tribunal de menores admitió el testimonio pericial de trabajadores de casos sin las conclusiones específicas que exige la regla de evidencia; el error no fue inofensivo, por lo que se necesita un nuevo juicio de adjudicación.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1090054201"
+ },
+ "No. 24CA1593": {
+  "en": "The judge overturned a county's denial of a kennel permit and granted summary judgment, but the county's decision had evidence behind it; the county's decisions are reinstated.",
+  "es": "El juez anuló la negativa de un condado a otorgar un permiso para una perrera, pero el tribunal de apelaciones dijo que la decisión del condado tenía respaldo en pruebas y que la sentencia sumaria fue indebida; se restablecen las decisiones del condado.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089735143"
+ },
+ "No. 24CA0432": {
+  "en": "In a divorce, the judge gave tax overpayments a value of zero and left them out of the property division, so the division and the maintenance decision must be redone.",
+  "es": "En un divorcio, el juez asignó valor cero a unos pagos en exceso de impuestos y los excluyó de la división de bienes, por lo que la división y la decisión de manutención deben rehacerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089735125"
+ },
+ "No. 23CA1685": {
+  "en": "The judge denied a sentence-reduction request by citing notes from a sentencing hearing that this judge did not preside over, so the order was reversed.",
+  "es": "El juez negó una solicitud de reducción de sentencia citando notas de una audiencia de sentencia que no presidió, por lo que se revocó la orden.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089735120"
+ },
+ "No. 25CA0230": {
+  "en": "The juvenile court granted summary judgment declaring the child dependent or neglected even though the parents raised real factual disputes and the court weighed the evidence.",
+  "es": "El tribunal de menores dictó sentencia sumaria declarando al niño dependiente o desatendido aunque los padres plantearon disputas reales sobre los hechos y el tribunal sopesó las pruebas.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089318175"
+ },
+ "No. 24CA0632": {
+  "en": "The judge awarded costs to two people who had already been removed from the case and were not winning parties; the cost award was vacated and the other judgments stood.",
+  "es": "El juez otorgó costas a dos personas que ya habían sido excluidas del caso y no eran partes vencedoras; se anuló esa condena en costas y las demás sentencias se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089318149"
+ },
+ "No. 24CA0178": {
+  "en": "The judge denied a petition to end sex-offender registration because of what the judge described as smirking, without weighing the petitioner's evidence; the petition must be granted.",
+  "es": "El juez negó una solicitud para terminar el registro de delincuente sexual por lo que describió como sonrisas burlonas, sin valorar las pruebas del solicitante; la solicitud debe concederse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089318147"
+ },
+ "No. 23CA1003": {
+  "en": "The judge set trial past the speedy-trial deadline, blaming the defense and relying on an expired COVID rule; the conviction was reversed and the charges dismissed.",
+  "es": "El juez fijó el juicio después del plazo de juicio rápido, atribuyendo la demora a la defensa y apoyándose en una regla de COVID vencida; se revocó la condena y se desestimaron los cargos.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089318057"
  },
  "2025 COA 72": {
   "en": "The record did not show the judge held the required hearing and found good cause before using an expunged juvenile record to deny ending registration; that hearing must be held.",
   "es": "El expediente no mostraba que el juez celebrara la audiencia requerida ni hallara causa justificada antes de usar un registro juvenil borrado para negar el fin del registro; esa audiencia deberá celebrarse.",
   "pdf": "https://colorado.vlex.io/pdf_viewer/1102899304"
  },
+ "No. 25CA0990": {
+  "en": "The judge authorized forced use of a backup antipsychotic drug based only on speculation that the first drug might not work; that part was reversed and the rest stood.",
+  "es": "El juez autorizó el uso forzado de un antipsicótico de respaldo basándose solo en la vaga especulación de que el primer medicamento podría no funcionar; esa parte se revocó y el resto de la orden se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089044561"
+ },
+ "No. 23CA0754": {
+  "en": "The judge dismissed the contribution claim because of an earlier ruling and claim-preclusion rules, but the appeals court said neither barred it; other claims stayed dismissed.",
+  "es": "El juez desestimó el reclamo de contribución por una decisión anterior y las reglas de preclusión, pero el tribunal de apelaciones dijo que ninguna lo impedía; los demás reclamos siguieron desestimados.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089044449"
+ },
+ "No. 23CA0250 (2025)": {
+  "en": "The judge ordered restitution 315 days after sentencing without finding good cause to extend the legal deadline, so the court had no authority and the order was vacated.",
+  "es": "El juez ordenó restitución 315 días después de la sentencia sin determinar causa justificada para extender el plazo legal, por lo que no tenía autoridad y la orden se anuló.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1089044439"
+ },
+ "No. 23CA1373": {
+  "en": "The judge ordered sanctions without naming the legal basis or making factual findings; the orders were reversed and the judge must decide again and explain the reasons.",
+  "es": "El juez ordenó sanciones sin indicar el fundamento legal ni hacer conclusiones de hecho; las órdenes se revocaron y el juez debe decidir de nuevo y explicar sus razones.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088574253"
+ },
+ "No. 23CA0894": {
+  "en": "The judge let a panel of experts make the binding decision on future upkeep of a shared driveway, which was improper delegation; the rest of the judgment stood.",
+  "es": "El juez permitió que un panel de expertos tomara la decisión vinculante sobre el mantenimiento futuro de un camino compartido, lo que el tribunal de apelaciones consideró una delegación indebida; el resto de la sentencia se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088574248"
+ },
+ "No. 22CA0825": {
+  "en": "The judge let a defendant absent from the rest of his trial give the jury an unsworn statement; the result was so prejudicial it denied him a fair trial.",
+  "es": "El juez permitió que el acusado, ausente durante el resto del juicio, diera al jurado una declaración sin juramento; el resultado fue tan perjudicial que le negó un juicio justo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088574227"
+ },
+ "2025 COA 71": {
+  "en": "The judge cut a landlord's fee request in half without enough findings and denied fees and costs for enforcing the fee clause; both go back and the rest stood.",
+  "es": "El juez redujo a la mitad los honorarios pedidos por un arrendador sin conclusiones suficientes y negó honorarios y costas por hacer cumplir la cláusula de honorarios; el tribunal de apelaciones devolvió ambos puntos y el resto se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088574225"
+ },
+ "No. 24CA1276": {
+  "en": "The judge refused to consider the request to correct the mother's will, wrongly finding the will was agreed to; the judge must rule on it, and the deed rulings stood.",
+  "es": "El juez se negó a considerar la solicitud de corregir el testamento de la madre, al concluir erróneamente que estaba acordado; deberá resolverla, y lo decidido sobre las escrituras se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088574330"
+ },
+ "No. 24CA0097": {
+  "en": "The judge said the court had no power to rule on returning a car seized by police; the appeals court said it did, so the judge must decide the request.",
+  "es": "El juez dijo que el tribunal no tenía facultad para resolver sobre la devolución de un auto incautado por la policía; el tribunal de apelaciones dijo que sí, por lo que el juez debe decidir la solicitud.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088253894"
+ },
+ "No. 24CA0063": {
+  "en": "The judge entered the restitution order 96 days after sentencing, past the 91-day deadline, without a timely finding of good cause to extend it, so the order was vacated.",
+  "es": "El juez dictó la orden de restitución 96 días después de la sentencia, pasado el plazo de 91 días y sin una determinación oportuna de causa justificada para extenderlo, por lo que la orden se anuló.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088253889"
+ },
+ "No. 24CA2002": {
+  "en": "The judge found the father broke the order on three grandparent visits without giving his decisions a parent's weight; those findings and the fee award were reversed.",
+  "es": "El juez concluyó que el padre incumplió la orden en tres visitas de los abuelos sin dar a sus decisiones el peso que corresponde a un padre; esas conclusiones y los honorarios se revocaron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1088253949"
+ },
+ "No. 24CA1795": {
+  "en": "The judge revoked the mother's deferred adjudication though the county did not prove she broke its terms; a finding lacked record support, so the petition must be dismissed.",
+  "es": "El juez revocó la adjudicación diferida de la madre aunque el condado no probó que incumplió sus términos; una conclusión no tenía apoyo en el expediente, así que la petición debe desestimarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1087474994"
+ },
+ "No. 24CA1543": {
+  "en": "The judge denied adding a claim for punitive damages without using the lenient proof standard the judge had just stated; that denial was reversed and the damages award stood.",
+  "es": "El juez negó agregar un reclamo de daños punitivos sin aplicar el estándar de prueba flexible que él mismo había citado; esa negativa se revocó y la indemnización por daños reales se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1087474956"
+ },
+ "No. 23CA1519": {
+  "en": "The judge ruled neither side won the homeowner's counterclaims and defenses without explaining why; the judge must make findings and decide again who prevailed on fees, while other rulings stood.",
+  "es": "El juez resolvió que ninguna parte ganó las demandas reconvencionales y defensas del propietario sin explicar por qué; deberá hacer conclusiones y decidir de nuevo quién prevaleció en los honorarios; lo demás se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1087474820"
+ },
+ "No. 22CA2203": {
+  "en": "After the defendant began serving a lawful concurrent sentence, the judge changed it to consecutive, which a court cannot do; the concurrent sentence must be restored.",
+  "es": "Después de que el acusado comenzó a cumplir una pena concurrente legal, el juez la cambió a consecutiva, algo que un tribunal no puede hacer; debe restablecerse la pena concurrente.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1086895968"
+ },
+ "No. 22CA0716": {
+  "en": "Two child sexual assault convictions could not stand beside the pattern-of-abuse convictions on the same conduct, so they were vacated; the other convictions and sentences stood.",
+  "es": "Dos condenas por agresión sexual a un menor no podían subsistir junto con las condenas por patrón de abuso por la misma conducta, así que se anularon; las demás condenas y penas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1086895963"
+ },
  "2025 COA 64": {
   "en": "The judge ruled that a streaming subscription is not taxable property; the appeals court disagreed, holding such sales are taxable, and sent the case back for further proceedings.",
   "es": "El juez dictaminó que una suscripción de transmisión no es propiedad gravable; el tribunal de apelaciones no estuvo de acuerdo, concluyó que esas ventas están gravadas y devolvió el caso para más trámites.",
   "pdf": "https://colorado.vlex.io/pdf_viewer/1098607764"
+ },
+ "No. 24CA1630": {
+  "en": "The judge granted summary judgment although the contracts do not clearly show whether the same wells were sold twice; disputed facts remain and the claims go back for trial.",
+  "es": "El juez dictó sentencia sumaria aunque los contratos no muestran con claridad si los mismos pozos se vendieron dos veces; quedan hechos en disputa y los reclamos vuelven para juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085688611"
+ },
+ "No. 24CA1439": {
+  "en": "The judge ordered the father to repay the mother's public assistance debt without evidence in the record or findings; the income and back child support rulings stood.",
+  "es": "El juez ordenó al padre reembolsar la deuda de asistencia pública de la madre sin pruebas en el expediente ni conclusiones; lo decidido sobre ingresos y manutención retroactiva se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085688602"
+ },
+ "No. 24CA1275": {
+  "en": "The judge refused to dismiss a libel suit against a reporter and news outlet, but the plaintiffs could not show likely proof of actual malice; the case must be dismissed.",
+  "es": "El juez se negó a desestimar una demanda por difamación contra un periodista y un medio, pero los demandantes no mostraron que probablemente probarían malicia real; el caso debe desestimarse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085688598"
+ },
+ "Nos. 24CA0960 & 24CA0961": {
+  "en": "The judge ordered one beneficiary to pay attorney fees and costs without explaining why or finding bad faith; that must be redone, while the trust ending and surcharge stood.",
+  "es": "El juez ordenó a una beneficiaria pagar honorarios y costas sin explicar el motivo ni determinar mala fe; esa parte debe rehacerse, mientras que el cierre del fideicomiso y el recargo se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085688590"
+ },
+ "No. 22CA1687": {
+  "en": "The judge denied without a hearing the claim that defense lawyers never tried to negotiate a plea, though the record did not show the claim was baseless; other denials stood.",
+  "es": "El juez rechazó sin audiencia el reclamo de que los abogados defensores nunca intentaron negociar un acuerdo, aunque el expediente no mostraba que careciera de mérito; los demás rechazos se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085688351"
+ },
+ "No. 25CA0043": {
+  "en": "The judge ended the mother's parental rights after finding her treatment plan appropriate, but it had no domestic violence treatment, which blocked her progress; the judgment was reversed.",
+  "es": "El juez puso fin a los derechos parentales de la madre tras considerar adecuado su plan de tratamiento, pero este no incluía tratamiento por violencia doméstica, lo que frenó su avance; se revocó la sentencia.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085008883"
+ },
+ "No. 24CA1372": {
+  "en": "The judge used a three-year deadline for the claim over development impact fees, but the contract sets those fees, so the six-year deadline applies; the school fee ruling stood.",
+  "es": "El juez aplicó un plazo de tres años al reclamo sobre las tarifas de impacto de desarrollo, pero el contrato las determinaba, por lo que rige el plazo de seis años; lo decidido sobre las tarifas escolares se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085008878"
+ },
+ "No. 24CA0197": {
+  "en": "The judge denied the wife's attorney fee request as too late, but it was timely; the judge must decide it, and the refusal to convert the separation stood.",
+  "es": "El juez negó la solicitud de honorarios de la esposa por presentarse tarde, pero se presentó a tiempo; deberá decidirla, y la negativa a convertir la separación se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085008872"
+ },
+ "No. 23CA0220": {
+  "en": "The judge valued the husband's hidden business interest using only data from after the divorce, instead of its value at the divorce; the value and split must be redone.",
+  "es": "El juez valoró la participación oculta del esposo en un negocio usando solo datos posteriores al divorcio, en vez de su valor al momento del divorcio; el valor y la división deben rehacerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1085008864"
+ },
+ "No. 24CA1658": {
+  "en": "The judge ended the mother's parental rights after improper notice by publication, too little time after the motion, and other process flaws; the hearing must be redone.",
+  "es": "El juez puso fin a los derechos parentales de la madre tras una notificación indebida por edicto, poco tiempo tras la moción y otras fallas del proceso; la audiencia debe repetirse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1082380395"
+ },
+ "No. 24CA1095": {
+  "en": "The judge dismissed a card dealer's meal-break wage complaint, but he plausibly alleged he had to be at work before breaks ended; the case continues and fees were vacated.",
+  "es": "El juez desestimó la demanda salarial de un crupier sobre los descansos para comer, pero este alegó de forma plausible que debía estar en su puesto antes de que terminaran; el caso sigue y la orden de honorarios se anuló.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1082380349"
+ },
+ "No. 24CA1307": {
+  "en": "The judge ordered the state to adopt the hearing officer's decision as final instead of sending the case back to the agency; reversing the agency decision stood.",
+  "es": "El juez ordenó al estado adoptar como final la decisión del juez administrativo en vez de devolver el caso a la agencia; la revocación de la decisión de la agencia se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1081613660"
+ },
+ "No. 22CA2106": {
+  "en": "The judge imposed surcharges, costs and fees outside the defendant's presence, with no chance to show inability to pay, and charged the victims' fund fee per count; convictions stood.",
+  "es": "El juez impuso recargos, costas y cuotas fuera de la presencia del acusado, sin darle oportunidad de mostrar que no podía pagar, y cobró la cuota del fondo de víctimas por cada cargo; las condenas se mantuvieron.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1081613135"
+ },
+ "No. 22CA0169": {
+  "en": "The judge made the company's owner personally liable for unpaid wages without the needed findings, and ordered him to deed a property without explaining why; the company's wage judgment stood.",
+  "es": "El juez hizo al dueño de la empresa personalmente responsable de salarios impagos sin las conclusiones necesarias, y le ordenó ceder una propiedad sin explicar por qué; la sentencia salarial contra la empresa se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1081426633"
+ },
+ "No. 24CA1304": {
+  "en": "The judge denied a one-day delay when the victim did not appear, without issuing an arrest warrant for the victim, then dismissed the case; the charges must be reinstated.",
+  "es": "El juez negó un aplazamiento de un día cuando la víctima no se presentó, sin emitir una orden de arresto para ella, y luego desestimó el caso; los cargos deben restablecerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1081426659"
+ },
+ "No. 22CA0011": {
+  "en": "The judge refused to remove a juror who said he favored child sexual assault victims and was never shown able to set that aside; the convictions were reversed for retrial.",
+  "es": "El juez se negó a excluir a un jurado que dijo favorecer a las víctimas de agresión sexual infantil y nunca demostró poder dejarlo de lado; se revocaron las condenas y habrá nuevo juicio.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1081426632"
+ },
+ "No. 24CA1075": {
+  "en": "The judge ruled the ranch goes to the three sons as tenants in common, but they had agreed to hold it as joint tenants, which no deed or will barred.",
+  "es": "El juez dispuso que el rancho pasa a los tres hijos como copropietarios por cuotas, pero ellos habían acordado tenerlo en propiedad conjunta, y ninguna escritura ni testamento lo impedía.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1080284004"
+ },
+ "No. 24CA1129": {
+  "en": "The judge made a short, conclusory maintenance award, so maintenance, child support and attorney fee rulings that depended on it were reversed; the property division stood.",
+  "es": "El juez fijó una pensión de manutención con conclusiones breves y escuetas, por lo que se revocaron la manutención, la pensión alimentaria infantil y los honorarios que dependían de ella; la división de bienes se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1080284008"
+ },
+ "No. 22CA0873": {
+  "en": "The appeals court disagreed with the judge's dismissal of a felony murder count for lack of notice, finding the defendant had enough notice of the underlying crimes; the conviction stands.",
+  "es": "El tribunal de apelaciones no estuvo de acuerdo con que el juez desestimara un cargo de homicidio en la comisión de un delito por falta de notificación, pues el acusado conocía los delitos de base; la condena se mantiene.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1080283975"
+ },
+ "No. 24CA1538": {
+  "en": "The judge denied a hearing on the father's request for equal parenting time by using the endangerment standard, which does not apply; a hearing is required.",
+  "es": "El juez negó una audiencia sobre la solicitud del padre de tiempo de crianza igualitario al aplicar el estándar de riesgo, que no corresponde; se requiere una audiencia.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1079982484"
+ },
+ "No. 24CA1711": {
+  "en": "The judge made no inquiry or findings under the Indian Child Welfare Act at the dispositional hearing, so that order was reversed; the finding that the child was neglected stood.",
+  "es": "El juez no hizo indagación ni conclusiones bajo la Ley de Bienestar del Niño Indígena en la audiencia de disposición, por lo que esa orden se revocó; la conclusión de que el niño estaba en negligencia se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1079982534"
+ },
+ "No. 24CA1620": {
+  "en": "The judge set the wife's income for support without showing how, and denied her fee request without a clear waiver finding; both go back, and the property division stood.",
+  "es": "El juez fijó los ingresos de la esposa para manutención y pensión infantil sin mostrar cómo, y negó su solicitud de honorarios sin determinar claramente que renunció a ella; ambos regresan, y la división de bienes se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1079982504"
+ },
+ "No. 24CA1054": {
+  "en": "The judge found neither side prevailed under a contract giving the winner attorney fees, but the side proving breach is the winner; fees must be awarded; the rest stood.",
+  "es": "El juez concluyó que ninguna parte prevaleció en un contrato que traslada los honorarios al ganador, pero quien probó el incumplimiento es el ganador; deben otorgarse los honorarios y lo demás se mantuvo.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1079982345"
+ },
+ "No. 24CA1905": {
+  "en": "The judge let the father decide whether and when the mother could have parenting time, though nothing showed the parents could cooperate; that part must be redone.",
+  "es": "El juez dejó que el padre decidiera si la madre podía tener tiempo de crianza y cuándo, aunque nada mostraba que los padres pudieran cooperar; esa parte debe rehacerse.",
+  "pdf": "https://colorado.vlex.io/pdf_viewer/1079516469"
  },
  "2025 COA 45": {
   "en": "The jury instruction did not require that false statements or omissions in the warrant affidavit be intentional or reckless to show a rights violation; the verdict was reversed.",

@@ -9,6 +9,8 @@ Allow: /api/districts
 Allow: /api/featured
 Allow: /api/appeals/top
 Allow: /api/appeals/summary
+Allow: /api/appeals/compare
+Allow: /api/added
 Allow: /api/log
 Disallow: /api/
 

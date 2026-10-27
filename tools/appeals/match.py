@@ -42,13 +42,13 @@ def outcome(d):
     d = re.sub(r"\bSET ASIDE\b", "VACATED", d)
     ev = re.findall(r"\b(AFFIRMED|REVERSED|VACATED|DISMISSED|DISAPPROVED|APPROVED)( IN PART)?", d)
     pos = [p for v, p in ev if v in ("AFFIRMED", "APPROVED")]
-    neg = [(v, p) for v, p in ev if v in ("REVERSED", "VACATED", "DISAPPROVED")]
+    neg = [(v, p) for v, p in ev if v in ("REVERSED", "VACATED")]
     dis = [p for v, p in ev if v == "DISMISSED"]
+    if not neg and any(v == "DISAPPROVED" for v, _ in ev): return "disapproved"   # "judgment affirmed and ruling disapproved": the ruling was wrong, nothing was changed — not partly reversed (22CA0873)
     if pos and neg: return "affirmed_in_part"
     if neg:
         if all(p for _, p in neg): return "affirmed_in_part"         # only parts reversed/vacated: the rest stands
-        vs = {v for v, _ in neg}
-        return "reversed" if "REVERSED" in vs else "vacated" if "VACATED" in vs else "disapproved"
+        return "reversed" if any(v == "REVERSED" for v, _ in neg) else "vacated"
     if pos:
         return "affirmed_in_part" if any(pos) and not any(dis) else "affirmed"
     if dis: return "dismissed"
